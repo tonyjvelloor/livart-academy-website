@@ -39,59 +39,104 @@ import InstagramReelCard from '../components/InstagramReelCard.astro';
 					</a>
 				</div>
 
-				<!-- ELEMENT 1: HERO ESTABLISHMENT VISUAL SHOWCASE (Atelier Floor & Bridal Suite) -->
-				<div class="w-full max-w-5xl mt-space-md grid grid-cols-1 md:grid-cols-2 gap-space-md text-left">
-					<!-- Window 1: Live Salon Floor & Hair Architecture -->
-					<div class="group relative rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-low shadow-xl transition-all duration-300 hover:border-primary/40">
-						<div class="aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden relative">
+				<!-- ELEMENT 1: HERO ESTABLISHMENT VISUAL SHOWCASE (3-Pillar Luxury Atelier Triptych) -->
+				<div class="w-full max-w-6xl mt-space-lg grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+					<!-- Pillar 1: Haute Bridal Couture & 4K HD Artistry -->
+					<div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(254,0,2,0.25)]">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
+							<img 
+								fetchpriority="high" 
+								decoding="async" 
+								src="/images/instagram/DUap-mOkvuu.jpg" 
+								alt="LivArt Academy Bridal Couture Artistry and Temple Saree Draping" 
+								class="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+							
+							<div class="absolute top-3.5 left-3.5">
+								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-wider text-white">
+									<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+									Bridal Couture Suite
+								</span>
+							</div>
+							
+							<div class="absolute bottom-4 left-4 right-4">
+								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">Bridal Artistry & Draping</span>
+								<h3 class="text-white font-headline-sm text-lg font-bold leading-tight">Master Bridal Transformations</h3>
+								<p class="text-white/75 text-xs mt-1.5 font-body-sm line-clamp-2">Complete Hindu, Christian & Muslim wedding looks with 4K HD makeup and precision saree pleating.</p>
+								<div class="pt-2 flex items-center justify-between text-xs text-primary font-bold">
+									<span>View Bridal Syllabus</span>
+									<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+								</div>
+							</div>
+							<a href="/bridal-makeup-course/" class="absolute inset-0 z-10" aria-label="Explore Bridal Makeup Course"></a>
+						</div>
+					</div>
+
+					<!-- Pillar 2: Flagship Kalamassery Salon Atelier (Elevated Centerpiece) -->
+					<div class="group relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary hover:shadow-[0_16px_50px_rgba(254,0,2,0.4)] md:-translate-y-2">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
 								src="/images/academy-live/future_artists_live_atelier.jpg" 
-								alt="LivArt Academy live hair architecture and client styling floor" 
+								alt="LivArt Academy live hair architecture and client styling floor at Pathadipalam" 
 								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
 							/>
-							<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
 							
-							<div class="absolute top-3 left-3">
-								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-bold uppercase tracking-wider text-white">
-									<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-									Kalamassery Flagship Atelier
+							<div class="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
+								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
+									<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+									Flagship Atelier
+								</span>
+								<span class="px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-white/90 text-[10px] font-semibold border border-white/15">
+									Metro Pillar 384
 								</span>
 							</div>
 							
-							<div class="absolute bottom-3.5 left-4 right-4">
-								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">Hair Architecture & Styling</span>
-								<h3 class="text-white font-headline-sm text-base md:text-lg font-bold leading-tight">Live Salon Floor & Client Experience</h3>
-								<p class="text-white/75 text-xs mt-1 font-body-sm line-clamp-1">Practical training on live clients inside our operational Kalamassery salon floors.</p>
+							<div class="absolute bottom-4 left-4 right-4">
+								<span class="text-[10px] uppercase font-bold tracking-widest text-primary-fixed block mb-1">Practical Education</span>
+								<h3 class="text-white font-headline-sm text-lg font-bold leading-tight">Live Salon Floors & Infrastructure</h3>
+								<p class="text-white/75 text-xs mt-1.5 font-body-sm line-clamp-2">Learn on live paying clients inside our operational Pathadipalam salon with modern hydraulic stations.</p>
+								<div class="pt-2 flex items-center justify-between text-xs text-primary font-bold">
+									<span>Take a Virtual Tour</span>
+									<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+								</div>
 							</div>
+							<a href="/take-a-tour/" class="absolute inset-0 z-10" aria-label="Take a tour of LivArt Academy"></a>
 						</div>
 					</div>
 
-					<!-- Window 2: Master Bridal Couture Suite -->
-					<div class="group relative rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-low shadow-xl transition-all duration-300 hover:border-primary/40">
-						<div class="aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden relative">
+					<!-- Pillar 3: Precision Hair Architecture & Chemical Salon Floor -->
+					<div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(254,0,2,0.25)]">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
-								src="/images/academy-live/bridal_masterclass_pathadipalam.jpg" 
-								alt="LivArt Bridal Studio traditional bridal transformation with temple jewelry" 
-								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+								src="/images/instagram/Db7rJBtuj4B.jpg" 
+								alt="LivArt Hair Dressing student executing precision blowout and styling" 
+								class="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
 							/>
-							<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
 							
-							<div class="absolute top-3 left-3">
-								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-bold uppercase tracking-wider text-white">
-									<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-									B&WSSC Accredited Floor
+							<div class="absolute top-3.5 left-3.5">
+								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-wider text-white">
+									<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+									Hair Architecture Bay
 								</span>
 							</div>
 							
-							<div class="absolute bottom-3.5 left-4 right-4">
-								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">Bridal Artistry & Couture</span>
-								<h3 class="text-white font-headline-sm text-base md:text-lg font-bold leading-tight">Master Bridal Transformations</h3>
-								<p class="text-white/75 text-xs mt-1 font-body-sm line-clamp-1">Complete Hindu, Christian, and Muslim wedding looks with 4K HD and saree draping.</p>
+							<div class="absolute bottom-4 left-4 right-4">
+								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">Styling & Trichology</span>
+								<h3 class="text-white font-headline-sm text-lg font-bold leading-tight">Precision Hairdressing & Texture</h3>
+								<p class="text-white/75 text-xs mt-1.5 font-body-sm line-clamp-2">Structural haircutting, thermal curls, Nanoplastia, Botox, and L'Oréal chemical color bar mastery.</p>
+								<div class="pt-2 flex items-center justify-between text-xs text-primary font-bold">
+									<span>View Hair Styling Syllabus</span>
+									<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+								</div>
 							</div>
+							<a href="/hair-styling-course/" class="absolute inset-0 z-10" aria-label="Explore Hair Styling Course"></a>
 						</div>
 					</div>
 				</div>
@@ -537,7 +582,7 @@ import InstagramReelCard from '../components/InstagramReelCard.astro';
 				<!-- Card 1: Student Testimonial Nimmy -->
 				<InstagramReelCard 
 					url="https://www.instagram.com/reel/Cj9gISlIba1/"
-					image="/images/academy-live/ig_student_testimonial_nimmy.jpg"
+					image="/images/instagram/Cj9gISlIba1.jpg"
 					category="Student Spotlight"
 					title="Student Nimmy Kalathil — Journey & Artistry"
 					description="Hands-on training from zero experience to mastering bridal makeup and client consultations inside our Kalamassery bays."
@@ -546,52 +591,52 @@ import InstagramReelCard from '../components/InstagramReelCard.astro';
 
 				<!-- Card 2: Bridal Masterclass -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/livart_academy/"
-					image="/images/academy-live/bridal_masterclass_pathadipalam.jpg"
+					url="https://www.instagram.com/p/Dc-ULHvEvKu/"
+					image="/images/instagram/Dc-ULHvEvKu.jpg"
 					category="Bridal Masterclass"
-					title="Muhurtham Saree & Temple Bridal Artistry"
-					description="Complete bridal makeover executed live on real clients with traditional Kerala Kasavu draping and 4K HD base."
+					title="Kasavu Muhurtham & Temple Bridal Artistry"
+					description="Complete bridal makeover executed live on real models with traditional Kerala Kasavu draping and 4K HD complexion base."
 					badge="Kalamassery Live"
 				/>
 
-				<!-- Card 3: L'Oréal Professional Hair Spa -->
+				<!-- Card 3: Masterclass with Stephy Sebastian -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/livart_academy/"
-					image="/images/academy-live/loreal_hair_spa_practical.jpg"
-					category="Hair Architecture"
-					title="L'Oréal Professional Practical Bay"
-					description="Clinical scalp diagnosis, deep keratin conditioning rituals, and precision blowouts trained under master educators."
-					badge="Live Studio Bay"
+					url="https://www.instagram.com/livart_academy/reel/DY8vuSUIW_R/"
+					image="/images/instagram/DY8vuSUIW_R.jpg"
+					category="Master Faculty"
+					title="Stephy Sebastian Live Masterclass"
+					description="Founder Stephy Sebastian demonstrating clinical skin preparation and precision color matching techniques on the atelier floor."
+					badge="Live Masterclass"
 				/>
 
 				<!-- Card 4: Precision Cut-Crease & Artistry -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/p/Dc-ULHvEvKu/"
-					image="/images/academy-live/ig_makeup_artistry_showcase.jpg"
+					url="https://www.instagram.com/livart_academy/reel/Ddi1GE9oWUm/"
+					image="/images/instagram/Ddi1GE9oWUm.jpg"
 					category="Makeup Artistry"
-					title="Precision Cut-Crease & Color Theory"
-					description="Advanced symmetry calibration, smokey eyes, and dewy glass skin finish demonstrated during intensive studio workshops."
-					badge="@livart_academy Post"
+					title="Student Live Bridal Hands-On Practice"
+					description="Intensive hands-on practical session: eye contouring, flawless base application, and precision blending on live models."
+					badge="@livart_academy Reel"
 				/>
 
-				<!-- Card 5: Graduate Runway Portfolio Showcase -->
+				<!-- Card 5: Hair Architecture & Blowout -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/livart_academy/"
-					image="/images/academy-live/student_graduation_showcase.jpg"
-					category="Final Examination"
-					title="Graduate Runway Portfolio Showcase"
-					description="Graduating cosmetologists present comprehensive hair styling and couture aesthetics for B&WSSC board certification."
-					badge="B&WSSC Certified"
+					url="https://www.instagram.com/livart_academy/reel/Db25HShNddj/"
+					image="/images/instagram/Db25HShNddj.jpg"
+					category="Hair Styling"
+					title="Precision Thermal Hair Styling & Tongs"
+					description="Students mastering micro-crimping, barrel tong curls, and root volume creation on professional mannequins and live models."
+					badge="Live Studio Bay"
 				/>
 
-				<!-- Card 6: Saree Draping & Veil Architecture -->
+				<!-- Card 6: Flagship Atelier & Salon Floor -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/livart_academy/"
-					image="/images/academy-live/saree_draping_masterclass.jpg"
-					category="Bridal Styling"
-					title="Crisp Pleats & Veil Setting Masterclass"
-					description="Mastering iron-pressed pleats, secure pin placement, and royal veil draping essential for high-end wedding clients."
-					badge="Masterclass"
+					url="https://www.instagram.com/livart_academy/reel/DcfyHIgoAVN/"
+					image="/images/instagram/DcfyHIgoAVN.jpg"
+					category="Campus Life"
+					title="Inside LivArt Flagship Atelier Pathadipalam"
+					description="Experience our high-volume operational salon floor, dedicated aesthetics stations, and vibrant student community in Kalamassery."
+					badge="Campus Reel"
 				/>
 			</div>
 

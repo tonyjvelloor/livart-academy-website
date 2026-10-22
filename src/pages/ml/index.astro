@@ -42,59 +42,104 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
 					</a>
 				</div>
 
-				<!-- ELEMENT 1: HERO ESTABLISHMENT VISUAL SHOWCASE (Atelier Floor & Bridal Suite) -->
-				<div class="w-full max-w-5xl mt-space-md grid grid-cols-1 md:grid-cols-2 gap-space-md text-left">
-					<!-- Window 1: Live Salon Floor & Hair Architecture -->
-					<div class="group relative rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-low shadow-xl transition-all duration-300 hover:border-primary/40">
-						<div class="aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden relative">
+				<!-- ELEMENT 1: HERO ESTABLISHMENT VISUAL SHOWCASE (3-Pillar Luxury Atelier Triptych) -->
+				<div class="w-full max-w-6xl mt-space-lg grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+					<!-- Pillar 1: Haute Bridal Couture & 4K HD Artistry -->
+					<div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(254,0,2,0.25)]">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
+							<img 
+								fetchpriority="high" 
+								decoding="async" 
+								src="/images/instagram/DUap-mOkvuu.jpg" 
+								alt="ലിവ്ആർട്ട് അക്കാദമി ബ്രൈഡൽ കൗച്ചർ ആർട്ടിസ്ട്രിയും ടെമ്പിൾ സാരി ഡ്രേപ്പിംഗും" 
+								class="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+							
+							<div class="absolute top-3.5 left-3.5">
+								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-wider text-white">
+									<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+									ബ്രൈഡൽ കൗച്ചർ സ്യൂട്ട്
+								</span>
+							</div>
+							
+							<div class="absolute bottom-4 left-4 right-4">
+								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">ബ്രൈഡൽ ആർട്ടിസ്ട്രി & ഡ്രേപ്പിംഗ്</span>
+								<h3 class="text-white font-headline-sm text-lg font-bold leading-tight">മാസ്റ്റർ ബ്രൈഡൽ മേക്കോവറുകൾ</h3>
+								<p class="text-white/75 text-xs mt-1.5 font-body-sm line-clamp-2">ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം വിവാഹ ലുക്കുകൾ, 4K HD മേക്കപ്പ്, പ്രിസിഷൻ സാരി പ്ലീറ്റിംഗ്.</p>
+								<div class="pt-2 flex items-center justify-between text-xs text-primary font-bold">
+									<span>ബ്രൈഡൽ സിലബസ് കാണാം</span>
+									<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+								</div>
+							</div>
+							<a href="/ml/bridal-makeup-course/" class="absolute inset-0 z-10" aria-label="ബ്രൈഡൽ മേക്കപ്പ് കോഴ്‌സ് പരിശോധിക്കുക"></a>
+						</div>
+					</div>
+
+					<!-- Pillar 2: Flagship Kalamassery Salon Atelier (Elevated Centerpiece) -->
+					<div class="group relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary hover:shadow-[0_16px_50px_rgba(254,0,2,0.4)] md:-translate-y-2">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
 								src="/images/academy-live/future_artists_live_atelier.jpg" 
-								alt="LivArt Academy live hair architecture and client styling floor" 
+								alt="ലിവ്ആർട്ട് അക്കാദമി ലൈവ് ഹെയർ ആർക്കിടെക്ചറും ക്ലയന്റ് സ്റ്റൈലിംഗ് ഫ്ലോറും - പത്തടിപ്പാലം" 
 								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
 							/>
-							<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
 							
-							<div class="absolute top-3 left-3">
-								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-bold uppercase tracking-wider text-white">
-									<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-									കളമശ്ശേരി ഫ്ലാഗ്ഷിപ്പ് അറ്റ്ലിയർ
+							<div class="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
+								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
+									<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+									ഫ്ലാഗ്ഷിപ്പ് അറ്റ്ലിയർ
+								</span>
+								<span class="px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-white/90 text-[10px] font-semibold border border-white/15">
+									മെട്രോ പില്ലർ 384
 								</span>
 							</div>
 							
-							<div class="absolute bottom-3.5 left-4 right-4">
-								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">ഹെയർ ആർക്കിടെക്ചർ & സ്റ്റൈലിംഗ്</span>
-								<h3 class="text-white font-headline-sm text-base md:text-lg font-bold leading-tight">ലൈവ് സലൂൺ ഫ്ലോർ & ക്ലയന്റ് ട്രെയിനിങ്</h3>
-								<p class="text-white/75 text-xs mt-1 font-body-sm line-clamp-1">പ്രവർത്തിക്കുന്ന സലൂണിൽ നേരിട്ടുള്ള ഉപഭോക്താക്കളിൽ പ്രാക്ടിക്കൽ പരിശീലനം.</p>
+							<div class="absolute bottom-4 left-4 right-4">
+								<span class="text-[10px] uppercase font-bold tracking-widest text-primary-fixed block mb-1">പ്രാക്ടിക്കൽ വിദ്യാഭ്യാസം</span>
+								<h3 class="text-white font-headline-sm text-lg font-bold leading-tight">ലൈവ് സലൂൺ ഫ്ലോർ & സൗകര്യങ്ങൾ</h3>
+								<p class="text-white/75 text-xs mt-1.5 font-body-sm line-clamp-2">പത്തടിപ്പാലത്തെ ഞങ്ങളുടെ സജീവ സലൂണിൽ നേരിട്ടുള്ള ഉപഭോക്താക്കളിൽ അത്യാധുനിക ഹൈഡ്രോളിക് സ്റ്റേഷനുകളോടെ പരിശീലനം.</p>
+								<div class="pt-2 flex items-center justify-between text-xs text-primary font-bold">
+									<span>അക്കാദമി ടൂർ കാണാം</span>
+									<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+								</div>
 							</div>
+							<a href="/ml/take-a-tour/" class="absolute inset-0 z-10" aria-label="ലിവ്ആർട്ട് അക്കാദമി ടൂർ കാണാം"></a>
 						</div>
 					</div>
 
-					<!-- Window 2: Master Bridal Couture Suite -->
-					<div class="group relative rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-low shadow-xl transition-all duration-300 hover:border-primary/40">
-						<div class="aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden relative">
+					<!-- Pillar 3: Precision Hair Architecture & Chemical Salon Floor -->
+					<div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(254,0,2,0.25)]">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
-								src="/images/academy-live/bridal_masterclass_pathadipalam.jpg" 
-								alt="LivArt Bridal Studio traditional bridal transformation with temple jewelry" 
-								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+								src="/images/instagram/Db7rJBtuj4B.jpg" 
+								alt="ലിവ്ആർട്ട് ഹെയർ ഡ്രസ്സിങ് വിദ്യാർത്ഥി ബ്ലോഔട്ടും സ്റ്റൈലിംഗും ചെയ്യുന്നു" 
+								class="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
 							/>
-							<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
 							
-							<div class="absolute top-3 left-3">
-								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-bold uppercase tracking-wider text-white">
-									<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-									B&WSSC അഫിലിയേറ്റഡ് ഫ്ലോർ
+							<div class="absolute top-3.5 left-3.5">
+								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-wider text-white">
+									<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+									ഹെയർ ആർക്കിടെക്ചർ ബേ
 								</span>
 							</div>
 							
-							<div class="absolute bottom-3.5 left-4 right-4">
-								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">ബ്രൈഡൽ ആർട്ടിസ്ട്രി & കൗച്ചർ</span>
-								<h3 class="text-white font-headline-sm text-base md:text-lg font-bold leading-tight">മാസ്റ്റർ ബ്രൈഡൽ മേക്കോവറുകൾ</h3>
-								<p class="text-white/75 text-xs mt-1 font-body-sm line-clamp-1">ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം വിവാഹ ലുക്കുകൾ, 4K HD ബേസ്, സാരി ഡ്രേപ്പിംഗ്.</p>
+							<div class="absolute bottom-4 left-4 right-4">
+								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">സ്റ്റൈലിംഗ് & ട്രൈക്കോളജി</span>
+								<h3 class="text-white font-headline-sm text-lg font-bold leading-tight">പ്രിസിഷൻ ഹെയർഡ്രെസ്സിങ് & ടെക്സ്ചർ</h3>
+								<p class="text-white/75 text-xs mt-1.5 font-body-sm line-clamp-2">സ്ട്രക്ചറൽ ഹെയർകട്ടിംഗ്, തെർമൽ കേളുകൾ, നാനോപ്ലാസ്റ്റിയ, ബോട്ടോക്സ്, L'Oréal കെമിക്കൽ കളർ ബാർ ട്രെയിനിംഗ്.</p>
+								<div class="pt-2 flex items-center justify-between text-xs text-primary font-bold">
+									<span>ഹെയർ സ്റ്റൈലിംഗ് സിലബസ് കാണാം</span>
+									<span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+								</div>
 							</div>
+							<a href="/ml/hair-styling-course/" class="absolute inset-0 z-10" aria-label="ഹെയർ സ്റ്റൈലിംഗ് കോഴ്സ് പരിശോധിക്കുക"></a>
 						</div>
 					</div>
 				</div>
@@ -540,7 +585,7 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
 				<!-- Card 1: Student Testimonial Nimmy -->
 				<InstagramReelCard 
 					url="https://www.instagram.com/reel/Cj9gISlIba1/"
-					image="/images/academy-live/ig_student_testimonial_nimmy.jpg"
+					image="/images/instagram/Cj9gISlIba1.jpg"
 					category="സ്റ്റുഡന്റ് സ്പോട്ട്‌ലൈറ്റ്"
 					title="വിദ്യാർത്ഥിനി നിമ്മി കളത്തിൽ — അനുഭവം"
 					description="മുൻപരിചയമില്ലാതെ തുടങ്ങി പ്രൊഫഷണൽ ബ്രൈഡൽ മേക്കപ്പ് ആർട്ടിസ്റ്റായി മാറിയ വിദ്യാർത്ഥിനിയുടെ യഥാർത്ഥ അനുഭവം."
@@ -549,52 +594,52 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
 
 				<!-- Card 2: Bridal Masterclass -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/livart_academy/"
-					image="/images/academy-live/bridal_masterclass_pathadipalam.jpg"
+					url="https://www.instagram.com/p/Dc-ULHvEvKu/"
+					image="/images/instagram/Dc-ULHvEvKu.jpg"
 					category="ബ്രൈഡൽ മാസ്റ്റർക്ലാസ്സ്"
-					title="മുഹൂർത്ത സാരി & ടെമ്പിൾ ബ്രൈഡൽ ആർട്ട്"
+					title="കസവ് മുഹൂർത്തം & ടെമ്പിൾ ബ്രൈഡൽ ആർട്ട്"
 					description="പരമ്പരാഗത കേരള കസവു സാരി ഡ്രേപ്പിംഗും 4K ഹൈ-ഡെഫനിഷൻ കോംപ്ലക്ഷൻ ബേസും ലൈവ് മോഡലുകളിൽ."
 					badge="കളമശ്ശേരി ലൈവ്"
 				/>
 
-				<!-- Card 3: L'Oréal Professional Hair Spa -->
+				<!-- Card 3: Masterclass with Stephy Sebastian -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/livart_academy/"
-					image="/images/academy-live/loreal_hair_spa_practical.jpg"
-					category="ഹെയർ ആർക്കിടെക്ചർ"
-					title="L'Oréal പ്രൊഫഷണൽ ഹെയർ സ്പാ പ്രാക്ടിക്കൽസ്"
-					description="ക്ലിനിക്കൽ സ്കാൽപ്പ് പരിശോധന, ഡീപ് കെരാറ്റിൻ കണ്ടീഷനിംഗ്, സലൂൺ ബ്ലോ ഔട്ടുകൾ എന്നിവയിൽ ലൈവ് ട്രെയിനിംഗ്."
-					badge="ലൈവ് സ്റ്റുഡിയോ ബേ"
+					url="https://www.instagram.com/livart_academy/reel/DY8vuSUIW_R/"
+					image="/images/instagram/DY8vuSUIW_R.jpg"
+					category="മാസ്റ്റർ ഫാക്കൽറ്റി"
+					title="സ്റ്റെഫി സെബാസ്റ്റ്യൻ ലൈവ് മാസ്റ്റർക്ലാസ്സ്"
+					description="ഫൗണ്ടർ സ്റ്റെഫി സെബാസ്റ്റ്യൻ നേരിട്ട് നൽകുന്ന ക്ലിനിക്കൽ സ്കിൻ പ്രെപ്പറേഷൻ, പ്രിസിഷൻ കളർ മാച്ചിംഗ് പരിശീലനം."
+					badge="ലൈവ് മാസ്റ്റർക്ലാസ്സ്"
 				/>
 
 				<!-- Card 4: Precision Cut-Crease & Artistry -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/p/Dc-ULHvEvKu/"
-					image="/images/academy-live/ig_makeup_artistry_showcase.jpg"
+					url="https://www.instagram.com/livart_academy/reel/Ddi1GE9oWUm/"
+					image="/images/instagram/Ddi1GE9oWUm.jpg"
 					category="മേക്കപ്പ് ആർട്ടിസ്ട്രി"
-					title="പ്രിസിഷൻ കട്ട്-ക്രീസ് & കളർ തിയറി"
-					description="അഡ്വാൻസ്ഡ് സിമ്മട്രി കാലിബ്രേഷൻ, സ്മോക്കി ഐസ്, ഗ്ലാസ് സ്കിൻ ഫിനിഷ് മാസ്റ്റർക്ലാസ്സ് ഡെമോൺസ്ട്രേഷൻ."
-					badge="@livart_academy Post"
+					title="വിദ്യാർത്ഥികളുടെ ലൈവ് ബ്രൈഡൽ പ്രാക്ടിക്കൽസ്"
+					description="ലൈവ് മോഡലുകളിൽ ഐ കോണ്ടൂറിങ്, ഫ്ലോലെസ്സ് ബേസ് ആപ്ലിക്കേഷൻ, പ്രിസിഷൻ ബ്ലെൻഡിംഗ് പരിശീലനം."
+					badge="@livart_academy Reel"
 				/>
 
-				<!-- Card 5: Graduate Runway Portfolio Showcase -->
+				<!-- Card 5: Hair Architecture & Blowout -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/livart_academy/"
-					image="/images/academy-live/student_graduation_showcase.jpg"
-					category="ഫൈനൽ എക്സാമിനേഷൻ"
-					title="ഗ്രാജ്വേറ്റ് റൺവേ പോർട്ട്ഫോളിയോ ഷോക്കേസ്"
-					description="കോസ്മെറ്റോളജി വിദ്യാർത്ഥികൾ തങ്ങളുടെ ഫൈനൽ ബോർഡ് സർട്ടിഫിക്കേഷനായി അവതരിപ്പിച്ച ലൈവ് മോഡൽ സ്റ്റൈലിംഗ്."
-					badge="B&WSSC സർട്ടിഫൈഡ്"
+					url="https://www.instagram.com/livart_academy/reel/Db25HShNddj/"
+					image="/images/instagram/Db25HShNddj.jpg"
+					category="ഹെയർ സ്റ്റൈലിംഗ്"
+					title="പ്രിസിഷൻ തെർമൽ ഹെയർ സ്റ്റൈലിംഗ് & ടോങ്സ്"
+					description="മൈക്രോ-ക്രിമ്പിംഗ്, ബാരൽ ടോങ് കേളുകൾ, റൂട്ട് വോളിയം ടെക്നിക്കുകൾ എന്നിവയിൽ നേരിട്ടുള്ള പരിശീലനം."
+					badge="ലൈവ് സ്റ്റുഡിയോ ബേ"
 				/>
 
-				<!-- Card 6: Saree Draping & Veil Architecture -->
+				<!-- Card 6: Flagship Atelier & Salon Floor -->
 				<InstagramReelCard 
-					url="https://www.instagram.com/livart_academy/"
-					image="/images/academy-live/saree_draping_masterclass.jpg"
-					category="ബ്രൈഡൽ സ്റ്റൈലിംഗ്"
-					title="സാരി പ്ലീറ്റിംഗ് & വെയ്ൽ സെറ്റിംഗ് മാസ്റ്റർക്ലാസ്സ്"
-					description="അയൺ-പ്രസ്സ് ചെയ്ത പ്ലീറ്റുകൾ, സുരക്ഷിതമായ പിൻ പ്ലേസ്മെന്റ്, റോയൽ ബ്രൈഡൽ വെയ്ൽ ഡ്രേപ്പിംഗ്."
-					badge="മാസ്റ്റർക്ലാസ്സ്"
+					url="https://www.instagram.com/livart_academy/reel/DcfyHIgoAVN/"
+					image="/images/instagram/DcfyHIgoAVN.jpg"
+					category="ക്യാമ്പസ് ലൈഫ്"
+					title="ലിവ്ആർട്ട് ഫ്ലാഗ്ഷിപ്പ് അറ്റ്ലിയർ പത്തടിപ്പാലം"
+					description="ഞങ്ങളുടെ സജീവ സലൂൺ ഫ്ലോർ, അത്യാധുനിക സൗന്ദര്യ വർദ്ധക സ്റ്റേഷനുകൾ, കളമശ്ശേരി ക്യാമ്പസ് അന്തരീക്ഷം."
+					badge="ക്യാമ്പസ് റീൽ"
 				/>
 			</div>
 
