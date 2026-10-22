@@ -207,3 +207,80 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* ==========================================================================
+   PRINT SPECIFICATION & EXECUTIVE PROSPECTUS STYLES
+   Ensures crystal-clear, ink-friendly, executive output when printed or exported as PDF
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 15mm 15mm;
+  }
+
+  /* Reset document canvas to pure white with high-contrast text */
+  html, body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* When printing on pages that have the dedicated executive prospectus, hide screen content */
+  .screen-only {
+    display: none !important;
+  }
+
+  /* Hide screen chrome, navbars, modals, floating buttons, forms, and video reels */
+  header,
+  nav,
+  footer,
+  #instagram-video-modal,
+  .livart-lead-form,
+  #course-lead-form-wrapper,
+  .faq-btn,
+  video,
+  iframe,
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Reveal the executive print prospectus */
+  .print-prospectus {
+    display: block !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  /* Avoid awkward page break splits */
+  h1, h2, h3, h4, h5 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+    color: #0f172a !important;
+  }
+
+  .print-module-card,
+  .print-avoid-break,
+  tr,
+  li {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Ensure links do not print trailing URLs */
+  a[href]:after {
+    content: none !important;
+  }
+}

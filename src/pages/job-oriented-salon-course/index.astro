@@ -2,13 +2,27 @@
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../components/CoursePrintProspectus.astro';
+
+const salonJobModules = [
+  { num: "01", title: "Salon Blow Dry & Styling Setting", desc: "Mastery of round brush, paddle brush, volume styling and sleek commercial finishes." },
+  { num: "02", title: "Shampoo, Hair Wash & Basin Etiquette", desc: "Correct basin posture, scalp massage, temperature control, deep cleansing & client draping." },
+  { num: "03", title: "Basic Haircuts (U, V, Straight & Layer Trims)", desc: "Essential commercial cuts: Straight cuts, U-cut, V-cut, and basic everyday layer trims." },
+  { num: "04", title: "Root Touch-Up & Quick Colouring", desc: "Rapid grey coverage, mixing ratios, clean application without scalp staining & post-wash care." },
+  { num: "05", title: "Traditional Scalp Oil Massage & Hair Spa", desc: "Acupressure pressure points, circulation therapy, and steam mask protocols for salon clients." },
+  { num: "06", title: "Precision Threading Mastery", desc: "Eyebrow mapping, arch definition, upper lip, chin, and full-face precision threading." },
+  { num: "07", title: "Commercial Facials & Clean Ups", desc: "Facial massage strokes, steaming, gentle extraction, and soothing clay/cream mask application." },
+  { num: "08", title: "Manicure & Pedicure Protocols", desc: "Nail filing, cuticle care, dead skin scrubbing, callus removal, and foot relaxation massage." },
+  { num: "09", title: "Basic to Advanced Waxing", desc: "Full arms, underarms, legs waxing techniques, speed application, and soothing post-wax oils." }
+];
 ---
 
 <Layout 
   title="Job-Oriented Salon Course (1 Month) | Livart Beauty Academy Kochi"
   description="Accelerated 1-month job-oriented salon course in Kochi. Master essential salon floor skills across hair and skin: blow dry, haircuts, facials, root touch-ups, pedicure, and threading for immediate employment."
 >
-  
+  <div class="screen-only">
   <!-- HERO -->
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
@@ -43,7 +57,7 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-lg">download</span>
             Get Syllabus & Fee Details
@@ -51,6 +65,7 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
           <a href="#modules" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
             View Curriculum
           </a>
+          <CoursePrintButton label="Print Course Details" />
         </div>
       </div>
       
@@ -216,6 +231,27 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
       formId="salon-job-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="Job-Oriented Salon Course (1 Month)"
+    courseSubtitle="Intensive job-entry qualification engineered for immediate employment in commercial salons. Covers everyday essential salon hair cuts, blow dry setting, root touch-up, threading, facials, manicure and pedicure."
+    duration="1 Month (Accelerated 30-Day Practical Training)"
+    eligibility="Open for 10th, 12th, Freshers & Career Seekers • No Prior Experience Required"
+    certification="LivArt Certified Salon Professional • B&WSSC Aligned"
+    toolKit="Essential Salon Tools & Equipment Provided for Training"
+    trainingFormat="100% Practical Training on Live Models in Kalamassery Working Salon Bays"
+    batchCapacity="Strictly 8–10 Students per Batch for Focused Individual Practice"
+    internship="Live Salon Floor Assessments & Direct Job Interview Support"
+    modules={salonJobModules}
+    careerOutcomes={[
+      "Junior Salon Stylist & Floor Hairdresser",
+      "Salon Skin & Facial Therapist",
+      "Threading & Nail Spa Professional",
+      "Commercial Salon Assistant Manager"
+    ]}
+  />
 
   <!-- COURSE SCHEMA MARKUP -->
   <script type="application/ld+json" set:html={`

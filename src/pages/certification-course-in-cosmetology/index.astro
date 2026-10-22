@@ -2,13 +2,23 @@
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../components/CoursePrintProspectus.astro';
+
+const cosmetologyModules = [
+  { num: "01", title: "Hair Dressing Mastery (Stage 1)", desc: "13+ precision haircuts (Butterfly, Wolf, Bob, Graduation) • Nanoplastia, Botox, Keratin & Smoothing • Global colour, Balayage & Highlights • Hair spa & scalp treatments." },
+  { num: "02", title: "Clinical Skin Therapy (Stage 2)", desc: "Skin anatomy & dermal analysis • Hydra facial machinery, High frequency & Galvanic iontophoresis • Chemical peels & anti-aging protocols • Manicure, pedicure & waxing." },
+  { num: "03", title: "Master Makeup Artistry (Stage 3)", desc: "Hindu, Christian & Muslim bridal couture • 4K HD foundation matching & airbrush makeup • Thermal styling (crimping, tongs) • Advanced saree pre-pleating & draping." },
+  { num: "04", title: "Commercial Salon Internship (Stage 4)", desc: "1-Month guaranteed internship on live working salon floor • Real client management, billing & appointment scheduling • High-volume speed, precision & service etiquette." },
+  { num: "05", title: "Salon Business & Entrepreneurship", desc: "Salon setup, equipment sourcing & inventory control • Client consultation & retention mastery • Freelance bridal booking management • B&WSSC Govt certification exam." }
+];
 ---
 
 <Layout 
   title="Cosmetology Programme (12 & 6 Months) | Livart Beauty Academy Kochi"
   description="Master Hair, Skin, and Makeup with a mandatory 1-month salon floor internship at Livart Beauty Academy Kochi. B&WSSC-affiliated Cosmetology qualification for aspiring salon owners and top artists."
 >
-  
+  <div class="screen-only">
   <!-- 1. HERO SECTION -->
   <section class="relative pt-24 pb-20 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-white/10 overflow-hidden">
     <!-- Ambient Red Glow -->
@@ -68,6 +78,8 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
           >
             Compare 12M vs 6M
           </a>
+
+          <CoursePrintButton label="Print Course Details" />
 
           <button 
             type="button" 
@@ -454,6 +466,28 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
       formId="cosmetology-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="Cosmetology Programme (12 Months & 6 Months Tracks)"
+    courseSubtitle="The comprehensive master beauty qualification combining Advanced Hair Dressing, Clinical Skin Therapy, Bridal & Fashion Makeup Artistry, and a 1-Month Working Salon Floor Internship."
+    duration="12 Months (Master Track) or 6 Months (Intensive Track)"
+    eligibility="10th / 12th / Any Degree • Open for Freshers & Career Changers"
+    certification="B&WSSC (Govt of India) Certified • LivArt Master Cosmetology Diploma"
+    toolKit="Complete Professional Equipment Kits Included (Hair Shears, Dryer, Mannequin, Facial Kit, Full Brush Set)"
+    trainingFormat="100% Practical Training on Live Models in Kalamassery Working Salon Bays"
+    batchCapacity="Strictly 8–10 Students per Batch for Individual Hands-On Guidance"
+    internship="Guaranteed 1-Month Salon Floor Internship with Real Client Experience"
+    modules={cosmetologyModules}
+    careerOutcomes={[
+      "Senior Cosmetologist & Master Stylist",
+      "Salon Manager & Creative Director",
+      "Independent Salon / Spa Entrepreneur",
+      "Clinical Aesthetician & Dermal Therapist",
+      "Celebrity Bridal & Media Makeup Artist"
+    ]}
+  />
 
   <!-- COURSE SCHEMA MARKUP FOR SEO -->
   <script type="application/ld+json" set:html={`

@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import CoursePrintButton from '../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../components/CoursePrintProspectus.astro';
 
 const modules3M = [
   { num: "01", title: "Makeup Fundamentals & Skin Prep", desc: "Personal grooming • History & intro to makeup • Skin types & preparation • Makeup product knowledge." },
@@ -21,6 +23,7 @@ const modules3M = [
   title="Diploma in Makeup (3 Months & 1 Month) | Livart Beauty Academy Kochi"
   description="Master bridal, fashion, and HD makeup artistry with Stephy Sebastian at Livart Beauty Academy Kochi. 3-Month Master Diploma and 1-Month Intensive with brush kit and tool kit included."
 >
+  <div class="screen-only">
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
       <div>
@@ -54,11 +57,12 @@ const modules3M = [
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-lg">download</span>
             Get Syllabus & Fee Details
           </a>
+          <CoursePrintButton label="Print Course Details" />
         </div>
       </div>
       
@@ -106,6 +110,27 @@ const modules3M = [
       formId="diploma-makeup-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="Diploma in Makeup Artistry (3-Month Master & 1-Month Intensive Tracks)"
+    courseSubtitle="Elite professional makeup qualification covering Hindu, Christian, and Muslim bridal artistry, Airbrush makeup, Glass Skin, HD editorial techniques, Saree pre-pleating & draping, and professional bridal hairstyling."
+    duration="3 Months (Master Track) / 1 Month (Intensive Track)"
+    eligibility="10th / 12th / Any Degree • No Prior Experience Required"
+    certification="B&WSSC (Govt of India) Certified • LivArt Master Makeup Diploma"
+    toolKit="Complete Professional Makeup Brush Kit & Essential Tool Kit Included"
+    trainingFormat="100% Practical Training on Live Models in Salon-Grade Vanity Bays"
+    batchCapacity="Strictly 8–10 Students per Batch for Individual Mentorship by Stephy Sebastian"
+    internship="Guaranteed Portfolio Shoot, Live Bridal Client Practicals & 100% Placement Support"
+    modules={modules3M}
+    careerOutcomes={[
+      "Luxury Bridal Makeup Artist (Hindu, Christian, Muslim Weddings)",
+      "High-Fashion, Editorial & Celebrity Makeup Artist",
+      "Airbrush & HD Makeup Specialist",
+      "Independent Bridal Makeup Studio Owner"
+    ]}
+  />
 
   <!-- SCHEMA -->
   <script type="application/ld+json" set:html={`

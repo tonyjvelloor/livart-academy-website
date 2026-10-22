@@ -2,6 +2,8 @@
 import Layout from '../../../layouts/Layout.astro';
 import CourseLeadForm from '../../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../../components/CoursePrintProspectus.astro';
 
 const hairModules = [
   { num: "01", title: "സലൂൺ മാനേഴ്സ് & ഹൈജീൻ", desc: "സലൂൺ ശുചിത്വം • സ്റ്റെറിലൈസേഷൻ • ഷാംപൂ & കണ്ടീഷനിംഗ് • ബ്ലോ-ഡ്രൈ സെറ്റിംഗ്." },
@@ -18,6 +20,7 @@ const hairModules = [
   title="ഹെയർ ഡ്രസ്സിംഗ് & സ്റ്റൈലിംഗ് കോഴ്‌സ് കൊച്ചി | Livart Beauty Academy"
   description="പ്രൊഫഷണൽ ഹെയർ ഡ്രസ്സിംഗ് & സ്റ്റൈലിംഗ് കോഴ്‌സുകൾ. 4 മാസ മാസ്റ്റർ ഡിപ്ലോമ, 2 മാസ കോഴ്‌സ്. 13+ ഹെയർകട്ടുകൾ, നാനോപ്ലാസ്റ്റിയ, ബാലിയാജ്, ടൂൾ കിറ്റ് സൗജന്യം."
 >
+  <div class="screen-only">
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-white/10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
@@ -51,11 +54,12 @@ const hairModules = [
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary hover:bg-[#d40002] text-white text-xs uppercase tracking-widest font-bold rounded-xl shadow-lg transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-base">download</span>
             <span>സിലബസും ഫീസും നേടുക</span>
           </a>
+          <CoursePrintButton isMalayalam={true} />
         </div>
       </div>
       
@@ -138,4 +142,26 @@ const hairModules = [
       formId="ml-hair-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="ഹെയർ ഡ്രസ്സിംഗ് & സ്റ്റൈലിംഗ് കോഴ്‌സ് (4 മാസവും 2 മാസവും)"
+    courseSubtitle="13+ പ്രിസിഷൻ ഹെയർകട്ടുകൾ, നാനോപ്ലാസ്റ്റിയ, ഹെയർ ബോട്ടോക്സ്, കെരാറ്റിൻ തെറാപ്പി, ബാലിയാജ് കളറിംഗ് കെമിസ്ട്രി, ബ്രൈഡൽ അപ്ഡോകൾ എന്നിവയിലെ സമഗ്ര പ്രായോഗിക യോഗ്യത."
+    duration="4 മാസം (മാസ്റ്റർ ഡിപ്ലോമ) അല്ലെങ്കിൽ 2 മാസം (ഇന്റൻസീവ് ഹെയർ ട്രാക്ക്)"
+    eligibility="10th / 12th / ഏതെങ്കിലും ബിരുദം • മുൻപരിചയം ആവശ്യമില്ല"
+    certification="B&WSSC (ഗവ. ഓഫ് ഇന്ത്യ) അംഗീകൃതം • ലിവ്ആർട്ട് മാസ്റ്റർ ഹെയർ ഡിപ്ലോമ"
+    toolKit="പ്രൊഫഷണൽ ഹെയർ ഡ്രസ്സിംഗ് ടൂൾ കിറ്റ് സൗജന്യം (കട്ടിംഗ് ഡമ്മി, കത്രിക, ഡ്രയർ, ചീപ്പുകൾ)"
+    trainingFormat="100% പ്രൊഫഷണൽ ഡമ്മിയിലും ലൈവ് ക്ലയന്റുകളിലും കളമശ്ശേരി സലൂൺ ബേകളിൽ പരിശീലനം"
+    batchCapacity="വ്യക്തിഗത ശ്രദ്ധയ്ക്കായി ഓരോ ബാച്ചിലും 8-10 വിദ്യാർത്ഥികൾ മാത്രം"
+    internship="വർക്കിംഗ് സലൂൺ ഫ്ലോർ അസസ്മെന്റും 100% പ്ലേസ്മെന്റ് അസിസ്റ്റൻസും"
+    modules={hairModules}
+    careerOutcomes={[
+      "സീനിയർ ഹെയർ സ്റ്റൈലിസ്റ്റ് & ക്രിയേറ്റീവ് കട്ടിംഗ് സ്പെഷ്യലിസ്റ്റ്",
+      "ടെക്സ്ചർ ട്രാൻസ്ഫോർമേഷൻ സ്പെഷ്യലിസ്റ്റ് (ബോട്ടോക്സ്/നാനോപ്ലാസ്റ്റിയ)",
+      "ബാലിയാജ് & കളർ ടെക്നീഷ്യൻ",
+      "കൊമേർഷ്യൽ സലൂൺ ഡയറക്ടർ & സംരംഭക"
+    ]}
+    isMalayalam={true}
+  />
 </Layout>

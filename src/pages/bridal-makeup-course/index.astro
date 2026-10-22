@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../components/CoursePrintProspectus.astro';
 
 const bridalModules = [
   { num: "01", title: "Fundamentals & Skin Preparation", desc: "Personal grooming • History & introduction to bridal makeup • Skin types & preparation • High-performance bridal product knowledge." },
@@ -24,64 +26,65 @@ const bridalModules = [
   title="Fastrack Bridal Makeup Course (10 Days) | Livart Beauty Academy Kochi"
   description="Master high-earning Hindu, Christian, and Muslim bridal looks in 10 intensive days at Livart Beauty Academy Kochi. Includes hairstyling, saree draping, brush kit, and live model practical exam."
 >
-  
-  <!-- HERO -->
-  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
-      <div>
-        <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
-          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Fast-Track Intensive • 2026 Admissions Open</span>
-        </div>
-        <h1 class="font-display-lg text-display-lg lg:text-[60px] lg:leading-[68px] text-on-surface tracking-tight mb-6">
-          Fastrack <span class="italic text-primary">Bridal Makeup.</span>
-        </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">
-          The most lucrative 10-day bridal bootcamp in Kerala. Master Hindu, Christian, and Muslim wedding looks, thermal hairstyles, saree pre-pleating, and complete your final evaluation on a live model.
-        </p>
-        
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-outline-variant/20 py-6">
-          <div>
-            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Duration</span>
-            <strong class="font-title-md text-on-surface text-base">10 Days</strong>
+  <div class="screen-only">
+    <!-- HERO -->
+    <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
+        <div>
+          <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Fast-Track Intensive • 2026 Admissions Open</span>
           </div>
-          <div>
-            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tool Kit</span>
-            <strong class="font-title-md text-on-surface text-base">Brush Kit Included</strong>
+          <h1 class="font-display-lg text-display-lg lg:text-[60px] lg:leading-[68px] text-on-surface tracking-tight mb-6">
+            Fastrack <span class="italic text-primary">Bridal Makeup.</span>
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">
+            The most lucrative 10-day bridal bootcamp in Kerala. Master Hindu, Christian, and Muslim wedding looks, thermal hairstyles, saree pre-pleating, and complete your final evaluation on a live model.
+          </p>
+          
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-outline-variant/20 py-6">
+            <div>
+              <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Duration</span>
+              <strong class="font-title-md text-on-surface text-base">10 Days</strong>
+            </div>
+            <div>
+              <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tool Kit</span>
+              <strong class="font-title-md text-on-surface text-base">Brush Kit Included</strong>
+            </div>
+            <div>
+              <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Wedding Cultures</span>
+              <strong class="font-title-md text-on-surface text-base">Hindu, Christian, Muslim</strong>
+            </div>
+            <div>
+              <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Final Evaluation</span>
+              <strong class="font-title-md text-on-surface text-base">Live Model Exam</strong>
+            </div>
           </div>
-          <div>
-            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Wedding Cultures</span>
-            <strong class="font-title-md text-on-surface text-base">Hindu, Christian, Muslim</strong>
-          </div>
-          <div>
-            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Final Evaluation</span>
-            <strong class="font-title-md text-on-surface text-base">Live Model Exam</strong>
-          </div>
-        </div>
 
-        <div class="flex flex-wrap gap-4">
-          <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg">download</span>
-            Get Syllabus & Fee Details
-          </a>
-          <a href="#curriculum" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
-            View 13 Modules
-          </a>
-        </div>
-      </div>
-      
-      <div class="relative h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-surface-container shadow-2xl">
-        <img fetchpriority="high" decoding="async" src="/images/academy-live/bridal_makeup_course_action.jpg" class="w-full h-full object-cover" alt="LivArt Bridal Makeup Artist Practical Training Session" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
-          <div class="inline-block px-3 py-1 bg-primary text-white text-xs uppercase tracking-widest font-bold rounded mb-2 w-max">
-            Complete Bridal Package
+          <div class="flex flex-wrap gap-4 items-center">
+            <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg">download</span>
+              Get Syllabus & Fee Details
+            </a>
+            <a href="#curriculum" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
+              View 13 Modules
+            </a>
+            <CoursePrintButton label="Print Course Details" />
           </div>
-          <h3 class="font-headline-sm text-white text-xl font-bold">Makeup + Hairstyling + Saree Draping</h3>
-          <p class="text-white/80 font-body-sm text-sm mt-1">Concludes with a formal practical examination on your own model.</p>
+        </div>
+        
+        <div class="relative h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-surface-container shadow-2xl">
+          <img fetchpriority="high" decoding="async" src="/images/academy-live/bridal_couture_transformation.jpg" class="w-full h-full object-cover object-[center_20%]" alt="LivArt Bridal Makeup Artistry and Muhurtham Transformation" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+            <div class="inline-block px-3 py-1 bg-primary text-white text-xs uppercase tracking-widest font-bold rounded mb-2 w-max">
+              Complete Bridal Package
+            </div>
+            <h3 class="font-headline-sm text-white text-xl font-bold">Makeup + Hairstyling + Saree Draping</h3>
+            <p class="text-white/80 font-body-sm text-sm mt-1">Concludes with a formal practical examination on your own model.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- 13 MODULES BREAKDOWN (Page 11 of Prospectus) -->
   <section id="curriculum" class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
@@ -201,6 +204,27 @@ const bridalModules = [
       formId="bridal-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="Fastrack Bridal Makeup Course (10 Days)"
+    courseSubtitle="Intensive luxury bridal bootcamp covering Hindu, Christian & Muslim wedding looks, 4K HD complexion base, thermal hair styling, saree pre-pleating, and final live model practical evaluation."
+    duration="10 Days (High-Intensity Daily Sessions)"
+    eligibility="Open for 10th, 12th, Graduates & Beauty Aspirants • No Prior Experience Required"
+    certification="LivArt Master Bridal Certification & B&WSSC Aligned"
+    toolKit="Professional Brush Set & Makeup Tools Included"
+    trainingFormat="100% Practical Training on Live Models in Kalamassery Bridal Bays"
+    batchCapacity="Strictly 8–10 Students per Batch for Individual Mentorship"
+    internship="Live Model Practical Evaluation & 100% Bridal Placement Guidance"
+    modules={bridalModules}
+    careerOutcomes={[
+      "Independent Luxury Bridal Makeup Artist",
+      "Destination Wedding Makeup & Saree Pleating Stylist",
+      "Celebrity Bridal & Fashion Media Artist",
+      "Freelance Bridal Studio Entrepreneur"
+    ]}
+  />
 
   <!-- COURSE SCHEMA MARKUP -->
   <script type="application/ld+json" set:html={`

@@ -2,6 +2,8 @@
 import Layout from '../../../layouts/Layout.astro';
 import CourseLeadForm from '../../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../../components/CoursePrintProspectus.astro';
 
 const masterDiplomaModules = [
   { num: "01", title: "മേക്കപ്പ് അടിസ്ഥാനങ്ങൾ & സ്കിൻ പ്രിപ്പറേഷൻ", desc: "പേഴ്സണൽ ഗ്രൂമിങ് • മേക്കപ്പിന്റെ ചരിത്രവും വളർച്ചയും • സ്കിൻ ടൈപ്പുകളും പ്രിപ്പറേഷനും • മേക്കപ്പ് പ്രോഡക്റ്റ് നോളഡ്ജ്." },
@@ -37,7 +39,7 @@ const oneMonthModules = [
   title="ഡിപ്ലോമ ഇൻ മേക്കപ്പ് ആർട്ടിസ്ട്രി കൊച്ചി | Livart Beauty Academy"
   description="സ്റ്റെഫി സെബാസ്റ്റ്യനിൽ നിന്ന് പ്രൊഫഷണൽ മേക്കപ്പ് ആർട്ടിസ്ട്രി പഠിക്കാം. 3 മാസത്തെ മാസ്റ്റർ ഡിപ്ലോമയും 1 മാസത്തെ ഇന്റെൻസീവ് കോഴ്സും. ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം ബ്രൈഡൽ ലുക്കുകൾ, എയർബ്രഷ്, സാരി ഡ്രേപ്പിംഗ്, ഒപ്പം ഫ്രീ പ്രൊഫഷണൽ ടൂൾകിറ്റും."
 >
-  
+  <div class="screen-only">
   <!-- HERO -->
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
@@ -72,14 +74,15 @@ const oneMonthModules = [
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-lg">download</span>
-            സിലബസും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടാം
+            സിലബസും ഫീസും അറിയാം
           </a>
           <a href="#curriculum" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
-            11 മോഡ്യൂളുകൾ കാണുക
+            11 മൊഡ്യൂളുകൾ കാണുക
           </a>
+          <CoursePrintButton isMalayalam={true} />
         </div>
       </div>
       
@@ -292,6 +295,28 @@ const oneMonthModules = [
       formId="ml-makeup-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="ഡിപ്ലോമ ഇൻ മേക്കപ്പ് ആർട്ടിസ്ട്രി (3 മാസവും 1 മാസവും)"
+    courseSubtitle="ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം ബ്രൈഡൽ ലുക്കുകൾ, 4K HD ഫൗണ്ടേഷൻ ബ്ലെൻഡിംഗ്, എയർബ്രഷ്, തെർമൽ ഹെയർ സ്റ്റൈലിംഗ്, സാരി പ്രീ-പ്ലീറ്റിംഗ് എന്നിവ ഉൾപ്പെടുന്ന പ്രൊഫഷണൽ യോഗ്യത."
+    duration="3 മാസം (മാസ്റ്റർ ഡിപ്ലോമ) അല്ലെങ്കിൽ 1 മാസം (ഇന്റൻസീവ്)"
+    eligibility="10th / 12th / ഏതെങ്കിലും ബിരുദം • മുൻപരിചയം ആവശ്യമില്ല"
+    certification="B&WSSC (ഗവ. ഓഫ് ഇന്ത്യ) സർട്ടിഫിക്കേഷൻ • ലിവ്ആർട്ട് മാസ്റ്റർ മേക്കപ്പ് ഡിപ്ലോമ"
+    toolKit="പ്രൊഫഷണൽ ബ്രഷ് സെറ്റും മേക്കപ്പ് ടൂളുകളും സൗജന്യം"
+    trainingFormat="100% ലൈവ് മോഡലുകളിൽ കളമശ്ശേരി മേക്കപ്പ് സ്റ്റുഡിയോയിൽ പ്രായോഗിക പരിശീലനം"
+    batchCapacity="വ്യക്തിഗത ശ്രദ്ധയ്ക്കായി ഓരോ ബാച്ചിലും 8-10 വിദ്യാർത്ഥികൾ മാത്രം"
+    internship="ലൈവ് മോഡൽ പരീക്ഷയും 100% ബ്രൈഡൽ പ്ലേസ്മെന്റ് സപ്പോർട്ടും"
+    modules={masterDiplomaModules}
+    careerOutcomes={[
+      "പ്രൊഫഷണൽ സെലിബ്രിറ്റി & ബ്രൈഡൽ മേക്കപ്പ് ആർട്ടിസ്റ്റ്",
+      "ഡെസ്റ്റിനേഷൻ വെഡ്ഡിംഗ് സ്റ്റൈലിസ്റ്റ് & ഡ്രേപ്പിംഗ് ആർട്ടിസ്റ്റ്",
+      "ഫാഷൻ, ടിവി & മീഡിയ പ്രൊഡക്ഷൻ ആർട്ടിസ്റ്റ്",
+      "സ്വന്തം ബ്രൈഡൽ സ്റ്റുഡിയോ സംരംഭക"
+    ]}
+    isMalayalam={true}
+  />
 
   <!-- COURSE SCHEMA MARKUP -->
   <script type="application/ld+json" set:html={`

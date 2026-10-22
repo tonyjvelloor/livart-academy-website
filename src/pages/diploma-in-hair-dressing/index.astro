@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import CoursePrintButton from '../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../components/CoursePrintProspectus.astro';
 
 const modules = [
   { num: "01", title: "Salon Basics", desc: "Salon manners / grooming & hygiene • Safety, tools & sterilization • Shampoo & conditioning • Blow-dry setting." },
@@ -17,6 +19,7 @@ const modules = [
   title="Diploma in Hair Dressing (4 Months) | Livart Beauty Academy Kochi"
   description="Master 13+ precision haircuts, Nanoplastia, Botox, Balayage, and advanced hair styling in this 4-month Diploma in Hair Dressing at Livart Beauty Academy Kochi. Full tool kit included."
 >
+  <div class="screen-only">
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
       <div>
@@ -50,11 +53,12 @@ const modules = [
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-lg">download</span>
             Get Syllabus & Fee Details
           </a>
+          <CoursePrintButton label="Print Course Details" />
         </div>
       </div>
       
@@ -102,6 +106,27 @@ const modules = [
       formId="hair-dressing-page-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="Diploma in Hair Dressing (4 Months Master Track)"
+    courseSubtitle="Advanced professional hair qualification mastering 13+ precision haircut geometries, Nanoplastia, Hair Botox, Balayage, Ombre, and bridal hair design with personal tool kit."
+    duration="4 Months (Comprehensive Master Track)"
+    eligibility="10th / 12th / Any Degree • No Prior Experience Required"
+    certification="B&WSSC (Govt of India) Certified • LivArt Master Hair Dressing Diploma"
+    toolKit="Complete Hair Dressing Kit Included (Cutting Dummy, Shears, Combs, Clips, Professional Hair Dryer)"
+    trainingFormat="100% Practical Training on Professional Dummies and Live Clients in Kalamassery Bays"
+    batchCapacity="Strictly 8–10 Students per Batch for Individual Mentorship"
+    internship="Guaranteed Working Salon Floor Assessments & 100% Placement Assistance"
+    modules={modules}
+    careerOutcomes={[
+      "Senior Hair Stylist & Creative Cutting Specialist",
+      "Chemical & Texture Transformation Specialist (Botox/Nanoplastia)",
+      "Balayage, Ombre & Colour Technician",
+      "Commercial Salon Director & Studio Entrepreneur"
+    ]}
+  />
 
   <!-- SCHEMA -->
   <script type="application/ld+json" set:html={`

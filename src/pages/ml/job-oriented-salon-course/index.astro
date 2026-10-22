@@ -2,13 +2,27 @@
 import Layout from '../../../layouts/Layout.astro';
 import CourseLeadForm from '../../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../../components/CoursePrintProspectus.astro';
+
+const mlSalonJobModules = [
+  { num: "01", title: "സലൂൺ ബ്ലോ ഡ്രൈ & സ്റ്റൈലിംഗ് സെറ്റിംഗ്", desc: "റൗണ്ട് ബ്രഷ്, പാഡിൽ ബ്രഷ്, വോളിയം സ്റ്റൈലിംഗ്, സ്ലീക്ക് കൊമേർഷ്യൽ ഫിനിഷിംഗ്." },
+  { num: "02", title: "ഷാംപൂ, ഹെയർ വാഷ് & ബേസിൻ എറ്റിക്കറ്റ്", desc: "ശരിയായ ബേസിൻ പോസ്ചർ, സ്കാൽപ് മസാജ്, ഡീപ് ക്ലെൻസിംഗ്, ക്ലയന്റ് ഡ്രേപ്പിംഗ് & ശുചിത്വം." },
+  { num: "03", title: "ബേസിക് ഹെയർകട്ടുകൾ (U, V, സ്ട്രെയിറ്റ് & ലെയർ)", desc: "സലൂണുകളിൽ ആവശ്യമായ സ്ട്രെയിറ്റ് കട്ട്, U-കട്ട്, V-കട്ട്, ബേസിക് ലെയർ കട്ടുകൾ." },
+  { num: "04", title: "റൂട്ട് ടച്ച്-അപ്പ് & ക്വിക്ക് കളറിംഗ്", desc: "ഗ്രേ കവറേജ്, മിക്സിംഗ് റേഷ്യോ, പാടുകൾ വരാതെയുള്ള കൃത്യമായ ആപ്ലിക്കേഷൻ & പോസ്റ്റ്-വാഷ് കെയർ." },
+  { num: "05", title: "പരമ്പരാഗത ഓയിൽ മസാജ് & ഹെയർ സ്പാ", desc: "അക്യുപ്രഷർ പ്രഷർ പോയിന്റുകൾ, ബ്ലഡ് സർക്കുലേഷൻ തെറാപ്പി, സ്റ്റീം മാസ്ക് പ്രോട്ടോക്കോളുകൾ." },
+  { num: "06", title: "പ്രിസിഷൻ ത്രെഡിംഗ് വൈദഗ്ദ്ധ്യം", desc: "ഐബ്രോ മാപ്പിംഗ്, ആർച്ച് ഡിസൈനിംഗ്, അപ്പർ ലിപ്, ചിൻ, ഫുൾ ഫേസ് ത്രെഡിംഗ്." },
+  { num: "07", title: "കൊമേർഷ്യൽ ഫേഷ്യലുകൾ & ക്ലീൻ-അപ്പ്", desc: "ഫേഷ്യൽ മസാജ് സ്ട്രോക്കുകൾ, സ്റ്റീമിംഗ്, ബ്ലാക്ക്‌ഹെഡ് എക്സ്ട്രാക്ഷൻ, ക്ലേ/ക്രീം മാസ്കുകൾ." },
+  { num: "08", title: "മാനിക്യൂർ & പെഡിക്യൂർ പ്രോട്ടോക്കോളുകൾ", desc: "നഖങ്ങൾ ഫയൽ ചെയ്യൽ, ക്യൂട്ടിക്കിൾ കെയർ, ഡെഡ് സ്കിൻ സ്ക്രബ്ബിംഗ്, ഫുട്ട് മസാജ്." },
+  { num: "09", title: "ബേസിക് ടു അഡ്വാൻസ്ഡ് വാക്സിംഗ്", desc: "കൈകൾ, കാലുകൾ, അണ്ടർആംസ് വാക്സിംഗ് രീതികൾ, പോസ്റ്റ്-വാക്സ് സൂതിംഗ് കെയർ." }
+];
 ---
 
 <Layout 
   title="ജോബ്-ഓറിയന്റഡ് സലൂൺ കോഴ്സ് (1 മാസം) | Livart Beauty Academy Kochi"
   description="കൊച്ചിയിലെ മികച്ച 1 മാസത്തെ ജോബ്-ഓറിയന്റഡ് സലൂൺ കോഴ്സ്. ബ്ലോ ഡ്രൈ, ഹെയർകട്ടുകൾ, ഫേഷ്യൽ, റൂട്ട് ടച്ച്-അപ്പ്, പെഡിക്യൂർ, ത്രെഡിംഗ് എന്നിവയിൽ സമഗ്ര പരിശീലനം നേടി ഉടൻ ജോലി നേടാം."
 >
-  
+  <div class="screen-only">
   <!-- HERO -->
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
@@ -43,7 +57,7 @@ import InstagramReelCard from '../../../components/InstagramReelCard.astro';
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-lg">download</span>
             സിലബസും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടാം
@@ -51,6 +65,7 @@ import InstagramReelCard from '../../../components/InstagramReelCard.astro';
           <a href="#modules" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
             കരിക്കുലം കാണുക
           </a>
+          <CoursePrintButton isMalayalam={true} />
         </div>
       </div>
       
@@ -216,6 +231,28 @@ import InstagramReelCard from '../../../components/InstagramReelCard.astro';
       formId="ml-job-salon-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="ജോബ്-ഓറിയന്റഡ് സലൂൺ കോഴ്സ് (1 മാസം)"
+    courseSubtitle="കൊമേർഷ്യൽ സലൂണുകളിൽ നേരിട്ട് ജോലിയിൽ പ്രവേശിക്കാൻ സഹായിക്കുന്ന ഫാസ്റ്റ്-ട്രാക്ക് സലൂൺ യോഗ്യത. ഹെയർകട്ടിംഗ്, ബ്ലോ ഡ്രൈ, റൂട്ട് ടച്ച്-അപ്പ്, ത്രെഡിംഗ്, ഫേഷ്യൽ, മാനിക്യൂർ, പെഡിക്യൂർ."
+    duration="1 മാസം (30 ദിവസത്തെ തീവ്ര പ്രായോഗിക പരിശീലനം)"
+    eligibility="10th / 12th / ഫ്രഷേഴ്സ് • മുൻപരിചയം ആവശ്യമില്ല"
+    certification="ലിവ്ആർട്ട് സർട്ടിഫൈഡ് സലൂൺ പ്രൊഫഷണൽ • B&WSSC അലൈൻഡ്"
+    toolKit="പരിശീലനത്തിനാവശ്യമായ സലൂൺ ടൂളുകളും എക്യുപ്‌മെന്റുകളും ലഭ്യമാക്കുന്നു"
+    trainingFormat="100% ലൈവ് മോഡലുകളിൽ കളമശ്ശേരി സലൂൺ ഫ്ലോറിൽ പ്രായോഗിക പരിശീലനം"
+    batchCapacity="വ്യക്തിഗത ശ്രദ്ധയ്ക്കായി ഓരോ ബാച്ചിലും 8-10 വിദ്യാർത്ഥികൾ മാത്രം"
+    internship="വർക്കിംഗ് സലൂൺ ഫ്ലോർ അസസ്മെന്റും നേരിട്ടുള്ള ജോബ് ഇന്റർവ്യൂ സഹായവും"
+    modules={mlSalonJobModules}
+    careerOutcomes={[
+      "ജൂനിയർ സലൂൺ സ്റ്റൈലിസ്റ്റ് & ഫ്ലോർ ഹെയർഡ്രസ്സർ",
+      "സലൂൺ സ്കിൻ & ഫേഷ്യൽ തെറാപ്പിസ്റ്റ്",
+      "ത്രെഡിംഗ് & നെയിൽ സ്പാ പ്രൊഫഷണൽ",
+      "കൊമേർഷ്യൽ സലൂൺ അസിസ്റ്റന്റ് മാനേജർ"
+    ]}
+    isMalayalam={true}
+  />
 
   <!-- COURSE SCHEMA MARKUP -->
   <script type="application/ld+json" set:html={`

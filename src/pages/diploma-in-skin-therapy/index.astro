@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import CoursePrintButton from '../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../components/CoursePrintProspectus.astro';
 
 const modules = [
   { num: "01", title: "Introduction & Skin Science", desc: "Introduction to skin therapy • Anatomy & physiology of skin • Functions of skin • Skin types & conditions." },
@@ -18,6 +20,7 @@ const modules = [
   title="Diploma in Skin Therapy (4 Months) | Livart Beauty Academy Kochi"
   description="Master clinical skin therapies, Hydra facials, chemical peels, and electrotherapy in this 4-month Diploma in Skin Therapy at Livart Beauty Academy Kochi. Tool kit included."
 >
+  <div class="screen-only">
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
       <div>
@@ -51,11 +54,12 @@ const modules = [
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-lg">download</span>
             Get Syllabus & Fee Details
           </a>
+          <CoursePrintButton label="Print Course Details" />
         </div>
       </div>
       
@@ -103,6 +107,27 @@ const modules = [
       formId="skin-therapy-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="Diploma in Skin Therapy (4 Months Clinical Track)"
+    courseSubtitle="Advanced clinical aesthetics curriculum covering skin anatomy, electrotherapy (Hydra Facial, High Frequency, Galvanic, Ultrasonic), chemical peels, medical hygiene, and salon spa treatments."
+    duration="4 Months (Clinical Aesthetics Track)"
+    eligibility="10th / 12th / Any Degree • No Prior Experience Required"
+    certification="B&WSSC (Govt of India) Certified • LivArt Diploma in Skin Therapy"
+    toolKit="Complete Skin Therapist Tool Kit Included (Professional Facial Kit, Extractor, Brushes, Thread)"
+    trainingFormat="100% Practical Training on Clinical Aesthetic Machines and Live Clients in Kalamassery Bays"
+    batchCapacity="Strictly 8–10 Students per Batch for Focused Individual Mentorship"
+    internship="Live Salon Floor Practical Assessments & 100% Placement Support"
+    modules={modules}
+    careerOutcomes={[
+      "Certified Clinical Skin Therapist & Aesthetician",
+      "Hydra Facial & Electrotherapy Specialist",
+      "Medi-Spa & Luxury Salon Aesthetician",
+      "Independent Skin Care & Beauty Clinic Entrepreneur"
+    ]}
+  />
 
   <!-- SCHEMA -->
   <script type="application/ld+json" set:html={`

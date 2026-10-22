@@ -1,0 +1,246 @@
+---
+interface ModuleItem {
+  num: string;
+  title: string;
+  desc: string;
+}
+
+interface Props {
+  courseTitle: string;
+  courseSubtitle?: string;
+  duration: string;
+  eligibility?: string;
+  certification?: string;
+  toolKit?: string;
+  trainingFormat?: string;
+  batchCapacity?: string;
+  internship?: string;
+  modules: ModuleItem[];
+  careerOutcomes?: string[];
+  isMalayalam?: boolean;
+}
+
+const {
+  courseTitle,
+  courseSubtitle = "Comprehensive professional curriculum engineered for high-earning beauty industry careers.",
+  duration,
+  eligibility = "10th / 12th / Any Degree • No Prior Experience Required",
+  certification = "B&WSSC (Govt of India) Certified / LivArt Master Diploma",
+  toolKit = "Professional Equipment & Brush Kit Included",
+  trainingFormat = "100% Practical Training on Live Models in Salon Bays",
+  batchCapacity = "Strictly 8–10 Students per Batch for Individual Mentorship",
+  internship = "Guaranteed Live Client Floor Assessments & Placement Support",
+  modules = [],
+  careerOutcomes = [
+    "Certified Salon Stylist / Aesthetician",
+    "Luxury Bridal Makeup Specialist",
+    "Independent Salon / Studio Entrepreneur",
+    "Celebrity & Fashion Media Artist"
+  ],
+  isMalayalam = false
+} = Astro.props;
+
+const currentDate = new Date().toLocaleDateString('en-IN', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<div class="hidden print:block print-prospectus w-full bg-white text-slate-900 font-sans p-0">
+  
+  <!-- 1. OFFICIAL ACADEMY HEADER -->
+  <div class="border-b-2 border-[#FE0002] pb-4 mb-5">
+    <div class="flex items-start justify-between gap-6">
+      <div class="flex-shrink-0">
+        <img 
+          src="/images/brand/livart-logo-print.png" 
+          alt="LivArt Beauty Academy Logo" 
+          class="h-16 w-auto object-contain"
+          width="180"
+          height="76"
+        />
+      </div>
+      
+      <div class="text-right text-xs leading-tight text-slate-600">
+        <div class="font-bold text-slate-900 text-sm tracking-wide uppercase">LivArt Beauty Academy</div>
+        <div class="text-[10px] text-[#FE0002] font-bold tracking-wider uppercase mt-0.5">
+          {isMalayalam ? "ഗവ. ഓഫ് ഇന്ത്യ B&WSSC അഫിലിയേറ്റഡ് ട്രെയിനിംഗ് പാർട്ണർ" : "B&WSSC Affiliated Training Partner • NSDC Recognized • ISO 9001:2015"}
+        </div>
+        <div class="text-[10px] text-slate-500 mt-1">
+          Madukappilly Tower, Pathadipalam, Edappally P.O, Kalamassery, Kochi 682024
+        </div>
+        <div class="text-[10px] text-slate-500 font-medium">
+          Metro Landmark: 2 Mins from Pathadipalam Metro Pillar 384
+        </div>
+        <div class="text-[10px] text-slate-700 font-semibold mt-1">
+          Admissions Helpline: +91 96332 11151 / +91 90725 74200 • www.livart.co.in
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. COURSE TITLE & PROSPECTUS BANNER -->
+  <div class="mb-5 bg-slate-50 border border-slate-200 rounded-lg p-4">
+    <div class="flex items-center justify-between gap-4 mb-1">
+      <span class="inline-block px-2.5 py-0.5 rounded bg-[#FE0002] text-white text-[10px] font-bold uppercase tracking-widest">
+        {isMalayalam ? "ഔദ്യോഗിക കോഴ്സ് സിലബസ് & പ്രോസ്പെക്ടസ്" : "Official Course Prospectus & Syllabus"}
+      </span>
+      <span class="text-[10px] text-slate-500 font-medium">
+        {isMalayalam ? `പ്രിന്റ് ചെയ്ത തീയതി: ${currentDate}` : `Document Date: ${currentDate}`}
+      </span>
+    </div>
+    
+    <h1 class="text-2xl font-bold text-slate-900 tracking-tight mt-1">
+      {courseTitle}
+    </h1>
+    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+      {courseSubtitle}
+    </p>
+  </div>
+
+  <!-- 3. COURSE SPECIFICATION TABLE -->
+  <div class="mb-6">
+    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-800 mb-2 border-b border-slate-200 pb-1">
+      {isMalayalam ? "കോഴ്സ് പ്രധാന വിവരങ്ങൾ" : "Key Course Specifications"}
+    </h2>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+      <div class="border border-slate-200 rounded p-2.5 bg-slate-50/50">
+        <span class="block text-[10px] font-bold uppercase text-slate-500 mb-0.5">
+          {isMalayalam ? "ദൈർഘ്യം" : "Duration"}
+        </span>
+        <strong class="text-slate-900 font-bold block">{duration}</strong>
+      </div>
+      
+      <div class="border border-slate-200 rounded p-2.5 bg-slate-50/50">
+        <span class="block text-[10px] font-bold uppercase text-slate-500 mb-0.5">
+          {isMalayalam ? "യോഗ്യത" : "Eligibility"}
+        </span>
+        <strong class="text-slate-900 font-bold block">{eligibility}</strong>
+      </div>
+
+      <div class="border border-slate-200 rounded p-2.5 bg-slate-50/50">
+        <span class="block text-[10px] font-bold uppercase text-slate-500 mb-0.5">
+          {isMalayalam ? "സർട്ടിഫിക്കേഷൻ" : "Certification"}
+        </span>
+        <strong class="text-slate-900 font-bold block">{certification}</strong>
+      </div>
+
+      <div class="border border-slate-200 rounded p-2.5 bg-slate-50/50">
+        <span class="block text-[10px] font-bold uppercase text-slate-500 mb-0.5">
+          {isMalayalam ? "ടൂൾ കിറ്റ്" : "Tool Kit Included"}
+        </span>
+        <strong class="text-slate-900 font-bold block">{toolKit}</strong>
+      </div>
+
+      <div class="border border-slate-200 rounded p-2.5 bg-slate-50/50">
+        <span class="block text-[10px] font-bold uppercase text-slate-500 mb-0.5">
+          {isMalayalam ? "പരിശീലന രീതി" : "Training Format"}
+        </span>
+        <strong class="text-slate-900 font-bold block">{trainingFormat}</strong>
+      </div>
+
+      <div class="border border-slate-200 rounded p-2.5 bg-slate-50/50">
+        <span class="block text-[10px] font-bold uppercase text-slate-500 mb-0.5">
+          {isMalayalam ? "ബാച്ച് പരിധി" : "Batch Size"}
+        </span>
+        <strong class="text-slate-900 font-bold block">{batchCapacity}</strong>
+      </div>
+
+      <div class="border border-slate-200 rounded p-2.5 bg-slate-50/50">
+        <span class="block text-[10px] font-bold uppercase text-slate-500 mb-0.5">
+          {isMalayalam ? "ഇന്റേൺഷിപ്പ് & പ്ലേസ്മെന്റ്" : "Internship & Placement"}
+        </span>
+        <strong class="text-slate-900 font-bold block">{internship}</strong>
+      </div>
+
+      <div class="border border-slate-200 rounded p-2.5 bg-slate-50/50">
+        <span class="block text-[10px] font-bold uppercase text-slate-500 mb-0.5">
+          {isMalayalam ? "കാമ്പസ് ലൊക്കേഷൻ" : "Campus Location"}
+        </span>
+        <strong class="text-slate-900 font-bold block">Kalamassery, Kochi (Metro Pillar 384)</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. DETAILED SYLLABUS & MODULES BREAKDOWN -->
+  <div class="mb-6">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-1 mb-3">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-slate-800">
+        {isMalayalam ? "സമ്പൂർണ്ണ മൊഡ്യൂൾ സിലബസ്" : "Detailed Curriculum & Module Breakdown"}
+      </h2>
+      <span class="text-[10px] text-slate-500 font-semibold">
+        {modules.length} {isMalayalam ? "മൊഡ്യൂളുകൾ" : "Core Modules"}
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+      {modules.map((m) => (
+        <div class="print-module-card border border-slate-200 rounded-lg p-3 bg-white">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="inline-block px-1.5 py-0.5 rounded bg-slate-100 border border-slate-300 text-[10px] font-black text-[#FE0002]">
+              {m.num}
+            </span>
+            <strong class="text-xs font-bold text-slate-900 leading-tight">
+              {m.title}
+            </strong>
+          </div>
+          <p class="text-[11px] text-slate-600 leading-relaxed">
+            {m.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- 5. CAREER OUTCOMES & PRACTICAL PEDAGOGY -->
+  <div class="mb-6 border border-slate-200 rounded-lg p-3.5 bg-slate-50/60 print-avoid-break">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+      <div>
+        <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wide mb-1.5">
+          {isMalayalam ? "കരിയർ സാധ്യതകൾ & ജോലി പദവികൾ" : "Career Pathways & Employment Roles"}
+        </h3>
+        <ul class="space-y-1 text-slate-600 text-[11px]">
+          {careerOutcomes.map((career) => (
+            <li class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#FE0002]"></span>
+              <span>{career}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wide mb-1.5">
+          {isMalayalam ? "പരിശീലന സവിശേഷതകൾ" : "Academy Training Guarantee"}
+        </h3>
+        <p class="text-[11px] text-slate-600 leading-relaxed">
+          {isMalayalam 
+            ? "100% ലൈവ് മോഡലുകളിൽ നേരിട്ടുള്ള പ്രായോഗിക പരിശീലനം. കളമശ്ശേരി മെട്രോ പില്ലർ 384-ൽ സ്ഥിതിചെയ്യുന്ന ആധുനിക സലൂൺ വർക്കിംഗ് ഫ്ലോറിലാണ് ക്ലാസുകൾ നടക്കുന്നത്. ഓരോ വിദ്യാർത്ഥിക്കും വ്യക്തിഗത ശ്രദ്ധ ഉറപ്പാക്കുന്നു."
+            : "All training is delivered 100% practically on live models inside our commercial salon floors in Kalamassery, Kochi. Stephy Sebastian and certified master educators ensure every student achieves client-ready speed, precision, and confidence."}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. ADMISSION INSTRUCTIONS & CONTACT DESK -->
+  <div class="border-t-2 border-slate-200 pt-3 text-[10px] text-slate-500 flex items-end justify-between gap-6 print-avoid-break">
+    <div class="space-y-0.5">
+      <div class="font-bold text-slate-700 uppercase">
+        {isMalayalam ? "അഡ്മിഷൻ രേഖകൾ:" : "Documents Required for Admission:"}
+      </div>
+      <div>1. Government Photo ID Proof (Aadhaar / Passport) • 2. Educational Marklists • 3. Two Passport Photos</div>
+      <div class="font-semibold text-slate-700 mt-1">
+        Admissions Desk: Madukappilly Tower, Pathadipalam, Kalamassery, Kochi • Phone: +91 96332 11151 / +91 90725 74200
+      </div>
+    </div>
+
+    <!-- Official Seal Box -->
+    <div class="w-36 h-16 border border-dashed border-slate-300 rounded flex flex-col items-center justify-center text-center p-1 flex-shrink-0 text-[9px] text-slate-400">
+      <span>Official Academy Stamp</span>
+      <span class="text-[8px] text-slate-300 mt-0.5">LivArt Kochi Admissions</span>
+    </div>
+  </div>
+
+</div>

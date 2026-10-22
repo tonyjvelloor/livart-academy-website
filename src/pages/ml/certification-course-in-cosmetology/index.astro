@@ -2,13 +2,23 @@
 import Layout from '../../../layouts/Layout.astro';
 import CourseLeadForm from '../../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../../components/CoursePrintProspectus.astro';
+
+const cosmetologyModules = [
+  { num: "01", title: "ഹെയർ ഡ്രസ്സിംഗ് മാസ്റ്ററി (സ്റ്റേജ് 1)", desc: "13+ പ്രിസിഷൻ ഹെയർകട്ടുകൾ (ബട്ടർഫ്ലൈ, വുൾഫ്, ബോബ്) • നാനോപ്ലാസ്റ്റിയ, ബോട്ടോക്സ്, കെരാറ്റിൻ & സ്മൂത്തനിംഗ് • ഗ്ലോബൽ കളർ, ബലയാജ് & ഹൈലൈറ്റുകൾ • ഹെയർ സ്പാ." },
+  { num: "02", title: "ക്ലിനിക്കൽ സ്കിൻ തെറാപ്പി (സ്റ്റേജ് 2)", desc: "സ്കിൻ അനാറ്റമി • ഹൈഡ്രാ ഫേഷ്യൽ മെഷിനറി, ഹൈ ഫ്രീക്വൻസി & ഗാൽവാനിക് • കെമിക്കൽ പീലിംഗ് & ആന്റി-ഏജിംഗ് • മാനിക്യൂർ, പെഡിക്യൂർ & വാക്സിംഗ്." },
+  { num: "03", title: "മാസ്റ്റർ മേക്കപ്പ് ആർട്ടിസ്ട്രി (സ്റ്റേജ് 3)", desc: "ഹിന്ദു, ക്രിസ്ത്യൻ & മുസ്ലിം ബ്രൈഡൽ ലുക്കുകൾ • 4K HD ഫൗണ്ടേഷൻ & എയർബ്രഷ് മേക്കപ്പ് • തെർമൽ ഹെയർ സ്റ്റൈലിംഗ് • അഡ്വാൻസ്ഡ് സാരി ഡ്രേപ്പിംഗ്." },
+  { num: "04", title: "കൊമേർഷ്യൽ സലൂൺ ഇന്റേൺഷിപ്പ് (സ്റ്റേജ് 4)", desc: "ലൈവ് വർക്കിംഗ് സലൂൺ ഫ്ലോറിൽ 1 മാസത്തെ നിർബന്ധിത ഇന്റേൺഷിപ്പ് • റിയൽ ക്ലയന്റ് മാനേജ്‌മെന്റ്, ബില്ലിംഗ്, ഹൈ-സ്പീഡ് പ്രിസിഷൻ പരിശീലനം." },
+  { num: "05", title: "സലൂൺ ബിസിനസ് & സംരംഭകത്വം", desc: "സലൂൺ സെറ്റപ്പ്, എക്യുപ്‌മെന്റ് സോഴ്സിംഗ് • ക്ലയന്റ് കൺസൾട്ടേഷൻ & റിട്ടൻഷൻ • ഫ്രീലാൻസ് ബ്രൈഡൽ ബുക്കിംഗ് മാനേജ്‌മെന്റ് • B&WSSC ഗവ. എക്സാം." }
+];
 ---
 
 <Layout 
   title="കോസ്‌മെറ്റോളജി കോഴ്‌സ് കൊച്ചി (12 & 6 മാസം) | Livart Beauty Academy"
   description="കേരളത്തിലെ ഏറ്റവും മികച്ച കോസ്‌മെറ്റോളജി പ്രോഗ്രാം. ഹെയർ, സ്കിൻ, മേക്കപ്പ് ഡിപ്ലോമകളും 1 മാസത്തെ സലൂൺ ഇന്റേൺഷിപ്പും ടൂൾ കിറ്റും ഉൾപ്പെടെ. B&WSSC അംഗീകൃത സർട്ടിഫിക്കേഷൻ."
 >
-  
+  <div class="screen-only">
   <!-- 1. HERO SECTION -->
   <section class="relative pt-24 pb-20 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-white/10 overflow-hidden">
     <!-- Ambient Red Glow -->
@@ -68,6 +78,8 @@ import InstagramReelCard from '../../../components/InstagramReelCard.astro';
           >
             12 മാസവും 6 മാസവും താരതമ്യം
           </a>
+
+          <CoursePrintButton isMalayalam={true} />
 
           <button 
             type="button" 
@@ -390,5 +402,27 @@ import InstagramReelCard from '../../../components/InstagramReelCard.astro';
       formId="ml-cosmetology-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
 
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="കോസ്‌മെറ്റോളജി പ്രോഗ്രാം (12 മാസവും 6 മാസവും)"
+    courseSubtitle="ഹെയർ ഡ്രസ്സിംഗ്, ക്ലിനിക്കൽ സ്കിൻ തെറാപ്പി, ബ്രൈഡൽ മേക്കപ്പ് ആർട്ടിസ്ട്രി എന്നിവ സമഗ്രമായി സംയോജിപ്പിച്ച മാസ്റ്റർ ബ്യൂട്ടി പ്രോഗ്രാം. 1 മാസത്തെ സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പ് ഉൾപ്പെടെ."
+    duration="12 മാസം (മാസ്റ്റർ ട്രാക്ക്) അല്ലെങ്കിൽ 6 മാസം (ഇന്റൻസീവ് ട്രാക്ക്)"
+    eligibility="10th / 12th / ഏതെങ്കിലും ബിരുദം • തുടക്കക്കാർക്കും കരിയർ മാറ്റാൻ ആഗ്രഹിക്കുന്നവർക്കും അനുയോജ്യം"
+    certification="B&WSSC (ഗവ. ഓഫ് ഇന്ത്യ) സർട്ടിഫിക്കേഷൻ • ലിവ്ആർട്ട് മാസ്റ്റർ ഡിപ്ലോമ"
+    toolKit="സമ്പൂർണ്ണ പ്രൊഫഷണൽ ടൂൾ കിറ്റുകൾ സൗജന്യം (കട്ടിംഗ് ഡമ്മി, ഷിയർ, ഡ്രയർ, ഫേഷ്യൽ കിറ്റ്, ബ്രഷ് സെറ്റ്)"
+    trainingFormat="100% ലൈവ് മോഡലുകളിൽ കളമശ്ശേരി വർക്കിംഗ് സലൂൺ ബേകളിൽ പ്രായോഗിക പരിശീലനം"
+    batchCapacity="വ്യക്തിഗത ശ്രദ്ധയ്ക്കായി ഓരോ ബാച്ചിലും 8-10 വിദ്യാർത്ഥികൾ മാത്രം"
+    internship="റിയൽ ക്ലയന്റുകളുമായി 1 മാസത്തെ നിർബന്ധിത സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പ്"
+    modules={cosmetologyModules}
+    careerOutcomes={[
+      "സീനിയർ കോസ്‌മെറ്റോളജിസ്റ്റ് & മാസ്റ്റർ സ്റ്റൈലിസ്റ്റ്",
+      "സലൂൺ മാനേജർ & ക്രിയേറ്റീവ് ഡയറക്ടർ",
+      "സ്വന്തം സലൂൺ / സ്പാ സംരംഭക",
+      "ക്ലിനിക്കൽ എസ്തെറ്റീഷ്യൻ & സ്കിൻ തെറാപ്പിസ്റ്റ്",
+      "സെലിബ്രിറ്റി ബ്രൈഡൽ & മീഡിയ മേക്കപ്പ് ആർട്ടിസ്റ്റ്"
+    ]}
+    isMalayalam={true}
+  />
 </Layout>

@@ -2,6 +2,8 @@
 import Layout from '../../../layouts/Layout.astro';
 import CourseLeadForm from '../../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../../components/CoursePrintProspectus.astro';
 
 const skinModules = [
   { num: "01", title: "സ്കിൻ സയൻസ് & അനാട്ടമി", desc: "ത്വക്കിന്റെ ഘടന • ചർമ്മത്തിന്റെ പാളികൾ • സ്കിൻ ടൈപ്പുകൾ • കോമൺ സ്കിൻ പ്രോബ്ലംസ്." },
@@ -19,6 +21,7 @@ const skinModules = [
   title="സ്കിൻ തെറാപ്പി & എസ്തറ്റിക്സ് കോഴ്‌സ് കൊച്ചി | Livart Beauty Academy"
   description="മെഡിക്കൽ ഗ്രേഡ് സ്കിൻ കെയർ, ഹൈഡ്ര ഫേഷ്യൽ, ഹൈ ഫ്രീക്വൻസി, കെമിക്കൽ പീൽ കോഴ്‌സുകൾ. 4 മാസ ഡിപ്ലോമ, 2 മാസ കോഴ്‌സ്. ഫേഷ്യൽ കിറ്റ് ഉൾപ്പെടെ."
 >
+  <div class="screen-only">
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-white/10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
@@ -52,11 +55,12 @@ const skinModules = [
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary hover:bg-[#d40002] text-white text-xs uppercase tracking-widest font-bold rounded-xl shadow-lg transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-base">download</span>
             <span>സിലബസും ഫീസും നേടുക</span>
           </a>
+          <CoursePrintButton isMalayalam={true} />
         </div>
       </div>
       
@@ -138,4 +142,26 @@ const skinModules = [
       formId="ml-skin-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="സ്കിൻ തെറാപ്പി & ക്ലിനിക്കൽ എസ്തറ്റിക്സ് (4 മാസവും 2 മാസവും)"
+    courseSubtitle="ഹൈഡ്ര ഫേഷ്യൽ മെഷിനറി, ഹൈ ഫ്രീക്വൻസി, ഗാൽവാനിക് അയോൺടോഫോറെസിസ്, കെമിക്കൽ പീലിംഗ്, സ്പാ ഫേഷ്യലുകൾ എന്നിവയിലെ സമഗ്ര ക്ലിനിക്കൽ യോഗ്യത."
+    duration="4 മാസം (ഡിപ്ലോമ ഇൻ സ്കിൻ തെറാപ്പി) അല്ലെങ്കിൽ 2 മാസം (സ്കിൻ തെറാപ്പി കോഴ്‌സ്)"
+    eligibility="10th / 12th / ഏതെങ്കിലും ബിരുദം • മുൻപരിചയം ആവശ്യമില്ല"
+    certification="B&WSSC (ഗവ. ഓഫ് ഇന്ത്യ) അംഗീകൃതം • ലിവ്ആർട്ട് മാസ്റ്റർ സ്കിൻ തെറാപ്പി ഡിപ്ലോമ"
+    toolKit="പ്രൊഫഷണൽ സ്കിൻ കെയർ & ഫേഷ്യൽ ടൂൾ കിറ്റ് സൗജന്യം"
+    trainingFormat="100% ക്ലിനിക്കൽ മെഷീനുകളിലും ലൈവ് മോഡലുകളിലും കളമശ്ശേരി ഡെർമൽ ലാബിൽ പരിശീലനം"
+    batchCapacity="വ്യക്തിഗത ശ്രദ്ധയ്ക്കായി ഓരോ ബാച്ചിലും 8-10 വിദ്യാർത്ഥികൾ മാത്രം"
+    internship="ക്ലിനിക്കൽ ലൈവ് മോഡൽ അസസ്മെന്റും 100% പ്ലേസ്മെന്റ് സപ്പോർട്ടും"
+    modules={skinModules}
+    careerOutcomes={[
+      "സർട്ടിഫൈഡ് ക്ലിനിക്കൽ എസ്തെറ്റീഷ്യൻ & സ്കിൻ തെറാപ്പിസ്റ്റ്",
+      "ഹൈഡ്ര ഫേഷ്യൽ & ഇലക്ട്രോതെറാപ്പി സ്പെഷ്യലിസ്റ്റ്",
+      "മെഡി-സ്പാ ഡയറക്ടർ & ട്രീറ്റ്മെന്റ് മാനേജർ",
+      "സ്വന്തം സ്കിൻ ക്ലിനിക്ക് & സൗന്ദര്യ സംരംഭക"
+    ]}
+    isMalayalam={true}
+  />
 </Layout>

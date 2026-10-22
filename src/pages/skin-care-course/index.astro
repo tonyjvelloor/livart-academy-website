@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../components/CoursePrintProspectus.astro';
 
 const skinDiplomaModules = [
   { num: "01", title: "Introduction & Skin Science", desc: "Introduction to professional skin therapy • Anatomy & physiology of skin • Functions of dermal layers • In-depth skin types & pathological conditions." },
@@ -28,7 +30,7 @@ const skin2MonthModules = [
   title="Skin Therapy & Aesthetics Courses in Kochi | Livart Beauty Academy"
   description="Master clinical aesthetics, Hydra Facials, High Frequency, and skin therapy at Livart Beauty Academy Kochi. 4-Month Diploma in Skin Therapy and 2-Month Skin Therapy Course with tool kit included."
 >
-  
+  <div class="screen-only">
   <!-- HERO -->
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
@@ -63,7 +65,7 @@ const skin2MonthModules = [
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-lg">download</span>
             Get Syllabus & Fee Details
@@ -71,6 +73,7 @@ const skin2MonthModules = [
           <a href="#tracks" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
             Compare 4M vs 2M
           </a>
+          <CoursePrintButton label="Print Course Details" />
         </div>
       </div>
       
@@ -218,6 +221,27 @@ const skin2MonthModules = [
       formId="skin-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="Diploma in Skin Therapy & Clinical Aesthetics (4-Month & 2-Month Tracks)"
+    courseSubtitle="Medical-grade clinical esthetician qualification covering skin anatomy, Hydra facial machinery, High frequency, Galvanic iontophoresis, chemical peels, and luxury spa treatments."
+    duration="4 Months (Diploma in Skin Therapy) or 2 Months (Skin Therapy Course)"
+    eligibility="10th / 12th / Any Degree • No Prior Experience Required"
+    certification="B&WSSC (Govt of India) Certified • LivArt Master Skin Therapy Diploma"
+    toolKit="Complete Professional Skin Therapy Tool Kit Included"
+    trainingFormat="100% Practical Training on Clinical Aesthetic Machines & Live Models in Kalamassery Dermal Lab"
+    batchCapacity="Strictly 8–10 Students per Batch for Hands-On Device Training"
+    internship="Clinical Live Model Practical Assessments & 100% Placement Support"
+    modules={skinDiplomaModules}
+    careerOutcomes={[
+      "Certified Clinical Aesthetician & Skin Therapist",
+      "Hydra Facial & Electrotherapy Specialist",
+      "Medi-Spa Director & Clinical Treatment Manager",
+      "Independent Skin Clinic & Aesthetics Entrepreneur"
+    ]}
+  />
 
   <!-- COURSE SCHEMA MARKUP -->
   <script type="application/ld+json" set:html={`

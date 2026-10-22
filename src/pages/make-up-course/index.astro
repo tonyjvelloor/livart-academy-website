@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../components/InstagramReelCard.astro';
+import CoursePrintButton from '../../components/CoursePrintButton.astro';
+import CoursePrintProspectus from '../../components/CoursePrintProspectus.astro';
 
 const masterDiplomaModules = [
   { num: "01", title: "Makeup Fundamentals & Skin Prep", desc: "Personal grooming • History & evolution of makeup • Skin types & preparation • Comprehensive makeup product knowledge." },
@@ -37,7 +39,7 @@ const oneMonthModules = [
   title="Diploma in Makeup Artistry in Kochi | Livart Beauty Academy"
   description="Learn professional makeup artistry from Stephy Sebastian at Livart Beauty Academy Kochi. 3-Month Master Diploma and 1-Month Intensive Diploma covering Bridal, HD, Airbrush, and Saree Draping with tool kit included."
 >
-  
+  <div class="screen-only">
   <!-- HERO -->
   <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
@@ -72,7 +74,7 @@ const oneMonthModules = [
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 items-center">
           <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
             <span class="material-symbols-outlined text-lg">download</span>
             Get Syllabus & Fee Details
@@ -80,6 +82,7 @@ const oneMonthModules = [
           <a href="#curriculum" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
             View 11 Modules
           </a>
+          <CoursePrintButton label="Print Course Details" />
         </div>
       </div>
       
@@ -269,6 +272,27 @@ const oneMonthModules = [
       formId="makeup-lead-form"
     />
   </section>
+  </div> <!-- /screen-only -->
+
+  <!-- EXECUTIVE PRINT PROSPECTUS (VISIBLE ONLY WHEN PRINTED / SAVED AS PDF) -->
+  <CoursePrintProspectus
+    courseTitle="Diploma in Makeup Artistry (3-Month Master & 1-Month Intensive)"
+    courseSubtitle="Professional qualification covering bridal couture (Hindu, Christian, Muslim), 4K HD foundation blending, airbrush, thermal hair styling, and precision saree pre-pleating."
+    duration="3 Months (Master Diploma) or 1 Month (Fastrack Intensive)"
+    eligibility="10th / 12th / Any Degree • No Prior Experience Required"
+    certification="B&WSSC (Govt of India) Certified • LivArt Master Makeup Diploma"
+    toolKit="Complete Professional Brush Set & Tool Kit Included"
+    trainingFormat="100% Practical Training on Live Models in Kalamassery Makeup Studio"
+    batchCapacity="Strictly 8–10 Students per Batch for Individual Mentorship"
+    internship="Live Model Practical Examination & 100% Bridal Placement Guidance"
+    modules={masterDiplomaModules}
+    careerOutcomes={[
+      "Professional Celebrity & Bridal Makeup Artist",
+      "Destination Wedding Stylist & Draping Artist",
+      "Fashion, TV & Media Production Artist",
+      "Freelance Bridal Studio Entrepreneur"
+    ]}
+  />
 
   <!-- COURSE SCHEMA MARKUP -->
   <script type="application/ld+json" set:html={`
