@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Page Not Found | 404 - LivArt Beauty Academy"
+  description="The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Explore our beauty and cosmetology courses."
+>
+  <div class="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-20">
+    <span class="text-xs uppercase tracking-widest text-primary font-bold mb-4 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
+      Error 404
+    </span>
+    <h1 class="font-display text-4xl sm:text-6xl font-bold mb-6 text-on-surface">
+      Page Not Found
+    </h1>
+    <p class="text-on-surface-variant max-w-lg mb-8 text-base sm:text-lg">
+      The beauty masterclass or page you are looking for isn't here. Let's get you back on track to exploring our courses.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a 
+        href="/" 
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary font-semibold hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20"
+      >
+        <span class="material-symbols-outlined text-lg">home</span>
+        Return to Home
+      </a>
+      <a 
+        href="/overview/" 
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:border-primary text-on-surface hover:text-primary transition-colors bg-white/5"
+      >
+        <span class="material-symbols-outlined text-lg">school</span>
+        Browse All Courses
+      </a>
+    </div>
+  </div>
+</Layout>
