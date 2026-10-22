@@ -212,14 +212,20 @@
    MOBILE-FIRST OPTIMIZATIONS & TAP SAFETY
    ========================================================================== */
 html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
+  -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Ensure smooth touch scrolling on iOS */
+* {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Prevent text overflow on small mobile displays */

@@ -49,7 +49,7 @@ const navLinks = isMalayalam ? [
 <!-- MOBILE NAVIGATION DRAWER (Slide-down luxury menu for mobile users) -->
 <div 
   id="mobile-nav-drawer" 
-  class="fixed inset-0 z-[60] bg-black/90 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none flex flex-col justify-between overflow-y-auto lg:hidden"
+  class="fixed inset-0 z-[60] hidden flex-col justify-between overflow-y-auto lg:hidden bg-black/95 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none"
   role="dialog"
   aria-modal="true"
   aria-label="Mobile Navigation Menu"
@@ -208,15 +208,21 @@ const navLinks = isMalayalam ? [
     if (!drawer) return;
 
     function openMenu() {
-      drawer.classList.remove('opacity-0', 'pointer-events-none');
-      drawer.classList.add('opacity-100', 'pointer-events-auto');
+      drawer.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        drawer.classList.remove('opacity-0', 'pointer-events-none');
+        drawer.classList.add('opacity-100', 'pointer-events-auto');
+      });
       document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
       drawer.classList.remove('opacity-100', 'pointer-events-auto');
       drawer.classList.add('opacity-0', 'pointer-events-none');
-      document.body.style.overflow = '';
+      setTimeout(() => {
+        drawer.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 250);
     }
 
     if (openBtn) {
