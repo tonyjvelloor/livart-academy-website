@@ -1,0 +1,235 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+
+const featuredReels = [
+  {
+    url: "https://www.instagram.com/reel/Cj9gISlIba1/",
+    image: "/images/academy-live/ig_student_testimonial_nimmy.jpg",
+    category: "സ്റ്റുഡന്റ് സ്പോട്ട്‌ലൈറ്റ്",
+    title: "വിദ്യാർത്ഥിനി നിമ്മി കളത്തിൽ — അനുഭവം",
+    description: "മുൻപരിചയമില്ലാതെ തുടങ്ങി പ്രൊഫഷണൽ ബ്രൈഡൽ മേക്കപ്പ് ആർട്ടിസ്റ്റായി മാറിയ വിദ്യാർത്ഥിനിയുടെ യഥാർത്ഥ അനുഭവം."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/",
+    image: "/images/academy-live/bridal_masterclass_pathadipalam.jpg",
+    category: "ബ്രൈഡൽ മാസ്റ്റർക്ലാസ്സ്",
+    title: "മുഹൂർത്ത സാരി & ടെമ്പിൾ ബ്രൈഡൽ ആർട്ട്",
+    description: "പരമ്പരാഗത കേരള കസവു സാരി ഡ്രേപ്പിംഗും 4K ഹൈ-ഡെഫനിഷൻ കോംപ്ലക്ഷൻ ബേസും ലൈവ് മോഡലുകളിൽ."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/",
+    image: "/images/academy-live/loreal_hair_spa_practical.jpg",
+    category: "ഹെയർ ആർക്കിടെക്ചർ",
+    title: "L'Oréal പ്രൊഫഷണൽ ഹെയർ സ്പാ പ്രാക്ടിക്കൽസ്",
+    description: "ക്ലിനിക്കൽ സ്കാൽപ്പ് പരിശോധന, ഡീപ് കെരാറ്റിൻ കണ്ടീഷനിംഗ്, സലൂൺ ബ്ലോ ഔട്ടുകൾ എന്നിവയിൽ ലൈവ് ട്രെയിനിംഗ്."
+  },
+  {
+    url: "https://www.instagram.com/p/Dc-ULHvEvKu/",
+    image: "/images/academy-live/ig_makeup_artistry_showcase.jpg",
+    category: "മേക്കപ്പ് ആർട്ടിസ്ട്രി",
+    title: "പ്രിസിഷൻ കട്ട്-ക്രീസ് & കളർ തിയറി",
+    description: "അഡ്വാൻസ്ഡ് സിമ്മട്രി കാലിബ്രേഷൻ, സ്മോക്കി ഐസ്, ഗ്ലാസ് സ്കിൻ ഫിനിഷ് മാസ്റ്റർക്ലാസ്സ് ഡെമോൺസ്ട്രേഷൻ."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/",
+    image: "/images/academy-live/student_graduation_showcase.jpg",
+    category: "ഫൈനൽ എക്സാമിനേഷൻ",
+    title: "ഗ്രാജ്വേറ്റ് റൺവേ പോർട്ട്ഫോളിയോ ഷോക്കേസ്",
+    description: "കോസ്മെറ്റോളജി വിദ്യാർത്ഥികൾ തങ്ങളുടെ ഫൈനൽ ബോർഡ് സർട്ടിഫിക്കേഷനായി അവതരിപ്പിച്ച ലൈവ് മോഡൽ സ്റ്റൈലിംഗ്."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/",
+    image: "/images/academy-live/saree_draping_masterclass.jpg",
+    category: "ബ്രൈഡൽ സ്റ്റൈലിംഗ്",
+    title: "സാരി പ്ലീറ്റിംഗ് & വെയ്ൽ സെറ്റിംഗ് മാസ്റ്റർക്ലാസ്സ്",
+    description: "അയൺ-പ്രസ്സ് ചെയ്ത പ്ലീറ്റുകൾ, സുരക്ഷിതമായ പിൻ പ്ലേസ്മെന്റ്, റോയൽ ബ്രൈഡൽ വെയ്ൽ ഡ്രേപ്പിംഗ്."
+  }
+];
+
+const transformations = [
+  {
+    category: "ബ്രൈഡൽ ആർട്ടിസ്ട്രി",
+    title: "പരമ്പരാഗത ഹിന്ദു ബ്രൈഡൽ ലുക്ക്",
+    desc: "HD ബേസ്, ഐ കോണ്ടൂറിങ്, ലൈവ് മോഡലുകളിൽ പൂർത്തിയാക്കിയ ട്രഡീഷണൽ സാരി ഡ്രേപ്പിംഗ്.",
+    image: "/images/instagram/DULWym5CHa0.jpg"
+  },
+  {
+    category: "ബ്രൈഡൽ ആർട്ടിസ്ട്രി",
+    title: "ക്രിസ്ത്യൻ ബ്രൈഡൽ വെയ്ൽ & ഗ്ലോ ലുക്ക്",
+    desc: "സ്കിൻ പ്രിപ്പറേഷൻ, കളർ കറക്ഷൻ, ലോംഗ്-വെയർ ട്രാൻസ്ഫർ-പ്രൂഫ് ബേസ്, കത്തീഡ്രൽ വെയ്ൽ ഡ്രേപ്പിംഗ്.",
+    image: "/images/instagram/DYuASLuK_le.jpg"
+  },
+  {
+    category: "ഹെയർ ആർക്കിടെക്ചർ",
+    title: "ക്ലിനിക്കൽ ഹെയർ ബോട്ടോക്സ് & സ്മൂത്തനിംഗ്",
+    desc: "ഡീപ് ഫൈബർ റീകൺസ്ട്രക്ഷൻ, ഫ്രിസ്സ് ഇല്ലാതാക്കൽ, മിറർ ഷൈൻ ഫിനിഷ്.",
+    image: "/images/instagram/DW1NAndDGuP.jpg"
+  },
+  {
+    category: "ഹെയർ സ്റ്റൈലിംഗ്",
+    title: "വോളിയം ബ്ലോ ഡ്രൈ & ടെക്സ്ചർ ഫിനിഷ്",
+    desc: "റൂട്ട് വോളിയത്തിനും വേവ്സിനുമായി തെർമൽ റൗണ്ട് ബ്രഷ് ടെക്നിക്ക്.",
+    image: "/images/instagram/Db7rJBtuj4B.jpg"
+  }
+];
+
+const studioWork = [
+  { image: "/images/academy-live/future_artists_live_atelier.jpg", tag: "സ്റ്റുഡിയോ പ്രാക്ടീസ്", label: "ബ്രൈഡൽ സെഷൻ" },
+  { image: "/images/instagram/DWtk05cjLnI.jpg", tag: "ഹെയർ സ്റ്റൈലിംഗ്", label: "പ്രിസിഷൻ വേവ് സെറ്റിംഗ്" },
+  { image: "/images/instagram/DUap-mOkvuu.jpg", tag: "മേക്കപ്പ് ആർട്ടിസ്ട്രി", label: "HD പിഗ്മെന്റ് ബ്ലെൻഡിംഗ്" },
+  { image: "/images/academy-live/bridal_makeup_live_session.jpg", tag: "ലൈവ് മോഡൽ", label: "ക്രിസ്ത്യൻ ബ്രൈഡൽ ലുക്ക്" },
+  { image: "/images/instagram/DX6qGl_SKf1.jpg", tag: "ഹെയർ കളർ", label: "ബാലയേജ് ടെക്നിക്ക്" },
+  { image: "/images/instagram/DT7y-uAkh47.jpg", tag: "സ്കിൻ സയൻസ്", label: "ഹൈഡ്ര ഫേഷ്യൽ തെറാപ്പി" },
+  { image: "/images/instagram/DDYbKpnTbKk.jpg", tag: "സാരി ഡ്രേപ്പിംഗ്", label: "പ്രീ-പ്ലീറ്റിംഗും അയണിംഗും" },
+  { image: "/images/instagram/DQMWOO5jNhc.jpg", tag: "ബ്രൈഡൽ ആർട്ടിസ്ട്രി", label: "മുസ്ലിം ബ്രൈഡൽ ലുക്ക്" },
+  { image: "/images/academy-live/student_graduation_showcase.jpg", tag: "പ്രാക്ടിക്കൽ എക്സാം", label: "ഫൈനൽ മോഡൽ ഇവാലുവേഷൻ" },
+  { image: "/images/academy-live/hair_curling_tongs_practical.jpg", tag: "സ്റ്റുഡിയോ ഫ്ലോർ", label: "തെർമൽ സ്റ്റൈലിംഗ് പ്രാക്ടീസ്" },
+  { image: "/images/academy-live/hair_diploma_bwssc_certified.jpg", tag: "ടെക്സ്ചർ കെയർ", label: "ഹെയർ ഡിപ്ലോമ പ്രാക്ടിക്കൽ" },
+  { image: "/images/academy-live/career_makeup_artist_mastery.jpg", tag: "മാസ്റ്റർക്ലാസ്", label: "സ്റ്റെഫി സെബാസ്റ്റ്യൻ ഡെമോ" }
+];
+---
+
+<Layout 
+  title="വിദ്യാർത്ഥികളുടെ വർക്കുകൾ & ട്രാൻസ്ഫോർമേഷൻസ് | Livart Beauty Academy"
+  description="ലിവ്ആർട്ട് അക്കാദമി വിദ്യാർത്ഥികളുടെ യഥാർത്ഥ വർക്കുകളും സ്റ്റുഡിയോ പരിശീലന ഫോട്ടോകളും. ബ്രൈഡൽ മേക്കപ്പ്, പ്രിസിഷൻ ഹെയർകട്ട്, ക്ലിനിക്കൽ സ്കിൻ കെയർ, ലൈവ് മോഡൽ പ്രാക്ടിക്കൽസ്."
+>
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto mt-8">
+    
+    <!-- HEADER -->
+    <div class="text-center max-w-3xl mx-auto mb-space-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">ലൈവ് സ്റ്റുഡിയോ ആർക്കൈവ്</span>
+      </div>
+      <h1 class="font-display-xl text-display-xl lg:text-[56px] text-on-surface tracking-tight mb-space-md">
+        വിദ്യാർത്ഥികളുടെ വർക്കുകൾ & ട്രാൻസ്ഫോർമേഷൻസ്.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        കളമശ്ശേരിയിലെ ഞങ്ങളുടെ സ്റ്റുഡിയോകളിൽ ലൈവ് മോഡലുകളിൽ വിദ്യാർത്ഥികൾ നേരിട്ട് ചെയ്ത യഥാർത്ഥ വർക്കുകൾ. ബ്രൈഡൽ മേക്കപ്പ്, ഹെയർ ആർക്കിടെക്ചർ, ക്ലിനിക്കൽ സ്കിൻ കെയർ എന്നിവയിലെ യഥാർത്ഥ റിസൾട്ടുകൾ.
+      </p>
+      
+      <div class="mt-6">
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="inline-flex items-center gap-2 text-primary hover:text-primary-fixed transition-colors font-title-md border border-primary/30 px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold bg-primary/5 hover:bg-primary/15"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          ദൈനംദിന അപ്ഡേറ്റുകൾക്കായി @livart_academy ഫോളോ ചെയ്യാം
+        </a>
+      </div>
+    </div>
+
+    <!-- FEATURED TRANSFORMATIONS -->
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">ലൈവ് മോഡൽ ഔട്ട്കംസ്</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">പ്രധാന ട്രാൻസ്ഫോർമേഷനുകൾ</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {transformations.map(item => (
+          <div class="group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/15 shadow-lg flex flex-col justify-between hover:border-primary/40 transition-all duration-300">
+            <div class="relative aspect-[3/4] overflow-hidden bg-surface-container">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                loading="lazy" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 bg-black/60 backdrop-blur-md text-primary text-[11px] font-bold uppercase tracking-wider rounded border border-primary/30">
+                  {item.category}
+                </span>
+              </div>
+            </div>
+            
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1.5">{item.title}</h3>
+                <p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- FEATURED REELS IN MOTION -->
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">പ്രാക്ടിക്കൽ വീഡിയോകൾ</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">ലൈവ് മോഡൽ ആർട്ടിസ്ട്രി & വീഡിയോ റീൽസ്</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>കൂടുതൽ @livart_academy ൽ</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredReels.map(reel => (
+          <InstagramReelCard 
+            url={reel.url}
+            image={reel.image}
+            category={reel.category}
+            title={reel.title}
+            description={reel.description}
+          />
+        ))}
+      </div>
+    </div>
+
+    <!-- STUDIO GALLERY & INSTAGRAM FEED -->
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">സ്റ്റുഡിയോ ചിത്രങ്ങൾ</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">അക്കാദമി പരിശീലന ചിത്രങ്ങൾ</h2>
+        </div>
+        <span class="text-xs text-outline font-semibold">100% ഒറിജിനൽ സ്റ്റുഡിയോ ഫോട്ടോഗ്രഫി</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {studioWork.map(item => (
+          <div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container shadow-md">
+            <img 
+              src={item.image} 
+              alt={item.label} 
+              loading="lazy" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-[10px] uppercase font-bold text-primary tracking-widest mb-0.5">{item.tag}</span>
+              <p class="text-white font-title-md text-xs font-semibold">{item.label}</p>
+            </div>
+            <a 
+              href="https://www.instagram.com/livart_academy/" 
+              target="_blank" 
+              class="absolute inset-0 z-10" 
+              aria-label={item.label}
+            ></a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- LEAD CAPTURE SECTION -->
+    <div class="py-space-xl max-w-[900px] mx-auto">
+      <CourseLeadForm 
+        courseName="Cosmetology Programme (12 Months)"
+        title="നിങ്ങൾക്കും ഇതുപോലുള്ള വർക്കുകൾ ചെയ്യാൻ ആഗ്രഹമുണ്ടോ?"
+        subtitle="കളമശ്ശേരി ക്യാമ്പസിൽ 2026 ബാച്ചുകളിലേക്കുള്ള അഡ്മിഷൻ ആരംഭിച്ചിരിക്കുന്നു. പൂർണ്ണ സിലബസും ഫീസ് വിവരങ്ങളും വാട്ട്‌സ്ആപ്പിൽ നേടാം."
+        formId="ml-portfolio-lead-form"
+      />
+    </div>
+
+  </section>
+</Layout>

@@ -1,0 +1,311 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+
+const masterDiplomaModules = [
+  { num: "01", title: "മേക്കപ്പ് അടിസ്ഥാനങ്ങൾ & സ്കിൻ പ്രിപ്പറേഷൻ", desc: "പേഴ്സണൽ ഗ്രൂമിങ് • മേക്കപ്പിന്റെ ചരിത്രവും വളർച്ചയും • സ്കിൻ ടൈപ്പുകളും പ്രിപ്പറേഷനും • മേക്കപ്പ് പ്രോഡക്റ്റ് നോളഡ്ജ്." },
+  { num: "02", title: "കളർ തിയറി & ബേസ് മേക്കപ്പ്", desc: "കളർ കറക്ഷനും കൺസീലിങ്ങും • കളർ വീൽ • സ്കിൻ ടോണിന് അനുയോജ്യമായ ഫൗണ്ടേഷൻ മിക്സിംഗ് • പെർഫെക്റ്റ് ബ്ലെൻഡിങ് രീതികൾ." },
+  { num: "03", title: "ക്രീം കോണ്ടൂറിങ് & ഫേസ് ഡെഫിനിഷൻ", desc: "ക്രീം കോണ്ടൂർ ആപ്ലിക്കേഷൻ • ക്രീം ബ്ലഷ് സ്കൾപ്റ്റിംഗ് • ലിക്വിഡ് & ക്രീം ഹൈലൈറ്റർ പ്രയോഗങ്ങൾ." },
+  { num: "04", title: "പൗഡർ ടെക്നിക്കുകൾ & ഫേസ് ഫിനിഷിംഗ്", desc: "ബേക്കിംഗും പൗഡർ സെറ്റിംഗും • പൗഡർ കോണ്ടൂറിങ് • പൗഡർ ബ്രഷ് ടെക്നിക്കുകൾ • മൈക്രോ-ഫൈൻ ഹൈലൈറ്റിംഗ്." },
+  { num: "05", title: "ലിപ് ആർക്കിടെക്ചർ & ആർട്ടിസ്ട്രി", desc: "ലിപ് കോണ്ടൂറിങ് • പ്രിസിഷൻ ലിപ് ലൈനർ • ലോംഗ്-വെയർ മാറ്റ് ലിപ്സ്റ്റിക് • ഗ്ലോസ് ആപ്ലിക്കേഷൻ." },
+  { num: "06", title: "ഐബ്രോ & ഐ ആർട്ടിസ്ട്രി", desc: "ഐബ്രോ ഷേപ്പിംഗും ഫില്ലിംഗും • ഐ കോണ്ടൂറിങ് • കട്ട്-ക്രീസ് & സ്മോക്കി ഐ ടെക്നിക്കുകൾ • കാജൽ, ജെൽ ഐലൈനർ • ഫാൾസ് ലാഷസ് & കോൺടാക്റ്റ് ലെൻസ് ഫിറ്റിംഗ്." },
+  { num: "07", title: "അഡ്വാൻസ്ഡ് സാരി ഡ്രേപ്പിംഗ് & പ്ലീറ്റിംഗ്", desc: "പ്രീ-പ്ലീറ്റിംഗും സ്റ്റീം അയണിംഗും • ബോഡി മെഷർമെന്റ് ഫിറ്റിംഗ് • ബോക്സ് ഫോൾഡിംഗ് • വ്യത്യസ്ത ശരീരപ്രകൃതികൾക്കായുള്ള ഡ്രേപ്പിംഗ് • ഹിപ് പ്ലീറ്റ്സ്, ഫ്ലഫി പ്ലീറ്റ്സ് • മെർമെയ്ഡ് & ലെഹങ്ക ഡ്രേപ്പിംഗ്." },
+  { num: "08", title: "ബ്രൈഡൽ & എഡിറ്റോറിയൽ ഡെമോൺസ്ട്രേഷൻസ്", desc: "മൂന്ന് പ്രധാന ബ്രൈഡൽ ലുക്കുകൾ: ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം • ഫാഷൻ മേക്കപ്പ് • റെട്രോ & ഫാന്റസി മേക്കപ്പ് • ട്രാൻസ്ഫർ-പ്രൂഫ് മേക്കപ്പ് • ഗ്ലാസ് സ്കിൻ മേക്കപ്പ് • 4K HD & എയർബ്രഷ് മേക്കപ്പ്." },
+  { num: "09", title: "ഹെയർ പ്രിപ്പറേഷൻ & ടൂളുകൾ", desc: "ഹെയർ പ്രിപ്പറേഷൻ രീതികൾ • സ്റ്റൈലിംഗ് ഉൽപ്പന്നങ്ങളും തെർമൽ പ്രൊട്ടക്ഷനും • പ്രൊഫഷണൽ ബ്ലോ-ഡ്രൈ ടെക്നിക്കുകൾ." },
+  { num: "10", title: "തെർമൽ ഹെയർ സ്റ്റൈലിംഗ് ടെക്നിക്കുകൾ", desc: "മൈക്രോ-ക്രിമ്പിംഗ് • ടോംഗ് കേർളിംഗ് • ഫ്ലാറ്റ് അയൺ സ്ട്രെയിറ്റനിംഗ് • വോളിയത്തിനായുള്ള സ്ട്രാറ്റജിക് ബാക്ക് കോമ്പിംഗ്." },
+  { num: "11", title: "ഹെയർസ്റ്റൈൽ ക്രിയേഷൻ & ഫിനിഷിംഗ്", desc: "ടെക്സ്ചർഡ് ബ്രൈഡൽ ബ്രെയ്ഡ്സ് • ബൺ സെറ്റിംഗ് • സ്ലീക്ക് & ടെക്സ്ചർഡ് പോണിടെയിലുകൾ • ഫ്രഷ് & ആർട്ടിഫിഷ്യൽ ഫ്ലവർ സെറ്റിംഗ് • ഫ്രണ്ട് ഹെയർസ്റ്റൈൽ വേരിയേഷൻസ്." }
+];
+
+const oneMonthModules = [
+  { num: "01", title: "അടിസ്ഥാനങ്ങൾ & CTM", desc: "പേഴ്സണൽ ഗ്രൂമിങ് • സ്കിൻ അനാലിസിസ് • CTM പ്രോട്ടോക്കോളുകൾ • ടൂളുകളും ശുചിത്വവും." },
+  { num: "02", title: "കളർ തിയറി & ബേസ്", desc: "കളർ കറക്ഷൻ • ഇന്ത്യൻ സ്കിൻ ടോണുകൾക്കുള്ള ഫൗണ്ടേഷൻ മിക്സിംഗ് • പെർഫെക്റ്റ് ബേസ് ആപ്ലിക്കേഷൻ." },
+  { num: "03", title: "കോണ്ടൂർ & ഹൈലൈറ്റ്", desc: "ക്രീം കോണ്ടൂർ, ക്രീം ബ്ലഷ്, ഹൈലൈറ്ററുകൾ." },
+  { num: "04", title: "ലിപ് മേക്കപ്പ്", desc: "ലിപ് കോണ്ടൂറിംഗും ലിപ്സ്റ്റിക് ടെക്നിക്കുകളും." },
+  { num: "05", title: "ഐ മേക്കപ്പ്", desc: "ഐബ്രോ ഷേപ്പിംഗ് • ഷിമ്മർ & സ്മോക്കി ഐ • ജെൽ ഐലൈനർ • മസ്കാര." },
+  { num: "06", title: "പൗഡർ & ഫിക്സിംഗ്", desc: "പൗഡർ സെറ്റിംഗ് • ഫിക്സിംഗ് സ്പ്രേ ഉപയോഗം • ഓൾ-ഡേ ലോക്ക്-ഇൻ." },
+  { num: "07", title: "ലിക്വിഡ് പ്രോഡക്റ്റ് പ്രാക്ടീസ്", desc: "പ്രത്യേക വൺ-ഡേ PAC ലിക്വിഡ് പ്രോഡക്റ്റ് പ്രാക്ടിക്കൽ സെഷൻ." },
+  { num: "08", title: "ബ്രൈഡൽ ഡെമോൺസ്ട്രേഷൻസ്", desc: "ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം ബ്രൈഡൽ ലുക്കുകൾ." },
+  { num: "09", title: "ഹെയർ പ്രെപ്പ്", desc: "ഹെയർ പ്രോഡക്റ്റുകൾ, ബ്ലോ-ഡ്രൈ, തെർമൽ പ്രെപ്പ്." },
+  { num: "10", title: "സ്റ്റൈലിംഗ് രീതികൾ", desc: "ക്രിമ്പിംഗ്, ടോംഗ്സ്, ഫ്ലാറ്റ് അയണിംഗ്, ബാക്ക് കോമ്പിംഗ്." },
+  { num: "11", title: "ഹെയർസ്റ്റൈലുകൾ", desc: "ബ്രൈഡൽ ബ്രെയ്ഡ്സ്, ബൺസ്, പോണിടെയിലുകൾ, ഫ്ലവർ സെറ്റിംഗ്." },
+  { num: "12", title: "സാരി ഡ്രേപ്പിംഗ്", desc: "പ്രീ-പ്ലീറ്റിംഗ്, ബോക്സ് ഫോൾഡിംഗ്, എല്ലാ ശരീരപ്രകൃതികൾക്കുമുള്ള ഡ്രേപ്പിംഗ്." }
+];
+---
+
+<Layout 
+  title="ഡിപ്ലോമ ഇൻ മേക്കപ്പ് ആർട്ടിസ്ട്രി കൊച്ചി | Livart Beauty Academy"
+  description="സ്റ്റെഫി സെബാസ്റ്റ്യനിൽ നിന്ന് പ്രൊഫഷണൽ മേക്കപ്പ് ആർട്ടിസ്ട്രി പഠിക്കാം. 3 മാസത്തെ മാസ്റ്റർ ഡിപ്ലോമയും 1 മാസത്തെ ഇന്റെൻസീവ് കോഴ്സും. ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം ബ്രൈഡൽ ലുക്കുകൾ, എയർബ്രഷ്, സാരി ഡ്രേപ്പിംഗ്, ഒപ്പം ഫ്രീ പ്രൊഫഷണൽ ടൂൾകിറ്റും."
+>
+  
+  <!-- HERO -->
+  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
+      <div>
+        <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">മേക്കപ്പ് അക്കാദമി • 2026 ബാച്ചുകൾ ആരംഭിച്ചു</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg lg:text-[60px] lg:leading-[68px] text-on-surface tracking-tight mb-6">
+          ഡിപ്ലോമ ഇൻ <span class="italic text-primary">മേക്കപ്പ് ആർട്ടിസ്ട്രി.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">
+          ഹൈ-ഡിമാൻഡ് ബ്രൈഡൽ, ഫാഷൻ, HD മീഡിയ മേഖലകളിൽ മുൻനിരയിലെത്താം. ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം വെഡ്ഡിംഗ് ലുക്കുകൾ, എയർബ്രഷ്, ഗ്ലാസ് സ്കിൻ, ഹെയർ സ്റ്റൈലിംഗ്, സാരി ഡ്രേപ്പിംഗ് എന്നിവ ഉൾക്കൊള്ളുന്ന സമ്പൂർണ്ണ സിലബസ്. ഒപ്പം ഫ്രീ പ്രൊഫഷണൽ ടൂൾകിറ്റും ലഭിക്കുന്നു.
+        </p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-outline-variant/20 py-6">
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">ട്രാക്കുകൾ</span>
+            <strong class="font-title-md text-on-surface text-base">3 മാസവും 1 മാസവും</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">ടൂൾ കിറ്റ്</span>
+            <strong class="font-title-md text-on-surface text-base">കോഴ്‌സിനൊപ്പം സൗജന്യം</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">ബ്രൈഡൽ ലുക്കുകൾ</span>
+            <strong class="font-title-md text-on-surface text-base">3 വെഡ്ഡിംഗ് ലുക്കുകൾ</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">സാരി ഡ്രേപ്പിംഗ്</span>
+            <strong class="font-title-md text-on-surface text-base">പ്രീ-പ്ലീറ്റിംഗ് + അയൺ</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">download</span>
+            സിലബസും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടാം
+          </a>
+          <a href="#curriculum" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
+            11 മോഡ്യൂളുകൾ കാണുക
+          </a>
+        </div>
+      </div>
+      
+      <div class="relative h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-surface-container shadow-2xl">
+        <img fetchpriority="high" decoding="async" src="/images/academy-live/career_makeup_artist_mastery.jpg" class="w-full h-full object-cover" alt="ലിവ്ആർട്ട് അക്കാദമിയിലെ ബ്രൈഡൽ മേക്കപ്പ് പരിശീലനം" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+          <div class="inline-block px-3 py-1 bg-primary text-white text-xs uppercase tracking-widest font-bold rounded mb-2 w-max">
+            കോഴ്‌സിനൊപ്പം ലഭിക്കുന്നത്
+          </div>
+          <h3 class="font-headline-sm text-white text-xl font-bold">പേഴ്സണൽ പ്രൊഫഷണൽ മേക്കപ്പ് ടൂൾ കിറ്റ്</h3>
+          <p class="text-white/80 font-body-sm text-sm mt-1">പ്രൊഫഷണൽ ബ്രഷ് കിറ്റ് • ബ്ലെൻഡിംഗ് സ്പോഞ്ച് • പൗഡർ പഫ് • മിക്സിംഗ് പാലറ്റ് • സ്പാറ്റുല</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS COMPARISON: 3-MONTH VS 1-MONTH -->
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+      
+      <!-- 3 Months Master Track -->
+      <div class="bg-surface-container-low p-space-lg rounded-2xl border-2 border-primary/40 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-sm uppercase tracking-widest text-primary font-bold text-xs">ഫ്ലാഗ്ഷിപ്പ് ആർട്ടിസ്ട്രി</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold">3 മാസം</span>
+          </div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-3">ഡിപ്ലോമ ഇൻ മേക്കപ്പ് (3 മാസം)</h2>
+          <p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            സമ്പൂർണ്ണ മാസ്റ്റർ ആർട്ടിസ്റ്റ് കരിക്കുലം. 4K HD, എയർബ്രഷ്, ഗ്ലാസ് സ്കിൻ, ട്രാൻസ്ഫർ-പ്രൂഫ് ബ്രൈഡൽ, റെട്രോ & ഫാന്റസി മേക്കപ്പ്, പൂർണ്ണ ഹെയർ സ്റ്റൈലിംഗ്, അഡ്വാൻസ്ഡ് സാരി ഡ്രേപ്പിംഗ് എന്നിവയുൾപ്പെടെ 11 സമഗ്ര മോഡ്യൂളുകൾ.
+          </p>
+          <div class="p-4 bg-surface-container rounded-xl mb-6 border border-outline-variant/15">
+            <span class="font-label-sm uppercase text-primary text-xs font-bold block mb-1">ലഭിക്കുന്ന ടൂൾ കിറ്റ്:</span>
+            <p class="font-body-sm text-on-surface-variant text-xs">ബ്രഷ് കിറ്റ് • സ്പോഞ്ച് • പൗഡർ പഫ് • പാലറ്റ് • സ്പാറ്റുല</p>
+          </div>
+        </div>
+        <a href="#curriculum" class="w-full py-3 bg-primary text-on-primary font-label-md uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary-fixed transition-colors">
+          11-മോഡ്യൂൾ സിലബസ് കാണുക &rarr;
+        </a>
+      </div>
+
+      <!-- 1 Month Intensive Track -->
+      <div class="bg-surface-container-low p-space-lg rounded-2xl border border-outline-variant/20 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-sm uppercase tracking-widest text-outline font-bold text-xs">ഫാസ്ട്രാക്ക് സർട്ടിഫിക്കേഷൻ</span>
+            <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-bold">1 മാസം</span>
+          </div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-3">ഡിപ്ലോമ ഇൻ മേക്കപ്പ് (1 മാസം)</h2>
+          <p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            വേഗത്തിൽ ബ്രൈഡൽ & ഇവന്റ് മേക്കപ്പ് പഠിക്കാൻ ആഗ്രഹിക്കുന്നവർക്കായി. ഫൗണ്ടേഷൻ മിക്സിംഗ്, കളർ വീൽ, 3 ബ്രൈഡൽ ഡെമോകൾ, PAC ലിക്വിഡ് പ്രോഡക്റ്റ് ട്രെയിനിങ്, ബേസിക് ഹെയർസ്റ്റൈൽ, സാരി പ്രീ-പ്ലീറ്റിംഗ്.
+          </p>
+          <div class="p-4 bg-surface-container rounded-xl mb-6 border border-outline-variant/15">
+            <span class="font-label-sm uppercase text-outline text-xs font-bold block mb-1">ലഭിക്കുന്ന ടൂൾ കിറ്റ്:</span>
+            <p class="font-body-sm text-on-surface-variant text-xs">ബ്രഷ് കിറ്റ് • സ്പോഞ്ച് • പൗഡർ പഫ്</p>
+          </div>
+        </div>
+        <a href="#curriculum-1m" class="w-full py-3 bg-surface-container-high text-on-surface font-label-md uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/30">
+          1-മാസത്തെ സിലബസ് കാണുക &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-MONTH SYLLABUS BREAKDOWN -->
+  <section id="curriculum" class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="max-w-3xl mb-space-xl">
+        <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">3 മാസത്തെ സമഗ്ര സിലബസ്</span>
+        <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">മാസ്റ്റർ ഡിപ്ലോമ മോഡ്യൂളുകൾ</h2>
+        <p class="font-body-lg text-on-surface-variant mt-4">ലൈവ് മോഡലുകളിൽ നേരിട്ടുള്ള പ്രായോഗിക പരിശീലനം. ഓരോ ലുക്കിലും അധ്യാപകരുടെ നേരിട്ടുള്ള മേൽനോട്ടവും ഫീഡ്‌ബാക്കും ഉറപ്പാക്കുന്നു.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {masterDiplomaModules.map(m => (
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-colors flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-label-sm text-primary uppercase tracking-widest font-bold text-xs">മോഡ്യൂൾ {m.num}</span>
+              </div>
+              <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">{m.title}</h3>
+              <p class="font-body-sm text-on-surface-variant text-sm leading-relaxed">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 1-MONTH CURRICULUM -->
+  <section id="curriculum-1m" class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="max-w-3xl mb-space-xl">
+      <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">1 മാസത്തെ ഇൻസെന്റീവ് സിലബസ്</span>
+      <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">1 മാസ ഡിപ്ലോമ മോഡ്യൂളുകൾ</h2>
+      <p class="font-body-lg text-on-surface-variant mt-4">പ്രധാനപ്പെട്ട ബ്രൈഡൽ, ഫേഷ്യൽ ബേസ്, സാരി ഡ്രേപ്പിംഗ് ടെക്നിക്കുകൾ വേഗത്തിൽ പഠിച്ചെടുക്കാം.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {oneMonthModules.map(m => (
+        <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-label-sm text-outline uppercase tracking-widest font-bold text-xs">മോഡ്യൂൾ {m.num}</span>
+            </div>
+            <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">{m.title}</h3>
+            <p class="font-body-sm text-on-surface-variant text-sm leading-relaxed">{m.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SHORT-TERM MAKEUP COURSES -->
+  <section class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20 px-margin-sm lg:px-margin-lg">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-space-xl">
+        <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">പ്രത്യേക ഹ്രസ്വകാല കോഴ്‌സുകൾ</span>
+        <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">ഷോർട്ട്-ടേം മേക്കപ്പ് മാസ്റ്റർക്ലാസ്സുകൾ</h2>
+        <p class="font-body-md text-on-surface-variant mt-3">വർക്കിംഗ് പ്രൊഫഷണലുകൾക്കും സ്വയം സൗന്ദര്യപരിപാലനം പഠിക്കാൻ ആഗ്രഹിക്കുന്നവർക്കുമായി:</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+          <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">5 ദിവസം</span>
+          <span class="font-title-md text-on-surface block font-bold text-sm">അഡ്വാൻസ്ഡ് ഗ്രൂമിങ്</span>
+          <span class="text-[11px] text-outline mt-1 block">മേക്കപ്പ് + ഹെയർ</span>
+        </div>
+        <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+          <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">5 ദിവസം / 1 ദിവസം</span>
+          <span class="font-title-md text-on-surface block font-bold text-sm">എയർബ്രഷ് മേക്കപ്പ്</span>
+          <span class="text-[11px] text-outline mt-1 block">HD മെഷീൻ ട്രെയിനിങ്</span>
+        </div>
+        <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+          <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">1 ദിവസം</span>
+          <span class="font-title-md text-on-surface block font-bold text-sm">ട്രാൻസ്ഫർ-പ്രൂഫ്</span>
+          <span class="text-[11px] text-outline mt-1 block">സ്വെറ്റ്-പ്രൂഫ് സീലിംഗ്</span>
+        </div>
+        <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+          <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">1 ദിവസം</span>
+          <span class="font-title-md text-on-surface block font-bold text-sm">ഗ്ലാസ് സ്കിൻ മേക്കപ്പ്</span>
+          <span class="text-[11px] text-outline mt-1 block">ഡ്യൂയി ഫിനിഷ് ലുക്ക്</span>
+        </div>
+        <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+          <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">2 ദിവസം</span>
+          <span class="font-title-md text-on-surface block font-bold text-sm">പേഴ്സണൽ ഗ്രൂമിങ്</span>
+          <span class="text-[11px] text-outline mt-1 block">ദൈനംദിന മേക്കപ്പ്</span>
+        </div>
+        <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+          <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">1 - 2 ദിവസം</span>
+          <span class="font-title-md text-on-surface block font-bold text-sm">സാരി ഡ്രേപ്പിംഗ്</span>
+          <span class="text-[11px] text-outline mt-1 block">പ്രീ-പ്ലീറ്റ് & അയൺ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKEUP ARTISTRY IN MOTION (REELS) -->
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg gap-2">
+      <div>
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">ലൈവ് സ്റ്റുഡിയോ വീഡിയോകൾ</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">വിദ്യാർത്ഥികളുടെ മേക്കപ്പ് വർക്കുകൾ</h2>
+      </div>
+      <a 
+        href="https://www.instagram.com/livart_academy/" 
+        target="_blank" 
+        class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+      >
+        <span>കൂടുതൽ ഇൻസ്റ്റാഗ്രാമിൽ കാണാം</span>
+        <span class="material-symbols-outlined text-sm">open_in_new</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/reel/Db25HShNddj/"
+        image="/images/academy-live/high_fashion_student_practical.jpg"
+        category="എഡിറ്റോറിയൽ മേക്കപ്പ്"
+        title="ഹൈ-ഫാഷൻ എഡിറ്റോറിയൽ ആർട്ടിസ്ട്രി"
+        description="വിദ്യാർത്ഥികൾ തയ്യാറാക്കിയ അഡ്വാൻസ്ഡ് എഡിറ്റോറിയൽ മേക്കപ്പ്, ഡൈനാമിക് കോണ്ടൂർ, റൺവേ സ്റ്റൈലിംഗ്."
+        badge="@livart_academy"
+      />
+
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/reel/DZPqBn5yV2k/"
+        image="/images/academy-live/kpop_glam_fashion_show.jpg"
+        category="റൺവേ ഗ്ലാമർ"
+        title="കെ-പോപ്പ് ഗ്ലാം & റൺവേ സ്റ്റൈലിംഗ്"
+        description="ഗ്ലാസ് സ്കിൻ ഫിനിഷ്, ട്രെൻഡി ഐ മേക്കപ്പ്, സമകാലിക ഫാഷൻ സ്റ്റൈലിംഗ് പ്രായോഗികം."
+        badge="@livart_academy"
+      />
+
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/reel/Ddi1GE9oWUm/"
+        image="/images/academy-live/self_makeup_student_experience.jpg"
+        category="പ്രാക്ടിക്കൽ സെഷൻ"
+        title="സെൽഫ് മേക്കപ്പ് & സ്കിൽ ലേണിംഗ്"
+        description="കളർ മാച്ചിംഗ്, പിഗ്മെന്റ് ബ്ലെൻഡിംഗ്, ബ്രഷ് ഉപയോഗം എന്നിവയിലെ ലൈവ് പ്രാക്ടീസ്."
+        badge="@livart_academy"
+      />
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE SECTION -->
+  <section id="enroll" class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Diploma in Makeup (3 Months & 1 Month)"
+      title="മേക്കപ്പ് കോഴ്‌സ് സിലബസും ഫീസും അറിയാം"
+      subtitle="നിങ്ങളുടെ പേരും ഫോൺ നമ്പറും നൽകുക. 3 മാസത്തെയും 1 മാസത്തെയും മേക്കപ്പ് സിലബസ്, ബ്രൈഡൽ ലുക്കുകൾ, ടൂൾകിറ്റ് വിവരങ്ങൾ, ഫീസ് വിവരങ്ങൾ എന്നിവ നേരിട്ട് വാട്ട്‌സ്ആപ്പിൽ ലഭിക്കും."
+      formId="ml-makeup-lead-form"
+    />
+  </section>
+
+  <!-- COURSE SCHEMA MARKUP -->
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Diploma in Makeup Artistry (3 Months & 1 Month) in Malayalam",
+      "description": "Professional 3-month and 1-month makeup artistry diplomas in Kochi covering Hindu, Christian, Muslim bridal makeup, Airbrush, Glass Skin, Hairstyling, and Saree Draping at Livart Beauty Academy.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Livart Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://livart.co.in"
+      }
+    }
+  `} />
+</Layout>

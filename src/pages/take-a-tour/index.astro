@@ -1,0 +1,151 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../components/InstagramReelCard.astro';
+
+const campusShots = [
+  { img: "/images/academy-live/bridal_masterclass_pathadipalam.jpg", title: "Bridal Atelier Studio", desc: "Dedicated high-lumen stations calibrated for 4K photography and wedding trials." },
+  { img: "/images/academy-live/loreal_hair_spa_practical.jpg", title: "Hair Architecture Floor", desc: "Equipped with professional basins, thermal styling tools, and texturizing setups." },
+  { img: "/images/academy-live/hair_makeup_skin_foundation.jpg", title: "Clinical Aesthetics Lab", desc: "Hydra facial machinery, electrotherapy units, and sterile skincare treatment beds." },
+  { img: "/images/academy-live/livart_academy_campus_overview.jpg", title: "Live Model Evaluation Bay", desc: "Where students execute timed transformations under direct faculty observation." }
+];
+
+const campusReels = [
+  {
+    url: "https://www.instagram.com/livart_academy/reel/Ddv_Ggpy6UK/",
+    image: "/images/academy-live/assumption_college_collaboration.jpg",
+    category: "Institutional",
+    title: "Assumption College Collaboration",
+    description: "Empowering college students through beauty workshops and skill development sessions."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DbnCA94N3Ns/",
+    image: "/images/academy-live/ezmera_product_industry_visit.jpg",
+    category: "Industry Visit",
+    title: "Ezmera Beauty Product Exposure",
+    description: "Direct interaction with premium cosmetic formulations, ingredient science, and professional trends."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DYj6lcJNsh5/",
+    image: "/images/academy-live/bwssc_diploma_cosmetology_gov.jpg",
+    category: "Milestone",
+    title: "B&WSSC Student Certification Day",
+    description: "Honoring our certified graduates as they receive their government-recognized credentials."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DcfyHIgoAVN/",
+    image: "/images/academy-live/onam_campus_celebration.jpg",
+    category: "Campus Life",
+    title: "Onam Celebrations & Creative BTS",
+    description: "Vibrant campus culture, traditional festive styling, and tight-knit student community."
+  }
+];
+---
+
+<Layout 
+  title="Campus Tour & Atelier Facilities | Livart Beauty Academy Kochi"
+  description="Take a visual tour inside Livart Beauty Academy's flagship atelier in Kalamassery, Kochi. Modern workstations, clinical skin labs, and bridal atelier bays."
+>
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto mt-8">
+    
+    <!-- HEADER -->
+    <div class="mb-space-xl text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Kalamassery, Kochi</span>
+      </div>
+      <h1 class="font-display-xl text-display-xl lg:text-[56px] text-on-surface tracking-tight mb-space-md">
+        Step Inside LivArt.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        Located at Madukappilly Tower, Pathadipalam, Kalamassery (2 mins walk from Pathadipalam Metro Pillar 384), our flagship academy features professional-grade salon workstations, clinical dermal equipment, and dedicated bridal bays.
+      </p>
+    </div>
+
+    <!-- CAMPUS GALLERY -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md mb-space-xl">
+      {campusShots.map(shot => (
+        <div class="group relative rounded-2xl overflow-hidden bg-surface-container shadow-xl aspect-[16/10]">
+          <img 
+            src={shot.img} 
+            alt={shot.title} 
+            loading="lazy" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6 sm:p-8">
+            <h3 class="font-headline-sm text-xl sm:text-2xl font-bold text-white mb-1">{shot.title}</h3>
+            <p class="text-white/80 font-body-sm text-xs sm:text-sm max-w-md">{shot.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CAMPUS LIFE & INDUSTRY REELS -->
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Atmosphere & Milestones</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Campus Life & Industry Exposure</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>See More on Instagram</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {campusReels.map(reel => (
+          <InstagramReelCard 
+            url={reel.url}
+            image={reel.image}
+            category={reel.category}
+            title={reel.title}
+            description={reel.description}
+          />
+        ))}
+      </div>
+    </div>
+
+    <!-- VISIT IN PERSON CTA -->
+    <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/15 shadow-lg text-center max-w-3xl mx-auto mb-space-xl">
+      <span class="material-symbols-outlined text-primary text-4xl mb-2">storefront</span>
+      <h2 class="font-headline-sm text-2xl font-bold text-on-surface mb-2">Visit Our Kalamassery Campus</h2>
+      <p class="font-body-md text-on-surface-variant text-sm mb-6 max-w-lg mx-auto">
+        Walk-in counseling sessions are available Monday through Friday, 10 AM to 5 PM. Meet our educators and inspect the equipment in person.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a 
+          href="https://share.google/OCj5l70Grn7Wxu8WR" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-3 bg-surface-container-high border border-outline-variant/30 font-label-md text-xs uppercase tracking-wider font-bold rounded-lg hover:border-primary transition-colors text-on-surface flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-base">pin_drop</span>
+          Google Business Profile & Maps
+        </a>
+        <a 
+          href="tel:+919633211151" 
+          class="px-6 py-3 bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-bold rounded-lg hover:bg-primary-fixed transition-colors shadow flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-base">call</span>
+          Call Admissions Desk
+        </a>
+      </div>
+    </div>
+
+    <!-- LEAD CAPTURE -->
+    <div class="py-space-xl max-w-[900px] mx-auto">
+      <CourseLeadForm 
+        courseName="General Admissions Inquiry 2026"
+        title="Schedule a Personalized Campus Tour"
+        subtitle="Fill in your details below. Our admissions counselor will contact you on WhatsApp to confirm your preferred visit date and share our complete course guide."
+        formId="tour-lead-form"
+      />
+    </div>
+
+  </section>
+</Layout>

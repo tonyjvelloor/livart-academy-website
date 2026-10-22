@@ -1,0 +1,150 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+
+const bridalModules = [
+  { num: "01", title: "അടിസ്ഥാന സ്കിൻ പ്രിപ്പറേഷൻ", desc: "ഗ്രൂമിംഗ് • ബ്രൈഡൽ മേക്കപ്പ് ആമുഖം • സ്കിൻ ടൈപ്പുകൾ • പ്രീമിയം പ്രൊഡക്റ്റ് നോളജ്." },
+  { num: "02", title: "കളർ തിയറി & ബേസ് മേക്കപ്പ്", desc: "കളർ കറക്ഷൻ • ഡാർക്ക് സർക്കിൾ മറയ്ക്കൽ • ഫൗണ്ടേഷൻ ഷേഡ് മാച്ചിംഗ്." },
+  { num: "03", title: "ക്രീം കോണ്ടൂറിംഗ് & ഹൈലൈറ്റിംഗ്", desc: "ഫേസ് ഷേപ്പിംഗ് • ക്രീം ബ്ലഷ് • റേഡിയന്റ് ബ്രൈഡൽ ഗ്ലോ ഹൈലൈറ്റർ." },
+  { num: "04", title: "ലോംഗ്-വെയർ ലിപ് മേക്കപ്പ്", desc: "ലിപ് കോണ്ടൂറിംഗ് • മാറ്റ് ലിപ്സ്റ്റിക് • സ്വെറ്റ്-പ്രൂഫ് ഗ്ലോസ് ടെക്നിക്കുകൾ." },
+  { num: "05", title: "ഐബ്രോ & ഐ മേക്കപ്പ്", desc: "ഐബ്രോ ഷേപ്പിംഗ് • 1, 2, 3-ഷേഡ് ഐ മേക്കപ്പ് • ഷിമ്മർ ഐ • സ്മോക്കി ഐ • വാട്ടർപ്രൂഫ് ഐലൈനർ." },
+  { num: "06", title: "പൗഡർ സെറ്റിംഗ് & ബേക്കിംഗ്", desc: "ബ്രൈഡൽ ബേക്കിംഗ് • പ്രൊഫഷണൽ ഫിക്സിംഗ് സ്പ്രേകൾ • സ്വെറ്റ്പ്രൂഫ് സീലിംഗ്." },
+  { num: "07", title: "ഹെയർ പ്രിപ്പറേഷൻ & പ്രൊഡക്റ്റുകൾ", desc: "ഹെയർ പ്രെപ്പ് • തെർമൽ പ്രൊട്ടക്റ്റന്റ് • വോളിയം ബ്ലോ ഡ്രൈ." },
+  { num: "08", title: "തെർമൽ ഹെയർ സ്റ്റൈലിംഗ്", desc: "മൈക്രോ-ക്രിമ്പിംഗ് • ടോങ് കേളിംഗ് • സ്ട്രെയ്റ്റനിംഗ് • ബാക്ക്-കോമ്പിംഗ്." },
+  { num: "09", title: "ബ്രൈഡൽ ഹെയർസ്റ്റൈലുകൾ", desc: "ബ്രൈഡൽ ബ്രെയ്ഡ് • സൗത്ത്/നോർത്ത് ഇന്ത്യൻ ബൺ • ഫ്രഷ് ഫ്ലവർ സെറ്റിംഗ്." },
+  { num: "10", title: "സാരി ഡ്രേപ്പിംഗ് & പ്രീ-പ്ലീറ്റിംഗ്", desc: "ബോക്സ് ഫോൾഡിംഗ് • സ്റ്റീം അയേണിംഗ് • ഹിപ് പ്ലീറ്റ്സ് • ലെഹങ്ക ഡ്രേപ്പിംഗ്." },
+  { num: "11", title: "3 പ്രധാന ബ്രൈഡൽ ഡെമോകൾ", desc: "പരമ്പരാഗത ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം വിവാഹ മേക്കപ്പ് ഡെമോൺസ്ട്രേഷനുകൾ." },
+  { num: "12", title: "ക്ലയന്റ് കൺസൾട്ടേഷൻ & കംപ്ലീറ്റ് ലുക്ക്", desc: "ബ്രൈഡൽ ട്രയൽ എറ്റിക്കറ്റ് • ടൈം മാനേജ്‌മെന്റ് • കംപ്ലീറ്റ് ബ്രൈഡൽ ഡെമോ." },
+  { num: "13", title: "ലൈവ് മോഡൽ പ്രാക്ടിക്കൽ എക്സാം", desc: "വിദ്യാർത്ഥികൾ സ്വന്തമായി ലൈവ് മോഡലിൽ ചെയ്യുന്ന ഫൈനൽ ബ്രൈഡൽ ഇവാല്യുവേഷൻ." }
+];
+---
+
+<Layout 
+  title="ഫാസ്റ്റ്-ട്രാക്ക് ബ്രൈഡൽ മേക്കപ്പ് കോഴ്‌സ് (10 ദിവസം) | Livart Beauty Academy"
+  description="10 ദിവസത്തെ തീവ്ര ബ്രൈഡൽ മേക്കപ്പ് കോഴ്‌സ്. ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം വെഡ്ഡിംഗ് ലുക്കുകൾ, ഹെയർസ്റ്റൈലിംഗ്, സാരി ഡ്രേപ്പിംഗ്, ബ്രഷ് കിറ്റ് ഉൾപ്പെടെ."
+>
+  <!-- HERO -->
+  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-white/10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs uppercase tracking-widest text-primary font-bold">10 ദിവസത്തെ ബൂട്ട്ക്യാമ്പ് • 2026 ബാച്ചുകൾ</span>
+        </div>
+        <h1 class="font-display-lg text-4xl sm:text-5xl lg:text-[56px] lg:leading-[64px] text-white tracking-tight mb-6">
+          ഫാസ്റ്റ്-ട്രാക്ക് <span class="italic text-primary">ബ്രൈഡൽ മേക്കപ്പ്.</span>
+        </h1>
+        <p class="font-body-lg text-white/80 max-w-xl leading-relaxed mb-8">
+          കേരളത്തിലെ ഏറ്റവും മികച്ച ബ്രൈഡൽ മേക്കപ്പ് കോഴ്‌സ്. ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം വെഡ്ഡിംഗ് ലുക്കുകൾ, തെർമൽ ഹെയർസ്റ്റൈലിംഗ്, സാരി പ്രീ-പ്ലീറ്റിംഗ് എന്നിവ 10 ദിവസത്തിൽ ലൈവ് മോഡലുകളിൽ പരിശീലിക്കാം.
+        </p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-white/10 py-6">
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">കാലാവധി</span>
+            <strong class="text-base font-bold text-white">10 ദിവസം</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">ടൂൾ കിറ്റ്</span>
+            <strong class="text-base font-bold text-white">ബ്രഷ് കിറ്റ് സൗജന്യം</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">വെഡ്ഡിംഗ് ലുക്കുകൾ</span>
+            <strong class="text-base font-bold text-white">ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">പരീക്ഷ</span>
+            <strong class="text-base font-bold text-primary">ലൈവ് മോഡൽ</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#enroll" class="px-8 py-4 bg-primary hover:bg-[#d40002] text-white text-xs uppercase tracking-widest font-bold rounded-xl shadow-lg transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">download</span>
+            <span>സിലബസും ഫീസും നേടുക</span>
+          </a>
+          <a href="#curriculum" class="px-6 py-4 bg-white/5 hover:bg-white/10 text-white text-xs uppercase tracking-widest font-bold rounded-xl border border-white/10 transition-colors">
+            13 മൊഡ്യൂളുകൾ കാണുക
+          </a>
+        </div>
+      </div>
+      
+      <div class="relative h-[480px] rounded-3xl overflow-hidden bg-[#131418] shadow-2xl border border-white/10">
+        <img src="/images/academy-live/bridal_makeup_course_action.jpg" class="w-full h-full object-cover" alt="ലിവ്ആർട്ട് ബ്രൈഡൽ മേക്കപ്പ്" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+          <span class="px-3 py-1 bg-primary text-white text-xs uppercase tracking-wider font-bold rounded mb-2 w-max">കംപ്ലീറ്റ് ബ്രൈഡൽ പാക്കേജ്</span>
+          <h3 class="text-xl font-bold text-white">മേക്കപ്പ് + ഹെയർസ്റ്റൈലിംഗ് + സാരി ഡ്രേപ്പിംഗ്</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 MODULES -->
+  <section id="curriculum" class="py-20 bg-[#07080a] border-y border-white/10">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-2">10 ദിവസത്തെ സിലബസ്</span>
+        <h2 class="font-display-lg text-3xl sm:text-4xl font-bold text-white">13 സമഗ്ര മൊഡ്യൂളുകൾ.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {bridalModules.map(m => (
+          <div class="bg-[#131418] p-6 rounded-2xl border border-white/10 hover:border-primary/40 transition-colors">
+            <span class="text-xs font-bold text-primary uppercase block mb-1">മൊഡ്യൂൾ {m.num}</span>
+            <h3 class="text-base font-bold text-white mb-2">{m.title}</h3>
+            <p class="text-xs text-white/70 leading-relaxed">{m.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- REELS IN MOTION -->
+  <section class="py-20 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-3">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-1">ലൈവ് വീഡിയോകൾ</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-white">വിദ്യാർത്ഥികൾ ചെയ്ത ബ്രൈഡൽ വർക്കുകൾ</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <InstagramReelCard 
+        url="https://www.instagram.com/reel/Cj9gISlIba1/"
+        image="/images/academy-live/ig_student_testimonial_nimmy.jpg"
+        category="വിദ്യാർത്ഥിനി അനുഭവം"
+        title="വിദ്യാർത്ഥിനി നിമ്മി കളത്തിൽ — ബ്രൈഡൽ ആർട്ട്"
+        description="മുൻപരിചയമില്ലാതെ തുടങ്ങി സമ്പൂർണ്ണ ബ്രൈഡൽ മേക്കപ്പും സാരി ഡ്രേപ്പിംഗും സ്വായത്തമാക്കിയ അനുഭവം."
+        badge="@livart_academy Reel"
+      />
+
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/"
+        image="/images/academy-live/bridal_masterclass_pathadipalam.jpg"
+        category="മുഹൂർത്ത ലുക്ക്"
+        title="ട്രഡീഷണൽ ഹിന്ദു ബ്രൈഡൽ മാസ്റ്റർക്ലാസ്സ്"
+        description="സൗത്ത് ഇന്ത്യൻ ബ്രൈഡൽ മേക്കപ്പ്, ടെമ്പിൾ ജ്വല്ലറി സെറ്റിംഗ്, 4K സ്വെറ്റ്‌പ്രൂഫ് ഫിനിഷ്."
+        badge="ലൈവ് സ്റ്റുഡിയോ ബേ"
+      />
+
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/"
+        image="/images/academy-live/saree_draping_masterclass.jpg"
+        category="ഡ്രേപ്പിംഗ് മാസ്റ്ററി"
+        title="സാരി പ്ലീറ്റിംഗ് & വെയ്ൽ ആർക്കിടെക്ചർ"
+        description="റോയൽ വെയ്ൽ സെറ്റിംഗ്, സുരക്ഷിതമായ പിൻ പ്ലേസ്മെന്റ്, അയൺ-പ്രസ്സ് ചെയ്ത പ്ലീറ്റുകൾ."
+        badge="മാസ്റ്റർക്ലാസ്സ്"
+      />
+    </div>
+  </section>
+
+  <!-- LEAD FORM -->
+  <section id="enroll" class="py-16 px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Fastrack Bridal Makeup (10 Days)"
+      title="ബ്രൈഡൽ കോഴ്‌സ് വിവരങ്ങളും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടുക"
+      subtitle="താഴെ നിങ്ങളുടെ വിവരങ്ങൾ നൽകുക. 10 ദിവസത്തെ ബ്രൈഡൽ മേക്കപ്പ് പ്രോസ്പെക്ടസും ബാച്ച് തീയതികളും വാട്ട്‌സ്ആപ്പിൽ ലഭിക്കുന്നതാണ്."
+      formId="ml-bridal-lead-form"
+    />
+  </section>
+</Layout>

@@ -1,0 +1,162 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+
+const mainCosmetology = [
+  {
+    title: "കോസ്‌മെറ്റോളജി പ്രോഗ്രാം (12 മാസം)",
+    url: "/ml/certification-course-in-cosmetology/",
+    duration: "12 മാസം (4+4+3+1)",
+    tag: "മാസ്റ്റർ ഫ്ലാഗ്ഷിപ്പ്",
+    description: "ഞങ്ങളുടെ ഏറ്റവും സമഗ്രമായ മാസ്റ്റർ യോഗ്യത. 4 മാസം ഹെയർ ഡ്രസ്സിംഗ് + 4 മാസം സ്കിൻ തെറാപ്പി + 3 മാസം മേക്കപ്പ് + 1 മാസം സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പ്.",
+    highlights: ["ഹെയർ, സ്കിൻ, മേക്കപ്പ് സംയോജനം", "3 വിഭാഗങ്ങൾക്കുമുള്ള ടൂൾ കിറ്റുകൾ സൗജന്യം", "1 മാസത്തെ സലൂൺ ഇന്റേൺഷിപ്പ്", "B&WSSC / MSDE അംഗീകാരം"]
+  },
+  {
+    title: "കോസ്‌മെറ്റോളജി പ്രോഗ്രാം (6 മാസം)",
+    url: "/ml/certification-course-in-cosmetology/",
+    duration: "6 മാസം (2+2+1+1)",
+    tag: "ഇന്റൻസീവ് ഫാസ്റ്റ്-ട്രാക്ക്",
+    description: "വേഗത്തിൽ തൊഴിൽ നേടാൻ സഹായിക്കുന്ന കോഴ്‌സ്. 2 മാസം ഹെയർ + 2 മാസം സ്കിൻ തെറാപ്പി + 1 മാസം മേക്കപ്പ് + 1 മാസം സലൂൺ ഇന്റേൺഷിപ്പ്.",
+    highlights: ["കോർ ഹെയർ, സ്കിൻ & മേക്കപ്പ്", "അത്യാവശ്യ ടൂൾ കിറ്റുകൾ സൗജന്യം", "1 മാസത്തെ സലൂൺ പരിശീലനം", "നേരിട്ടുള്ള ജോലി സാധ്യതകൾ"]
+  }
+];
+
+const specializedCourses = [
+  {
+    title: "ഫാസ്റ്റ്-ട്രാക്ക് ബ്രൈഡൽ മേക്കപ്പ് (10 ദിവസം)",
+    url: "/ml/bridal-makeup-course/",
+    duration: "10 ദിവസം",
+    tag: "ഹൈ-ഡിമാൻഡ് ബൂട്ട്ക്യാമ്പ്",
+    description: "ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം ബ്രൈഡൽ ലുക്കുകൾ, തെർമൽ ഹെയർ സ്റ്റൈലിംഗ്, സാരി പ്രീ-പ്ലീറ്റിംഗ്, ലൈവ് മോഡൽ പരീക്ഷ. ബ്രഷ് കിറ്റ് സൗജന്യം."
+  },
+  {
+    title: "ഡിപ്ലോമ ഇൻ ഹെയർ ഡ്രസ്സിംഗ് (4 മാസം)",
+    url: "/ml/hair-styling-course/",
+    duration: "4 മാസം",
+    tag: "ഹെയർ സ്പെഷ്യലിസ്റ്റ്",
+    description: "13-ലധികം പ്രിസിഷൻ ഹെയർകട്ടുകൾ, നാനോപ്ലാസ്റ്റിയ, ബോട്ടോക്സ്, ബാലിയാജ് കളറിംഗ്, ബ്രൈഡൽ ഹെയർ സ്റ്റൈലുകൾ. കട്ടിംഗ് ഡമ്മിയും ഡ്രയറും അടങ്ങിയ കിറ്റ് സൗജന്യം."
+  },
+  {
+    title: "ഡിപ്ലോമ ഇൻ സ്കിൻ തെറാപ്പി (4 മാസം)",
+    url: "/ml/skin-care-course/",
+    duration: "4 മാസം",
+    tag: "ക്ലിനിക്കൽ എസ്തറ്റിക്സ്",
+    description: "ഹൈഡ്ര ഫേഷ്യൽ, ഹൈ ഫ്രീക്വൻസി മെഷീൻ, കെമിക്കൽ പീൽസ്, ഗാൽവാനിക്, മാനിക്യൂർ, പെഡിക്യൂർ, വാക്സിംഗ്. ഫേഷ്യൽ കിറ്റും ഉപകരണങ്ങളും സൗജന്യം."
+  },
+  {
+    title: "ഡിപ്ലോമ ഇൻ മേക്കപ്പ് ആർട്ടിസ്ട്രി (3 മാസം)",
+    url: "/ml/make-up-course/",
+    duration: "3 മാസം",
+    tag: "മാസ്റ്റർ ആർട്ടിസ്ട്രി",
+    description: "3 വിവാഹ മേക്കപ്പ് ലുക്കുകൾ, 4K HD, എയർബ്രഷ്, ഗ്ലാസ് സ്കിൻ, സാരി ഡ്രേപ്പിംഗ്, ഹെയർ സ്റ്റൈലിംഗ്. പ്രൊഫഷണൽ ബ്രഷ് കിറ്റ് സൗജന്യം."
+  },
+  {
+    title: "ജോബ്-ഓറിയന്റഡ് സലൂൺ കോഴ്‌സ് (1 മാസം)",
+    url: "/ml/job-oriented-salon-course/",
+    duration: "1 മാസം",
+    tag: "നേരിട്ടുള്ള ജോലി പ്രവേശനം",
+    description: "സലൂണുകളിൽ ആവശ്യമായ പ്രധാന സേവനങ്ങൾ: ബ്ലോ ഡ്രൈ, ബേസിക് ഹെയർകട്ടുകൾ, ഫേഷ്യലുകൾ, ത്രെഡിംഗ്, വാക്സിംഗ്. 30 ദിവസത്തിനുള്ളിൽ ജോലിക്ക് തയ്യാറാകാം."
+  }
+];
+---
+
+<Layout 
+  title="എല്ലാ കോഴ്‌സുകളും 2026 | Livart Beauty Academy Kochi"
+  description="ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമിയിലെ 2026 കോഴ്‌സുകൾ. കോസ്‌മെറ്റോളജി, ബ്രൈഡൽ മേക്കപ്പ്, ഹെയർ ഡ്രസ്സിംഗ്, സ്കിൻ തെറാപ്പി കോഴ്‌സുകൾ."
+>
+  <div class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto mt-6">
+    
+    <!-- HEADER -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 mb-4">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="text-xs uppercase tracking-widest text-primary font-bold">2026 ഔദ്യോഗിക പ്രോസ്പെക്ടസ്</span>
+      </div>
+      <h1 class="font-display-xl text-3xl sm:text-5xl lg:text-[56px] text-white tracking-tight mb-4">
+        ലിവ്ആർട്ട് ബ്യൂട്ടി കോഴ്‌സുകൾ.
+      </h1>
+      <p class="font-body-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        കേന്ദ്ര സർക്കാർ അംഗീകാരത്തോടെ (B&WSSC), ലൈവ് മോഡലുകളിൽ 100% പ്രായോഗിക പരിശീലനം നൽകുന്ന കേരളത്തിലെ പ്രമുഖ ബ്യൂട്ടി അക്കാദമി.
+      </p>
+    </div>
+
+    <!-- 1. FLAGSHIP COSMETOLOGY -->
+    <div class="mb-16">
+      <div class="border-b border-white/10 pb-4 mb-8">
+        <span class="text-xs uppercase tracking-widest text-primary font-bold">പ്രധാന കോഴ്‌സ്</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-white">സമ്പൂർണ്ണ കോസ്‌മെറ്റോളജി പ്രോഗ്രാമുകൾ</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {mainCosmetology.map(c => (
+          <div class="p-8 rounded-3xl bg-[#131418] border border-white/10 hover:border-primary/50 shadow-xl flex flex-col justify-between transition-all">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">{c.tag}</span>
+                <span class="text-xs text-white/60 font-semibold">{c.duration}</span>
+              </div>
+              <h3 class="font-headline-md text-2xl font-bold text-white mb-3">{c.title}</h3>
+              <p class="text-sm text-white/70 mb-6 leading-relaxed">{c.description}</p>
+              
+              <div class="space-y-2 mb-8">
+                {c.highlights.map(h => (
+                  <div class="flex items-center gap-2 text-xs text-white/80">
+                    <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                    <span>{h}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+              <a href={c.url} class="flex-1 py-3 bg-primary hover:bg-[#d40002] text-white text-xs font-bold uppercase tracking-wider text-center rounded-xl transition-colors">
+                വിവരങ്ങൾ കാണുക
+              </a>
+              <a href="#enroll" class="px-5 py-3 bg-white/5 hover:bg-white/10 text-white text-xs font-semibold uppercase tracking-wider text-center rounded-xl border border-white/10 transition-colors">
+                ഫീസ് ചോദിക്കാം
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 2. SPECIALIZED DIPLOMAS -->
+    <div class="mb-20">
+      <div class="border-b border-white/10 pb-4 mb-8">
+        <span class="text-xs uppercase tracking-widest text-primary font-bold">പ്രത്യേക ഡിപ്ലോമകൾ</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-white">ഹെയർ, സ്കിൻ, മേക്കപ്പ് കോഴ്‌സുകൾ</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {specializedCourses.map(sc => (
+          <div class="p-6 rounded-2xl bg-[#131418] border border-white/10 hover:border-primary/40 shadow-lg flex flex-col justify-between transition-all">
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <span class="text-[11px] font-bold text-primary uppercase tracking-wider">{sc.tag}</span>
+                <span class="text-xs text-white/50">{sc.duration}</span>
+              </div>
+              <h3 class="font-headline-sm text-lg font-bold text-white mb-2">{sc.title}</h3>
+              <p class="text-xs text-white/70 leading-relaxed mb-6">{sc.description}</p>
+            </div>
+            
+            <a href={sc.url} class="w-full py-2.5 bg-white/5 hover:bg-primary text-white text-xs font-bold uppercase tracking-wider text-center rounded-lg border border-white/10 transition-colors block">
+              സിലബസ് കാണുക &rarr;
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 3. LEAD CAPTURE -->
+    <div id="enroll" class="max-w-[900px] mx-auto py-12 scroll-mt-20">
+      <CourseLeadForm 
+        courseName="General Admissions Inquiry 2026"
+        title="കോഴ്‌സ് സിലബസും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടുക"
+        subtitle="താഴെ നിങ്ങളുടെ വിവരങ്ങൾ നൽകുക. ലിവ്ആർട്ടിന്റെ വിശദമായ പ്രോസ്പെക്ടസും ബാച്ച് വിവരങ്ങളും വാട്ട്‌സ്ആപ്പിൽ അയച്ചു നൽകുന്നതാണ്."
+        formId="ml-overview-lead-form"
+      />
+    </div>
+
+  </div>
+</Layout>

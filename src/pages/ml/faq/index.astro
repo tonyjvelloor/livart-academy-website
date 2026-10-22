@@ -1,0 +1,93 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "ലിവ്ആർട്ട് അക്കാദമിയിലെ കോഴ്‌സ് ഫീസ് എത്രയാണ്?",
+    answer: "കോഴ്‌സിന്റെ കാലയളവിനും സിലബസിനും അനുസരിച്ച് ഫീസിൽ വ്യത്യാസമുണ്ടാകും (10 ദിവസത്തെ ഫാസ്ട്രാക്ക് ബ്രൈഡൽ കോഴ്‌സ് മുതൽ 12 മാസത്തെ മാസ്റ്റർ കോസ്മെറ്റോളജി പ്രോഗ്രാം വരെ). ഞങ്ങളുടെ അഡ്മിഷൻ ഫോം വഴി നിങ്ങളുടെ വാട്ട്‌സ്ആപ്പിലേക്ക് വിശദമായ ഫീസ് വിവരങ്ങൾ ഉടനടി ലഭ്യമാക്കാവുന്നതാണ്."
+  },
+  {
+    question: "ലിവ്ആർട്ട് അക്കാദമിയുടെ സർട്ടിഫിക്കറ്റുകൾക്ക് ഗവൺമെന്റ് അംഗീകാരമുണ്ടോ?",
+    answer: "അതെ. കേന്ദ്ര നൈപുണ്യ വികസന മന്ത്രാലയത്തിന് (MSDE) കീഴിലുള്ള ബ്യൂട്ടി & വെൽനസ്സ് സെക്ടർ സ്കിൽ കൗൺസിൽ (B&WSSC) അംഗീകാരമുള്ളതാണ് ലിവ്ആർട്ട് അക്കാദമി. ഇന്ത്യയിലുടനീളവും വിദേശത്തും അംഗീകരിക്കപ്പെടുന്ന ഔദ്യോഗിക യോഗ്യതയാണ് ഈ സർട്ടിഫിക്കറ്റുകൾ."
+  },
+  {
+    question: "മുൻപരിചയമില്ലാത്ത തുടക്കക്കാർക്ക് ഈ കോഴ്സുകളിൽ ചേരാൻ സാധിക്കുമോ?",
+    answer: "തീർച്ചയായും സാധിക്കും. ഞങ്ങളുടെ പല മുൻനിര വിദ്യാർത്ഥികളും ബ്യൂട്ടി മേഖലയിൽ യാതൊരു മുൻപരിചയവുമില്ലാതെ എത്തിയവരാണ്. അടിസ്ഥാന ശരീരശാസ്ത്രം (anatomy), ഉപകരണങ്ങളുടെ ഉപയോഗം എന്നിവയിൽ തുടങ്ങി അഡ്വാൻസ്ഡ് എഡിറ്റോറിയൽ ടെക്നിക്കുകൾ വരെ പടിപടിയായി പരിശീലിപ്പിക്കുന്നു."
+  },
+  {
+    question: "പ്രാക്ടിക്കൽ ക്ലാസുകൾക്കായി ലൈവ് ഹ്യൂമൻ മോഡലുകൾ ലഭ്യമാണോ?",
+    answer: "അതെ. ഡമ്മികളിൽ മാത്രം പരിശീലനം പരിമിതപ്പെടുത്തുന്ന സാധാരണ ഇൻസ്റ്റിറ്റ്യൂട്ടുകളിൽ നിന്ന് വ്യത്യസ്തമായി, ബ്രൈഡൽ മേക്കപ്പ്, ഫേഷ്യൽ, ഹെയർകട്ടിംഗ് എന്നിവയിലെല്ലാം ലൈവ് മോഡലുകളിൽ നേരിട്ട് വർക്ക് ചെയ്യാനുള്ള അവസരം ലിവ്ആർട്ട് നൽകുന്നു."
+  },
+  {
+    question: "കോസ്മെറ്റോളജി കോഴ്‌സ് കഴിഞ്ഞാൽ ലഭിക്കുന്ന തൊഴിലവസരങ്ങൾ എന്തൊക്കെയാണ്?",
+    answer: "ഫ്രീലാൻസ് ബ്രൈഡൽ മേക്കപ്പ് ആർട്ടിസ്റ്റ്, പ്രമുഖ ബ്രാൻഡ് ട്രെയിനർമാർ (MAC, സെഫോറ), ഫാഷൻ/റൺവേ ആർട്ടിസ്റ്റ്, സിനിമാ-സീരിയൽ മേക്കപ്പ്, സ്വന്തമായി പ്രീമിയം സലൂൺ ബിസിനസ്സ് എന്നിങ്ങനെ നിരവധി ഉയർന്ന വരുമാനമുള്ള കരിയർ സാധ്യതകൾ തുറന്നുകിട്ടുന്നു. പ്ലേസ്‌മെന്റ് സഹായവും ബിസിനസ്സ് മാർഗ്ഗനിർദ്ദേശങ്ങളും ഞങ്ങൾ നൽകുന്നു."
+  },
+  {
+    question: "കോസ്മെറ്റോളജി കരിക്കുലത്തിൽ എന്തൊക്കെയാണ് ഉൾപ്പെടുന്നത്?",
+    answer: "12 മാസത്തെയും 6 മാസത്തെയും കോസ്മെറ്റോളജി പ്രോഗ്രാമുകളിൽ ഹെയർ ഡ്രസ്സിംഗ് (13+ കട്ടുകൾ, നാനോപ്ലാസ്റ്റിയ, ബോട്ടോക്സ്, കളറിംഗ്), സ്കിൻ തെറാപ്പി (ഹൈഡ്ര ഫേഷ്യൽ, കെമിക്കൽ പീൽസ്), മേക്കപ്പ് ആർട്ടിസ്ട്രി (3 ബ്രൈഡൽ ലുക്കുകൾ, എയർബ്രഷ്, സാരി ഡ്രേപ്പിംഗ്), ടൂൾകിറ്റുകൾ, കൂടാതെ 1 മാസത്തെ നിർബന്ധിത സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പും ഉൾപ്പെടുന്നു."
+  }
+];
+---
+
+<Layout title="പതിവായി ചോദിക്കുന്ന ചോദ്യങ്ങൾ (FAQ) | Livart Beauty Academy">
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1000px] mx-auto mt-8">
+    <div class="text-center mb-space-xl">
+      <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">വിവരങ്ങൾ & സംശയനിവാരണം</span>
+      <h1 class="font-display-xl text-display-xl text-on-surface tracking-tight mb-space-md">അഡ്മിഷൻ FAQ.</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        ഞങ്ങളുടെ കരിക്കുലം, ഗവൺമെന്റ് അംഗീകാരങ്ങൾ, ഫീസ് രീതികൾ, തൊഴിലവസരങ്ങൾ എന്നിവയെക്കുറിച്ചുള്ള പ്രധാന വിവരങ്ങൾ.
+      </p>
+    </div>
+
+    <div class="space-y-space-sm" id="faq-accordion">
+      {faqs.map((faq) => (
+        <div class="rounded-xl bg-surface-container-low overflow-hidden shadow-sm border border-outline-variant/15">
+          <button class="w-full p-space-lg flex items-center justify-between text-left focus:outline-none transition-colors hover:bg-surface-container faq-toggle">
+            <span class="font-headline-sm text-title-md text-on-surface font-semibold">{faq.question}</span>
+            <span class="material-symbols-outlined text-outline transition-transform duration-300">expand_more</span>
+          </button>
+          <div class="hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md leading-relaxed border-t border-surface-container-highest/30 pt-space-sm faq-content">
+            {faq.answer}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Structured Data for FAQPage -->
+    <script type="application/ld+json" set:html={`
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          ${faqs.map(faq => `{
+            "@type": "Question",
+            "name": "${faq.question}",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "${faq.answer.replace(/"/g, '\\"')}"
+            }
+          }`).join(',')}
+        ]
+      }
+    `} />
+    
+    <script>
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector('.material-symbols-outlined');
+          const isExpanded = !content?.classList.contains('hidden');
+          
+          // Close other drawers
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-toggle .material-symbols-outlined').forEach(i => (i as HTMLElement).style.transform = 'rotate(0deg)');
+
+          if (!isExpanded && content && icon) {
+            content.classList.remove('hidden');
+            (icon as HTMLElement).style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+    </script>
+  </section>
+</Layout>

@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../components/InstagramReelCard.astro';
+
+const skinDiplomaModules = [
+  { num: "01", title: "Introduction & Skin Science", desc: "Introduction to professional skin therapy • Anatomy & physiology of skin • Functions of dermal layers • In-depth skin types & pathological conditions." },
+  { num: "02", title: "Client Care & Salon Practice", desc: "Client consultation protocols • Professional ethics • Personal hygiene & therapist grooming • Product chemistry & selection • Trolley & bed preparation • Client draping." },
+  { num: "03", title: "Foundational Skin Treatments", desc: "Deep pore clean up • Bleach & specialized de-tan protocols • Basic facial massage procedures • Therapeutic masks & packs." },
+  { num: "04", title: "Advanced Clinical Treatments", desc: "High frequency machine treatments • Galvanic iontophoresis • Ultrasonic facials • Chemical exfoliation (peels) • Hydra facial machinery • Anti-aging & rejuvenating facial protocols." },
+  { num: "05", title: "Professional Manicure", desc: "Classic manicure • Luxury spa manicure • French manicure & polish application." },
+  { num: "06", title: "Waxing Techniques", desc: "Basic to advanced waxing • Strip and peel-off wax • Sensitive area protocols & post-wax soothing." },
+  { num: "07", title: "Professional Pedicure", desc: "Basic to advanced spa pedicure • Callus removal • Foot massage & therapeutic nail care." },
+  { num: "08", title: "Threading Mastery", desc: "Precision eyebrow shaping • Forehead, upper lip & full face threading techniques." }
+];
+
+const skin2MonthModules = [
+  { num: "01", title: "Introduction to Skin Care", desc: "Importance of clinical skin care • Role & career responsibility of a certified skin therapist." },
+  { num: "02", title: "Skin Science & Anatomy", desc: "Basic anatomy & physiology • Structure & function of skin • Skin analysis methods • Dermal pH balance • Product knowledge." },
+  { num: "03", title: "Consultation & Aftercare", desc: "Client skin assessment • Post-treatment home care recommendations • Allergy contraindications." },
+  { num: "04", title: "Facial Fundamentals", desc: "Fundamentals of facial therapy • Facial room & sterile trolley setup • Correct massage manipulation strokes." },
+  { num: "05", title: "Skin Concerns & Targeted Care", desc: "Understanding acne, hyperpigmentation, dryness, oiliness, and specialized corrective treatments." },
+  { num: "06", title: "Extensive Practical Training", desc: "Threading • De-tan treatment • Basic clean up • Basic facial • Waxing • Manicure • Pedicure • High frequency machine • Acne treatments." }
+];
+---
+
+<Layout 
+  title="Skin Therapy & Aesthetics Courses in Kochi | Livart Beauty Academy"
+  description="Master clinical aesthetics, Hydra Facials, High Frequency, and skin therapy at Livart Beauty Academy Kochi. 4-Month Diploma in Skin Therapy and 2-Month Skin Therapy Course with tool kit included."
+>
+  
+  <!-- HERO -->
+  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
+      <div>
+        <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Skin Aesthetics Academy • 2026 Admissions Open</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg lg:text-[60px] lg:leading-[68px] text-on-surface tracking-tight mb-6">
+          Skin Therapy & <span class="italic text-primary">Aesthetics Courses.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">
+          Master medical-grade skincare, Hydra facials, chemical peels, and electrotherapy. Train on advanced aesthetic machines and real clients with professional skin tool kits included.
+        </p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-outline-variant/20 py-6">
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tracks</span>
+            <strong class="font-title-md text-on-surface text-base">4M & 2M</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tool Kit</span>
+            <strong class="font-title-md text-on-surface text-base">Included</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Machine Training</span>
+            <strong class="font-title-md text-on-surface text-base">Hydra & High Freq</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Certification</span>
+            <strong class="font-title-md text-on-surface text-base">B&WSSC Affiliated</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">download</span>
+            Get Syllabus & Fee Details
+          </a>
+          <a href="#tracks" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
+            Compare 4M vs 2M
+          </a>
+        </div>
+      </div>
+      
+      <div class="relative h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-surface-container shadow-2xl">
+        <img fetchpriority="high" decoding="async" src="/images/academy-live/hair_makeup_skin_foundation.jpg" class="w-full h-full object-cover" alt="LivArt Clinical Skin Therapy and Facial Training" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+          <div class="inline-block px-3 py-1 bg-primary text-white text-xs uppercase tracking-widest font-bold rounded mb-2 w-max">
+            Tool Kit Provided
+          </div>
+          <h3 class="font-headline-sm text-white text-xl font-bold">Skin Therapist Professional Kit</h3>
+          <p class="text-white/80 font-body-sm text-sm mt-1">Extractor • Facial Brush • Threading Thread • Professional Facial Kit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS: 4-MONTH VS 2-MONTH -->
+  <section id="tracks" class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+      
+      <!-- 4 Months Diploma in Skin Therapy -->
+      <div class="bg-surface-container-low p-space-lg rounded-2xl border-2 border-primary/40 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-sm uppercase tracking-widest text-primary font-bold text-xs">Advanced Aesthetics</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold">4 Months</span>
+          </div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-3">Diploma in Skin Therapy</h2>
+          <p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            The definitive clinical skin program covering 8 complete modules. Learn electrotherapy, chemical peels, Hydra facials, manicure, pedicure, and waxing.
+          </p>
+          <div class="p-4 bg-surface-container rounded-xl mb-6 border border-outline-variant/15">
+            <span class="font-label-sm uppercase text-primary text-xs font-bold block mb-1">Tool Kit Included:</span>
+            <p class="font-body-sm text-on-surface-variant text-xs">Extractor • Facial Brush • Threading Thread • Professional Facial Kit</p>
+          </div>
+        </div>
+        <a href="#curriculum-4m" class="w-full py-3 bg-primary text-on-primary font-label-md uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary-fixed transition-colors">
+          View 8-Module Syllabus &rarr;
+        </a>
+      </div>
+
+      <!-- 2 Months Skin Therapy Course -->
+      <div class="bg-surface-container-low p-space-lg rounded-2xl border border-outline-variant/20 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-sm uppercase tracking-widest text-outline font-bold text-xs">Foundational Track</span>
+            <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-bold">2 Months</span>
+          </div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-3">Skin Therapy Course</h2>
+          <p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            Fast-track commercial skincare education covering skin analysis, massage manipulations, High Frequency acne treatments, cleanups, facials, waxing, and threading.
+          </p>
+          <div class="p-4 bg-surface-container rounded-xl mb-6 border border-outline-variant/15">
+            <span class="font-label-sm uppercase text-outline text-xs font-bold block mb-1">Tool Kit Included:</span>
+            <p class="font-body-sm text-on-surface-variant text-xs">Professional Facial Kit</p>
+          </div>
+        </div>
+        <a href="#curriculum-2m" class="w-full py-3 bg-surface-container-high text-on-surface font-label-md uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/30">
+          View 6-Module Syllabus &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-MONTH DIPLOMA MODULES (Page 8 of Prospectus) -->
+  <section id="curriculum-4m" class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="max-w-3xl mb-space-xl">
+        <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">Comprehensive 4-Month Curriculum</span>
+        <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Diploma in Skin Therapy Modules.</h2>
+        <p class="font-body-lg text-on-surface-variant mt-4">Structured into 8 comprehensive modules combining clinical dermatological theory with intensive hands-on practicals on models.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {skinDiplomaModules.map(m => (
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-colors flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-label-sm text-primary uppercase tracking-widest font-bold text-xs">Module {m.num}</span>
+              </div>
+              <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">{m.title}</h3>
+              <p class="font-body-sm text-on-surface-variant text-sm leading-relaxed">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SKIN AESTHETICS IN MOTION (REELS) -->
+  <section class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">Clinical Practicals</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Skin Care & Dermal Therapy</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>Watch on @livart_academy</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/instagram/DT7y-uAkh47.jpg"
+          category="Dermal Aesthetics"
+          title="Pre-Bridal Clinical Skin Therapy"
+          description="In-depth pore cleansing, hydration infusion, and soothing botanical masks on live models."
+          badge="@livart_academy"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/instagram/DRXFRQCEgpm.jpg"
+          category="Glass Skin"
+          title="Hydra Glow & Complexion Therapy"
+          description="Ultra-hydrating clinical skin treatment creating radiant glass-skin texture and high luminosity."
+          badge="@livart_academy"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/instagram/C88tG9iSEKp.jpg"
+          category="Spa Therapies"
+          title="Deluxe Pedicure & Foot Spa Therapy"
+          description="Exfoliation, callus reduction, and therapeutic reflex massage techniques demonstrated in studio."
+          badge="@livart_academy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE SECTION -->
+  <section id="enroll" class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Diploma in Skin Therapy (4 Months)"
+      title="Request Skin Course Syllabus & Fee Structure"
+      subtitle="Fill in your details below to receive the complete Skin Therapy prospectus, machine training overview, toolkit details, and fee schedule via WhatsApp."
+      formId="skin-lead-form"
+    />
+  </section>
+
+  <!-- COURSE SCHEMA MARKUP -->
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Diploma in Skin Therapy & Clinical Aesthetics",
+      "description": "Comprehensive skin therapy and esthetician courses in Kochi covering anatomy, Hydra facials, High frequency, chemical exfoliation, and professional tool kits at Livart Beauty Academy.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Livart Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://livart.co.in"
+      }
+    }
+  `} />
+</Layout>

@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(entry => ({
+    params: { slug: entry.id }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <article class="pt-32 pb-16 px-margin-sm lg:px-margin-lg max-w-[800px] mx-auto text-on-surface">
+    <div class="mb-12 border-b border-outline-variant/20 pb-8">
+      <a href="/blog/" class="font-label-sm text-primary uppercase tracking-widest hover:underline mb-4 inline-block">&larr; Back to Blog</a>
+      <h1 class="font-display-lg text-display-lg lg:text-[56px] lg:leading-[64px] tracking-tight mb-6">
+        {entry.data.title.split('|')[0].trim()}
+      </h1>
+    </div>
+    
+    <div class="prose prose-invert prose-p:text-on-surface-variant prose-headings:text-on-surface prose-a:text-primary max-w-none">
+      <Content />
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,151 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+
+const campusShots = [
+  { img: "/images/academy-live/bridal_masterclass_pathadipalam.jpg", title: "ബ്രൈഡൽ അറ്റ്ലിയർ സ്റ്റുഡിയോ", desc: "4K ഫോട്ടോഗ്രാഫിക്കും വെഡ്ഡിംഗ് ട്രയലുകൾക്കുമായി സജ്ജീകരിച്ചിരിക്കുന്ന ഹൈ-ലൂമൻ സ്റ്റേഷനുകൾ." },
+  { img: "/images/academy-live/loreal_hair_spa_practical.jpg", title: "ഹെയർ ആർക്കിടെക്ചർ ഫ്ലോർ", desc: "പ്രൊഫഷണൽ വാഷ് ബേസിനുകൾ, തെർമൽ സ്റ്റൈലിംഗ് ടൂളുകൾ, ടെക്സ്ചറൈസിംഗ് സെറ്റപ്പുകൾ." },
+  { img: "/images/academy-live/hair_makeup_skin_foundation.jpg", title: "ക്ലിനിക്കൽ എസ്തെറ്റിക്സ് ലാബ്", desc: "ഹൈഡ്ര ഫേഷ്യൽ മെഷീനുകൾ, ഇലക്ട്രോതെറാപ്പി യൂണിറ്റുകൾ, സ്റ്റെറൈൽ സ്കിൻകെയർ ബെഡുകൾ." },
+  { img: "/images/academy-live/livart_academy_campus_overview.jpg", title: "ലൈവ് മോഡൽ ഇവാലുവേഷൻ ബേ", desc: "അധ്യാപകരുടെ നേരിട്ടുള്ള നിരീക്ഷണത്തിൽ വിദ്യാർത്ഥികൾ പ്രാക്ടിക്കൽ പരീക്ഷകൾ ചെയ്യുന്ന സ്ഥലം." }
+];
+
+const campusReels = [
+  {
+    url: "https://www.instagram.com/livart_academy/reel/Ddv_Ggpy6UK/",
+    image: "/images/academy-live/assumption_college_collaboration.jpg",
+    category: "ഇൻസ്റ്റിറ്റ്യൂഷണൽ",
+    title: "അസംപ്ഷൻ കോളേജ് വർക്ക്ഷോപ്പ്",
+    description: "കോളേജ് വിദ്യാർത്ഥികൾക്കായി സംഘടിപ്പിച്ച ബ്യൂട്ടി വർക്ക്ഷോപ്പും സ്കിൽ ഡെവലപ്‌മെന്റ് സെഷനും."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DbnCA94N3Ns/",
+    image: "/images/academy-live/ezmera_product_industry_visit.jpg",
+    category: "ഇൻഡസ്ട്രി വിസിറ്റ്",
+    title: "Ezmera ബ്യൂട്ടി പ്രോഡക്റ്റ് എക്സ്പോഷർ",
+    description: "പ്രീമിയം കോസ്മെറ്റിക് ഫോർമുലേഷനുകൾ, ചേരുവകൾ, ഇൻഡസ്ട്രി ട്രെൻഡുകൾ എന്നിവ നേരിട്ട് കണ്ടറിയുന്നു."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DYj6lcJNsh5/",
+    image: "/images/academy-live/bwssc_diploma_cosmetology_gov.jpg",
+    category: "മൈൽസ്റ്റോൺ",
+    title: "B&WSSC സർട്ടിഫിക്കറ്റ് വിതരണ ദിനം",
+    description: "ഗവൺമെന്റ് അംഗീകൃത സർട്ടിഫിക്കറ്റുകൾ കരസ്ഥമാക്കിയ വിദ്യാർത്ഥികളുടെ ബിരുദദാന ചടങ്ങ്."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DcfyHIgoAVN/",
+    image: "/images/academy-live/onam_campus_celebration.jpg",
+    category: "ക്യാമ്പസ് ലൈഫ്",
+    title: "ഓണാഘോഷവും ക്രിയേറ്റീവ് വർക്കുകളും",
+    description: "ഊർജ്ജസ്വലമായ ക്യാമ്പസ് അന്തരീക്ഷവും പരമ്പരാഗത ഫെസ്റ്റീവ് സ്റ്റൈലിംഗും."
+  }
+];
+---
+
+<Layout 
+  title="ക്യാമ്പസ് ടൂർ & സ്റ്റുഡിയോ സൗകര്യങ്ങൾ | Livart Beauty Academy Kochi"
+  description="കളമശ്ശേരിയിലെ ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമിയുടെ അത്യാധുനിക സ്റ്റുഡിയോ സൗകര്യങ്ങൾ നേരിട്ട് കണ്ടറിയാം. മോഡേൺ വർക്ക്സ്റ്റേഷനുകൾ, ക്ലിനിക്കൽ സ്കിൻ ലാബുകൾ, ബ്രൈഡൽ അറ്റ്ലിയർ ബേകൾ."
+>
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto mt-8">
+    
+    <!-- HEADER -->
+    <div class="mb-space-xl text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">കളമശ്ശേരി, കൊച്ചി</span>
+      </div>
+      <h1 class="font-display-xl text-display-xl lg:text-[56px] text-on-surface tracking-tight mb-space-md">
+        ലിവ്ആർട്ട് ക്യാമ്പസിലേക്ക് സ്വാഗതം.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        കളമശ്ശേരി പത്തടിപ്പാലം മടുകപ്പള്ളി ടവറിലെ (പത്തടിപ്പാലം മെട്രോ പില്ലർ 384 ന് സമീപം) ഞങ്ങളുടെ ഫ്ലാഗ്ഷിപ്പ് അക്കാദമിയിൽ അന്താരാഷ്ട്ര നിലവാരമുള്ള സലൂൺ വർക്ക്സ്റ്റേഷനുകളും, ക്ലിനിക്കൽ സ്കിൻ ഉപകരണങ്ങളും, പ്രത്യേക ബ്രൈഡൽ ബേകളും ഒരുക്കിയിരിക്കുന്നു.
+      </p>
+    </div>
+
+    <!-- CAMPUS GALLERY -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md mb-space-xl">
+      {campusShots.map(shot => (
+        <div class="group relative rounded-2xl overflow-hidden bg-surface-container shadow-xl aspect-[16/10]">
+          <img 
+            src={shot.img} 
+            alt={shot.title} 
+            loading="lazy" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-6 sm:p-8">
+            <h3 class="font-headline-sm text-xl sm:text-2xl font-bold text-white mb-1">{shot.title}</h3>
+            <p class="text-white/80 font-body-sm text-xs sm:text-sm max-w-md">{shot.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CAMPUS LIFE & INDUSTRY REELS -->
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">ക്യാമ്പസ് അന്തരീക്ഷം</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">ക്യാമ്പസ് ജീവിതവും ഇൻഡസ്ട്രി എക്സ്പോഷറും</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>ഇൻസ്റ്റാഗ്രാമിൽ കൂടുതൽ കാണാം</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {campusReels.map(reel => (
+          <InstagramReelCard 
+            url={reel.url}
+            image={reel.image}
+            category={reel.category}
+            title={reel.title}
+            description={reel.description}
+          />
+        ))}
+      </div>
+    </div>
+
+    <!-- VISIT IN PERSON CTA -->
+    <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/15 shadow-lg text-center max-w-3xl mx-auto mb-space-xl">
+      <span class="material-symbols-outlined text-primary text-4xl mb-2">storefront</span>
+      <h2 class="font-headline-sm text-2xl font-bold text-on-surface mb-2">കളമശ്ശേരി ക്യാമ്പസ് നേരിട്ട് സന്ദർശിക്കാം</h2>
+      <p class="font-body-md text-on-surface-variant text-sm mb-6 max-w-lg mx-auto">
+        തിങ്കൾ മുതൽ വെള്ളി വരെ രാവിലെ 10 മുതൽ വൈകിട്ട് 5 വരെ നേരിട്ട് വന്ന് കൗൺസിലിംഗ് നേടാം. അധ്യാപകരുമായി സംസാരിക്കാനും സൗകര്യങ്ങൾ നേരിട്ട് കാണാനും അവസരം.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a 
+          href="https://share.google/OCj5l70Grn7Wxu8WR" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="px-6 py-3 bg-surface-container-high border border-outline-variant/30 font-label-md text-xs uppercase tracking-wider font-bold rounded-lg hover:border-primary transition-colors text-on-surface flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-base">pin_drop</span>
+          ഗൂഗിൾ പ്രൊഫൈലും മാപ്പും കാണുക
+        </a>
+        <a 
+          href="tel:+919633211151" 
+          class="px-6 py-3 bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-bold rounded-lg hover:bg-primary-fixed transition-colors shadow flex items-center gap-2"
+        >
+          <span class="material-symbols-outlined text-base">call</span>
+          അഡ്മിഷൻ ഡെസ്കിലേക്ക് വിളിക്കുക
+        </a>
+      </div>
+    </div>
+
+    <!-- LEAD CAPTURE -->
+    <div class="py-space-xl max-w-[900px] mx-auto">
+      <CourseLeadForm 
+        courseName="General Admissions Inquiry 2026"
+        title="ക്യാമ്പസ് വിസിറ്റ് ഷെഡ്യൂൾ ചെയ്യാം"
+        subtitle="താഴെ വിവരങ്ങൾ നൽകുക. ഞങ്ങളുടെ അഡ്മിഷൻ കൗൺസിലർ വാട്ട്‌സ്ആപ്പിൽ ബന്ധപ്പെട്ട് നിങ്ങളുടെ സന്ദർശന തീയതി സ്ഥിരീകരിക്കുന്നതാണ്."
+        formId="ml-tour-lead-form"
+      />
+    </div>
+
+  </section>
+</Layout>

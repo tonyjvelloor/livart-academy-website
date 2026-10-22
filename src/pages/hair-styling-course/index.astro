@@ -1,0 +1,312 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../components/InstagramReelCard.astro';
+
+const hairDressingModules = [
+  {
+    num: "01",
+    title: "Salon Basics & Client Hygiene",
+    desc: "Salon manners, grooming & hygiene • Safety, tools & sterilization • Shampoo & conditioning • Blow-dry setting."
+  },
+  {
+    num: "02",
+    title: "Hair Fundamentals & Anatomy",
+    desc: "Hair anatomy & structure • Terms & methods of hair cutting • Scissors & comb mastery • Parting & sectioning geometry • Face shape analysis."
+  },
+  {
+    num: "03",
+    title: "Basic to Advanced Precision Haircuts",
+    desc: "One-length & variations • Forward graduation • Square layers • Stationary cut • Transient/transition cut • Round layers • Butterfly cut • Bob & Graduated bob • Bangs, fringes & curtain bangs • Wolf cut • Long layers • Customized commercial haircuts."
+  },
+  {
+    num: "04",
+    title: "Relaxation & Scalp Treatments",
+    desc: "Professional oil massage techniques • Hair spa therapy • Clinical anti-dandruff treatments."
+  },
+  {
+    num: "05",
+    title: "Comprehensive Hair Styling & Artistry",
+    desc: "Blow-dry settings • Ironing, crimping & tongs • Open hair styles • Front variations & updos • Bun settings & ponytails • Back combing • Hair extension fixing • Hair accessories styling • Pulling, spreading & pinching techniques • Half pony variations • Multi-strand braiding styles."
+  },
+  {
+    num: "06",
+    title: "Advanced Hair Colouring Chemistry",
+    desc: "Colour theories & wheel • Product knowledge • Foiling techniques • Root touch-ups • Global colouring • Highlights & Global + highlights • Balayage techniques • Ombre blending."
+  },
+  {
+    num: "07",
+    title: "Clinical Texturizing Treatments",
+    desc: "Hair smoothing, Hair Botox, Nanoplastia (in-depth theory & practical on models) • Hair bonds, texture, structure & chemistry."
+  }
+];
+
+const diplomaInHairModules = [
+  { num: "01", title: "Salon Basics", desc: "Salon manners, grooming & hygiene • Safety & sterilization • Shampoo, conditioning & blow-dry settings." },
+  { num: "02", title: "Hair Fundamentals", desc: "Hair anatomy • Cutting terminology • Scissors & comb grip • Parting & sectioning • Face shapes." },
+  { num: "03", title: "Core Hair Cuts", desc: "One-length • One-length variation • Forward graduation • Square layers • Classic Bob cut • Bangs." },
+  { num: "04", title: "Hair & Scalp Care", desc: "Traditional oil massage • Hair spa treatments • Anti-dandruff scalp protocols." },
+  { num: "05", title: "Hair Styling", desc: "Commercial hair styling • Bun setting • Back combing • Front variations • Hair updos • Product knowledge." },
+  { num: "06", title: "Hair Colouring", desc: "Colour theory • Product selection • Root touch-up • Global colour • Global + highlights." },
+  { num: "07", title: "Texture Treatments", desc: "Hair smoothing & Keratin treatments (complete theory and practical execution on live clients)." }
+];
+---
+
+<Layout 
+  title="Hair Dressing & Hair Styling Courses in Kochi | Livart Beauty Academy"
+  description="Master professional hair dressing and styling in Kochi. Offering 4-Month Diploma in Hair Dressing, 2-Month Diploma in Hair, and Short-Term precision cutting workshops with tool kits included."
+>
+  
+  <!-- HERO -->
+  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
+      <div>
+        <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Hair Academy • 2026 Admissions Open</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg lg:text-[60px] lg:leading-[68px] text-on-surface tracking-tight mb-6">
+          Hair Dressing & <span class="italic text-primary">Styling Courses.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">
+          From structural haircutting and Nanoplastia to creative Balayage and editorial updos. Learn on professional cutting dummies and live clients with your own professional tool kit.
+        </p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-outline-variant/20 py-6">
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tracks</span>
+            <strong class="font-title-md text-on-surface text-base">4M & 2M</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tool Kit</span>
+            <strong class="font-title-md text-on-surface text-base">Full Kit Included</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Practicals</span>
+            <strong class="font-title-md text-on-surface text-base">Dummy & Live Models</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Certification</span>
+            <strong class="font-title-md text-on-surface text-base">B&WSSC Affiliated</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">download</span>
+            Get Syllabus & Fee Details
+          </a>
+          <a href="#curriculum" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
+            Explore 7 Modules
+          </a>
+        </div>
+      </div>
+      
+      <div class="relative h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-surface-container shadow-2xl">
+        <img fetchpriority="high" decoding="async" src="/images/academy-live/hair_curling_tongs_practical.jpg" class="w-full h-full object-cover" alt="LivArt Hair Dressing and Thermal Styling Practical Session" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+          <div class="inline-block px-3 py-1 bg-primary text-white text-xs uppercase tracking-widest font-bold rounded mb-2 w-max">
+            Included in Course
+          </div>
+          <h3 class="font-headline-sm text-white text-xl font-bold">Personal Professional Hair Tool Kit</h3>
+          <p class="text-white/80 font-body-sm text-sm mt-1">Cutting Dummy (1) • Comb Set • Cutting Scissors • Thinning Scissors • Section Clips • Professional Dryer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS: 4-MONTH VS 2-MONTH -->
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+      
+      <!-- 4 Months Diploma in Hair Dressing -->
+      <div class="bg-surface-container-low p-space-lg rounded-2xl border-2 border-primary/40 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-sm uppercase tracking-widest text-primary font-bold text-xs">Master Diploma</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold">4 Months</span>
+          </div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-3">Diploma in Hair Dressing</h2>
+          <p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            The definitive course for master hair stylists. Covers 13+ precision haircuts (Butterfly, Wolf, Graduated Bob), Nanoplastia, Botox, Balayage, Ombre, and high-level bridal updos.
+          </p>
+          <div class="p-4 bg-surface-container rounded-xl mb-6 border border-outline-variant/15">
+            <span class="font-label-sm uppercase text-primary text-xs font-bold block mb-1">Tool Kit Included:</span>
+            <p class="font-body-sm text-on-surface-variant text-xs">Cutting Dummy (1) • Comb Set • Cutting Scissors • Thinning Scissors • Section Clips • Dryer</p>
+          </div>
+        </div>
+        <a href="#curriculum-4m" class="w-full py-3 bg-primary text-on-primary font-label-md uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary-fixed transition-colors">
+          View 4-Month Syllabus &rarr;
+        </a>
+      </div>
+
+      <!-- 2 Months Diploma in Hair -->
+      <div class="bg-surface-container-low p-space-lg rounded-2xl border border-outline-variant/20 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-sm uppercase tracking-widest text-outline font-bold text-xs">Accelerated Track</span>
+            <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-bold">2 Months</span>
+          </div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-3">Diploma in Hair</h2>
+          <p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            Fast-paced commercial hair training covering essential salon cutting, Keratin, Smoothing, Global colour, root touch-ups, and commercial styling.
+          </p>
+          <div class="p-4 bg-surface-container rounded-xl mb-6 border border-outline-variant/15">
+            <span class="font-label-sm uppercase text-outline text-xs font-bold block mb-1">Tool Kit Included:</span>
+            <p class="font-body-sm text-on-surface-variant text-xs">Cutting Dummy • Cutting Comb • Cutting Scissors • Thinning Scissors • Section Clips</p>
+          </div>
+        </div>
+        <a href="#curriculum-2m" class="w-full py-3 bg-surface-container-high text-on-surface font-label-md uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/30">
+          View 2-Month Syllabus &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-MONTH SYLLABUS BREAKDOWN (Page 6 of Prospectus) -->
+  <section id="curriculum-4m" class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="max-w-3xl mb-space-xl">
+        <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">Full 4-Month Curriculum</span>
+        <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Diploma in Hair Dressing Modules.</h2>
+        <p class="font-body-lg text-on-surface-variant mt-4">Every module includes both rigorous theory and hands-on practical application on dummies and live models.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {hairDressingModules.map(m => (
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-colors flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-label-sm text-primary uppercase tracking-widest font-bold text-xs">Module {m.num}</span>
+              </div>
+              <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">{m.title}</h3>
+              <p class="font-body-sm text-on-surface-variant text-sm leading-relaxed">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SHORT-TERM HAIR COURSES & WORKSHOPS (Page 12 of Prospectus) -->
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-space-xl">
+      <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">Short-Term Certifications</span>
+      <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Specialized Hair Workshops.</h2>
+      <p class="font-body-md text-on-surface-variant mt-3">Targeted skill upgrades for existing stylists and freshers looking for focused mastery:</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/15">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">Short-Term Specialization</span>
+        <h4 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Advanced Hair Cutting</h4>
+        <p class="font-body-sm text-on-surface-variant mb-4 text-xs">Exclusive focus on trending precision and textured haircuts:</p>
+        <ul class="text-xs space-y-1.5 text-outline">
+          <li>• Butterfly cut & Wolf cut</li>
+          <li>• Curtain bangs & Customized layers</li>
+          <li>• Stationary cut & Transient cut</li>
+          <li>• Round layers & Long layers</li>
+        </ul>
+      </div>
+
+      <div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/15">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">Short-Term Track</span>
+        <h4 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Hair Colouring Masterclass</h4>
+        <p class="font-body-sm text-on-surface-variant mb-4 text-xs">Dedicated colour chemistry and advanced placement techniques:</p>
+        <ul class="text-xs space-y-1.5 text-outline">
+          <li>• Colour theory, schemes & neutralization</li>
+          <li>• Balayage, Ombre & French Foiling</li>
+          <li>• Root touch-ups & Grey coverage</li>
+          <li>• Global colour + highlight combinations</li>
+        </ul>
+      </div>
+
+      <div class="p-6 bg-surface-container-low rounded-xl border border-outline-variant/15">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">Short-Term / Workshop</span>
+        <h4 class="font-headline-sm text-xl font-bold text-on-surface mb-2">Hair Styling & Updos</h4>
+        <p class="font-body-sm text-on-surface-variant mb-4 text-xs">Basic, Advanced, and Combo Styling Workshops:</p>
+        <ul class="text-xs space-y-1.5 text-outline">
+          <li>• Bridal bun settings & flower arrangements</li>
+          <li>• Multi-strand textured braiding</li>
+          <li>• Tong curling, crimping & volume blow-dry</li>
+          <li>• Hair extension fixing & accessory placement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAIR ARTISTRY IN MOTION (REELS) -->
+  <section class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">Live Studio Practicals</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Hair Artistry & Cutting in Action</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>Watch More on Instagram</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/academy-live/loreal_hair_spa_practical.jpg"
+          category="Clinical Therapy"
+          title="L'Oréal Professional Hair Spa Practicals"
+          description="Live model scalp analysis, deep nourishing treatments, and thermal steam infusion rituals."
+          badge="@livart_academy"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/academy-live/hairstylist_graduation_ceremony.jpg"
+          category="Graduation"
+          title="Hairstylist Graduation & Certification"
+          description="Celebrating our successful hair styling graduates certified under National B&WSSC standards."
+          badge="Graduation Bay"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/academy-live/hair_diploma_bwssc_certified.jpg"
+          category="Govt Approved"
+          title="5 Months Hair Diploma in Action"
+          description="Govt of India approved hair dressing syllabus with live client cuts, styling, and texture re-bonding."
+          badge="B&WSSC Certified"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE SECTION -->
+  <section id="enroll" class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Diploma in Hair Dressing (4 Months)"
+      title="Request Hair Course Syllabus & Fee Structure"
+      subtitle="Fill in your details below to receive the complete Hair Dressing syllabus, toolkit breakdown, upcoming batch calendar, and fee schedule directly on WhatsApp."
+      formId="hair-lead-form"
+    />
+  </section>
+
+  <!-- COURSE SCHEMA MARKUP -->
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Diploma in Hair Dressing & Styling",
+      "description": "Professional 4-month and 2-month hair dressing diplomas in Kochi covering precision haircuts, Nanoplastia, Botox, Balayage, and styling tool kit at Livart Beauty Academy.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Livart Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://livart.co.in"
+      }
+    }
+  `} />
+</Layout>

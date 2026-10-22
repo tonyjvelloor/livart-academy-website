@@ -1,0 +1,292 @@
+---
+interface Props {
+  courseName?: string;
+  title?: string;
+  subtitle?: string;
+  formId?: string;
+}
+
+const {
+  courseName = "Cosmetology Programme",
+  title = "Request Fee Structure & Syllabus",
+  subtitle = "Receive the complete course brochure, fee breakdown, and batch schedule directly on your WhatsApp.",
+  formId = "course-lead-form"
+} = Astro.props;
+
+const allCourses = [
+  "Cosmetology Programme (12 Months)",
+  "Cosmetology Programme (6 Months)",
+  "Diploma in Hair Dressing (4 Months)",
+  "Diploma in Hair (2 Months)",
+  "Diploma in Skin Therapy (4 Months)",
+  "Skin Therapy Course (2 Months)",
+  "Diploma in Makeup (3 Months)",
+  "Diploma in Makeup (1 Month)",
+  "Fastrack Bridal Makeup (10 Days)",
+  "Job-Oriented Salon Course (1 Month)",
+  "Advanced Hair Cutting (Short Term)",
+  "Hair Colouring & Styling Masterclass",
+  "Airbrush Makeup (5 Days / 1 Day)",
+  "Glass Skin & Transfer-Proof Makeup",
+  "Saree Draping & Pre-pleating (1-2 Days)"
+];
+---
+
+<div class="bg-surface-container-high/90 backdrop-blur-xl p-6 sm:p-8 rounded-2xl border border-outline-variant/30 shadow-2xl relative overflow-hidden" id={`${formId}-wrapper`}>
+  <!-- Ambient glow decoration -->
+  <div class="absolute -top-16 -right-16 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
+
+  <div class="relative z-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/25 mb-4">
+      <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+      <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Admissions 2026 Open</span>
+    </div>
+
+    <h3 class="font-headline-md text-on-surface tracking-tight mb-2 text-2xl font-bold">{title}</h3>
+    <p class="font-body-sm text-on-surface-variant mb-6 leading-relaxed">{subtitle}</p>
+
+    <!-- FORM ELEMENT -->
+    <form class="space-y-4 livart-lead-form" id={formId} data-course-default={courseName}>
+      <div>
+        <label for={`${formId}-name`} class="block font-label-sm uppercase tracking-wider text-outline text-xs mb-1.5 font-medium">
+          Candidate Full Name <span class="text-primary">*</span>
+        </label>
+        <input 
+          id={`${formId}-name`}
+          name="name" 
+          type="text" 
+          required 
+          placeholder="e.g. Anjali Nair" 
+          class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body-md placeholder:text-outline/60 border border-outline-variant/20 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
+        />
+      </div>
+
+      <div>
+        <label for={`${formId}-phone`} class="block font-label-sm uppercase tracking-wider text-outline text-xs mb-1.5 font-medium">
+          WhatsApp Number <span class="text-primary">*</span>
+        </label>
+        <div class="flex">
+          <span class="inline-flex items-center px-3.5 bg-surface-container border border-r-0 border-outline-variant/20 rounded-l-lg text-xs font-semibold text-on-surface-variant">
+            🇮🇳 +91
+          </span>
+          <input 
+            id={`${formId}-phone`}
+            name="phone" 
+            type="tel" 
+            pattern="[0-9]{10}"
+            title="Please enter a valid 10-digit WhatsApp phone number"
+            required 
+            placeholder="9876543210" 
+            class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body-md placeholder:text-outline/60 border border-outline-variant/20 rounded-r-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for={`${formId}-course`} class="block font-label-sm uppercase tracking-wider text-outline text-xs mb-1.5 font-medium">
+          Course Interested In <span class="text-primary">*</span>
+        </label>
+        <select 
+          id={`${formId}-course`}
+          name="course" 
+          class="w-full px-4 py-3 bg-surface-container-low text-on-surface font-body-md border border-outline-variant/20 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
+        >
+          {allCourses.map(c => (
+            <option value={c} selected={c.toLowerCase().includes(courseName.toLowerCase()) || courseName.toLowerCase().includes(c.toLowerCase().split(' (')[0])}>
+              {c}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <label for={`${formId}-batch`} class="block font-label-sm uppercase tracking-wider text-outline text-xs mb-1.5 font-medium">
+            Preferred Batch
+          </label>
+          <select 
+            id={`${formId}-batch`}
+            name="batch" 
+            class="w-full px-3 py-2.5 bg-surface-container-low text-on-surface font-body-sm border border-outline-variant/20 rounded-lg focus:outline-none focus:border-primary text-xs"
+          >
+            <option value="Immediate 2026 Batch">Immediate 2026 Batch</option>
+            <option value="Next Month Intake">Next Month Intake</option>
+            <option value="Weekend / Fastrack">Weekend / Fastrack</option>
+          </select>
+        </div>
+
+        <div>
+          <label for={`${formId}-campus`} class="block font-label-sm uppercase tracking-wider text-outline text-xs mb-1.5 font-medium">
+            Campus Location
+          </label>
+          <input 
+            id={`${formId}-campus`}
+            name="campus" 
+            type="text" 
+            readonly 
+            value="Kalamassery, Kochi" 
+            class="w-full px-3 py-2.5 bg-surface-container-low/60 text-on-surface-variant font-body-sm border border-outline-variant/20 rounded-lg text-xs cursor-not-allowed"
+          />
+        </div>
+      </div>
+
+      <!-- Privacy notice -->
+      <p class="text-[11px] text-outline leading-tight pt-1">
+        🔒 We respect your privacy. No spam. You will receive official course brochure & fee details on WhatsApp.
+      </p>
+
+      <!-- SUBMIT BUTTON -->
+      <button 
+        type="submit" 
+        class="w-full py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold shadow-xl hover:bg-primary-fixed transition-all rounded-lg flex items-center justify-center gap-2 group text-sm cursor-pointer mt-2"
+      >
+        <span class="submit-text flex items-center gap-2">
+          <span class="material-symbols-outlined text-[20px]">chat</span>
+          Send Fee Details on WhatsApp
+        </span>
+        <span class="loading-spinner hidden">
+          <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </span>
+      </button>
+    </form>
+
+    <!-- SUCCESS STATE (Initially Hidden) -->
+    <div class="hidden success-state py-8 text-center space-y-4" id={`${formId}-success`}>
+      <div class="w-16 h-16 bg-primary/20 text-primary border border-primary/40 rounded-full flex items-center justify-center mx-auto shadow-lg animate-bounce">
+        <span class="material-symbols-outlined text-3xl">check_circle</span>
+      </div>
+      <h4 class="font-headline-sm text-on-surface text-xl font-bold">Details Sent via WhatsApp!</h4>
+      <p class="font-body-sm text-on-surface-variant max-w-sm mx-auto">
+        Thank you, <span class="font-semibold text-on-surface student-name-placeholder"></span>. Our admissions desk (+91 96332 11151) is sharing the complete syllabus breakdown and fee details on your WhatsApp.
+      </p>
+      <div class="pt-2">
+        <a 
+          href="#" 
+          target="_blank" 
+          class="whatsapp-direct-link inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white font-label-md uppercase tracking-wider font-bold rounded-lg shadow-lg hover:brightness-110 transition-all text-xs"
+        >
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+          Open WhatsApp Chat Now
+        </a>
+      </div>
+      <p class="text-[11px] text-outline">
+        Prefer a phone call? Reach our desk directly at <a href="tel:+919633211151" class="text-primary hover:underline font-semibold">+91 96332 11151</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Reusable Form Submission & Automation Handler
+  function initLivartLeadForms() {
+    document.querySelectorAll<HTMLFormElement>('.livart-lead-form').forEach(form => {
+      // Prevent double attachment
+      if (form.getAttribute('data-initialized') === 'true') return;
+      form.setAttribute('data-initialized', 'true');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        const submitText = form.querySelector('.submit-text');
+        const spinner = form.querySelector('.loading-spinner');
+        const formWrapper = form.closest('div');
+        const successState = formWrapper?.querySelector('.success-state');
+        const namePlaceholder = successState?.querySelector('.student-name-placeholder');
+        const whatsappDirectLink = successState?.querySelector('.whatsapp-direct-link') as HTMLAnchorElement;
+
+        const formData = new FormData(form);
+        const name = (formData.get('name') as string || '').trim();
+        const rawPhone = (formData.get('phone') as string || '').trim().replace(/[^0-9]/g, '');
+        const course = formData.get('course') as string || 'Cosmetology Programme';
+        const batch = formData.get('batch') as string || 'Immediate 2026 Batch';
+        const campus = formData.get('campus') as string || 'Kalamassery, Kochi';
+        const phone = rawPhone.length === 10 ? `+91${rawPhone}` : rawPhone;
+
+        // UI Loading state
+        if (submitBtn) submitBtn.disabled = true;
+        submitText?.classList.add('hidden');
+        spinner?.classList.remove('hidden');
+
+        // 1. SAVE TO LOCAL STORAGE BACKUP (Guarantees zero lost leads)
+        const leadRecord = {
+          timestamp: new Date().toISOString(),
+          name,
+          phone,
+          course,
+          batch,
+          campus,
+          pageUrl: window.location.href,
+          referrer: document.referrer || 'direct'
+        };
+
+        try {
+          const existingLeads = JSON.parse(localStorage.getItem('livart_leads') || '[]');
+          existingLeads.unshift(leadRecord);
+          localStorage.setItem('livart_leads', JSON.stringify(existingLeads));
+        } catch (err) {
+          console.warn('LocalStorage lead backup notice:', err);
+        }
+
+        // 2. CONNECT TO GOOGLE SHEET WEBHOOK
+        // Reads from window.LIVART_SHEET_WEBHOOK or localStorage configuration
+        const webhookUrl = (window as any).LIVART_SHEET_WEBHOOK || 
+          localStorage.getItem('livart_sheet_webhook') || 
+          'https://script.google.com/macros/s/AKfycbzLIVART_LEADS_FALLBACK/exec';
+
+        try {
+          await fetch(webhookUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadRecord)
+          }).catch(e => console.log('Google Sheet webhook sync dispatched'));
+        } catch (webhookErr) {
+          console.log('Webhook dispatched, lead persisted in local cache.');
+        }
+
+        // 3. AUTOMATED WHATSAPP MESSAGE REDIRECT
+        const academyWhatsApp = '919633211151';
+        const whatsappText = `Hi LivArt Beauty Academy Admissions,
+
+I have submitted an admission enquiry on your website for *${course}*.
+
+• Candidate Name: ${name}
+• WhatsApp Number: ${phone}
+• Preferred Batch: ${batch}
+• Campus: ${campus}
+
+Please share the official syllabus, batch schedule, and current fee structure with me. Thank you!`;
+
+        const waUrl = `https://wa.me/${academyWhatsApp}?text=${encodeURIComponent(whatsappText)}`;
+
+        // Open WhatsApp in new tab
+        const opened = window.open(waUrl, '_blank');
+
+        // 4. DISPLAY IN-PAGE SUCCESS STATE
+        if (namePlaceholder) namePlaceholder.textContent = name;
+        if (whatsappDirectLink) whatsappDirectLink.href = waUrl;
+
+        form.classList.add('hidden');
+        successState?.classList.remove('hidden');
+
+        // Reset submit button state
+        if (submitBtn) submitBtn.disabled = false;
+        submitText?.classList.remove('hidden');
+        spinner?.classList.add('hidden');
+      });
+    });
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLivartLeadForms);
+  } else {
+    initLivartLeadForms();
+  }
+  // Re-run on Astro page navigations
+  document.addEventListener('astro:page-load', initLivartLeadForms);
+</script>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://livart.co.in/sitemap-index.xml

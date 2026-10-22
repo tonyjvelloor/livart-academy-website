@@ -1,0 +1,288 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../components/InstagramReelCard.astro';
+
+const masterDiplomaModules = [
+  { num: "01", title: "Makeup Fundamentals & Skin Prep", desc: "Personal grooming • History & evolution of makeup • Skin types & preparation • Comprehensive makeup product knowledge." },
+  { num: "02", title: "Colour Theory & Base Makeup", desc: "Colour correction & concealing • Colour wheel & schemes • Foundation mixing for perfect skin matching • Flawless application & blending." },
+  { num: "03", title: "Cream Contouring & Face Definition", desc: "Cream contour application • Cream blush sculpting • Strategic liquid & cream highlighter placement." },
+  { num: "04", title: "Powder Techniques & Face Finishing", desc: "Baking & powder setting • Powder contouring • Powder brush techniques • Micro-fine highlighting." },
+  { num: "05", title: "Lip Architecture & Artistry", desc: "Lip contouring • Precision lip liner • Long-wear matte lipstick • Gloss application." },
+  { num: "06", title: "Eyebrow & Eye Artistry", desc: "Eyebrow shaping & filling • Eye contouring • Cut-crease & smoky eye techniques • Kajal • Gel eyeliner • False lash & contact lens application." },
+  { num: "07", title: "Advanced Saree Draping & Pleating", desc: "Pre-pleating & steam ironing • Body measurement & fitting • Box folding • Draping for lean, medium & heavy silhouettes • Hip pleats • Fluffy pleats • Mermaid & Lehenga draping." },
+  { num: "08", title: "Bridal & Editorial Demonstrations", desc: "Three bridal looks: Hindu, Christian & Muslim • Fashion makeup • Retro & Fantasy makeup • Transfer-proof makeup • Glass skin makeup • 4K HD & Airbrush makeup." },
+  { num: "09", title: "Hair Preparation & Tools", desc: "Hair preparation methods • Styling products & thermal protection • Professional blow-drying techniques." },
+  { num: "10", title: "Thermal Hair Styling Techniques", desc: "Micro-crimping • Tong curling • Flat iron sleek straightening • Strategic backcombing for volume." },
+  { num: "11", title: "Hairstyle Creation & Finishing", desc: "Textured bridal braids • Bun setting • Sleek & textured ponytails • Fresh & artificial flower setting • Front hairstyle variations." }
+];
+
+const oneMonthModules = [
+  { num: "01", title: "Fundamentals & CTM", desc: "Personal grooming • Skin analysis • CTM protocols • Tools & hygiene." },
+  { num: "02", title: "Colour Theory & Base", desc: "Colour correction • Foundation mixing for Indian skin tones • Flawless base application." },
+  { num: "03", title: "Contour & Highlight", desc: "Cream contour, cream blush & highlighters." },
+  { num: "04", title: "Lip Makeup", desc: "Lip contouring & lipstick techniques." },
+  { num: "05", title: "Eye Makeup", desc: "Eyebrow shaping • Shimmer & smoky eye • Gel eyeliner • Mascara." },
+  { num: "06", title: "Powder & Fixing", desc: "Powder setting • Fixing spray application • All-day lock-in." },
+  { num: "07", title: "Liquid Product Practice", desc: "Special one-day PAC liquid product practical session." },
+  { num: "08", title: "Bridal Demonstrations", desc: "Hindu, Christian, and Muslim bridal looks." },
+  { num: "09", title: "Hair Prep", desc: "Hair products, blow-drying & thermal prep." },
+  { num: "10", title: "Styling Techniques", desc: "Crimping, tongs, flat ironing, and backcombing." },
+  { num: "11", title: "Hairstyles", desc: "Bridal braids, buns, ponytails, and flower setting." },
+  { num: "12", title: "Saree Draping", desc: "Pre-pleating, box folding, and draping for all body types." }
+];
+---
+
+<Layout 
+  title="Diploma in Makeup Artistry in Kochi | Livart Beauty Academy"
+  description="Learn professional makeup artistry from Stephy Sebastian at Livart Beauty Academy Kochi. 3-Month Master Diploma and 1-Month Intensive Diploma covering Bridal, HD, Airbrush, and Saree Draping with tool kit included."
+>
+  
+  <!-- HERO -->
+  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
+      <div>
+        <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Makeup Academy • 2026 Admissions Open</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg lg:text-[60px] lg:leading-[68px] text-on-surface tracking-tight mb-6">
+          Diploma in <span class="italic text-primary">Make-up Artistry.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">
+          Master the high-demand bridal, fashion, and HD media circuits. A complete curriculum covering Hindu, Christian & Muslim bridal looks, Airbrush, Glass Skin, Hair Styling, and Saree Draping with tool kits included.
+        </p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-outline-variant/20 py-6">
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tracks</span>
+            <strong class="font-title-md text-on-surface text-base">3M & 1M</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tool Kit</span>
+            <strong class="font-title-md text-on-surface text-base">Included</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Bridal Mastery</span>
+            <strong class="font-title-md text-on-surface text-base">3 Wedding Looks</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Saree Draping</span>
+            <strong class="font-title-md text-on-surface text-base">Pre-pleating + Iron</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">download</span>
+            Get Syllabus & Fee Details
+          </a>
+          <a href="#curriculum" class="px-6 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/30 hover:border-primary transition-colors">
+            View 11 Modules
+          </a>
+        </div>
+      </div>
+      
+      <div class="relative h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-surface-container shadow-2xl">
+        <img fetchpriority="high" decoding="async" src="/images/academy-live/career_makeup_artist_mastery.jpg" class="w-full h-full object-cover" alt="Student practicing makeup artistry at LivArt Beauty Academy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+          <div class="inline-block px-3 py-1 bg-primary text-white text-xs uppercase tracking-widest font-bold rounded mb-2 w-max">
+            Included in Course
+          </div>
+          <h3 class="font-headline-sm text-white text-xl font-bold">Personal Professional Makeup Tool Kit</h3>
+          <p class="text-white/80 font-body-sm text-sm mt-1">Professional Brush Kit • Blending Sponge • Powder Puff • Mixing Palette • Spatula</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS COMPARISON: 3-MONTH VS 1-MONTH -->
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+      
+      <!-- 3 Months Master Track -->
+      <div class="bg-surface-container-low p-space-lg rounded-2xl border-2 border-primary/40 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-sm uppercase tracking-widest text-primary font-bold text-xs">Flagship Artistry</span>
+            <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold">3 Months</span>
+          </div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-3">Diploma in Makeup (3 Months)</h2>
+          <p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            The complete master artist curriculum. Covers 11 extensive modules including 4K HD, Airbrush, Glass Skin, Transfer-proof bridal, Retro & Fantasy makeup, full hairstyling, and advanced saree draping.
+          </p>
+          <div class="p-4 bg-surface-container rounded-xl mb-6 border border-outline-variant/15">
+            <span class="font-label-sm uppercase text-primary text-xs font-bold block mb-1">Tool Kit Included:</span>
+            <p class="font-body-sm text-on-surface-variant text-xs">Brush Kit • Sponge • Powder Puff • Palette • Spatula</p>
+          </div>
+        </div>
+        <a href="#curriculum" class="w-full py-3 bg-primary text-on-primary font-label-md uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary-fixed transition-colors">
+          View 11-Module Syllabus &rarr;
+        </a>
+      </div>
+
+      <!-- 1 Month Intensive Track -->
+      <div class="bg-surface-container-low p-space-lg rounded-2xl border border-outline-variant/20 shadow-xl flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-label-sm uppercase tracking-widest text-outline font-bold text-xs">Fast-Track Certification</span>
+            <span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-bold">1 Month</span>
+          </div>
+          <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-3">Diploma in Makeup (1 Month)</h2>
+          <p class="font-body-md text-on-surface-variant mb-6 leading-relaxed">
+            Accelerated bridal and event makeup qualification. Covers foundation mixing, color wheel, 3 bridal demos, liquid product PAC training, basic hairstyles, and saree pre-pleating.
+          </p>
+          <div class="p-4 bg-surface-container rounded-xl mb-6 border border-outline-variant/15">
+            <span class="font-label-sm uppercase text-outline text-xs font-bold block mb-1">Tool Kit Included:</span>
+            <p class="font-body-sm text-on-surface-variant text-xs">Brush Kit • Sponge • Powder Puff</p>
+          </div>
+        </div>
+        <a href="#curriculum-1m" class="w-full py-3 bg-surface-container-high text-on-surface font-label-md uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/30">
+          View 1-Month Syllabus &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-MONTH SYLLABUS BREAKDOWN (Page 10 of Prospectus) -->
+  <section id="curriculum" class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="max-w-3xl mb-space-xl">
+        <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">Comprehensive 3-Month Curriculum</span>
+        <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Master Diploma in Makeup Modules.</h2>
+        <p class="font-body-lg text-on-surface-variant mt-4">Hands-on practical training on live models. You will work through every look under individual instructor guidance.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {masterDiplomaModules.map(m => (
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15 hover:border-primary/40 transition-colors flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-label-sm text-primary uppercase tracking-widest font-bold text-xs">Module {m.num}</span>
+              </div>
+              <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">{m.title}</h3>
+              <p class="font-body-sm text-on-surface-variant text-sm leading-relaxed">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SHORT-TERM MAKEUP COURSES (Page 12 of Prospectus) -->
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-space-xl">
+      <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">Specialized Short Courses</span>
+      <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Short-Term Makeup Masterclasses.</h2>
+      <p class="font-body-md text-on-surface-variant mt-3">Targeted certifications for working professionals and self-grooming aspirants:</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+        <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">5 Days</span>
+        <span class="font-title-md text-on-surface block font-bold text-sm">Advanced Grooming</span>
+        <span class="text-[11px] text-outline mt-1 block">Makeup + Hair</span>
+      </div>
+      <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+        <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">5 Days / 1 Day</span>
+        <span class="font-title-md text-on-surface block font-bold text-sm">Airbrush Makeup</span>
+        <span class="text-[11px] text-outline mt-1 block">HD Machine Protocols</span>
+      </div>
+      <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+        <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">1 Day</span>
+        <span class="font-title-md text-on-surface block font-bold text-sm">Transfer-Proof</span>
+        <span class="text-[11px] text-outline mt-1 block">Sweatproof Sealing</span>
+      </div>
+      <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+        <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">1 Day</span>
+        <span class="font-title-md text-on-surface block font-bold text-sm">Glass Skin Makeup</span>
+        <span class="text-[11px] text-outline mt-1 block">Ultra-dewy Finish</span>
+      </div>
+      <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+        <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">2 Days</span>
+        <span class="font-title-md text-on-surface block font-bold text-sm">Personal Grooming</span>
+        <span class="text-[11px] text-outline mt-1 block">Everyday Self-Mastery</span>
+      </div>
+      <div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/15 text-center">
+        <span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded block mb-1">1 - 2 Days</span>
+        <span class="font-title-md text-on-surface block font-bold text-sm">Saree Draping</span>
+        <span class="text-[11px] text-outline mt-1 block">Pre-pleat & Box Fold</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKEUP ARTISTRY IN MOTION (REELS) -->
+  <section class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">Live Studio Artistry</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Makeup Transformations in Motion</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>Watch More on Instagram</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/reel/Db25HShNddj/"
+          image="/images/academy-live/high_fashion_student_practical.jpg"
+          category="Editorial Artistry"
+          title="High-Fashion Editorial Artistry"
+          description="Avant-garde editorial makeup, dynamic contours, and camera-ready styling by academy students."
+          badge="@livart_academy"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/reel/DZPqBn5yV2k/"
+          image="/images/academy-live/kpop_glam_fashion_show.jpg"
+          category="Runway Glamour"
+          title="K-pop Glam & Runway Styling"
+          description="Luminous glass skin finish, vibrant eyes, and contemporary high-fashion runway look."
+          badge="@livart_academy"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/reel/Ddi1GE9oWUm/"
+          image="/images/academy-live/self_makeup_student_experience.jpg"
+          category="Student Practical"
+          title="Self-Makeup & Skill Building Experience"
+          description="Hands-on practice session: colour matching, pigment blending, and brush ergonomics."
+          badge="@livart_academy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE SECTION -->
+  <section id="enroll" class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Diploma in Makeup (3 Months)"
+      title="Request Makeup Syllabus & Fee Structure"
+      subtitle="Fill in your details below to receive the complete 3-Month & 1-Month Makeup prospectus, bridal look breakdowns, toolkit list, and fee schedule via WhatsApp."
+      formId="makeup-lead-form"
+    />
+  </section>
+
+  <!-- COURSE SCHEMA MARKUP -->
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Diploma in Makeup Artistry (3 Months & 1 Month)",
+      "description": "Professional 3-month and 1-month makeup artistry diplomas in Kochi covering Hindu, Christian, Muslim bridal makeup, Airbrush, Glass Skin, Hairstyling, and Saree Draping at Livart Beauty Academy.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Livart Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://livart.co.in"
+      }
+    }
+  `} />
+</Layout>

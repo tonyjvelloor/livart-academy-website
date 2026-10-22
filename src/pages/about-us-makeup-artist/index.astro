@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../components/InstagramReelCard.astro';
+
+const pillars = [
+  {
+    icon: "brush",
+    title: "CRAFT",
+    subtitle: "Hands-on Mastery",
+    desc: "Rigorous live-model practicals over rote classroom theory. Every student completes supervised client transformations across Hair, Skin, and Makeup."
+  },
+  {
+    icon: "verified",
+    title: "CREDENTIAL",
+    subtitle: "National Certification",
+    desc: "Government-recognized credentials under the Beauty & Wellness Sector Skill Council (B&WSSC), accredited by the Ministry of Skill Development."
+  },
+  {
+    icon: "work",
+    title: "CAREER",
+    subtitle: "Salon Floor Internship",
+    desc: "A direct bridge from classroom to commercial beauty. Hands-on floor experience at LivArt Salons with dedicated placement guidance."
+  }
+];
+
+const highlights = [
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DZKXR4KNBIU/",
+    image: "/images/brand/stephy-sebastian.webp",
+    category: "Founder Spotlight",
+    title: "Why LivArt is Different",
+    description: "Stephy Sebastian explains the unique blend of clinical nursing precision and commercial beauty education."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DY8vuSUIW_R/",
+    image: "/images/academy-live/sabna_faculty_journey.jpg",
+    category: "Career Pathway",
+    title: "From Student to Faculty — Sabna",
+    description: "A testament to career progression: transitioning from enrolled student to senior academy educator."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/Ddv_Ggpy6UK/",
+    image: "/images/academy-live/assumption_college_collaboration.jpg",
+    category: "Institutional",
+    title: "Assumption College Collaboration",
+    description: "Extending professional beauty education to collegiate workshops across central Kerala."
+  }
+];
+---
+
+<Layout 
+  title="About Us | Livart Beauty Academy Kochi"
+  description="Learn about Livart Beauty Academy Kochi. Founded by Stephy Sebastian and Joseph Nipun to deliver accredited, hands-on professional beauty education in Kerala."
+>
+  <div class="flex flex-col w-full text-on-surface">
+
+    <!-- 1. HERO -->
+    <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex justify-center mb-6">
+          <img 
+            src="/images/brand/livart-logo-horizontal.png" 
+            alt="LivArt Beauty Academy" 
+            class="h-14 sm:h-16 w-auto object-contain"
+            width="212"
+            height="90"
+          />
+        </div>
+        <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Our Heritage & Mission</span>
+        </div>
+        <h1 class="font-display-xl text-display-xl lg:text-[64px] lg:leading-[72px] text-white tracking-tight mb-6 text-balance">
+          Elevating Beauty Education in Kerala. <br/>
+          <span class="italic text-white/90 font-display-xl font-light">Through Science & Artistry.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+          Livart Beauty Academy was born to bridge the gap between casual salon apprenticeships and internationally competitive cosmetology education. 
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. FOUNDER STORY & CLINICAL ROOTS -->
+    <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
+        
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl bg-surface-container aspect-[4/5]">
+            <img 
+              src="/images/brand/stephy-sebastian.webp" 
+              alt="Stephy Sebastian - Founder & Educator at Livart Beauty Academy" 
+              class="w-full h-full object-cover object-[center_15%]"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6">
+              <span class="text-xs uppercase font-bold tracking-widest text-primary mb-1">Founder & Educator</span>
+              <h3 class="font-headline-sm text-xl font-bold text-white">Stephy Sebastian</h3>
+              <p class="text-xs text-white/80">Registered Nurse • Certified Master Cosmetologist</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="space-y-4 font-body-lg text-on-surface-variant leading-relaxed">
+            <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold block">The Foundation</span>
+            <h2 class="font-display-md text-3xl sm:text-4xl font-bold text-on-surface tracking-tight">
+              Clinical Precision Meets High-Fashion Cosmetology.
+            </h2>
+            <p>
+              Growing up in Kuttanadu in Alappuzha, Stephy Sebastian spent five years as a registered nurse, instilling a deep respect for hygiene, dermal anatomy, and patient safety. Inspired by her mother’s compassionate community work helping brides, Stephy redirected her clinical foundation into beauty and aesthetics.
+            </p>
+            <p>
+              She observed a persistent flaw across Kerala’s beauty academies: students were taught product application without understanding underlying hair bonds, dermal pH levels, or hygiene protocols. 
+            </p>
+            <p>
+              Together with <strong>Joseph Nipun</strong>, she established Livart Beauty Academy in Kalamassery, Kochi. Today, LivArt combines clinical-grade hygiene standards with masterclass techniques from L’Oréal, Wella, and the Beauty & Wellness Sector Skill Council (B&WSSC).
+            </p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-outline-variant/15 text-center">
+            <div class="p-4 bg-surface-container-low rounded-xl">
+              <strong class="font-display-md text-2xl font-bold text-primary block">20+</strong>
+              <span class="text-xs text-outline">Years Salon Experience</span>
+            </div>
+            <div class="p-4 bg-surface-container-low rounded-xl">
+              <strong class="font-display-md text-2xl font-bold text-primary block">1000+</strong>
+              <span class="text-xs text-outline">Graduates Empowered</span>
+            </div>
+            <div class="p-4 bg-surface-container-low rounded-xl">
+              <strong class="font-display-md text-2xl font-bold text-primary block">100%</strong>
+              <span class="text-xs text-outline">Practical Training</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. THE THREE PILLARS -->
+    <section class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+      <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+        <div class="text-center max-w-3xl mx-auto mb-space-xl">
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold block mb-2">Our Operating Philosophy</span>
+          <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Craft. Credential. Career.</h2>
+          <p class="font-body-lg text-on-surface-variant mt-3">
+            Every curriculum at LivArt is reverse-engineered from what commercial salons and high-paying bridal clients actually demand.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {pillars.map(p => (
+            <div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/15 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                  <span class="material-symbols-outlined text-2xl">{p.icon}</span>
+                </div>
+                <span class="text-xs uppercase font-bold text-outline tracking-wider block mb-1">{p.subtitle}</span>
+                <h3 class="font-headline-md text-2xl font-bold text-on-surface mb-3">{p.title}</h3>
+                <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. STORIES & COLLABORATIONS IN MOTION -->
+    <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">Authentic Community</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Voices from the Academy</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>Follow @livart_academy</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {highlights.map(item => (
+          <InstagramReelCard 
+            url={item.url}
+            image={item.image}
+            category={item.category}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- 5. LEAD CAPTURE -->
+    <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto">
+      <CourseLeadForm 
+        courseName="General Admissions Inquiry 2026"
+        title="Begin Your Journey at LivArt"
+        subtitle="Speak directly with our senior counseling team in Kalamassery, Kochi. Receive our official prospectus, batch schedules, and fee details via WhatsApp."
+        formId="about-lead-form"
+      />
+    </section>
+
+  </div>
+</Layout>

@@ -1,0 +1,141 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+
+const hairModules = [
+  { num: "01", title: "സലൂൺ മാനേഴ്സ് & ഹൈജീൻ", desc: "സലൂൺ ശുചിത്വം • സ്റ്റെറിലൈസേഷൻ • ഷാംപൂ & കണ്ടീഷനിംഗ് • ബ്ലോ-ഡ്രൈ സെറ്റിംഗ്." },
+  { num: "02", title: "ഹെയർ അനറ്റമി & അടിസ്ഥാനം", desc: "ഹെയർ ഘടന • കത്രിക നിയന്ത്രണം • സെക്ഷനിംഗ് • ഫേസ് ഷേപ്പ് അനാലിസിസ്." },
+  { num: "03", title: "13+ പ്രിസിഷൻ ഹെയർകട്ടുകൾ", desc: "വൺ-ലെങ്ത് • ഫോർവേഡ് ഗ്രാജുവേഷൻ • സ്ക്വയർ ലെയേഴ്സ് • ബട്ടർഫ്ലൈ കട്ട് • വുൾഫ് കട്ട് • ബോബ് • ബാംഗ്സ്." },
+  { num: "04", title: "സ്കാൽപ് & ഹെയർ സ്പാ", desc: "പരമ്പരാഗത ഓയിൽ മസാജ് • ഹെയർ സ്പാ തെറാപ്പി • ആന്റി-ഡാൻഡ്രഫ് ട്രീറ്റ്മെന്റുകൾ." },
+  { num: "05", title: "ഹെയർ സ്റ്റൈലിംഗ് & അപ്ഡോകൾ", desc: "ടോങ് കേളിംഗ് • ക്രിമ്പിംഗ് • ബൺ സെറ്റിംഗ് • ബ്രൈഡൽ ബ്രെയ്ഡുകൾ • ഹെയർ എക്സ്റ്റൻഷൻ ഫിക്സിംഗ്." },
+  { num: "06", title: "ഹെയർ കളറിംഗ് കെമിസ്ട്രി", desc: "കളർ തിയറി • റൂട്ട് ടച്ച്-അപ്പ് • ഗ്ലോബൽ കളർ • ബാലിയാജ് • ഓംബ്രെ • ഫോയിലിംഗ്." },
+  { num: "07", title: "ക്ലിനിക്കൽ ടെക്സ്ചർ ട്രീറ്റ്മെന്റ്", desc: "നാനോപ്ലാസ്റ്റിയ • ഹെയർ ബോട്ടോക്സ് • സ്മൂത്തനിംഗ് • കെരാറ്റിൻ തെറാപ്പി." }
+];
+---
+
+<Layout 
+  title="ഹെയർ ഡ്രസ്സിംഗ് & സ്റ്റൈലിംഗ് കോഴ്‌സ് കൊച്ചി | Livart Beauty Academy"
+  description="പ്രൊഫഷണൽ ഹെയർ ഡ്രസ്സിംഗ് & സ്റ്റൈലിംഗ് കോഴ്‌സുകൾ. 4 മാസ മാസ്റ്റർ ഡിപ്ലോമ, 2 മാസ കോഴ്‌സ്. 13+ ഹെയർകട്ടുകൾ, നാനോപ്ലാസ്റ്റിയ, ബാലിയാജ്, ടൂൾ കിറ്റ് സൗജന്യം."
+>
+  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-white/10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs uppercase tracking-widest text-primary font-bold">ഹെയർ അക്കാദമി • 2026 ബാച്ചുകൾ</span>
+        </div>
+        <h1 class="font-display-lg text-4xl sm:text-5xl lg:text-[56px] lg:leading-[64px] text-white tracking-tight mb-6">
+          ഹെയർ ഡ്രസ്സിംഗ് & <span class="italic text-primary">സ്റ്റൈലിംഗ് കോഴ്‌സുകൾ.</span>
+        </h1>
+        <p class="font-body-lg text-white/80 max-w-xl leading-relaxed mb-8">
+          പ്രിസിഷൻ ഹെയർകട്ടിംഗ് മുതൽ നാനോപ്ലാസ്റ്റിയ, ബാലിയാജ് കളറിംഗ്, ബ്രൈഡൽ ഹെയർഡോകൾ വരെ. സ്വന്തം കട്ടിംഗ് ഡമ്മിയിലും ലൈവ് മോഡലുകളിലും പരിശീലിക്കാം.
+        </p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-white/10 py-6">
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">ട്രാക്കുകൾ</span>
+            <strong class="text-base font-bold text-white">4M & 2M</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">ടൂൾ കിറ്റ്</span>
+            <strong class="text-base font-bold text-white">ഡ്രയറും കിറ്റും സൗജന്യം</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">പരിശീലനം</span>
+            <strong class="text-base font-bold text-white">ഡമ്മി & ലൈവ് മോഡലുകൾ</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">അംഗീകാരം</span>
+            <strong class="text-base font-bold text-primary">B&WSSC</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#enroll" class="px-8 py-4 bg-primary hover:bg-[#d40002] text-white text-xs uppercase tracking-widest font-bold rounded-xl shadow-lg transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">download</span>
+            <span>സിലബസും ഫീസും നേടുക</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="relative h-[480px] rounded-3xl overflow-hidden bg-[#131418] shadow-2xl border border-white/10">
+        <img src="/images/academy-live/hair_curling_tongs_practical.jpg" class="w-full h-full object-cover" alt="ലിവ്ആർട്ട് ഹെയർ സ്റ്റൈലിംഗ്" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+          <span class="px-3 py-1 bg-primary text-white text-xs uppercase tracking-wider font-bold rounded mb-2 w-max">ടൂൾ കിറ്റ് ഉൾപ്പെടെ</span>
+          <h3 class="text-xl font-bold text-white">പ്രൊഫഷണൽ ഹെയർ ടൂൾ കിറ്റ് സൗജന്യം</h3>
+          <p class="text-xs text-white/80 mt-1">കട്ടിംഗ് ഡമ്മി • കത്രിക സെറ്റ് • പ്രൊഫഷണൽ ഡ്രയർ • ചീപ്പുകൾ • സെക്ഷൻ ക്ലിപ്പുകൾ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 MODULES -->
+  <section class="py-20 bg-[#07080a] border-y border-white/10">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-2">സിലബസ് വിവരങ്ങൾ</span>
+        <h2 class="font-display-lg text-3xl sm:text-4xl font-bold text-white">7 പ്രധാന മൊഡ്യൂളുകൾ.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {hairModules.map(m => (
+          <div class="bg-[#131418] p-6 rounded-2xl border border-white/10 hover:border-primary/40 transition-colors">
+            <span class="text-xs font-bold text-primary uppercase block mb-1">മൊഡ്യൂൾ {m.num}</span>
+            <h3 class="text-base font-bold text-white mb-2">{m.title}</h3>
+            <p class="text-xs text-white/70 leading-relaxed">{m.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- REELS IN MOTION -->
+  <section class="py-20 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-3">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-1">സ്റ്റുഡിയോ പ്രാക്ടിക്കൽസ്</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-white">ഹെയർ ആർട്ടിസ്ട്രി വീഡിയോകൾ</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/"
+        image="/images/academy-live/loreal_hair_spa_practical.jpg"
+        category="സ്കാൽപ് തെറാപ്പി"
+        title="L'Oréal പ്രൊഫഷണൽ ഹെയർ സ്പാ പ്രാക്ടിക്കൽസ്"
+        description="ലൈവ് മോഡൽ സ്കാൽപ്പ് പരിശോധന, ഡീപ് കണ്ടീഷനിംഗ്, തെർമൽ സ്റ്റീം തെറാപ്പി."
+        badge="@livart_academy"
+      />
+
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/"
+        image="/images/academy-live/hairstylist_graduation_ceremony.jpg"
+        category="ഗ്രാജ്വേഷൻ"
+        title="ഹെയർസ്റ്റൈലിസ്റ്റ് ഗ്രാജ്വേഷൻ & സർട്ടിഫിക്കേഷൻ"
+        description="ദേശീയ B&WSSC നിലവാരത്തിൽ സർട്ടിഫൈഡ് ആയ വിദ്യാർത്ഥികളുടെ ഗ്രാജ്വേഷൻ ചടങ്ങ്."
+        badge="ഗ്രാജ്വേഷൻ ബേ"
+      />
+
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/"
+        image="/images/academy-live/hair_diploma_bwssc_certified.jpg"
+        category="ഗവ. അംഗീകൃതം"
+        title="5 മാസത്തെ ഹെയർ ഡിപ്ലോമ ഇൻ ആക്ഷൻ"
+        description="തത്സമയ ഹെയർകട്ടിംഗ്, റീ-ബോണ്ടിംഗ്, സ്റ്റൈലിംഗ് എന്നിവ അടങ്ങിയ സമഗ്ര സിലബസ്."
+        badge="B&WSSC സർട്ടിഫൈഡ്"
+      />
+    </div>
+  </section>
+
+  <!-- LEAD FORM -->
+  <section id="enroll" class="py-16 px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Diploma in Hair Dressing (4 Months)"
+      title="ഹെയർ കോഴ്‌സ് സിലബസും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടുക"
+      subtitle="താഴെ നിങ്ങളുടെ വിവരങ്ങൾ നൽകുക. ഹെയർ ഡ്രസ്സിംഗ് പ്രോസ്പെക്ടസും ബാച്ച് തീയതികളും വാട്ട്‌സ്ആപ്പിൽ ലഭിക്കുന്നതാണ്."
+      formId="ml-hair-lead-form"
+    />
+  </section>
+</Layout>

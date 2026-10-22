@@ -1,0 +1,366 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+
+const mainCosmetology = [
+  {
+    title: "Cosmetology Programme (12 Months)",
+    url: "/certification-course-in-cosmetology/",
+    duration: "12 Months (4+4+3+1)",
+    tag: "Master Flagship",
+    description: "Our most comprehensive master qualification. 4 months Hair Dressing + 4 months Skin Therapy + 3 months Makeup + 1 month mandatory salon floor internship.",
+    highlights: ["Complete Triad Integration", "Tool Kits for Hair, Skin & Makeup Included", "1-Month Salon Floor Internship", "B&WSSC / MSDE Recognized"]
+  },
+  {
+    title: "Cosmetology Programme (6 Months)",
+    url: "/certification-course-in-cosmetology/",
+    duration: "6 Months (2+2+1+1)",
+    tag: "Intensive Track",
+    description: "Fast-track multi-skill certification. 2 months Hair + 2 months Skin Therapy + 1 month Makeup + 1 month salon floor internship for rapid industry entry.",
+    highlights: ["Core Hair, Skin & Makeup", "Essential Tool Kits Included", "1-Month Salon Internship", "Immediate Employment Readiness"]
+  }
+];
+
+const hairCourses = [
+  {
+    title: "Diploma in Hair Dressing",
+    url: "/hair-styling-course/",
+    duration: "4 Months",
+    tag: "Master Diploma",
+    description: "Complete hair mastery across 7 modules: 13+ precision haircuts (Butterfly, Wolf, Bob), Nanoplastia, Botox, Balayage, Ombre, and bridal updos.",
+    highlights: ["13+ Advanced Haircut Techniques", "Nanoplastia & Hair Botox Theory + Practicals", "Balayage & Foiling Masterclass", "Tool Kit Included (Dummy, Scissors, Combs, Clips, Dryer)"]
+  },
+  {
+    title: "Diploma in Hair",
+    url: "/hair-styling-course/",
+    duration: "2 Months",
+    tag: "Commercial Track",
+    description: "Focused salon hair qualification covering fundamental haircuts, Keratin, Smoothing, Global colour, root touch-up, and everyday salon styling.",
+    highlights: ["Core Commercial Haircuts", "Keratin & Smoothing Practicals", "Global Colour & Root Touch-up", "Tool Kit Included (Dummy, Scissors, Comb, Clips)"]
+  },
+  {
+    title: "Short-Term Hair Workshops",
+    url: "/hair-styling-course/",
+    duration: "Short Term / Workshops",
+    tag: "Skill Upgrades",
+    description: "Targeted modules in Advanced Hair Cutting (Butterfly, Wolf, Curtain bangs), Hair Colouring Masterclass, and Basic & Advanced Hair Styling.",
+    highlights: ["Trending Haircut Workshops", "Balayage & Pigment Chemistry", "Bridal Bun & Braiding Styles", "Certificate of Completion"]
+  }
+];
+
+const skinCourses = [
+  {
+    title: "Diploma in Skin Therapy",
+    url: "/skin-care-course/",
+    duration: "4 Months",
+    tag: "Advanced Aesthetics",
+    description: "8 comprehensive clinical modules covering anatomy, Hydra facials, High frequency, Galvanic, Ultrasonic, chemical peels, manicure, pedicure, and waxing.",
+    highlights: ["Clinical Electrotherapy Machines", "Chemical Peels & Hydra Facials", "Manicure, Pedicure & Waxing", "Tool Kit Included (Extractor, Brush, Thread, Facial Kit)"]
+  },
+  {
+    title: "Skin Therapy Course",
+    url: "/skin-care-course/",
+    duration: "2 Months",
+    tag: "Foundational Track",
+    description: "Commercial skincare fundamentals covering skin analysis, massage strokes, High frequency acne treatments, de-tan, facials, waxing, and threading.",
+    highlights: ["Skin Analysis & pH Balance", "High Frequency Acne Treatment", "Facials, Cleanups & De-tan", "Tool Kit Included (Professional Facial Kit)"]
+  }
+];
+
+const makeupCourses = [
+  {
+    title: "Diploma in Makeup (3 Months)",
+    url: "/make-up-course/",
+    duration: "3 Months",
+    tag: "Master Artistry",
+    description: "The complete bridal and fashion master curriculum. 11 modules including Hindu, Christian & Muslim bridal looks, Airbrush, Glass skin, 4K HD, Hairstyling, and Saree draping.",
+    highlights: ["3 Wedding Culture Looks", "Airbrush & 4K HD Protocols", "Bridal Hairstyles & Saree Draping", "Tool Kit Included (Brush Kit, Sponge, Puff, Palette, Spatula)"]
+  },
+  {
+    title: "Diploma in Makeup (1 Month)",
+    url: "/make-up-course/",
+    duration: "1 Month",
+    tag: "Accelerated Track",
+    description: "Fast-track professional makeup qualification. 12 modules covering foundation mixing, color wheel, 3 bridal looks, PAC liquid training, hairstyling, and saree pre-pleating.",
+    highlights: ["Colour Wheel & Foundation Mixing", "3 Bridal Demonstration Looks", "PAC Liquid Product Practical Day", "Tool Kit Included (Brush Kit, Sponge, Puff)"]
+  },
+  {
+    title: "Fastrack Bridal Makeup",
+    url: "/bridal-makeup-course/",
+    duration: "10 Days",
+    tag: "Wedding Bootcamp",
+    description: "High-intensity 13-module bridal bootcamp. Master Hindu, Christian, and Muslim bridal looks, thermal hairstyles, saree pre-pleating, and final live model practical exam.",
+    highlights: ["13 Focused Modules in 10 Days", "Hindu, Christian & Muslim Bridal Demos", "Live Model Practical Examination", "Professional Brush Kit Included"]
+  },
+  {
+    title: "Short-Term Masterclasses",
+    url: "/make-up-course/",
+    duration: "1 to 5 Days",
+    tag: "Short Courses",
+    description: "High-value intensive workshops: Airbrush Makeup (5 Days / 1 Day), Transfer-Proof Makeup (1 Day), Glass Skin (1 Day), Personal Grooming (2 Days), and Saree Draping (1-2 Days).",
+    highlights: ["Transfer-Proof & Glass Skin", "Saree Pre-Pleating & Box Folding", "Airbrush Machine Calibration", "Individual Focus"]
+  }
+];
+
+const salonCourses = [
+  {
+    title: "Job-Oriented Salon Course",
+    url: "/job-oriented-salon-course/",
+    duration: "1 Month",
+    tag: "Direct Employment",
+    description: "Built for immediate entry into commercial salons. Covers everyday high-frequency salon services across Hair (blow dry, haircuts, hair spa, root touch-up) and Skin (threading, facials, waxing, pedicure, manicure).",
+    highlights: ["100% Practical Salon Floor Training", "Hair Wash, Blow Dry & Trims", "Threading, Waxing & Facials", "Immediate Placement Support"]
+  }
+];
+---
+
+<Layout 
+  title="All Beauty & Cosmetology Courses 2026 | Livart Beauty Academy Kochi"
+  description="Explore official 2026 beauty courses at Livart Beauty Academy Kochi. Hair dressing, clinical skin therapy, bridal makeup, and master cosmetology with tool kits and internship included."
+>
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto mt-8">
+    
+    <!-- HEADER -->
+    <div class="text-center max-w-3xl mx-auto mb-space-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Official Prospectus 2026</span>
+      </div>
+      <h1 class="font-display-xl text-display-xl lg:text-[56px] text-on-surface tracking-tight mb-space-md">
+        Courses & Curriculum Guide.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        Career-focused education in Hair, Skin, and Makeup. Every course is built around practical, hands-on training with professional tool kits and B&WSSC-affiliated certification.
+      </p>
+    </div>
+
+    <!-- QUICK CATEGORY JUMP NAV -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-space-xl">
+      <a href="#cosmetology" class="px-4 py-2 bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all rounded-full text-xs font-bold uppercase tracking-wider border border-outline-variant/20">Cosmetology (Main)</a>
+      <a href="#hair" class="px-4 py-2 bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all rounded-full text-xs font-bold uppercase tracking-wider border border-outline-variant/20">Hair Courses</a>
+      <a href="#skin" class="px-4 py-2 bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all rounded-full text-xs font-bold uppercase tracking-wider border border-outline-variant/20">Skin Therapy</a>
+      <a href="#makeup" class="px-4 py-2 bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all rounded-full text-xs font-bold uppercase tracking-wider border border-outline-variant/20">Makeup Artistry</a>
+      <a href="#salon" class="px-4 py-2 bg-surface-container-low hover:bg-primary hover:text-on-primary transition-all rounded-full text-xs font-bold uppercase tracking-wider border border-outline-variant/20">Salon Job Course</a>
+      <a href="#inquiry" class="px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold uppercase tracking-wider shadow">Request Fee Dossier</a>
+    </div>
+
+    <!-- 1. MAIN COURSES: COSMETOLOGY -->
+    <div id="cosmetology" class="mb-space-xl scroll-mt-24">
+      <div class="border-b border-outline-variant/20 pb-4 mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Main Academy Track</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Cosmetology Programmes</h2>
+        </div>
+        <span class="text-xs text-outline font-semibold">Includes 1-Month Salon Floor Internship</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+        {mainCosmetology.map(course => (
+          <div class="group bg-surface-container-low rounded-2xl overflow-hidden flex flex-col justify-between hover:bg-surface-container transition-all duration-300 shadow-lg border border-outline-variant/15 p-6 sm:p-8">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full font-label-sm text-xs text-primary uppercase tracking-widest font-bold">
+                  {course.tag}
+                </span>
+                <span class="font-label-md text-xs font-bold text-on-surface-variant tracking-wider bg-surface-container px-3 py-1 rounded-full">{course.duration}</span>
+              </div>
+              <h3 class="font-headline-sm text-2xl font-bold text-on-surface group-hover:text-primary transition-colors mb-2">{course.title}</h3>
+              <p class="font-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                {course.description}
+              </p>
+              <ul class="space-y-2 mb-6">
+                {course.highlights.map(highlight => (
+                  <li class="flex items-start gap-2.5 font-body-sm text-xs text-on-surface-variant">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="pt-4 border-t border-outline-variant/15 flex flex-col sm:flex-row gap-3">
+              <a class="flex-1 py-3 bg-surface-container-high text-center font-label-md text-xs uppercase tracking-wider text-on-surface hover:bg-primary hover:text-on-primary transition-all rounded-lg font-bold" href={course.url}>
+                View Full Syllabus
+              </a>
+              <a class="py-3 px-4 bg-primary/15 text-primary text-center font-label-md text-xs uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-all rounded-lg font-bold" href="#inquiry">
+                Get Fee Details
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 2. HAIR COURSES -->
+    <div id="hair" class="mb-space-xl scroll-mt-24">
+      <div class="border-b border-outline-variant/20 pb-4 mb-6">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Hair Atelier</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Hair Dressing & Styling Courses</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-md">
+        {hairCourses.map(course => (
+          <div class="group bg-surface-container-low rounded-2xl overflow-hidden flex flex-col justify-between hover:bg-surface-container transition-all duration-300 shadow-md border border-outline-variant/15 p-6">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 bg-surface-container border border-outline-variant/20 rounded-full font-label-sm text-[11px] text-primary uppercase tracking-wider font-bold">
+                  {course.tag}
+                </span>
+                <span class="text-xs text-outline font-semibold">{course.duration}</span>
+              </div>
+              <h3 class="font-headline-sm text-xl font-bold text-on-surface group-hover:text-primary transition-colors mb-2">{course.title}</h3>
+              <p class="font-body-sm text-on-surface-variant text-xs mb-4 leading-relaxed">
+                {course.description}
+              </p>
+              <ul class="space-y-1.5 mb-6">
+                {course.highlights.map(highlight => (
+                  <li class="flex items-start gap-2 font-body-sm text-[11px] text-on-surface-variant">
+                    <span class="material-symbols-outlined text-primary text-xs mt-0.5">check_circle</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="pt-4 border-t border-outline-variant/15 flex flex-col gap-2">
+              <a class="w-full py-2.5 bg-surface-container-high text-center font-label-md text-xs uppercase tracking-wider text-on-surface hover:bg-primary hover:text-on-primary transition-all rounded-lg font-bold" href={course.url}>
+                View Syllabus
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 3. SKIN COURSES -->
+    <div id="skin" class="mb-space-xl scroll-mt-24">
+      <div class="border-b border-outline-variant/20 pb-4 mb-6">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Dermal Science</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Skin Therapy & Aesthetics</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+        {skinCourses.map(course => (
+          <div class="group bg-surface-container-low rounded-2xl overflow-hidden flex flex-col justify-between hover:bg-surface-container transition-all duration-300 shadow-md border border-outline-variant/15 p-6 sm:p-8">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 bg-surface-container border border-outline-variant/20 rounded-full font-label-sm text-[11px] text-primary uppercase tracking-wider font-bold">
+                  {course.tag}
+                </span>
+                <span class="text-xs text-outline font-semibold">{course.duration}</span>
+              </div>
+              <h3 class="font-headline-sm text-xl font-bold text-on-surface group-hover:text-primary transition-colors mb-2">{course.title}</h3>
+              <p class="font-body-sm text-on-surface-variant text-xs mb-4 leading-relaxed">
+                {course.description}
+              </p>
+              <ul class="space-y-1.5 mb-6">
+                {course.highlights.map(highlight => (
+                  <li class="flex items-start gap-2 font-body-sm text-[11px] text-on-surface-variant">
+                    <span class="material-symbols-outlined text-primary text-xs mt-0.5">check_circle</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="pt-4 border-t border-outline-variant/15 flex flex-col sm:flex-row gap-3">
+              <a class="flex-1 py-2.5 bg-surface-container-high text-center font-label-md text-xs uppercase tracking-wider text-on-surface hover:bg-primary hover:text-on-primary transition-all rounded-lg font-bold" href={course.url}>
+                View Syllabus
+              </a>
+              <a class="py-2.5 px-4 bg-primary/15 text-primary text-center font-label-md text-xs uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-all rounded-lg font-bold" href="#inquiry">
+                Get Fee Details
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 4. MAKEUP COURSES -->
+    <div id="makeup" class="mb-space-xl scroll-mt-24">
+      <div class="border-b border-outline-variant/20 pb-4 mb-6">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Haute Artistry</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Makeup & Bridal Academies</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-md">
+        {makeupCourses.map(course => (
+          <div class="group bg-surface-container-low rounded-2xl overflow-hidden flex flex-col justify-between hover:bg-surface-container transition-all duration-300 shadow-md border border-outline-variant/15 p-6">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 bg-surface-container border border-outline-variant/20 rounded-full font-label-sm text-[11px] text-primary uppercase tracking-wider font-bold">
+                  {course.tag}
+                </span>
+                <span class="text-xs text-outline font-semibold">{course.duration}</span>
+              </div>
+              <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors mb-2">{course.title}</h3>
+              <p class="font-body-sm text-on-surface-variant text-xs mb-4 leading-relaxed">
+                {course.description}
+              </p>
+              <ul class="space-y-1.5 mb-6">
+                {course.highlights.map(highlight => (
+                  <li class="flex items-start gap-2 font-body-sm text-[11px] text-on-surface-variant">
+                    <span class="material-symbols-outlined text-primary text-xs mt-0.5">check_circle</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div class="pt-4 border-t border-outline-variant/15 flex flex-col gap-2">
+              <a class="w-full py-2.5 bg-surface-container-high text-center font-label-md text-xs uppercase tracking-wider text-on-surface hover:bg-primary hover:text-on-primary transition-all rounded-lg font-bold" href={course.url}>
+                View Syllabus
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 5. JOB-ORIENTED SALON COURSE -->
+    <div id="salon" class="mb-space-xl scroll-mt-24">
+      <div class="border-b border-outline-variant/20 pb-4 mb-6">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Direct Salon Entry</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Job-Oriented Salon Course</h2>
+      </div>
+
+      <div class="bg-surface-container-low rounded-2xl p-6 sm:p-8 border border-outline-variant/15 shadow-lg">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+          <div class="lg:col-span-2">
+            <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase rounded-full mb-3">1 Month Fastrack</div>
+            <h3 class="font-headline-sm text-2xl font-bold text-on-surface mb-2">Job-Oriented Salon Course (1 Month)</h3>
+            <p class="font-body-md text-on-surface-variant text-sm mb-4 leading-relaxed">
+              Designed for rapid employment in top salon chains across Kerala and the UAE. Covers high-frequency salon floor requirements across Hair (wash, blow dry, trims, root touch-up, spa) and Skin (threading, facials, cleanups, waxing, manicure, pedicure).
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs text-on-surface">
+              <span class="px-2.5 py-1 bg-surface-container rounded">Blow Dry & Setting</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded">Precision Threading</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded">Root Touch-Ups</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded">Waxing & Facials</span>
+              <span class="px-2.5 py-1 bg-surface-container rounded">Manicure & Pedicure</span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a href="/job-oriented-salon-course/" class="w-full py-3 bg-primary text-on-primary font-label-md text-xs uppercase tracking-wider font-bold rounded-lg text-center hover:bg-primary-fixed transition-colors shadow">
+              View Salon Course Syllabus &rarr;
+            </a>
+            <a href="#inquiry" class="w-full py-3 bg-surface-container-high text-on-surface font-label-md text-xs uppercase tracking-wider font-bold rounded-lg text-center hover:bg-surface-container transition-colors border border-outline-variant/30">
+              Get Fee & Batch Schedule
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GLOBAL LEAD CAPTURE SECTION -->
+    <div id="inquiry" class="py-space-xl max-w-[900px] mx-auto scroll-mt-24">
+      <CourseLeadForm 
+        courseName="General Admissions Inquiry 2026"
+        title="Request Official Prospectus & Fee Structure"
+        subtitle="Fill in your details below to receive the complete LivArt 2026 course prospectus, module syllabi, toolkit lists, and current fee schedule directly on your WhatsApp."
+        formId="overview-lead-form"
+      />
+    </div>
+
+  </section>
+</Layout>

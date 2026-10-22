@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+
+const modules3M = [
+  { num: "01", title: "Makeup Fundamentals & Skin Prep", desc: "Personal grooming • History & intro to makeup • Skin types & preparation • Makeup product knowledge." },
+  { num: "02", title: "Colour Theory & Base Makeup", desc: "Colour correction & concealing • Colour theory & colour schemes • Foundation mixing for perfect skin tone • Application & blending." },
+  { num: "03", title: "Cream Contouring & Face Definition", desc: "Cream contour application • Cream blush application • Highlighter application." },
+  { num: "04", title: "Powder Techniques & Face Finishing", desc: "Powder setting • Powder contouring • Powder brush techniques • Powder highlighting." },
+  { num: "05", title: "Lip Makeup", desc: "Lip contouring • Lipstick application • Lip liner application • Lip gloss application." },
+  { num: "06", title: "Eyebrow & Eye Makeup", desc: "Eyebrow shaping & filling • Eye contouring • Eye makeup techniques • Kajal • Gel eyeliner • Mascara • False lash & contact lens application." },
+  { num: "07", title: "Saree Draping & Pleating", desc: "Saree pre-pleating & ironing • Measurements & fitting • Box folding • Draping for lean, medium & heavy body types • Side & hip pleats • Fluffy pleats • Mermaid & Lehenga draping." },
+  { num: "08", title: "Bridal & Professional Demonstrations", desc: "Three bridal looks: Hindu, Christian & Muslim • Fashion makeup • Retro makeup • Fantasy makeup • Transfer-proof makeup • Glass skin makeup • HD makeup • Airbrush makeup." },
+  { num: "09", title: "Hair Preparation & Product Knowledge", desc: "Hair preparation techniques • Hair products & tools knowledge • Blow-drying techniques." },
+  { num: "10", title: "Hair Styling Techniques", desc: "Crimping • Tong curling • Hair ironing & straightening • Backcombing." },
+  { num: "11", title: "Hairstyle Creation", desc: "Different braid variations • Bun setting • Ponytail styling • Flower setting • Front hairstyle variations." }
+];
+---
+
+<Layout 
+  title="Diploma in Makeup (3 Months & 1 Month) | Livart Beauty Academy Kochi"
+  description="Master bridal, fashion, and HD makeup artistry with Stephy Sebastian at Livart Beauty Academy Kochi. 3-Month Master Diploma and 1-Month Intensive with brush kit and tool kit included."
+>
+  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
+      <div>
+        <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Makeup Artistry Academy</span>
+        </div>
+        <h1 class="font-display-lg text-display-lg lg:text-[60px] lg:leading-[68px] text-on-surface tracking-tight mb-6">
+          Diploma in <span class="italic text-primary">Makeup Artistry.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">
+          Offering both the 3-Month Master Diploma and the 1-Month Intensive Track. Master Hindu, Christian, and Muslim bridal looks, Airbrush, Glass Skin, Hairstyling, and Saree Draping with your personal tool kit.
+        </p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-outline-variant/20 py-6">
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tracks</span>
+            <strong class="font-title-md text-on-surface text-base">3M & 1M</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Bridal Looks</span>
+            <strong class="font-title-md text-on-surface text-base">Hindu, Christian, Muslim</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Tool Kit</span>
+            <strong class="font-title-md text-on-surface text-base">Included</strong>
+          </div>
+          <div>
+            <span class="block font-label-sm uppercase text-outline mb-1 text-xs">Certification</span>
+            <strong class="font-title-md text-on-surface text-base">B&WSSC Affiliated</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#enroll" class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold rounded shadow-lg hover:bg-primary-fixed transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">download</span>
+            Get Syllabus & Fee Details
+          </a>
+        </div>
+      </div>
+      
+      <div class="relative h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-surface-container shadow-2xl">
+        <img fetchpriority="high" decoding="async" src="/images/academy-live/fastrack_bridal_workshop.jpg" class="w-full h-full object-cover" alt="Student practicing makeup artistry at LivArt Beauty Academy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+          <div class="inline-block px-3 py-1 bg-primary text-white text-xs uppercase tracking-widest font-bold rounded mb-2 w-max">
+            Included in Course
+          </div>
+          <h3 class="font-headline-sm text-white text-xl font-bold">Personal Professional Makeup Tool Kit</h3>
+          <p class="text-white/80 font-body-sm text-sm mt-1">Brush Kit • Sponge • Powder Puff • Palette • Spatula</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 MODULES -->
+  <section class="py-space-xl bg-surface-container-lowest border-b border-outline-variant/20">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="max-w-3xl mb-space-xl">
+        <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold">Full 11-Module Syllabus</span>
+        <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">The 11 Modules of Master Makeup Artistry.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {modules3M.map(m => (
+          <div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15 flex flex-col justify-between">
+            <div>
+              <span class="font-label-sm text-primary uppercase tracking-widest font-bold text-xs block mb-1">Module {m.num}</span>
+              <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">{m.title}</h3>
+              <p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE -->
+  <section id="enroll" class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Diploma in Makeup (3 Months)"
+      title="Request Makeup Syllabus & Fee Structure"
+      subtitle="Fill in your details below to receive the complete 3-Month & 1-Month Makeup prospectus, bridal look breakdowns, toolkit list, and fee schedule via WhatsApp."
+      formId="diploma-makeup-lead-form"
+    />
+  </section>
+
+  <!-- SCHEMA -->
+  <script type="application/ld+json" set:html={`
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Diploma in Makeup Artistry",
+      "description": "3-month and 1-month professional makeup artistry diplomas in Kochi covering Hindu, Christian, Muslim bridal makeup, Airbrush, Glass Skin, Hairstyling, and Saree Draping at Livart Beauty Academy.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Livart Beauty Academy",
+        "url": "https://livart.co.in"
+      }
+    }
+  `} />
+</Layout>

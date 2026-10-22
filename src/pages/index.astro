@@ -1,0 +1,780 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CourseLeadForm from '../components/CourseLeadForm.astro';
+import InstagramReelCard from '../components/InstagramReelCard.astro';
+---
+
+<Layout title="Livart Beauty Academy | Professional Beauty Education in Kochi">
+	<div class="flex flex-col w-full text-on-surface">
+		
+		<!-- 1. HERO SECTION -->
+		<section class="relative min-h-[85vh] flex flex-col justify-center items-center text-center px-margin-sm lg:px-margin-lg overflow-hidden py-space-xl">
+			<div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+				<div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high/90 border border-outline-variant/30 mb-space-lg shadow-sm">
+					<a href="https://www.instagram.com/livart_academy?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-on-surface hover:text-primary transition-colors font-medium">
+						<svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+						<span class="font-semibold text-primary">@livart_academy</span>
+					</a>
+					<span class="text-outline/40">•</span>
+					<span class="font-label-sm text-label-sm uppercase tracking-[0.16em] text-on-surface font-semibold">
+						Kerala’s Finest Beauty Academy • 2026 Admissions Open
+					</span>
+				</div>
+				
+				<h1 class="font-display-xl text-display-xl lg:text-[72px] lg:leading-[80px] tracking-tight text-white max-w-4xl mb-space-md text-balance">
+					Professional Beauty Education. <br/>
+					<span class="italic font-display-xl text-white/90">Built for Real Careers.</span>
+				</h1>
+				
+				<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-space-xl leading-relaxed text-pretty">
+					Turn passion into profession with Kerala’s premier B&WSSC-certified beauty education atelier in Kalamassery, Kochi. Master hair architecture, bridal couture, clinical dermal aesthetics, and salon management on live clients.
+				</p>
+				
+				<div class="flex flex-col sm:flex-row items-center gap-space-md mb-space-xl">
+					<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-label-md text-label-md uppercase tracking-widest transition-all duration-300 shadow-md hover:bg-primary-fixed font-bold rounded" href="/overview/">
+						Explore Courses
+					</a>
+					<a class="inline-flex items-center justify-center px-8 py-4 bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-widest hover:border-primary transition-all duration-300 border border-outline-variant/30 rounded" href="/contact-us/">
+						Talk to Admissions
+					</a>
+				</div>
+
+				<!-- ELEMENT 1: HERO ESTABLISHMENT VISUAL SHOWCASE (Atelier Floor & Bridal Suite) -->
+				<div class="w-full max-w-5xl mt-space-md grid grid-cols-1 md:grid-cols-2 gap-space-md text-left">
+					<!-- Window 1: Live Salon Floor & Hair Architecture -->
+					<div class="group relative rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-low shadow-xl transition-all duration-300 hover:border-primary/40">
+						<div class="aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden relative">
+							<img 
+								fetchpriority="high" 
+								decoding="async" 
+								src="/images/academy-live/future_artists_live_atelier.jpg" 
+								alt="LivArt Academy live hair architecture and client styling floor" 
+								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+							
+							<div class="absolute top-3 left-3">
+								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-bold uppercase tracking-wider text-white">
+									<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+									Kalamassery Flagship Atelier
+								</span>
+							</div>
+							
+							<div class="absolute bottom-3.5 left-4 right-4">
+								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">Hair Architecture & Styling</span>
+								<h3 class="text-white font-headline-sm text-base md:text-lg font-bold leading-tight">Live Salon Floor & Client Experience</h3>
+								<p class="text-white/75 text-xs mt-1 font-body-sm line-clamp-1">Practical training on live clients inside our operational Kalamassery salon floors.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Window 2: Master Bridal Couture Suite -->
+					<div class="group relative rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface-container-low shadow-xl transition-all duration-300 hover:border-primary/40">
+						<div class="aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden relative">
+							<img 
+								fetchpriority="high" 
+								decoding="async" 
+								src="/images/academy-live/bridal_masterclass_pathadipalam.jpg" 
+								alt="LivArt Bridal Studio traditional bridal transformation with temple jewelry" 
+								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+							
+							<div class="absolute top-3 left-3">
+								<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-bold uppercase tracking-wider text-white">
+									<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+									B&WSSC Accredited Floor
+								</span>
+							</div>
+							
+							<div class="absolute bottom-3.5 left-4 right-4">
+								<span class="text-[10px] uppercase font-bold tracking-widest text-primary block mb-1">Bridal Artistry & Couture</span>
+								<h3 class="text-white font-headline-sm text-base md:text-lg font-bold leading-tight">Master Bridal Transformations</h3>
+								<p class="text-white/75 text-xs mt-1 font-body-sm line-clamp-1">Complete Hindu, Christian, and Muslim wedding looks with 4K HD and saree draping.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- 2. TRUST STRIP -->
+		<section class="w-full bg-surface-container-lowest py-space-md border-y border-outline-variant/20">
+			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md text-center divide-x divide-outline-variant/20">
+					<div class="flex flex-col items-center justify-center px-4">
+						<span class="material-symbols-outlined text-primary text-3xl mb-2">verified</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface">B&WSSC Affiliated</span>
+					</div>
+					<div class="flex flex-col items-center justify-center px-4">
+						<span class="material-symbols-outlined text-primary text-3xl mb-2">back_hand</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface">Hands-on Training</span>
+					</div>
+					<div class="flex flex-col items-center justify-center px-4">
+						<span class="material-symbols-outlined text-primary text-3xl mb-2">school</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface">Experienced Trainers</span>
+					</div>
+					<div class="flex flex-col items-center justify-center px-4">
+						<span class="material-symbols-outlined text-primary text-3xl mb-2">location_on</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface">Kalamassery, Kochi</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. WHY LIVART (Proof Pillars) -->
+		<section class="w-full py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+			<div class="text-center max-w-3xl mx-auto mb-space-xl">
+				<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">The Academy</span>
+				<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Structured for Professional Success.</h2>
+				<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm">
+					We don't just teach techniques; we build professionals. Livart stands on three foundational pillars designed to transition you from student to sought-after artist.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
+				<div class="luxury-card p-space-lg rounded-2xl">
+					<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-space-md">
+						<span class="material-symbols-outlined text-2xl">brush</span>
+					</div>
+					<h3 class="font-headline-sm text-on-surface mb-3 text-xl font-bold">CRAFT</h3>
+					<p class="font-body-md text-on-surface-variant leading-relaxed text-sm">
+						Immersive, hands-on beauty, makeup, hair, and skin education. We prioritize practical application on live models over theoretical classroom lectures.
+					</p>
+				</div>
+				<div class="luxury-card p-space-lg rounded-2xl">
+					<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-space-md">
+						<span class="material-symbols-outlined text-2xl">workspace_premium</span>
+					</div>
+					<h3 class="font-headline-sm text-on-surface mb-3 text-xl font-bold">CREDENTIAL</h3>
+					<p class="font-body-md text-on-surface-variant leading-relaxed text-sm">
+						Backed by B&WSSC affiliation and recognized under the Ministry of Skill Development. Our documented certification pathway adds instant authority to your resume.
+					</p>
+				</div>
+				<div class="luxury-card p-space-lg rounded-2xl">
+					<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-space-md">
+						<span class="material-symbols-outlined text-2xl">trending_up</span>
+					</div>
+					<h3 class="font-headline-sm text-on-surface mb-3 text-xl font-bold">CAREER</h3>
+					<p class="font-body-md text-on-surface-variant leading-relaxed text-sm">
+						Training designed around actual salon workflows, freelance client management, bridal bookings, and real beauty-industry opportunities.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ELEMENT 2: INSIDE THE ACADEMY (Atelier Infrastructure & Live Bays) -->
+		<section class="w-full py-space-xl bg-surface-container-low border-y border-outline-variant/30">
+			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+				<div class="text-center max-w-3xl mx-auto mb-space-xl">
+					<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs font-bold">Physical Infrastructure</span>
+					<h2 class="font-display-lg text-display-lg text-white tracking-tight text-balance">Inside The Academy. Built Like a Working Salon.</h2>
+					<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm text-pretty">
+						We eliminated the desk-bound classroom. Our Kalamassery campus is configured as high-volume commercial salon floors, clinical aesthetics bays, and bridal master suites so you graduate industry-ready.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg mb-space-xl">
+					<!-- Infrastructure Card 1: Clinical Skincare & Aesthetics Lab -->
+					<div class="luxury-card rounded-2xl overflow-hidden flex flex-col group border border-outline-variant/30">
+						<div class="aspect-[16/10] w-full overflow-hidden relative">
+							<img 
+								fetchpriority="high" 
+								decoding="async" 
+								src="/images/academy-live/hair_makeup_skin_foundation.jpg" 
+								alt="Clinical skincare and aesthetics consultation bay at LivArt Academy" 
+								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+							<div class="absolute top-4 left-4">
+								<span class="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+									<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+									Clinical Aesthetics Lab
+								</span>
+							</div>
+							<div class="absolute bottom-4 left-5 right-5">
+								<h3 class="text-white font-headline-sm text-xl font-bold">Clinical Dermal & Aesthetic Stations</h3>
+							</div>
+						</div>
+						<div class="p-space-lg flex-1 flex flex-col justify-between">
+							<p class="font-body-md text-on-surface-variant leading-relaxed text-sm mb-4">
+								Equipped with modern aesthetic equipment including Hydra-facial vacuum infusion systems, high-frequency derma wands, galvanic units, and LED light therapy. Students practice clinical consultation, Fitzpatrick skin typing, and personalized treatment regimens.
+							</p>
+							<div class="grid grid-cols-2 gap-2 pt-4 border-t border-outline-variant/20 text-xs text-on-surface">
+								<div class="flex items-center gap-2">
+									<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+									<span>Hydra-Facial Systems</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+									<span>High-Frequency Units</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+									<span>Autoclave Sterilization</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+									<span>Chemical Peel Bays</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Infrastructure Card 2: Precision Hair Architecture & Commercial Floor -->
+					<div class="luxury-card rounded-2xl overflow-hidden flex flex-col group border border-outline-variant/30">
+						<div class="aspect-[16/10] w-full overflow-hidden relative">
+							<img 
+								fetchpriority="high" 
+								decoding="async" 
+								src="/images/academy-live/loreal_hair_spa_practical.jpg" 
+								alt="Commercial hairdressing stations and live client styling floor at LivArt" 
+								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+							<div class="absolute top-4 left-4">
+								<span class="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5">
+									<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+									Commercial Salon Floor
+								</span>
+							</div>
+							<div class="absolute bottom-4 left-5 right-5">
+								<h3 class="text-white font-headline-sm text-xl font-bold">Hairdressing & Chemical Processing Bays</h3>
+							</div>
+						</div>
+						<div class="p-space-lg flex-1 flex flex-col justify-between">
+							<p class="font-body-md text-on-surface-variant leading-relaxed text-sm mb-4">
+								Operating directly inside our flagship Kalamassery salon with ergonomic hydraulic chairs, shadowless mirror illumination, and dedicated backwash stations. Students formulate L'Oréal and Wella treatments, execute precision haircuts, and manage client flow.
+							</p>
+							<div class="grid grid-cols-2 gap-2 pt-4 border-t border-outline-variant/20 text-xs text-on-surface">
+								<div class="flex items-center gap-2">
+									<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+									<span>Hydraulic Styling Bays</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+									<span>L'Oréal / Wella Color Bar</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+									<span>Nanoplastia & Botox</span>
+								</div>
+								<div class="flex items-center gap-2">
+									<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+									<span>1M Live Client Internship</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Institutional Authority Metrics -->
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-space-md rounded-xl bg-surface-container border border-outline-variant/30 text-center">
+					<div class="p-3">
+						<span class="font-display-md text-2xl lg:text-3xl font-bold text-white block">20+</span>
+						<span class="font-label-sm text-on-surface-variant uppercase tracking-wider text-[11px] mt-1 block">Years Salon Pedigree</span>
+					</div>
+					<div class="p-3">
+						<span class="font-display-md text-2xl lg:text-3xl font-bold text-white block">100%</span>
+						<span class="font-label-sm text-on-surface-variant uppercase tracking-wider text-[11px] mt-1 block">Live Model Training</span>
+					</div>
+					<div class="p-3">
+						<span class="font-display-md text-2xl lg:text-3xl font-bold text-white block">B&WSSC</span>
+						<span class="font-label-sm text-on-surface-variant uppercase tracking-wider text-[11px] mt-1 block">National Govt. Affiliation</span>
+					</div>
+					<div class="p-3">
+						<span class="font-display-md text-2xl lg:text-3xl font-bold text-white block">1 Month</span>
+						<span class="font-label-sm text-on-surface-variant uppercase tracking-wider text-[11px] mt-1 block">Salon Floor Internship</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 4. COURSE SYSTEM -->
+		<section class="w-full py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+				<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+					<div class="max-w-xl">
+						<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs font-bold">Curriculum</span>
+						<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Our Primary Courses.</h2>
+					</div>
+					<a href="/overview/" class="mt-space-md md:mt-0 font-label-md text-primary uppercase tracking-widest hover:underline flex items-center gap-2 font-bold text-xs">
+						View All Courses <span class="material-symbols-outlined text-sm">arrow_forward</span>
+					</a>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-lg">
+					
+					<!-- Cosmetology (12M & 6M) -->
+					<div class="luxury-card flex flex-col rounded-2xl overflow-hidden">
+						<div class="p-space-lg flex-1">
+							<div class="flex justify-between items-center mb-4">
+								<span class="font-label-sm text-primary uppercase tracking-widest font-bold">12M & 6M Tracks</span>
+								<span class="px-2 py-1 bg-surface-container-high text-xs rounded text-on-surface-variant font-bold">Master Flagship</span>
+							</div>
+							<h3 class="font-headline-sm text-on-surface mb-2 font-bold text-xl">Cosmetology Programme</h3>
+							<p class="font-body-sm text-on-surface-variant mb-4 text-sm leading-relaxed">Hair, Skin, and Makeup triad with tool kits and a mandatory 1-month salon floor internship.</p>
+							<div class="mb-6">
+								<span class="font-label-sm uppercase text-outline block mb-2 text-xs font-bold">Highlights:</span>
+								<div class="flex flex-wrap gap-1.5">
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">1M Internship</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Tool Kits Included</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">B&WSSC Certified</span>
+								</div>
+							</div>
+						</div>
+						<a href="/certification-course-in-cosmetology/" class="p-4 bg-surface-container-high text-center font-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors font-bold text-xs border-t border-outline-variant/20">View Syllabus & Details</a>
+					</div>
+
+					<!-- Makeup (3M & 1M) -->
+					<div class="luxury-card flex flex-col rounded-2xl overflow-hidden">
+						<div class="p-space-lg flex-1">
+							<div class="flex justify-between items-center mb-4">
+								<span class="font-label-sm text-primary uppercase tracking-widest font-bold">3M & 1M Tracks</span>
+								<span class="px-2 py-1 bg-surface-container-high text-xs rounded text-on-surface-variant font-bold">Master Artistry</span>
+							</div>
+							<h3 class="font-headline-sm text-on-surface mb-2 font-bold text-xl">Diploma in Make-up Artistry</h3>
+							<p class="font-body-sm text-on-surface-variant mb-4 text-sm leading-relaxed">Hindu, Christian & Muslim bridal looks, 4K HD, Airbrush, Hair Styling, and Saree Draping.</p>
+							<div class="mb-6">
+								<span class="font-label-sm uppercase text-outline block mb-2 text-xs font-bold">Highlights:</span>
+								<div class="flex flex-wrap gap-1.5">
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">3 Bridal Looks</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Brush Kit Included</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Saree Pre-pleating</span>
+								</div>
+							</div>
+						</div>
+						<a href="/make-up-course/" class="p-4 bg-surface-container-high text-center font-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors font-bold text-xs border-t border-outline-variant/20">View Syllabus & Details</a>
+					</div>
+
+					<!-- Hair (4M & 2M) -->
+					<div class="luxury-card flex flex-col rounded-2xl overflow-hidden">
+						<div class="p-space-lg flex-1">
+							<div class="flex justify-between items-center mb-4">
+								<span class="font-label-sm text-primary uppercase tracking-widest font-bold">4M & 2M Tracks</span>
+								<span class="px-2 py-1 bg-surface-container-high text-xs rounded text-on-surface-variant font-bold">Hair Atelier</span>
+							</div>
+							<h3 class="font-headline-sm text-on-surface mb-2 font-bold text-xl">Hair Dressing & Styling</h3>
+							<p class="font-body-sm text-on-surface-variant mb-4 text-sm leading-relaxed">13+ precision haircuts, Nanoplastia, Botox, Balayage, Ombre, and commercial hair styling.</p>
+							<div class="mb-6">
+								<span class="font-label-sm uppercase text-outline block mb-2 text-xs font-bold">Highlights:</span>
+								<div class="flex flex-wrap gap-1.5">
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Precision Cuts</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Nanoplastia / Botox</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Tool Kit Included</span>
+								</div>
+							</div>
+						</div>
+						<a href="/hair-styling-course/" class="p-4 bg-surface-container-high text-center font-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors font-bold text-xs border-t border-outline-variant/20">View Syllabus & Details</a>
+					</div>
+
+					<!-- Skin (4M & 2M) -->
+					<div class="luxury-card flex flex-col rounded-2xl overflow-hidden">
+						<div class="p-space-lg flex-1">
+							<div class="flex justify-between items-center mb-4">
+								<span class="font-label-sm text-primary uppercase tracking-widest font-bold">4M & 2M Tracks</span>
+								<span class="px-2 py-1 bg-surface-container-high text-xs rounded text-on-surface-variant font-bold">Aesthetics</span>
+							</div>
+							<h3 class="font-headline-sm text-on-surface mb-2 font-bold text-xl">Skin Therapy & Aesthetics</h3>
+							<p class="font-body-sm text-on-surface-variant mb-4 text-sm leading-relaxed">Hydra facials, High frequency, chemical peels, acne therapies, manicure, and pedicure.</p>
+							<div class="mb-6">
+								<span class="font-label-sm uppercase text-outline block mb-2 text-xs font-bold">Highlights:</span>
+								<div class="flex flex-wrap gap-1.5">
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Hydra Facial</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">High Frequency</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Facial Kit Included</span>
+								</div>
+							</div>
+						</div>
+						<a href="/skin-care-course/" class="p-4 bg-surface-container-high text-center font-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors font-bold text-xs border-t border-outline-variant/20">View Syllabus & Details</a>
+					</div>
+
+					<!-- Fastrack Bridal (10 Days) -->
+					<div class="luxury-card flex flex-col rounded-2xl overflow-hidden">
+						<div class="p-space-lg flex-1">
+							<div class="flex justify-between items-center mb-4">
+								<span class="font-label-sm text-primary uppercase tracking-widest font-bold">10 Days Intensive</span>
+								<span class="px-2 py-1 bg-surface-container-high text-xs rounded text-on-surface-variant font-bold">Bootcamp</span>
+							</div>
+							<h3 class="font-headline-sm text-on-surface mb-2 font-bold text-xl">Fastrack Bridal Makeup</h3>
+							<p class="font-body-sm text-on-surface-variant mb-4 text-sm leading-relaxed">Hindu, Christian & Muslim wedding looks, bridal buns, pre-pleating, and final live model exam.</p>
+							<div class="mb-6">
+								<span class="font-label-sm uppercase text-outline block mb-2 text-xs font-bold">Highlights:</span>
+								<div class="flex flex-wrap gap-1.5">
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">13 Modules</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Live Model Exam</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Brush Kit Included</span>
+								</div>
+							</div>
+						</div>
+						<a href="/bridal-makeup-course/" class="p-4 bg-surface-container-high text-center font-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors font-bold text-xs border-t border-outline-variant/20">View Syllabus & Details</a>
+					</div>
+					
+					<!-- Job-Oriented Salon Course (1 Month) -->
+					<div class="luxury-card flex flex-col rounded-2xl overflow-hidden">
+						<div class="p-space-lg flex-1">
+							<div class="flex justify-between items-center mb-4">
+								<span class="font-label-sm text-primary uppercase tracking-widest font-bold">1 Month Track</span>
+								<span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded font-bold">Direct Job Entry</span>
+							</div>
+							<h3 class="font-headline-sm text-on-surface mb-2 font-bold text-xl">Job-Oriented Salon Course</h3>
+							<p class="font-body-sm text-on-surface-variant mb-4 text-sm leading-relaxed">High-demand salon services across Hair and Skin: blow dry, haircuts, facials, waxing, and threading.</p>
+							<div class="mb-6">
+								<span class="font-label-sm uppercase text-outline block mb-2 text-xs font-bold">Highlights:</span>
+								<div class="flex flex-wrap gap-1.5">
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Hair + Skin Floor</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">Placement Support</span>
+									<span class="px-2 py-1 bg-surface-container-high rounded text-xs text-on-surface">30-Day Launch</span>
+								</div>
+							</div>
+						</div>
+						<a href="/job-oriented-salon-course/" class="p-4 bg-surface-container-high text-center font-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors font-bold text-xs border-t border-outline-variant/20">View Syllabus & Details</a>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- 5. CAREER PATHWAYS -->
+		<section class="w-full py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+			<div class="text-center max-w-3xl mx-auto mb-space-xl">
+				<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs font-bold">Your Future</span>
+				<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Real Career Outcomes.</h2>
+				<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm">
+					Livart education translates directly to industry roles. Our courses are built to equip you for these specific pathways:
+				</p>
+			</div>
+
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-sm">
+				<div class="luxury-card p-space-md text-center rounded-xl">
+					<span class="material-symbols-outlined text-primary mb-2 text-3xl">storefront</span>
+					<div class="font-title-md text-on-surface text-sm font-semibold">Salon Professional</div>
+				</div>
+				<div class="luxury-card p-space-md text-center rounded-xl">
+					<span class="material-symbols-outlined text-primary mb-2 text-3xl">diamond</span>
+					<div class="font-title-md text-on-surface text-sm font-semibold">Bridal Makeup Artist</div>
+				</div>
+				<div class="luxury-card p-space-md text-center rounded-xl">
+					<span class="material-symbols-outlined text-primary mb-2 text-3xl">flight_takeoff</span>
+					<div class="font-title-md text-on-surface text-sm font-semibold">Freelance Artist</div>
+				</div>
+				<div class="luxury-card p-space-md text-center rounded-xl">
+					<span class="material-symbols-outlined text-primary mb-2 text-3xl">content_cut</span>
+					<div class="font-title-md text-on-surface text-sm font-semibold">Hair Specialist</div>
+				</div>
+				<div class="luxury-card p-space-md text-center rounded-xl">
+					<span class="material-symbols-outlined text-primary mb-2 text-3xl">spa</span>
+					<div class="font-title-md text-on-surface text-sm font-semibold">Skin Care Professional</div>
+				</div>
+				<div class="luxury-card p-space-md text-center rounded-xl">
+					<span class="material-symbols-outlined text-primary mb-2 text-3xl">domain</span>
+					<div class="font-title-md text-on-surface text-sm font-semibold">Beauty Entrepreneur</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 6. FOUNDER STORY -->
+		<section class="w-full py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
+					<div class="order-2 lg:order-1">
+						<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-2">The Founder</span>
+						<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight mb-6">From Clinical Nursing to Beauty Education.</h2>
+						<p class="font-body-lg text-on-surface-variant mb-6 leading-relaxed">
+							Raised in Kuttanadu in Alappuzha, Stephy Sebastian spent 5 years as a dedicated registered nurse before transitioning her clinical precision into the beauty industry. 
+						</p>
+						<p class="font-body-lg text-on-surface-variant mb-8 leading-relaxed">
+							Inspired by her mother's work helping brides, Stephy trained extensively with global brands like L'Oréal and Wella, building over 20 years of salon industry experience. She founded Livart Beauty Academy to bring structured, accredited, and highly professional education to Kerala's aspiring artists.
+						</p>
+						<a href="/founder-makeup-academy/" class="inline-flex items-center gap-2 font-label-md uppercase tracking-widest text-primary hover:text-primary-fixed transition-colors">
+							Read Stephy's Story <span class="material-symbols-outlined text-sm">arrow_forward</span>
+						</a>
+					</div>
+					<div class="order-1 lg:order-2">
+						<div class="rounded-xl overflow-hidden shadow-xl border border-outline-variant/10">
+							<img fetchpriority="high" decoding="async" src="/images/brand/stephy-sebastian.webp" alt="Stephy Sebastian - Founder of Livart Beauty Academy" class="w-full h-auto object-cover object-[center_15%] max-h-[500px]" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 7. STUDENT WORK & INSTAGRAM SHOWCASE -->
+		<section class="w-full py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+			<div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-space-md mb-space-lg">
+				<div>
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/25 mb-3">
+						<svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+						<span class="text-xs font-bold uppercase tracking-widest text-primary">Live From @livart_academy</span>
+						<span class="text-primary/40">•</span>
+						<span class="text-xs text-on-surface font-semibold">6.5K+ Community</span>
+					</div>
+					<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Turn Passion Into Profession.</h2>
+					<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-2 leading-relaxed">
+						Experience what happens inside our Kalamassery atelier floors. From live bridal suites and L'Oréal hair therapies to student graduation runway assessments.
+					</p>
+				</div>
+				<div class="flex flex-wrap items-center gap-3">
+					<a 
+						href="https://www.instagram.com/livart_academy?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" 
+						target="_blank" 
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-container-high border border-outline-variant/30 hover:border-primary text-xs uppercase tracking-wider font-bold transition-all shadow-sm hover:shadow-md"
+					>
+						<svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+						<span>Follow @livart_academy</span>
+					</a>
+					<a class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-all text-xs uppercase tracking-wider font-bold" href="/portfolios/">
+						<span>All Portfolios</span>
+						<span class="material-symbols-outlined text-sm">arrow_forward</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- 6-Card Grid of Real Academy Work -->
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+				<!-- Card 1: Student Testimonial Nimmy -->
+				<InstagramReelCard 
+					url="https://www.instagram.com/reel/Cj9gISlIba1/"
+					image="/images/academy-live/ig_student_testimonial_nimmy.jpg"
+					category="Student Spotlight"
+					title="Student Nimmy Kalathil — Journey & Artistry"
+					description="Hands-on training from zero experience to mastering bridal makeup and client consultations inside our Kalamassery bays."
+					badge="@livart_academy Reel"
+				/>
+
+				<!-- Card 2: Bridal Masterclass -->
+				<InstagramReelCard 
+					url="https://www.instagram.com/livart_academy/"
+					image="/images/academy-live/bridal_masterclass_pathadipalam.jpg"
+					category="Bridal Masterclass"
+					title="Muhurtham Saree & Temple Bridal Artistry"
+					description="Complete bridal makeover executed live on real clients with traditional Kerala Kasavu draping and 4K HD base."
+					badge="Kalamassery Live"
+				/>
+
+				<!-- Card 3: L'Oréal Professional Hair Spa -->
+				<InstagramReelCard 
+					url="https://www.instagram.com/livart_academy/"
+					image="/images/academy-live/loreal_hair_spa_practical.jpg"
+					category="Hair Architecture"
+					title="L'Oréal Professional Practical Bay"
+					description="Clinical scalp diagnosis, deep keratin conditioning rituals, and precision blowouts trained under master educators."
+					badge="Live Studio Bay"
+				/>
+
+				<!-- Card 4: Precision Cut-Crease & Artistry -->
+				<InstagramReelCard 
+					url="https://www.instagram.com/p/Dc-ULHvEvKu/"
+					image="/images/academy-live/ig_makeup_artistry_showcase.jpg"
+					category="Makeup Artistry"
+					title="Precision Cut-Crease & Color Theory"
+					description="Advanced symmetry calibration, smokey eyes, and dewy glass skin finish demonstrated during intensive studio workshops."
+					badge="@livart_academy Post"
+				/>
+
+				<!-- Card 5: Graduate Runway Portfolio Showcase -->
+				<InstagramReelCard 
+					url="https://www.instagram.com/livart_academy/"
+					image="/images/academy-live/student_graduation_showcase.jpg"
+					category="Final Examination"
+					title="Graduate Runway Portfolio Showcase"
+					description="Graduating cosmetologists present comprehensive hair styling and couture aesthetics for B&WSSC board certification."
+					badge="B&WSSC Certified"
+				/>
+
+				<!-- Card 6: Saree Draping & Veil Architecture -->
+				<InstagramReelCard 
+					url="https://www.instagram.com/livart_academy/"
+					image="/images/academy-live/saree_draping_masterclass.jpg"
+					category="Bridal Styling"
+					title="Crisp Pleats & Veil Setting Masterclass"
+					description="Mastering iron-pressed pleats, secure pin placement, and royal veil draping essential for high-end wedding clients."
+					badge="Masterclass"
+				/>
+			</div>
+
+			<!-- Instagram Community Banner -->
+			<div class="mt-space-lg p-6 sm:p-8 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
+				<div class="flex items-center gap-4 text-left">
+					<img 
+						src="/images/brand/livart_academy_ig_profile.jpg" 
+						alt="LivArt Beauty Academy Instagram Profile" 
+						class="w-16 h-16 rounded-full border-2 border-primary object-cover shadow-md flex-shrink-0"
+					/>
+					<div>
+						<div class="flex items-center gap-2">
+							<h3 class="font-headline-sm text-lg font-bold text-on-surface">@livart_academy</h3>
+							<span class="inline-flex items-center justify-center w-4 h-4 rounded-full bg-primary text-white text-[10px] font-bold" title="Verified Academy">✓</span>
+						</div>
+						<p class="font-body-sm text-xs text-on-surface-variant mt-0.5">
+							✨ Kerala’s Finest Beauty Academy • Master Hair • Makeup • Cosmetology
+						</p>
+						<div class="flex items-center gap-3 text-xs text-outline mt-2 font-medium">
+							<span><strong class="text-on-surface font-bold">6,550+</strong> Followers</span>
+							<span>•</span>
+							<span><strong class="text-on-surface font-bold">770+</strong> Posts & Reels</span>
+							<span>•</span>
+							<span class="text-primary font-bold">BWSSC Certified</span>
+						</div>
+					</div>
+				</div>
+				<a 
+					href="https://www.instagram.com/livart_academy?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" 
+					target="_blank" 
+					rel="noopener noreferrer"
+					class="w-full md:w-auto px-6 py-3.5 bg-gradient-to-r from-[#FE0002] to-[#B30002] text-white font-label-md text-xs uppercase tracking-widest font-bold rounded-xl shadow-md hover:shadow-lg hover:scale-102 transition-all flex items-center justify-center gap-2 flex-shrink-0"
+				>
+					<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+					<span>Follow Official Instagram</span>
+				</a>
+			</div>
+		</section>
+
+		<!-- 8. CAMPUS & LOCAL SEO -->
+		<section class="w-full py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg items-center">
+					<div class="space-y-space-md">
+						<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block">Visit Us</span>
+						<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Beauty Academy in Kalamassery, Kochi.</h2>
+						<p class="font-body-lg text-body-lg text-on-surface-variant">
+							Our professional academy is centrally located, providing an accessible, inspiring environment for students across Kerala.
+						</p>
+						<div class="space-y-4 pt-4 border-t border-outline-variant/10">
+							<div class="flex items-start gap-4 text-on-surface">
+								<span class="material-symbols-outlined text-primary text-2xl mt-0.5">location_on</span>
+								<div>
+									<strong class="block font-title-md mb-1">Livart Beauty Academy</strong>
+									<span class="text-on-surface-variant leading-relaxed">Madukappilly Tower, Pathadipalam, Edappally P.O, Kalamassery, Kochi, Kerala 682024</span>
+								</div>
+							</div>
+							<div class="flex items-center gap-4 text-on-surface">
+								<span class="material-symbols-outlined text-primary text-2xl">call</span>
+								<a href="tel:9633211151" class="text-on-surface-variant hover:text-primary transition-colors">+91 96332 11151</a>
+							</div>
+							<div class="flex items-center gap-4 text-on-surface">
+								<span class="material-symbols-outlined text-outline text-2xl">schedule</span>
+								<span class="text-on-surface-variant">Mon – Fri: 10:00 AM – 5:00 PM <br/> Sunday: Closed</span>
+							</div>
+						</div>
+						<div class="pt-4 flex flex-wrap gap-3">
+							<a href="https://share.google/OCj5l70Grn7Wxu8WR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-label-md uppercase tracking-widest font-bold shadow-md hover:bg-primary-fixed transition-colors rounded">
+								<span class="material-symbols-outlined text-sm">directions</span>
+								Get Directions
+							</a>
+							<a href="/contact-us/" class="inline-block px-6 py-3 bg-surface-container-high border border-outline-variant/30 font-label-md uppercase tracking-widest hover:border-primary transition-colors rounded">Contact Desk</a>
+						</div>
+					</div>
+					<div>
+						<!-- Static Map Placeholder for Local SEO visual -->
+						<div class="w-full aspect-[4/3] rounded-xl bg-surface-container overflow-hidden shadow-lg relative flex items-center justify-center">
+							<img fetchpriority="high" decoding="async" src="/images/academy-live/livart_academy_campus_overview.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Livart Campus Exterior" />
+							<div class="relative z-10 p-6 rounded-xl bg-surface-container-lowest/95 shadow-xl text-center border border-outline-variant/20 max-w-sm m-4">
+								<span class="material-symbols-outlined text-primary text-4xl mb-2">pin_drop</span>
+								<div class="font-title-md text-on-surface mb-1">Livart Beauty Academy</div>
+								<p class="font-body-sm text-on-surface-variant mb-4">2 mins walk from Pathadipalam Metro Pillar 384, Kalamassery</p>
+								<a class="inline-block px-5 py-2.5 bg-primary text-white font-label-sm uppercase tracking-wider rounded font-bold shadow hover:bg-primary-fixed transition-colors" href="https://share.google/OCj5l70Grn7Wxu8WR" target="_blank" rel="noopener noreferrer">View Google Profile & Maps</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 9. FAQ -->
+		<section class="w-full py-space-xl px-margin-sm lg:px-margin-lg max-w-[1000px] mx-auto">
+			<div class="text-center mb-space-xl">
+				<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">Answers</span>
+				<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">Frequently Asked Questions.</h2>
+			</div>
+			
+			<div class="space-y-4" id="home-faq">
+				<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+					<button class="w-full p-space-md md:p-space-lg flex items-center justify-between text-left focus:outline-none hover:bg-surface-container transition-colors faq-btn">
+						<span class="font-headline-sm text-title-md text-on-surface">What is the fee structure for beauty courses in Kochi?</span>
+						<span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+					</button>
+					<div class="hidden px-space-md md:px-space-lg pb-space-md md:pb-space-lg text-on-surface-variant font-body-md border-t border-outline-variant/10 pt-4">
+						Course fees vary depending on the duration and specialization (from accelerated bridal masterclasses and 1-month salon certifications to our comprehensive 12-month and 6-month Cosmetology Programmes). We invite you to contact our admissions team for the current fee structure and available promotional concessions for the 2026 intake.
+					</div>
+				</div>
+				<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+					<button class="w-full p-space-md md:p-space-lg flex items-center justify-between text-left focus:outline-none hover:bg-surface-container transition-colors faq-btn">
+						<span class="font-headline-sm text-title-md text-on-surface">What certifications do Livart graduates receive?</span>
+						<span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+					</button>
+					<div class="hidden px-space-md md:px-space-lg pb-space-md md:pb-space-lg text-on-surface-variant font-body-md border-t border-outline-variant/10 pt-4">
+						Our academy is affiliated with the Beauty & Wellness Sector Skill Council (B&WSSC) and is recognized under the Ministry of Skill Development & Entrepreneurship (MSDE). Our diplomas offer strong professional credentials to support your career in top salons or your own business.
+					</div>
+				</div>
+				<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+					<button class="w-full p-space-md md:p-space-lg flex items-center justify-between text-left focus:outline-none hover:bg-surface-container transition-colors faq-btn">
+						<span class="font-headline-sm text-title-md text-on-surface">Do beginners qualify for enrollment?</span>
+						<span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+					</button>
+					<div class="hidden px-space-md md:px-space-lg pb-space-md md:pb-space-lg text-on-surface-variant font-body-md border-t border-outline-variant/10 pt-4">
+						Absolutely. Many of our most successful graduates started with zero prior beauty experience. Qualification and age are not barriers. We teach everything from foundational anatomy to advanced techniques.
+					</div>
+				</div>
+			</div>
+			
+			<div class="text-center mt-8">
+				<a href="/faq/" class="font-label-md text-primary uppercase tracking-widest hover:underline flex items-center justify-center gap-2">Read All FAQs <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+			</div>
+		</section>
+
+		<!-- ADMISSIONS LEAD FORM (WhatsApp & Google Sheets) -->
+		<section class="w-full py-space-xl px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto">
+			<CourseLeadForm 
+				courseName="Cosmetology Programme (12 Months)"
+				title="Apply for 2026 Batches • Get Fee Details"
+				subtitle="Submit your details below to receive the complete LivArt 2026 prospectus, module breakdown, toolkit list, and current fee schedule directly on your WhatsApp."
+				formId="home-lead-form"
+			/>
+		</section>
+
+		<!-- 10. FINAL CTA -->
+		<section class="w-full py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto mb-space-xl">
+			<div class="relative rounded-2xl bg-surface-container-low border border-primary/20 p-space-xl text-center overflow-hidden shadow-xl flex flex-col items-center">
+				<div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none"></div>
+				
+				<h2 class="font-display-lg text-display-lg lg:text-[56px] text-on-surface max-w-3xl mb-space-md relative z-10">
+					Ready to Build Your Beauty Career?
+				</h2>
+				
+				<div class="flex flex-col sm:flex-row items-center gap-space-md relative z-10 mt-6">
+					<a class="px-10 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest font-bold shadow-lg hover:bg-primary-fixed transition-all rounded" href="/overview/">
+						Explore Courses &rarr;
+					</a>
+					<a class="px-8 py-4 bg-surface-container-high text-on-surface font-label-md uppercase tracking-widest hover:border-primary border border-outline-variant/30 transition-all rounded" href="/contact-us/">
+						Speak to Admissions
+					</a>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<script>
+		// FAQ toggle script
+		document.querySelectorAll('.faq-btn').forEach(btn => {
+			btn.addEventListener('click', () => {
+				const content = btn.nextElementSibling;
+				const icon = btn.querySelector('.material-symbols-outlined');
+				const isExpanded = !content?.classList.contains('hidden');
+				
+				// Close all
+				document.querySelectorAll('#home-faq > div > div').forEach(c => c.classList.add('hidden'));
+				document.querySelectorAll('#home-faq .material-symbols-outlined').forEach(i => (i as HTMLElement).style.transform = 'rotate(0deg)');
+
+				// Open clicked
+				if (!isExpanded && content && icon) {
+					content.classList.remove('hidden');
+					(icon as HTMLElement).style.transform = 'rotate(180deg)';
+				}
+			});
+		});
+	</script>
+</Layout>

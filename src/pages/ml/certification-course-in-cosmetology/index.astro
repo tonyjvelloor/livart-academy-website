@@ -1,0 +1,394 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+---
+
+<Layout 
+  title="കോസ്‌മെറ്റോളജി കോഴ്‌സ് കൊച്ചി (12 & 6 മാസം) | Livart Beauty Academy"
+  description="കേരളത്തിലെ ഏറ്റവും മികച്ച കോസ്‌മെറ്റോളജി പ്രോഗ്രാം. ഹെയർ, സ്കിൻ, മേക്കപ്പ് ഡിപ്ലോമകളും 1 മാസത്തെ സലൂൺ ഇന്റേൺഷിപ്പും ടൂൾ കിറ്റും ഉൾപ്പെടെ. B&WSSC അംഗീകൃത സർട്ടിഫിക്കേഷൻ."
+>
+  
+  <!-- 1. HERO SECTION -->
+  <section class="relative pt-24 pb-20 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-white/10 overflow-hidden">
+    <!-- Ambient Red Glow -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <!-- Left Column: Copy & Actions -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs uppercase tracking-widest text-white/90 font-bold">
+            പ്രധാന അക്കാദമി കോഴ്‌സ് • 2026 ബാച്ചുകൾ ആരംഭിച്ചു
+          </span>
+        </div>
+
+        <h1 class="font-display-lg text-4xl sm:text-5xl lg:text-[58px] lg:leading-[68px] text-white tracking-tight font-normal text-balance">
+          കോസ്‌മെറ്റോളജിയിൽ <br/>
+          <span class="italic text-white/90 font-display-xl font-light">സമ്പൂർണ്ണ പ്രൊഫഷണൽ വിജയം.</span>
+        </h1>
+
+        <p class="font-body-lg text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+          കേരളത്തിലെ ഏറ്റവും മികച്ച ബ്യൂട്ടി കരിയർ കോഴ്‌സ്. <strong>ഹെയർ ഡ്രസ്സിംഗ്</strong>, <strong>ക്ലിനിക്കൽ സ്കിൻ കെയർ</strong>, <strong>ബ്രൈഡൽ & മീഡിയ മേക്കപ്പ്</strong> എന്നിവ സമഗ്രമായി പഠിക്കാം. ഒപ്പം പ്രൊഫഷണൽ ടൂൾ കിറ്റുകളും നിർബന്ധിത <strong>1 മാസത്തെ സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പും</strong> ലഭിക്കുന്നു.
+        </p>
+
+        <!-- Quick Proof Indicators -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-4 border-y border-white/10">
+          <div class="p-2">
+            <span class="block text-[11px] uppercase tracking-wider text-white/50 mb-0.5">കോഴ്‌സ് കാലാവധി</span>
+            <strong class="text-sm font-bold text-white">12M & 6M</strong>
+          </div>
+          <div class="p-2">
+            <span class="block text-[11px] uppercase tracking-wider text-white/50 mb-0.5">പ്രാക്ടിക്കൽ ഫോക്കസ്</span>
+            <strong class="text-sm font-bold text-white">100% ലൈവ് മോഡലുകൾ</strong>
+          </div>
+          <div class="p-2">
+            <span class="block text-[11px] uppercase tracking-wider text-white/50 mb-0.5">ഇന്റേൺഷിപ്പ്</span>
+            <strong class="text-sm font-bold text-white">1 മാസം സലൂൺ ഫ്ലോർ</strong>
+          </div>
+          <div class="p-2">
+            <span class="block text-[11px] uppercase tracking-wider text-white/50 mb-0.5">അംഗീകാരം</span>
+            <strong class="text-sm font-bold text-primary">B&WSSC / MSDE</strong>
+          </div>
+        </div>
+
+        <!-- Call to Actions -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a 
+            href="#enroll" 
+            class="px-8 py-4 bg-primary hover:bg-[#d40002] text-white font-label-md text-xs uppercase tracking-widest font-bold rounded-xl shadow-[0_0_25px_rgba(254,0,2,0.5)] transition-all duration-300 flex items-center gap-2"
+          >
+            <span class="material-symbols-outlined text-base">download</span>
+            <span>സിലബസും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടുക</span>
+          </a>
+          
+          <a 
+            href="#tracks" 
+            class="px-6 py-4 bg-white/5 hover:bg-white/10 text-white font-label-md text-xs uppercase tracking-widest font-bold rounded-xl border border-white/10 transition-colors"
+          >
+            12 മാസവും 6 മാസവും താരതമ്യം
+          </a>
+
+          <button 
+            type="button" 
+            class="inline-flex items-center gap-2 text-xs text-primary font-bold uppercase tracking-wider hover:underline cursor-pointer open-reel-modal"
+            data-reel-url="https://www.instagram.com/livart_academy/reel/DcIgaKVBb3R/"
+            data-reel-title="ലൈവ് ഹെയർകട്ട് & ബ്ലോ ഡ്രൈ പരിശീലനം"
+            data-reel-category="സ്റ്റുഡിയോ പ്രാക്ടിക്കൽസ്"
+          >
+            <span class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-sm">play_arrow</span>
+            </span>
+            <span>വീഡിയോ കാണുക (0:45)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual Poster -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-[0_20px_60px_rgba(0,0,0,0.8)] bg-[#131418] aspect-[4/5] group">
+          <img 
+            src="/images/academy-live/bwssc_diploma_cosmetology_gov.jpg" 
+            alt="ലിവ്ആർട്ട് കോസ്‌മെറ്റോളജി വിദ്യാർത്ഥികൾ സ്റ്റുഡിയോയിൽ" 
+            class="w-full h-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-700"
+            fetchpriority="high"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent pointer-events-none"></div>
+          
+          <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[11px] font-bold text-primary uppercase tracking-wider border border-white/10">
+              സർക്കാർ അംഗീകൃത സർട്ടിഫിക്കറ്റ്
+            </span>
+            <span class="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[11px] font-semibold text-white/90 border border-white/10">
+              കളമശ്ശേരി, കൊച്ചി
+            </span>
+          </div>
+
+          <div class="absolute bottom-0 inset-x-0 p-6 space-y-2">
+            <span class="text-xs uppercase font-bold tracking-widest text-primary">മൂന്ന് പ്രധാന മേഖലകൾ</span>
+            <h3 class="font-headline-sm text-xl font-bold text-white">ഹെയർ + സ്കിൻ + മേക്കപ്പ് + സലൂൺ പരിശീലനം</h3>
+            <p class="text-xs text-white/75 leading-relaxed">
+              കോഴ്സിനൊപ്പം പ്രൊഫഷണൽ ടൂൾ കിറ്റുകളും ലൈവ് ക്ലയന്റ് ട്രെയിനിംഗും സൗജന്യം.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. TRACKS COMPARISON (12 Months vs 6 Months) -->
+  <section id="tracks" class="py-20 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="max-w-3xl mb-16 text-center mx-auto">
+      <span class="font-label-sm uppercase tracking-widest text-primary block mb-2 font-bold text-xs">
+        കോഴ്‌സ് തിരഞ്ഞെടുക്കാം
+      </span>
+      <h2 class="font-display-lg text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        നിങ്ങൾക്ക് അനുയോജ്യമായ കോഴ്സ് ഏത്?
+      </h2>
+      <p class="font-body-lg text-white/70 mt-4 leading-relaxed">
+        രണ്ട് ട്രാക്കുകളിലും ലൈവ് മോഡലുകളിൽ പരിശീലനം, പ്രൊഫഷണൽ ടൂൾ കിറ്റുകൾ, 1 മാസത്തെ സലൂൺ ഇന്റേൺഷിപ്പ് എന്നിവ ലഭ്യമാണ്.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      
+      <!-- 12-MONTH MASTER TRACK -->
+      <div class="relative p-8 sm:p-10 rounded-3xl bg-[#131418] border-2 border-primary shadow-[0_15px_40px_rgba(254,0,2,0.25)] flex flex-col justify-between">
+        <div class="absolute -top-3.5 right-8 px-4 py-1 bg-primary text-white font-label-sm uppercase tracking-widest font-bold rounded-full text-[11px] shadow-lg">
+          ★ കൂടുതൽ പേർ തിരഞ്ഞെടുക്കുന്നത്
+        </div>
+
+        <div>
+          <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-1">
+            മാസ്റ്റർ ലെവൽ ഡിപ്ലോമ
+          </span>
+          <h3 class="font-headline-md text-2xl sm:text-3xl font-bold text-white mb-3">
+            കോസ്‌മെറ്റോളജി — 12 മാസം
+          </h3>
+          <p class="text-sm text-white/70 mb-8 leading-relaxed">
+            സ്വന്തമായി സലൂൺ ആരംഭിക്കാൻ ആഗ്രഹിക്കുന്നവർക്കും സീനിയർ കോസ്‌മെറ്റോളജിസ്റ്റ് ആകാൻ ആഗ്രഹിക്കുന്നവർക്കും ഏറ്റവും അനുയോജ്യം.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8 text-center">
+            <div class="p-3.5 rounded-xl bg-[#191b22] border border-white/10">
+              <span class="block text-[10px] font-bold text-white/50 uppercase">ഘട്ടം 1</span>
+              <strong class="text-sm font-bold text-white block mt-0.5">4 മാസം</strong>
+              <span class="text-[11px] text-primary font-semibold">ഹെയർ ഡ്രസ്സിംഗ്</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-[#191b22] border border-white/10">
+              <span class="block text-[10px] font-bold text-white/50 uppercase">ഘട്ടം 2</span>
+              <strong class="text-sm font-bold text-white block mt-0.5">4 മാസം</strong>
+              <span class="text-[11px] text-primary font-semibold">സ്കിൻ തെറാപ്പി</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-[#191b22] border border-white/10">
+              <span class="block text-[10px] font-bold text-white/50 uppercase">ഘട്ടം 3</span>
+              <strong class="text-sm font-bold text-white block mt-0.5">3 മാസം</strong>
+              <span class="text-[11px] text-primary font-semibold">മേക്കപ്പ് മാസ്റ്റർ</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-primary/10 border border-primary/30">
+              <span class="block text-[10px] font-bold text-primary uppercase">ഘട്ടം 4</span>
+              <strong class="text-sm font-bold text-primary block mt-0.5">1 മാസം</strong>
+              <span class="text-[11px] text-white/80 font-semibold">സലൂൺ ഫ്ലോർ</span>
+            </div>
+          </div>
+
+          <div class="space-y-3.5 text-xs text-white/80 mb-8">
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+              <span><strong>ഹെയർ ഡ്രസ്സിംഗ് (4M):</strong> 13-ലധികം പ്രിസിഷൻ കട്ടുകൾ (ബട്ടർഫ്ലൈ, വുൾഫ്, ബോബ്), നാനോപ്ലാസ്റ്റിയ, ബോട്ടോക്സ്, ബാലിയാജ്, ഓംബ്രെ.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+              <span><strong>അഡ്വാൻസ്ഡ് സ്കിൻ തെറാപ്പി (4M):</strong> ഹൈഡ്ര ഫേഷ്യൽ മെഷീൻ, ഹൈ ഫ്രീക്വൻസി, ഗാൽവാനിക്, കെമിക്കൽ പീൽ, ആന്റി-ഏജിംഗ് ചികിത്സകൾ.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+              <span><strong>മാസ്റ്റർ മേക്കപ്പ് ആർട്ടിസ്ട്രി (3M):</strong> ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം ബ്രൈഡൽ ലുക്കുകൾ, എയർബ്രഷ്, 4K HD, സാരി പ്രീ-പ്ലീറ്റിംഗ്.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+              <span><strong>സമ്പൂർണ്ണ പ്രൊഫഷണൽ ടൂൾ കിറ്റുകൾ സൗജന്യം:</strong> കട്ടിംഗ് ഡമ്മി, പ്രൊഫഷണൽ കത്രികകൾ, ഡ്രയർ, ഫേഷ്യൽ കിറ്റ്, ബ്രഷ് സെറ്റ്.</span>
+            </div>
+          </div>
+        </div>
+
+        <a 
+          href="#enroll" 
+          class="w-full py-4 bg-primary hover:bg-[#d40002] text-white font-label-md uppercase tracking-wider font-bold rounded-xl text-center shadow-[0_0_20px_rgba(254,0,2,0.4)] transition-all"
+        >
+          12 മാസ ബാച്ചിലേക്ക് അപേക്ഷിക്കുക
+        </a>
+      </div>
+
+      <!-- 6-MONTH INTENSIVE TRACK -->
+      <div class="p-8 sm:p-10 rounded-3xl bg-[#131418] border border-white/10 hover:border-white/25 shadow-xl flex flex-col justify-between transition-all">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-white/60 font-bold block mb-1">
+            ഫാസ്റ്റ്-ട്രാക്ക് തൊഴിലധിഷ്ഠിതം
+          </span>
+          <h3 class="font-headline-md text-2xl sm:text-3xl font-bold text-white mb-3">
+            കോസ്‌മെറ്റോളജി — 6 മാസം
+          </h3>
+          <p class="text-sm text-white/70 mb-8 leading-relaxed">
+            2 + 2 + 1 മാസ കോർ ഡിപ്ലോമകളും 1 മാസ ഇന്റേൺഷിപ്പും. വേഗത്തിൽ മികച്ച സലൂണുകളിൽ ജോലി നേടാൻ സഹായിക്കുന്ന കോഴ്‌സ്.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8 text-center">
+            <div class="p-3.5 rounded-xl bg-[#191b22] border border-white/10">
+              <span class="block text-[10px] font-bold text-white/50 uppercase">ഘട്ടം 1</span>
+              <strong class="text-sm font-bold text-white block mt-0.5">2 മാസം</strong>
+              <span class="text-[11px] text-white/70 font-semibold">ഹെയർ ഡിപ്ലോമ</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-[#191b22] border border-white/10">
+              <span class="block text-[10px] font-bold text-white/50 uppercase">ഘട്ടം 2</span>
+              <strong class="text-sm font-bold text-white block mt-0.5">2 മാസം</strong>
+              <span class="text-[11px] text-white/70 font-semibold">സ്കിൻ തെറാപ്പി</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-[#191b22] border border-white/10">
+              <span class="block text-[10px] font-bold text-white/50 uppercase">ഘട്ടം 3</span>
+              <strong class="text-sm font-bold text-white block mt-0.5">1 മാസം</strong>
+              <span class="text-[11px] text-white/70 font-semibold">മേക്കപ്പ് ട്രാക്ക്</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-primary/10 border border-primary/30">
+              <span class="block text-[10px] font-bold text-primary uppercase">ഘട്ടം 4</span>
+              <strong class="text-sm font-bold text-primary block mt-0.5">1 മാസം</strong>
+              <span class="text-[11px] text-white/80 font-semibold">സലൂൺ ഫ്ലോർ</span>
+            </div>
+          </div>
+
+          <div class="space-y-3.5 text-xs text-white/80 mb-8">
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+              <span><strong>കോർ ഹെയർ ഡിപ്ലോമ (2M):</strong> വൺ-ലെങ്ത്, ഗ്രാജുവേഷൻ, ലെയേഴ്സ്, ബോബ് കട്ടുകൾ, കെരാറ്റിൻ, സ്മൂത്തനിംഗ്, ഗ്ലോബൽ കളർ.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+              <span><strong>സ്കിൻ തെറാപ്പി കോഴ്‌സ് (2M):</strong> സ്കിൻ അനാലിസിസ്, ബേസിക് ഫേഷ്യലുകൾ, ഹൈ ഫ്രീക്വൻസി മുഖക്കുരു ചികിത്സ, വാക്സിംഗ്, ത്രെഡിംഗ്.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+              <span><strong>മേക്കപ്പ് ഫൗണ്ടേഷൻ (1M):</strong> CTM, കളർ തിയറി, ബേസ് കോണ്ടൂറിംഗ്, 3 ബ്രൈഡൽ ലുക്കുകൾ, സാരി ഡ്രേപ്പിംഗ്.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-primary text-base flex-shrink-0 mt-0.5">check_circle</span>
+              <span><strong>അത്യാവശ്യ ടൂൾ കിറ്റുകൾ സൗജന്യം:</strong> കട്ടിംഗ് ഡമ്മി, പ്രൊഫഷണൽ കത്രിക, ചീപ്പുകൾ, ഫേഷ്യൽ കിറ്റ്.</span>
+            </div>
+          </div>
+        </div>
+
+        <a 
+          href="#enroll" 
+          class="w-full py-4 bg-white/10 hover:bg-white/20 text-white font-label-md uppercase tracking-wider font-bold rounded-xl text-center border border-white/15 transition-colors"
+        >
+          6 മാസ ബാച്ചിലേക്ക് അപേക്ഷിക്കുക
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. ROADMAP -->
+  <section class="py-20 bg-[#07080a] border-y border-white/10">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold block mb-2">പഠന ഘട്ടങ്ങൾ</span>
+        <h2 class="font-display-lg text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">നിങ്ങളുടെ 4 ഘട്ടങ്ങളായുള്ള വളർച്ച.</h2>
+        <p class="font-body-lg text-white/70 mt-3">അടിസ്ഥാന തിയറിയിൽ നിന്ന് ആരംഭിച്ച് പ്രൊഫഷണൽ സലൂൺ ഫ്ലോറിലേക്ക്.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-[#111317] border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">content_cut</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-widest text-primary font-bold block mb-1">ഘട്ടം 01</span>
+          <h3 class="font-headline-sm text-lg font-bold text-white mb-2">ഹെയർ ആർക്കിടെക്ചർ</h3>
+          <p class="text-xs text-white/70 leading-relaxed">
+            ഹെയർ അനറ്റമി, കത്രിക നിയന്ത്രണം, 13+ അഡ്വാൻസ്ഡ് ഹെയർകട്ടുകൾ, ബോട്ടോക്സ്, നാനോപ്ലാസ്റ്റിയ, ബാലിയാജ് കളറിംഗ്.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#111317] border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">spa</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-widest text-primary font-bold block mb-1">ഘട്ടം 02</span>
+          <h3 class="font-headline-sm text-lg font-bold text-white mb-2">സ്കിൻ സയൻസ് & തെറാപ്പി</h3>
+          <p class="text-xs text-white/70 leading-relaxed">
+            മെഡിക്കൽ ഗ്രേഡ് സ്കിൻ അനാലിസിസ്, ഹൈഡ്ര ഫേഷ്യൽ, ഹൈ ഫ്രീക്വൻസി, ഗാൽവാനിക്, കെമിക്കൽ പീലിംഗ്.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#111317] border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">brush</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-widest text-primary font-bold block mb-1">ഘട്ടം 03</span>
+          <h3 class="font-headline-sm text-lg font-bold text-white mb-2">ബ്രൈഡൽ & മീഡിയ മേക്കപ്പ്</h3>
+          <p class="text-xs text-white/70 leading-relaxed">
+            ഹിന്ദു, ക്രിസ്ത്യൻ, മുസ്ലിം വിവാഹ മേക്കപ്പ്, 4K HD ബേസ്, എയർബ്രഷ്, തെർമൽ ഹെയർ സ്റ്റൈലുകൾ, സാരി പ്ലീറ്റിംഗ്.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#111317] border border-primary/30 bg-primary/5">
+          <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center mb-5 shadow-lg">
+            <span class="material-symbols-outlined text-2xl">storefront</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-widest text-primary font-bold block mb-1">ഘട്ടം 04</span>
+          <h3 class="font-headline-sm text-lg font-bold text-white mb-2">സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പ്</h3>
+          <p class="text-xs text-white/70 leading-relaxed">
+            ലിവ്ആർട്ട് സലൂണുകളിൽ 1 മാസത്തെ നേരിട്ടുള്ള പരിശീലനം. യഥാർത്ഥ ഉപഭോക്താക്കൾക്ക് സേവനം നൽകി ആത്മവിശ്വാസം നേടാം.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. REELS IN MOTION -->
+  <section class="py-20 bg-[#07080a] border-y border-white/10">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-3">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">
+            സ്റ്റുഡിയോ വീഡിയോകൾ
+          </span>
+          <h2 class="font-display-md text-2xl sm:text-4xl font-bold text-white tracking-tight">
+            വിദ്യാർത്ഥികളുടെ വർക്കുകൾ കാണാം
+          </h2>
+          <p class="text-xs sm:text-sm text-white/70 mt-1">
+            ഏതൊരു വീഡിയോയിലും ക്ലിക്ക് ചെയ്ത് വെബ്‌സൈറ്റിൽ തന്നെ കാണാം.
+          </p>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>കൂടുതൽ ഇൻസ്റ്റാഗ്രാമിൽ കാണാം</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/academy-live/loreal_hair_spa_practical.jpg"
+          category="ഹെയർ ഡിസിപ്ലിൻ"
+          title="L'Oréal പ്രൊഫഷണൽ ഹെയർ സ്പാ പ്രാക്ടിക്കൽസ്"
+          description="ക്ലിനിക്കൽ സ്കാൽപ്പ് പരിശോധന, ഡീപ് കെരാറ്റിൻ കണ്ടീഷനിംഗ്, സലൂൺ ബ്ലോ ഔട്ടുകൾ എന്നിവയിൽ ലൈവ് ട്രെയിനിംഗ്."
+          badge="@livart_academy"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/academy-live/bridal_masterclass_pathadipalam.jpg"
+          category="ബ്രൈഡൽ ഡിസിപ്ലിൻ"
+          title="മുഹൂർത്ത സാരി & ടെമ്പിൾ ബ്രൈഡൽ ആർട്ട്"
+          description="പരമ്പരാഗത കേരള കസവു സാരി ഡ്രേപ്പിംഗും 4K ഹൈ-ഡെഫനിഷൻ കോംപ്ലക്ഷൻ ബേസും ലൈവ് മോഡലുകളിൽ."
+          badge="കളമശ്ശേരി ലൈവ്"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/reel/Cj9gISlIba1/"
+          image="/images/academy-live/ig_student_testimonial_nimmy.jpg"
+          category="സ്റ്റുഡന്റ് സ്പോട്ട്‌ലൈറ്റ്"
+          title="വിദ്യാർത്ഥിനി നിമ്മി കളത്തിൽ — ലൈവ് അനുഭവം"
+          description="മുൻപരിചയമില്ലാതെ തുടങ്ങി പ്രൊഫഷണൽ ബ്രൈഡൽ മേക്കപ്പ് ആർട്ടിസ്റ്റായി മാറിയ വിദ്യാർത്ഥിനിയുടെ യഥാർത്ഥ അനുഭവം."
+          badge="@livart_academy Reel"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. LEAD CAPTURE FORM SECTION -->
+  <section id="enroll" class="py-20 px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Cosmetology Programme (12 & 6 Months)"
+      title="കോസ്‌മെറ്റോളജി സിലബസും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടുക"
+      subtitle="നിങ്ങളുടെ വിവരങ്ങൾ നൽകുക. ലിവ്ആർട്ട് കോസ്‌മെറ്റോളജി പ്രോസ്പെക്ടസ്, ടൂൾ കിറ്റ് വിവരങ്ങൾ, ബാച്ച് തീയതികൾ എന്നിവ വാട്ട്‌സ്ആപ്പിൽ ലഭിക്കുന്നതാണ്."
+      formId="ml-cosmetology-lead-form"
+    />
+  </section>
+
+</Layout>

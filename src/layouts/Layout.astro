@@ -1,0 +1,355 @@
+---
+import '../styles/global.css';
+import InstagramVideoModal from '../components/InstagramVideoModal.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+	schema?: object;
+}
+
+const { 
+	title, 
+	description = "Premium beauty, makeup, hair, and skincare education in Kochi. We combine rigorous hands-on training with B&WSSC-affiliated certification.",
+	image = "/images/instagram/DULWym5CHa0.jpg",
+	schema
+} = Astro.props;
+
+// Normalize pathname to ensure trailing slash
+const currentPathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const isMl = currentPathname.startsWith('/ml/');
+
+// Bilingual paths mapping
+const ML_EXACT_ROUTES = new Set([
+  '/',
+  '/overview/',
+  '/about-us-makeup-artist/',
+  '/take-a-tour/',
+  '/portfolios/',
+  '/contact-us/',
+  '/faq/',
+  '/certification-course-in-cosmetology/',
+  '/make-up-course/',
+  '/hair-styling-course/',
+  '/skin-care-course/',
+  '/bridal-makeup-course/',
+  '/job-oriented-salon-course/'
+]);
+
+const EN_TO_ML_ALIASES: Record<string, string> = {
+  '/founder-makeup-academy/': '/ml/about-us-makeup-artist/',
+  '/diploma-in-hair/': '/ml/hair-styling-course/',
+  '/diploma-in-hair-dressing/': '/ml/hair-styling-course/',
+  '/diploma-in-makeup/': '/ml/make-up-course/',
+  '/diploma-in-skin-therapy/': '/ml/skin-care-course/'
+};
+
+let enPath = '/';
+let mlPath = '/ml/';
+let hasMlCounterpart = false;
+
+if (isMl) {
+  const purePath = currentPathname.replace(/^\/ml/, '') || '/';
+  enPath = purePath;
+  mlPath = currentPathname;
+  hasMlCounterpart = true;
+} else {
+  enPath = currentPathname;
+  if (EN_TO_ML_ALIASES[currentPathname]) {
+    mlPath = EN_TO_ML_ALIASES[currentPathname];
+    hasMlCounterpart = true;
+  } else if (ML_EXACT_ROUTES.has(currentPathname)) {
+    mlPath = currentPathname === '/' ? '/ml/' : `/ml${currentPathname}`;
+    hasMlCounterpart = true;
+  } else {
+    // English-only page (e.g. blog posts, location landing pages)
+    mlPath = '/ml/'; // Graceful fallback for human visitor clicking 'ML'
+    hasMlCounterpart = false; // Do not output invalid hreflang for search bots
+  }
+}
+
+const canonicalURL = new URL(currentPathname, Astro.site || 'https://livart.co.in');
+const enUrl = new URL(enPath, Astro.site || 'https://livart.co.in');
+const mlUrl = new URL(mlPath, Astro.site || 'https://livart.co.in');
+
+const ogImageURL = image.startsWith('http://') || image.startsWith('https://') 
+  ? image 
+  : new URL(image, Astro.site || 'https://livart.co.in').toString();
+
+
+// Breadcrumb Schema Logic
+const pathParts = Astro.url.pathname.split('/').filter(p => p !== '');
+const breadcrumbItemList = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": Astro.site ? Astro.site.toString() : "https://livart.co.in"
+  }
+];
+
+let currentPath = '';
+pathParts.forEach((part, index) => {
+  currentPath += '/' + part;
+  // Format part for display (e.g. "make-up-course" -> "Make Up Course")
+  const name = part.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  breadcrumbItemList.push({
+    "@type": "ListItem",
+    "position": index + 2,
+    "name": name,
+    "item": new URL(currentPath + '/', Astro.site || 'https://livart.co.in').toString()
+  });
+});
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItemList
+};
+
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Livart Beauty Academy",
+  "url": "https://livart.co.in",
+  "logo": "https://livart.co.in/images/brand/livart-original-logo.png",
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+    "addressLocality": "Kalamassery, Kochi",
+    "addressRegion": "Kerala",
+    "postalCode": "682024",
+    "addressCountry": "IN"
+  },
+  "hasMap": "https://share.google/OCj5l70Grn7Wxu8WR",
+  "sameAs": [
+    "https://share.google/OCj5l70Grn7Wxu8WR",
+    "https://www.instagram.com/livart_academy/",
+    "https://www.facebook.com/livart.academy/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-9633211151",
+    "contactType": "admissions"
+  }
+};
+
+const finalSchema = schema || defaultSchema;
+---
+
+<!doctype html>
+<html lang={isMl ? "ml" : "en"} class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Hreflang for internationalization SEO -->
+		<link rel="alternate" hreflang="en" href={enUrl} />
+		{hasMlCounterpart && (
+			<link rel="alternate" hreflang="ml" href={mlUrl} />
+		)}
+		<link rel="alternate" hreflang="x-default" href={enUrl} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImageURL} />
+
+		
+		<!-- Schema Markup -->
+		<script type="application/ld+json" set:html={JSON.stringify(finalSchema)} />
+		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- Preload critical fonts -->
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" as="style" />
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+		
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" as="style" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" media="print" onload="this.media='all'" />
+	</head>
+	<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between">
+		
+		<!-- Header -->
+		<header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0b0e]/85 backdrop-blur-2xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+			<div class="h-16 max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg flex items-center justify-between">
+				<div class="flex items-center gap-space-md">
+					<a class="flex items-center gap-3 group py-1" href={isMl ? "/ml/" : "/"} aria-label="LivArt Beauty Academy">
+						<img 
+							alt="LivArt Beauty Academy" 
+							class="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+							src="/images/brand/livart-logo-horizontal.png"
+							width="212"
+							height="90"
+						/>
+						{isMl && (
+							<span class="hidden md:inline-block font-label-sm text-[11px] tracking-widest text-primary uppercase font-bold border-l border-white/20 pl-3">
+								ബ്യൂട്ടി അക്കാദമി
+							</span>
+						)}
+					</a>
+
+					<nav class="hidden lg:flex items-center gap-6 ml-8">
+						<a class="font-label-md text-xs text-white/70 hover:text-white hover:text-primary transition-colors duration-200 tracking-wider uppercase font-semibold" href={isMl ? "/ml/overview/" : "/overview/"}>
+							{isMl ? "കോഴ്‌സുകൾ" : "Courses"}
+						</a>
+						<a class="font-label-md text-xs text-white/70 hover:text-white hover:text-primary transition-colors duration-200 tracking-wider uppercase font-semibold" href={isMl ? "/ml/about-us-makeup-artist/" : "/founder-makeup-academy/"}>
+							{isMl ? "ഞങ്ങളെക്കുറിച്ച്" : "About Us"}
+						</a>
+						<a class="font-label-md text-xs text-white/70 hover:text-white hover:text-primary transition-colors duration-200 tracking-wider uppercase font-semibold" href={isMl ? "/ml/take-a-tour/" : "/take-a-tour/"}>
+							{isMl ? "കാമ്പസ്" : "Campus"}
+						</a>
+						<a class="font-label-md text-xs text-white/70 hover:text-white hover:text-primary transition-colors duration-200 tracking-wider uppercase font-semibold" href={isMl ? "/ml/portfolios/" : "/portfolios/"}>
+							{isMl ? "പോർട്ട്ഫോളിയോ" : "Portfolio"}
+						</a>
+						<a class="font-label-md text-xs text-white/70 hover:text-white hover:text-primary transition-colors duration-200 tracking-wider uppercase font-semibold" href="/blog/">
+							{isMl ? "ബ്ലോഗ്" : "Blog"}
+						</a>
+						<a class="font-label-md text-xs text-white/70 hover:text-white hover:text-primary transition-colors duration-200 tracking-wider uppercase font-semibold" href="/faq/">
+							{isMl ? "ചോദ്യോത്തരങ്ങൾ" : "FAQ"}
+						</a>
+					</nav>
+				</div>
+				
+				<div class="flex items-center gap-3">
+					<a class="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-primary hover:border-primary/50 transition-all duration-300" href="tel:+919633211151" aria-label="Advisory Helpline">
+						<span class="material-symbols-outlined text-[18px]">call</span>
+					</a>
+					<a class="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-[#25D366] hover:border-[#25D366]/50 transition-all duration-300" href="https://wa.me/919633211151" target="_blank" aria-label="WhatsApp">
+						<span class="material-symbols-outlined text-[18px]">chat</span>
+					</a>
+					
+					<!-- Language Switcher -->
+					<div class="flex items-center gap-1 border border-white/15 rounded-full p-1 bg-black/50 shadow-inner">
+						<a 
+							href={enPath} 
+							class={`px-3 py-1 rounded-full text-xs font-bold font-label-sm uppercase tracking-wider transition-all ${isMl ? "text-white/60 hover:text-white" : "bg-primary text-white shadow-[0_0_12px_rgba(254,0,2,0.6)]"}`}
+							aria-label="Switch to English version"
+						>
+							EN
+						</a>
+						<a 
+							href={mlPath} 
+							class={`px-3 py-1 rounded-full text-xs font-bold font-label-sm uppercase tracking-wider transition-all ${isMl ? "bg-primary text-white shadow-[0_0_12px_rgba(254,0,2,0.6)]" : "text-white/60 hover:text-white"}`}
+							aria-label="മലയാളം പതിപ്പിലേക്ക് മാറുക"
+						>
+							ML
+						</a>
+					</div>
+
+					<a 
+						class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-primary hover:bg-[#d40002] text-white font-label-md text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(254,0,2,0.45)] hover:shadow-[0_0_25px_rgba(254,0,2,0.7)]" 
+						href={isMl ? "/ml/contact-us/" : "/contact-us/"}
+					>
+						{isMl ? "അഡ്മിഷൻ നേടൂ" : "Apply Now"}
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<!-- Main Content -->
+		<main class="w-full pt-16 bg-surface flex-1">
+			<slot />
+		</main>
+
+		<!-- Footer -->
+		<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 pt-space-xl pb-space-lg">
+			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-lg pb-space-xl border-b border-outline-variant/20">
+					<div class="lg:col-span-2 space-y-space-md pr-0 lg:pr-gutter-lg">
+						<div class="flex items-center gap-space-sm mb-2">
+							<img 
+								alt="LivArt Beauty Academy" 
+								class="h-10 sm:h-11 w-auto object-contain" 
+								src="/images/brand/livart-logo-horizontal.png"
+								width="212"
+								height="90"
+							/>
+						</div>
+						<p class="font-body-md text-body-md text-on-surface-variant max-w-md">A premium, professionally structured beauty education academy in Kochi. Combining rigorous hands-on training with B&WSSC-affiliated certification to build real careers.</p>
+						<div class="space-y-space-xs pt-space-xs">
+							<div class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Kerala Flagship Atelier</div>
+							<p class="font-body-sm text-body-sm text-on-surface-variant">Madukappilly Tower, Pathadipalam, Edappally P.O, Kalamassery, Kochi, Kerala 682024</p>
+							<p class="font-body-sm text-body-sm text-outline">Admissions Desk: <a href="tel:+919633211151" class="hover:text-primary transition-colors text-on-surface-variant font-semibold">+91 96332 11151</a> | <a href="mailto:connect@livart.co.in" class="hover:text-primary transition-colors">connect@livart.co.in</a></p>
+							<p class="font-body-sm text-body-sm text-outline">Hours: Mon – Fri: 10:00 AM – 5:00 PM (Sunday Closed)</p>
+							<div class="pt-1">
+								<a href="https://share.google/OCj5l70Grn7Wxu8WR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-primary hover:underline font-bold">
+									<span class="material-symbols-outlined text-sm">location_on</span>
+									Google Business Profile & Reviews &rarr;
+								</a>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="font-label-md text-label-md tracking-widest uppercase text-on-surface mb-space-md">Curriculum</div>
+						<ul class="space-y-space-sm font-body-sm text-body-sm">
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/certification-course-in-cosmetology/" : "/certification-course-in-cosmetology/"}>Cosmetology (12M & 6M)</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/make-up-course/" : "/make-up-course/"}>Diploma in Makeup (3M & 1M)</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/hair-styling-course/" : "/hair-styling-course/"}>Hair Dressing & Styling (4M & 2M)</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/skin-care-course/" : "/skin-care-course/"}>Skin Therapy (4M & 2M)</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/bridal-makeup-course/" : "/bridal-makeup-course/"}>Fastrack Bridal (10 Days)</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/job-oriented-salon-course/" : "/job-oriented-salon-course/"}>Job-Oriented Salon Course</a></li>
+						</ul>
+					</div>
+					<div>
+						<div class="font-label-md text-label-md tracking-widest uppercase text-on-surface mb-space-md">Accreditations</div>
+						<div class="space-y-space-sm">
+							<div class="p-space-sm rounded border border-outline-variant/40 bg-surface-container-low">
+								<div class="font-label-sm text-label-sm tracking-wider text-primary uppercase">B&WSSC Verified</div>
+								<div class="font-body-sm text-body-sm text-on-surface-variant">Beauty & Wellness Sector Skill Council</div>
+							</div>
+							<div class="p-space-sm rounded border border-outline-variant/40 bg-surface-container-low">
+								<div class="font-label-sm text-label-sm tracking-wider text-primary uppercase">MSDE Recognized</div>
+								<div class="font-body-sm text-body-sm text-on-surface-variant">Ministry of Skill Development & Ent.</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="font-label-md text-label-md tracking-widest uppercase text-on-surface mb-space-md">Academy</div>
+						<ul class="space-y-space-sm font-body-sm text-body-sm">
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/about-us-makeup-artist/" : "/founder-makeup-academy/"}>{isMl ? "സ്ഥാപക" : "Founder"}</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/portfolios/" : "/portfolios/"}>{isMl ? "പോർട്ട്ഫോളിയോ" : "Student Portfolio"}</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/take-a-tour/" : "/take-a-tour/"}>{isMl ? "കാമ്പസ് ടൂർ" : "Take a Tour"}</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/faq/" : "/faq/"}>{isMl ? "ചോദ്യോത്തരങ്ങൾ" : "FAQ"}</a></li>
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href={isMl ? "/ml/contact-us/" : "/contact-us/"}>{isMl ? "ബന്ധപ്പെടുക" : "Contact Us"}</a></li>
+						</ul>
+						<div class="font-label-md text-label-md tracking-widest uppercase text-on-surface mt-space-md mb-space-sm">Sister Brand</div>
+						<ul class="space-y-space-sm font-body-sm text-body-sm">
+							<li><a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer flex items-center gap-2" href="https://www.livartsalon.com/" target="_blank"><span class="material-symbols-outlined text-sm">spa</span> Livart Salon</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-outline">
+					<div>© 2026 Livart Beauty Academy. All rights reserved. Kalamassery, Kochi.</div>
+					<div class="flex items-center gap-space-lg font-label-sm text-label-sm uppercase tracking-wider">
+						<a class="hover:text-on-surface transition-colors" href="/privacy-policy/">Privacy Policy</a>
+						<a class="hover:text-on-surface transition-colors" href="/terms-and-conditions/">Terms & Conditions</a>
+					</div>
+					<div class="flex items-center gap-space-sm">
+						<a href="https://www.instagram.com/livart_academy/" target="_blank" class="hover:text-primary transition-colors" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+						<a href="https://www.facebook.com/livart.academy/" target="_blank" class="hover:text-primary transition-colors" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Global Interactive Instagram Video Modal -->
+		<InstagramVideoModal />
+	</body>
+</html>

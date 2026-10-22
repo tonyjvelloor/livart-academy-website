@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: "What is the fee structure for courses at Livart Academy?",
+    answer: "Tuition varies by program scope (from accelerated 10-day bridal masterclasses and 1-month salon certifications to our 12-month and 6-month Cosmetology Programmes). You can request our detailed fee dossier instantly on WhatsApp via our admissions form."
+  },
+  {
+    question: "Is Livart Beauty Academy’s certification government approved?",
+    answer: "Yes. Livart is affiliated with B&WSSC (Beauty & Wellness Sector Skill Council), recognized under the Ministry of Skill Development & Entrepreneurship (MSDE) and National Council for Vocational Education and Training (NCVET). Your diploma carries national recognition and a strong professional foundation."
+  },
+  {
+    question: "Do beginners with zero beauty experience qualify for enrollment?",
+    answer: "Many of our successful alumni enter with zero prior cosmetology experience, originating from corporate, academic, or healthcare backgrounds just like founder Stephy Sebastian. Qualification and age are not an issue. Our structured foundational curriculum begins with human anatomy and tool physics before advancing to editorial techniques."
+  },
+  {
+    question: "Are live human models provided for hands-on sessions?",
+    answer: "Unlike ordinary academies that limit students to mannequins, Livart integrates a structured roster of live models for bridal, facial aesthetics, and haircutting modules to guarantee authentic salon pressure calibration."
+  },
+  {
+    question: "What are the career outcomes after completing a cosmetology course?",
+    answer: "Our graduates pursue diverse high-yield paths including Freelance/Bridal Makeup Artist, Retail Counter Trainer (MAC, Sephora), Fashion/Editorial/Runway Artist, Film & TV Crew, Lash Technician, and Salon Owner. We assist with placement outcomes and entrepreneurial guidance."
+  },
+  {
+    question: "Which cosmetology school is best in Kerala?",
+    answer: "Livart Beauty Academy is widely recognized as one of the best beautician academies in Kerala due to our MSDE/B&WSSC accredited curriculum, hands-on model training, and the clinical rigor brought by founder Stephy Sebastian's background."
+  },
+  {
+    question: "What does the cosmetology curriculum cover?",
+    answer: "Our Cosmetology Programmes (12 Months and 6 Months) combine diplomas across Hair Dressing (13+ cuts, Nanoplastia, Botox, Balayage), Skin Therapy (Hydra facials, High frequency, chemical peels), Makeup Artistry (3 bridal looks, Airbrush, Saree draping), tool kits, and a mandatory 1-month salon floor internship."
+  }
+];
+---
+
+<Layout title="Frequently Asked Questions | Livart Beauty Academy">
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1000px] mx-auto mt-8">
+    <div class="text-center mb-space-xl">
+      <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">Clarity & Governance</span>
+      <h1 class="font-display-xl text-display-xl text-on-surface tracking-tight mb-space-md">Admissions & Academic FAQ.</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        Authoritative answers regarding our curriculum, government credentials, fee structures, and career outcomes.
+      </p>
+    </div>
+
+    <div class="space-y-space-sm" id="faq-accordion">
+      {faqs.map((faq, index) => (
+        <div class="rounded-xl bg-surface-container-low overflow-hidden shadow-sm">
+          <button class="w-full p-space-lg flex items-center justify-between text-left focus:outline-none transition-colors hover:bg-surface-container faq-toggle">
+            <span class="font-headline-sm text-title-md text-on-surface">{faq.question}</span>
+            <span class="material-symbols-outlined text-outline transition-transform duration-300">expand_more</span>
+          </button>
+          <div class="hidden px-space-lg pb-space-lg text-on-surface-variant font-body-md text-body-md leading-relaxed border-t border-surface-container-highest/30 pt-space-sm faq-content">
+            {faq.answer}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Structured Data for FAQPage -->
+    <script type="application/ld+json" set:html={`
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          ${faqs.map(faq => `{
+            "@type": "Question",
+            "name": "${faq.question}",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "${faq.answer.replace(/"/g, '\\"')}"
+            }
+          }`).join(',')}
+        ]
+      }
+    `} />
+    
+    <script>
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector('.material-symbols-outlined');
+          const isExpanded = !content?.classList.contains('hidden');
+          
+          // Close other drawers
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-toggle .material-symbols-outlined').forEach(i => (i as HTMLElement).style.transform = 'rotate(0deg)');
+
+          if (!isExpanded && content && icon) {
+            content.classList.remove('hidden');
+            (icon as HTMLElement).style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+    </script>
+  </section>
+</Layout>

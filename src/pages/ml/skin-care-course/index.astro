@@ -1,0 +1,141 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+
+const skinModules = [
+  { num: "01", title: "സ്കിൻ സയൻസ് & അനാട്ടമി", desc: "ത്വക്കിന്റെ ഘടന • ചർമ്മത്തിന്റെ പാളികൾ • സ്കിൻ ടൈപ്പുകൾ • കോമൺ സ്കിൻ പ്രോബ്ലംസ്." },
+  { num: "02", title: "ക്ലയന്റ് കെയർ & പ്രൊഡക്റ്റ് കെമിസ്ട്രി", desc: "കൺസൾട്ടേഷൻ രീതികൾ • എറ്റിക്കറ്റ് • ഹൈജീൻ & സ്റ്റെറിലൈസേഷൻ • ബെഡ് & ട്രോളി സെറ്റപ്പ്." },
+  { num: "03", title: "ഫൗണ്ടേഷൻ സ്കിൻ ട്രീറ്റ്മെന്റുകൾ", desc: "ഡീപ് പോർ ക്ലീൻ അപ്പ് • ബ്ലീച്ച് & ഡി-ടാൻ പ്രോട്ടോക്കോളുകൾ • ഫേഷ്യൽ മസാജ് സ്ട്രോക്കുകൾ." },
+  { num: "04", title: "അഡ്വാൻസ്ഡ് ക്ലിനിക്കൽ മെഷീൻ ട്രീറ്റ്മെന്റ്", desc: "ഹൈഡ്ര ഫേഷ്യൽ മെഷീൻ • ഹൈ ഫ്രീക്വൻസി • ഗാൽവാനിക് • അൾട്രാസോണിക് • കെമിക്കൽ പീൽസ് • ആന്റി-ഏജിംഗ്." },
+  { num: "05", title: "പ്രൊഫഷണൽ മാനിക്യൂർ", desc: "ക്ലാസിക് മാനിക്യൂർ • സ്പാ മാനിക്യൂർ • ഫ്രഞ്ച് നെയിൽ പോളിഷ് ആപ്ലിക്കേഷൻ." },
+  { num: "06", title: "വാക്സിംഗ് ടെക്നിക്കുകൾ", desc: "സ്ട്രിപ്പ് & പീൽ-ഓഫ് വാക്സിംഗ് • സെൻസിറ്റീവ് ഏരിയ വാക്സിംഗ് • പോസ്റ്റ്-വാക്സ് സൂതിംഗ്." },
+  { num: "07", title: "പ്രൊഫഷണൽ പെഡിക്യൂർ", desc: "ഫുട്ട് സ്പാ പെഡിക്യൂർ • കാല്ലസ് റിമൂവൽ • ഫുട്ട് റിഫ്ലെക്സോളജി മസാജ്." },
+  { num: "08", title: "ത്രെഡിംഗ് വൈദഗ്ദ്ധ്യം", desc: "ഐബ്രോ ഷേപ്പിംഗ് • അപ്പർ ലിപ് • ഫോർഹെഡ് • ഫുൾ ഫേസ് ത്രെഡിംഗ്." }
+];
+---
+
+<Layout 
+  title="സ്കിൻ തെറാപ്പി & എസ്തറ്റിക്സ് കോഴ്‌സ് കൊച്ചി | Livart Beauty Academy"
+  description="മെഡിക്കൽ ഗ്രേഡ് സ്കിൻ കെയർ, ഹൈഡ്ര ഫേഷ്യൽ, ഹൈ ഫ്രീക്വൻസി, കെമിക്കൽ പീൽ കോഴ്‌സുകൾ. 4 മാസ ഡിപ്ലോമ, 2 മാസ കോഴ്‌സ്. ഫേഷ്യൽ കിറ്റ് ഉൾപ്പെടെ."
+>
+  <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-white/10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs uppercase tracking-widest text-primary font-bold">സ്കിൻ അക്കാദമി • 2026 ബാച്ചുകൾ</span>
+        </div>
+        <h1 class="font-display-lg text-4xl sm:text-5xl lg:text-[56px] lg:leading-[64px] text-white tracking-tight mb-6">
+          സ്കിൻ തെറാപ്പി & <span class="italic text-primary">ക്ലിനിക്കൽ എസ്തറ്റിക്സ്.</span>
+        </h1>
+        <p class="font-body-lg text-white/80 max-w-xl leading-relaxed mb-8">
+          ഹൈഡ്ര ഫേഷ്യൽ മെഷീനുകൾ, ഹൈ ഫ്രീക്വൻസി, കെമിക്കൽ പീലിംഗ് എന്നിവയിൽ സമഗ്ര പ്രായോഗിക പരിശീലനം. പ്രൊഫഷണൽ ഫേഷ്യൽ കിറ്റ് സൗജന്യമായി ലഭിക്കുന്നു.
+        </p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-white/10 py-6">
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">ട്രാക്കുകൾ</span>
+            <strong class="text-base font-bold text-white">4M & 2M</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">ടൂൾ കിറ്റ്</span>
+            <strong class="text-base font-bold text-white">ഫേഷ്യൽ കിറ്റ് സൗജന്യം</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">മെഷീനുകൾ</span>
+            <strong class="text-base font-bold text-white">ഹൈഡ്ര & ഹൈ ഫ്രീക്വൻസി</strong>
+          </div>
+          <div>
+            <span class="block text-[11px] uppercase text-white/50 mb-1">അംഗീകാരം</span>
+            <strong class="text-base font-bold text-primary">B&WSSC</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#enroll" class="px-8 py-4 bg-primary hover:bg-[#d40002] text-white text-xs uppercase tracking-widest font-bold rounded-xl shadow-lg transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">download</span>
+            <span>സിലബസും ഫീസും നേടുക</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="relative h-[480px] rounded-3xl overflow-hidden bg-[#131418] shadow-2xl border border-white/10">
+        <img src="/images/academy-live/hair_makeup_skin_foundation.jpg" class="w-full h-full object-cover" alt="ലിവ്ആർട്ട് സ്കിൻ തെറാപ്പി" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-8">
+          <span class="px-3 py-1 bg-primary text-white text-xs uppercase tracking-wider font-bold rounded mb-2 w-max">ക്ലിനിക്കൽ ഡെർമൽ ലാബ്</span>
+          <h3 class="text-xl font-bold text-white">ആധുനിക എസ്തറ്റിക് മെഷീനുകളിൽ പരിശീലനം</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 MODULES -->
+  <section class="py-20 bg-[#07080a] border-y border-white/10">
+    <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+      <div class="max-w-3xl mb-16">
+        <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-2">സിലബസ് വിവരങ്ങൾ</span>
+        <h2 class="font-display-lg text-3xl sm:text-4xl font-bold text-white">8 ക്ലിനിക്കൽ മൊഡ്യൂളുകൾ.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {skinModules.map(m => (
+          <div class="bg-[#131418] p-6 rounded-2xl border border-white/10 hover:border-primary/40 transition-colors">
+            <span class="text-xs font-bold text-primary uppercase block mb-1">മൊഡ്യൂൾ {m.num}</span>
+            <h3 class="text-base font-bold text-white mb-2">{m.title}</h3>
+            <p class="text-xs text-white/70 leading-relaxed">{m.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- REELS IN MOTION -->
+  <section class="py-20 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-3">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-primary font-bold block mb-1">ക്ലിനിക്കൽ പ്രാക്ടിക്കൽസ്</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-white">സ്കിൻ കെയർ & ഡെർമൽ തെറാപ്പി</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/"
+        image="/images/instagram/DT7y-uAkh47.jpg"
+        category="ഡെർമൽ എസ്തറ്റിക്സ്"
+        title="പ്രീ-ബ്രൈഡൽ സ്കിൻ തെറാപ്പി"
+        description="ഡീപ് പോർ ക്ലീൻസിംഗ്, ഹൈഡ്രേഷൻ ഇൻഫ്യൂഷൻ, ലൈവ് മോഡലുകളിൽ സൂതിംഗ് മാസ്കുകൾ."
+        badge="@livart_academy"
+      />
+
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/"
+        image="/images/instagram/DRXFRQCEgpm.jpg"
+        category="ഗ്ലാസ് സ്കിൻ"
+        title="ഹൈഡ്ര ഗ്ലോ & കോംപ്ലക്ഷൻ തെറാപ്പി"
+        description="റേഡിയന്റ് ഗ്ലാസ്-സ്കിൻ ഫിനിഷ് നൽകുന്ന ആധുനിക ക്ലിനിക്കൽ സ്കിൻ കെയർ ട്രീറ്റ്മെന്റ്."
+        badge="@livart_academy"
+      />
+
+      <InstagramReelCard 
+        url="https://www.instagram.com/livart_academy/"
+        image="/images/instagram/C88tG9iSEKp.jpg"
+        category="സ്പാ തെറാപ്പി"
+        title="ഡീലക്സ് പെഡിക്യൂർ & ഫുട്ട് സ്പാ"
+        description="എക്സ്ഫോളിയേഷൻ, കാല്ലസ് റിഡക്ഷൻ, തെറാപ്യൂട്ടിക് റിഫ്ലെക്സ് മസാജ് രീതികൾ."
+        badge="@livart_academy"
+      />
+    </div>
+  </section>
+
+  <!-- LEAD FORM -->
+  <section id="enroll" class="py-16 px-margin-sm lg:px-margin-lg max-w-[900px] mx-auto scroll-mt-20">
+    <CourseLeadForm 
+      courseName="Diploma in Skin Therapy (4 Months)"
+      title="സ്കിൻ കോഴ്‌സ് സിലബസും ഫീസും വാട്ട്‌സ്ആപ്പിൽ നേടുക"
+      subtitle="താഴെ നിങ്ങളുടെ വിവരങ്ങൾ നൽകുക. സ്കിൻ തെറാപ്പി പ്രോസ്പെക്ടസും ബാച്ച് വിവരങ്ങളും വാട്ട്‌സ്ആപ്പിൽ ലഭിക്കുന്നതാണ്."
+      formId="ml-skin-lead-form"
+    />
+  </section>
+</Layout>

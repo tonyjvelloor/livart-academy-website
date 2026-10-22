@@ -1,0 +1,209 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import CourseLeadForm from '../../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../../components/InstagramReelCard.astro';
+
+const pillars = [
+  {
+    icon: "brush",
+    title: "CRAFT (പ്രാക്ടിക്കൽ മികവ്)",
+    subtitle: "നേരിട്ടുള്ള പ്രായോഗിക പരിശീലനം",
+    desc: "വെറും തിയറികൾക്കപ്പുറം ലൈവ് മോഡലുകളിൽ നേരിട്ടുള്ള പ്രായോഗിക പരിശീലനം. ഹെയർ, സ്കിൻ, മേക്കപ്പ് മേഖലകളിൽ ഓരോ വിദ്യാർത്ഥിയും വിദഗ്ദ്ധരുടെ മേൽനോട്ടത്തിൽ വർക്കുകൾ പൂർത്തിയാക്കുന്നു."
+  },
+  {
+    icon: "verified",
+    title: "CREDENTIAL (അംഗീകാരം)",
+    subtitle: "ദേശീയ തലത്തിലുള്ള സർട്ടിഫിക്കേഷൻ",
+    desc: "കേന്ദ്ര നൈപുണ്യ വികസന മന്ത്രാലയത്തിന് (MSDE) കീഴിലുള്ള ബ്യൂട്ടി & വെൽനസ്സ് സെക്ടർ സ്കിൽ കൗൺസിൽ (B&WSSC) അംഗീകാരമുള്ള ഔദ്യോഗിക സർട്ടിഫിക്കറ്റുകൾ."
+  },
+  {
+    icon: "work",
+    title: "CAREER (തൊഴിൽ അവസരങ്ങൾ)",
+    subtitle: "സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പ്",
+    desc: "പഠനത്തോടൊപ്പം ലിവ്ആർട്ട് സലൂണുകളിൽ നേരിട്ടുള്ള ക്ലയന്റ് സർവീസ് ഇന്റേൺഷിപ്പ്. പഠനം പൂർത്തിയാക്കിയാലുടൻ ഉയർന്ന കരിയറിലേക്ക് എത്താനുള്ള പ്ലേസ്‌മെന്റ് മാർഗ്ഗനിർദ്ദേശങ്ങൾ."
+  }
+];
+
+const highlights = [
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DZKXR4KNBIU/",
+    image: "/images/brand/stephy-sebastian.webp",
+    category: "ഫൗണ്ടർ സ്പോട്ട്‌ലൈറ്റ്",
+    title: "എന്തുകൊണ്ട് ലിവ്ആർട്ട് വേറിട്ടുനിൽക്കുന്നു?",
+    description: "ക്ലിനിക്കൽ നഴ്സിംഗ് കൃത്യതയും കൊമേഴ്ഷ്യൽ ബ്യൂട്ടി എഡ്യൂക്കേഷനും സംയോജിപ്പിക്കുന്നതിനെക്കുറിച്ച് സ്റ്റെഫി സെബാസ്റ്റ്യൻ."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/DY8vuSUIW_R/",
+    image: "/images/academy-live/sabna_faculty_journey.jpg",
+    category: "കരിയർ ഗ്രോത്ത്",
+    title: "വിദ്യാർത്ഥിയിൽ നിന്ന് അധ്യാപികയിലേക്ക് — സബ്ന",
+    description: "ലിവ്ആർട്ടിൽ വിദ്യാർത്ഥിയായി ചേർന്ന് സീനിയർ അക്കാദമി ട്രെയിനറായി മാറിയ യഥാർത്ഥ വിജയഗാഥ."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/reel/Ddv_Ggpy6UK/",
+    image: "/images/academy-live/assumption_college_collaboration.jpg",
+    category: "സഹകരണം",
+    title: "അസംപ്ഷൻ കോളേജ് വർക്ക്ഷോപ്പ്",
+    description: "വിദ്യാർത്ഥികൾക്കായി കേരളത്തിലുടനീളം സംഘടിപ്പിച്ച പ്രൊഫഷണൽ ബ്യൂട്ടി ഗ്രൂമിങ് ശിൽപശാല."
+  }
+];
+---
+
+<Layout 
+  title="ഞങ്ങളെക്കുറിച്ച് | Livart Beauty Academy Kochi"
+  description="ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമിയെക്കുറിച്ച് കൂടുതൽ അറിയാം. സ്റ്റെഫി സെബാസ്റ്റ്യനും ജോസഫ് നിപുണും ചേർന്ന് രൂപകൽപ്പന ചെയ്ത കേരളത്തിലെ മുൻനിര ബ്യൂട്ടി എഡ്യൂക്കേഷൻ അക്കാദമി."
+>
+  <div class="flex flex-col w-full text-on-surface">
+
+    <!-- 1. HERO -->
+    <section class="relative pt-24 pb-16 px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto border-b border-outline-variant/20">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex justify-center mb-6">
+          <img 
+            src="/images/brand/livart-logo-horizontal.png" 
+            alt="LivArt Beauty Academy" 
+            class="h-14 sm:h-16 w-auto object-contain"
+            width="212"
+            height="90"
+          />
+        </div>
+        <div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">ഞങ്ങളുടെ പാരമ്പര്യവും ലക്ഷ്യവും</span>
+        </div>
+        <h1 class="font-display-xl text-display-xl lg:text-[64px] lg:leading-[72px] text-white tracking-tight mb-6 text-balance">
+          കേരളത്തിലെ ബ്യൂട്ടി വിദ്യാഭ്യാസം.<br/>
+          <span class="italic text-white/90 font-display-xl font-light">ശാസ്ത്രീയതയും പ്രൊഫഷണലിസവും സംയോജിപ്പിച്ച്.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+          കേവലം താൽക്കാലിക ബ്യൂട്ടി പാർലർ പരിശീലനങ്ങൾക്കപ്പുറം, ശാസ്ത്രീയവും അന്താരാഷ്ട്ര നിലവാരമുള്ളതുമായ കോസ്മെറ്റോളജി വിദ്യാഭ്യാസം വിദ്യാർത്ഥികൾക്ക് ലഭ്യമാക്കുക എന്നതാണ് ലിവ്ആർട്ടിന്റെ ലക്ഷ്യം.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. FOUNDER STORY & CLINICAL ROOTS -->
+    <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
+        
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl bg-surface-container aspect-[4/5]">
+            <img 
+              src="/images/brand/stephy-sebastian.webp" 
+              alt="Stephy Sebastian - Founder & Educator at Livart Beauty Academy" 
+              class="w-full h-full object-cover object-[center_15%]"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-6">
+              <span class="text-xs uppercase font-bold tracking-widest text-primary mb-1">ഫൗണ്ടർ & എഡ്യൂക്കേറ്റർ</span>
+              <h3 class="font-headline-sm text-xl font-bold text-white">സ്റ്റെഫി സെബാസ്റ്റ്യൻ</h3>
+              <p class="text-xs text-white/80">രജിസ്റ്റേർഡ് നഴ്സ് • സർട്ടിഫൈഡ് മാസ്റ്റർ കോസ്മെറ്റോളജിസ്റ്റ്</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="space-y-4 font-body-lg text-on-surface-variant leading-relaxed">
+            <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold block">അക്കാദമിയുടെ അടിത്തറ</span>
+            <h2 class="font-display-md text-3xl sm:text-4xl font-bold text-on-surface tracking-tight">
+              ക്ലിനിക്കൽ കൃത്യതയും ഹൈ-ഫാഷൻ സൗന്ദര്യശാസ്ത്രവും.
+            </h2>
+            <p>
+              ആലപ്പുഴ കുട്ടനാട്ടിൽ ജനിച്ചു വളർന്ന സ്റ്റെഫി സെബാസ്റ്റ്യൻ 5 വർഷം രജിസ്റ്റേർഡ് നഴ്സായി ജോലി ചെയ്തു. ആരോഗ്യ ശുചിത്വം, ചർമ്മത്തിന്റെ ശരീരശാസ്ത്രം (dermal anatomy), രോഗി സുരക്ഷ എന്നിവയിലുള്ള ആഴത്തിലുള്ള അറിവ് ഈ ക്ലിനിക്കൽ അനുഭവത്തിലൂടെയാണ് രൂപപ്പെട്ടത്. വിവാഹദിനത്തിൽ വധുക്കളെ ഒരുക്കുന്നതിൽ അമ്മ കാണിച്ചിരുന്ന സേവനതൽപരതയിൽ നിന്ന് പ്രചോദനം ഉൾക്കൊണ്ടാണ് സ്റ്റെഫി ബ്യൂട്ടി ആർട്ടിസ്ട്രിയിലേക്ക് തിരിഞ്ഞത്.
+            </p>
+            <p>
+              കേരളത്തിലെ പല ഇൻസ്റ്റിറ്റ്യൂട്ടുകളിലും ചർമ്മത്തിന്റെ pH ലെവലോ, മുടിയുടെ ഘടനയോ, സാനിറ്റൈസേഷൻ പ്രോട്ടോക്കോളുകളോ കൃത്യമായി പഠിപ്പിക്കുന്നില്ലെന്ന പോരായ്മ സ്റ്റെഫി തിരിച്ചറിഞ്ഞു.
+            </p>
+            <p>
+              തുടർന്ന് <strong>ജോസഫ് നിപുണുമായി</strong> ചേർന്ന് കൊച്ചി കളമശ്ശേരിയിൽ ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമി സ്ഥാപിച്ചു. ഇന്ന് L’Oréal, Wella തുടങ്ങിയ പ്രമുഖ ആഗോള ബ്രാൻഡുകളുടെ സാങ്കേതിക വിദ്യകളും B&WSSC ദേശീയ അംഗീകാരവും സമന്വയിപ്പിച്ചാണ് ലിവ്ആർട്ട് പ്രവർത്തിക്കുന്നത്.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-outline-variant/15 text-center">
+            <div class="p-4 bg-surface-container-low rounded-xl">
+              <strong class="font-display-md text-2xl font-bold text-primary block">20+</strong>
+              <span class="text-xs text-outline">വർഷത്തെ ഇൻഡസ്ട്രി പരിചയം</span>
+            </div>
+            <div class="p-4 bg-surface-container-low rounded-xl">
+              <strong class="font-display-md text-2xl font-bold text-primary block">1000+</strong>
+              <span class="text-xs text-outline">വിദ്യാർത്ഥികൾ</span>
+            </div>
+            <div class="p-4 bg-surface-container-low rounded-xl">
+              <strong class="font-display-md text-2xl font-bold text-primary block">100%</strong>
+              <span class="text-xs text-outline">പ്രാക്ടിക്കൽ ട്രെയിനിങ്</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. THE THREE PILLARS -->
+    <section class="py-space-xl bg-surface-container-lowest border-y border-outline-variant/20">
+      <div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
+        <div class="text-center max-w-3xl mx-auto mb-space-xl">
+          <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold block mb-2">ഞങ്ങളുടെ പ്രവർത്തന തത്വങ്ങൾ</span>
+          <h2 class="font-display-lg text-display-lg text-on-surface tracking-tight">ക്രാഫ്റ്റ്. ക്രെഡൻഷ്യൽ. കരിയർ.</h2>
+          <p class="font-body-lg text-on-surface-variant mt-3">
+            കൊമേഴ്സ്യൽ സലൂണുകളും മുൻനിര ബ്രൈഡൽ ക്ലയന്റുകളും പ്രതീക്ഷിക്കുന്ന പ്രൊഫഷണലിസം ഉറപ്പുവരുത്തുന്നതാണ് ഓരോ കരിക്കുലവും.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {pillars.map(p => (
+            <div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant/15 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                  <span class="material-symbols-outlined text-2xl">{p.icon}</span>
+                </div>
+                <span class="text-xs uppercase font-bold text-outline tracking-wider block mb-1">{p.subtitle}</span>
+                <h3 class="font-headline-md text-2xl font-bold text-on-surface mb-3">{p.title}</h3>
+                <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. STORIES & COLLABORATIONS IN MOTION -->
+    <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">വീഡിയോ സ്റ്റോറികൾ</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">അക്കാദമി ജീവിതവും അനുഭവങ്ങളും</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>ഇൻസ്റ്റാഗ്രാമിൽ ഫോളോ ചെയ്യാം</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {highlights.map(item => (
+          <InstagramReelCard 
+            url={item.url}
+            image={item.image}
+            category={item.category}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- LEAD CAPTURE -->
+    <section class="py-space-xl max-w-[900px] mx-auto px-margin-sm lg:px-margin-lg">
+      <CourseLeadForm 
+        courseName="General Admissions Inquiry 2026"
+        title="ലിവ്ആർട്ടിൽ നിങ്ങളുടെ കരിയർ തുടങ്ങാം"
+        subtitle="2026 ബാച്ചുകളിലേക്കുള്ള അഡ്മിഷൻ ആരംഭിച്ചിരിക്കുന്നു. വിശദമായ കോഴ്‌സ് വിവരങ്ങളും ഫീസ് ഘടനയും വാട്ട്‌സ്ആപ്പിൽ ലഭിക്കാൻ താഴെ വിവരങ്ങൾ നൽകുക."
+        formId="ml-about-lead-form"
+      />
+    </section>
+
+  </div>
+</Layout>

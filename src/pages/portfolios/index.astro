@@ -1,0 +1,236 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../components/InstagramReelCard.astro';
+
+const featuredReels = [
+  {
+    url: "https://www.instagram.com/reel/Cj9gISlIba1/",
+    image: "/images/academy-live/ig_student_testimonial_nimmy.jpg",
+    category: "Student Spotlight",
+    title: "Student Nimmy Kalathil — Journey & Artistry",
+    description: "Hands-on training from zero experience to mastering bridal makeup and client consultations inside our Kalamassery bays."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/",
+    image: "/images/academy-live/bridal_masterclass_pathadipalam.jpg",
+    category: "Bridal Artistry",
+    title: "Muhurtham Saree & Temple Bridal Artistry",
+    description: "Complete bridal makeover executed live on real clients with traditional Kerala Kasavu draping and 4K HD complexion base."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/",
+    image: "/images/academy-live/loreal_hair_spa_practical.jpg",
+    category: "Hair Architecture",
+    title: "L'Oréal Professional Practical Bay",
+    description: "Clinical scalp diagnosis, deep keratin conditioning rituals, and precision blowouts trained under master educators."
+  },
+  {
+    url: "https://www.instagram.com/p/Dc-ULHvEvKu/",
+    image: "/images/academy-live/ig_makeup_artistry_showcase.jpg",
+    category: "Makeup Artistry",
+    title: "Precision Cut-Crease & Color Theory",
+    description: "Advanced symmetry calibration, smokey eyes, and dewy glass skin finish demonstrated during intensive studio workshops."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/",
+    image: "/images/academy-live/student_graduation_showcase.jpg",
+    category: "Final Examination",
+    title: "Graduate Runway Portfolio Showcase",
+    description: "Graduating cosmetologists present comprehensive hair styling and couture aesthetics for B&WSSC board certification."
+  },
+  {
+    url: "https://www.instagram.com/livart_academy/",
+    image: "/images/academy-live/saree_draping_masterclass.jpg",
+    category: "Bridal Styling",
+    title: "Crisp Pleats & Veil Setting Masterclass",
+    description: "Mastering iron-pressed pleats, secure pin placement, and royal veil draping essential for high-end wedding clients."
+  }
+];
+
+const transformations = [
+  {
+    category: "Bridal Artistry",
+    title: "Traditional Hindu Bridal Look",
+    desc: "HD base, jewel-toned eye contouring, and traditional saree pleating executed during live model practicals.",
+    image: "/images/instagram/DULWym5CHa0.jpg"
+  },
+  {
+    category: "Bridal Artistry",
+    title: "Christian Bridal Veil & Glow Transformation",
+    desc: "Flawless skin preparation, color correction, and long-wear transfer-proof base with cathedral veil draping.",
+    image: "/images/instagram/DYuASLuK_le.jpg"
+  },
+  {
+    category: "Hair Architecture",
+    title: "Clinical Hair Botox & Smoothing",
+    desc: "Deep fiber reconstruction, frizz elimination, and high-shine mirror finish.",
+    image: "/images/instagram/DW1NAndDGuP.jpg"
+  },
+  {
+    category: "Hair Styling",
+    title: "Volume Blow Dry & Texture Finish",
+    desc: "Thermal round brush technique for long-lasting root volume and bouncy commercial waves.",
+    image: "/images/instagram/Db7rJBtuj4B.jpg"
+  }
+];
+
+const studioWork = [
+  { image: "/images/academy-live/future_artists_live_atelier.jpg", tag: "Studio Practice", label: "Bridal Atelier Session" },
+  { image: "/images/instagram/DWtk05cjLnI.jpg", tag: "Hair Styling", label: "Precision Wave Setting" },
+  { image: "/images/instagram/DUap-mOkvuu.jpg", tag: "Makeup Artistry", label: "HD Pigment Blending" },
+  { image: "/images/academy-live/bridal_makeup_live_session.jpg", tag: "Live Model", label: "Christian Bridal Look" },
+  { image: "/images/instagram/DX6qGl_SKf1.jpg", tag: "Hair Atelier", label: "Balayage Technique" },
+  { image: "/images/instagram/DT7y-uAkh47.jpg", tag: "Skin Science", label: "Hydra Facial Therapy" },
+  { image: "/images/instagram/DDYbKpnTbKk.jpg", tag: "Saree Draping", label: "Pre-Pleating & Ironing" },
+  { image: "/images/instagram/DQMWOO5jNhc.jpg", tag: "Bridal Artistry", label: "Muslim Bridal Look" },
+  { image: "/images/academy-live/student_graduation_showcase.jpg", tag: "Practical Exam", label: "Final Model Evaluation" },
+  { image: "/images/academy-live/hair_curling_tongs_practical.jpg", tag: "Studio Floor", label: "Thermal Styling Practice" },
+  { image: "/images/academy-live/hair_diploma_bwssc_certified.jpg", tag: "Texture Care", label: "Hair Diploma Practical" },
+  { image: "/images/academy-live/career_makeup_artist_mastery.jpg", tag: "Masterclass", label: "Stephy Sebastian Demo" }
+];
+---
+
+<Layout 
+  title="Student Work & Transformations | Livart Beauty Academy Kochi"
+  description="Explore real student transformations and studio practice work from Livart Beauty Academy Kochi. Bridal makeup, precision haircuts, clinical hair botox, and live model practicals."
+>
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto mt-8">
+    
+    <!-- HEADER -->
+    <div class="text-center max-w-3xl mx-auto mb-space-xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">Live Studio Archive</span>
+      </div>
+      <h1 class="font-display-xl text-display-xl lg:text-[56px] text-on-surface tracking-tight mb-space-md">
+        Student Work & Transformations.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        Authentic work crafted inside our Kalamassery studios during live model sessions and practical examinations. Real results across Bridal Makeup, Hair Architecture, and Clinical Skin Care.
+      </p>
+      
+      <div class="mt-6">
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="inline-flex items-center gap-2 text-primary hover:text-primary-fixed transition-colors font-title-md border border-primary/30 px-6 py-2.5 rounded-full text-xs uppercase tracking-widest font-bold bg-primary/5 hover:bg-primary/15"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Follow Daily Updates @livart_academy
+        </a>
+      </div>
+    </div>
+
+    <!-- FEATURED TRANSFORMATIONS -->
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8">
+        <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Live Model Outcomes</span>
+        <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Signature Transformations</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {transformations.map(item => (
+          <div class="group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/15 shadow-lg flex flex-col justify-between hover:border-primary/40 transition-all duration-300">
+            <div class="relative aspect-[3/4] overflow-hidden bg-surface-container">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                loading="lazy" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 bg-black/60 backdrop-blur-md text-primary text-[11px] font-bold uppercase tracking-wider rounded border border-primary/30">
+                  {item.category}
+                </span>
+              </div>
+            </div>
+            
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1.5">{item.title}</h3>
+                <p class="font-body-sm text-on-surface-variant text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- FEATURED REELS IN MOTION -->
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Techniques in Motion</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Live Model Artistry & Video Reels</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>More on @livart_academy</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredReels.map(reel => (
+          <InstagramReelCard 
+            url={reel.url}
+            image={reel.image}
+            category={reel.category}
+            title={reel.title}
+            description={reel.description}
+          />
+        ))}
+      </div>
+    </div>
+
+    <!-- STUDIO GALLERY & INSTAGRAM FEED -->
+
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold">Studio Stills</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Academy Practicals & Masterclasses</h2>
+        </div>
+        <span class="text-xs text-outline font-semibold">100% Genuine Studio Photography</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {studioWork.map(item => (
+          <div class="relative group aspect-square rounded-xl overflow-hidden bg-surface-container shadow-md">
+            <img 
+              src={item.image} 
+              alt={item.label} 
+              loading="lazy" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="text-[10px] uppercase font-bold text-primary tracking-widest mb-0.5">{item.tag}</span>
+              <p class="text-white font-title-md text-xs font-semibold">{item.label}</p>
+            </div>
+            <a 
+              href="https://www.instagram.com/livart_academy/" 
+              target="_blank" 
+              class="absolute inset-0 z-10" 
+              aria-label={item.label}
+            ></a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- LEAD CAPTURE SECTION -->
+    <div class="py-space-xl max-w-[900px] mx-auto">
+      <CourseLeadForm 
+        courseName="Cosmetology Programme (12 Months)"
+        title="Ready to Create Work Like This?"
+        subtitle="Enroll for our 2026 batches in Kalamassery, Kochi. Receive the complete syllabus, toolkit details, and fee structure directly on your WhatsApp."
+        formId="portfolio-lead-form"
+      />
+    </div>
+
+  </section>
+</Layout>

@@ -1,0 +1,136 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CourseLeadForm from '../../components/CourseLeadForm.astro';
+import InstagramReelCard from '../../components/InstagramReelCard.astro';
+---
+
+<Layout 
+  title="Stephy Sebastian | Founder & Master Educator | Livart Beauty Academy"
+  description="Meet Stephy Sebastian, founder and master educator at Livart Beauty Academy Kochi. Bridging clinical nursing precision with high-fashion cosmetology and bridal artistry."
+>
+  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1200px] mx-auto mt-8">
+    
+    <!-- HEADER -->
+    <div class="mb-space-xl text-center max-w-3xl mx-auto">
+      <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary font-semibold block mb-4">Founder & Lead Educator</span>
+      <h1 class="font-display-xl text-display-xl lg:text-[56px] text-on-surface tracking-tight mb-space-md">Stephy Sebastian.</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+        From a 5-year nursing career in Kuttanadu to redefining Kerala's beauty education landscape with clinical precision and haute artistry.
+      </p>
+    </div>
+
+    <!-- PROFILE GRID -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center mb-space-xl">
+      <!-- Founder Image -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl bg-surface-container aspect-[3/4]">
+          <img 
+            src="/images/brand/stephy-sebastian.webp" 
+            alt="Stephy Sebastian - Founder of Livart Beauty Academy" 
+            class="w-full h-full object-cover object-[center_15%]"
+            fetchpriority="high"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex flex-col justify-end p-6">
+            <span class="text-xs uppercase font-bold tracking-widest text-primary mb-1">Founder & Educator</span>
+            <h3 class="font-headline-sm text-xl font-bold text-white">Stephy Sebastian</h3>
+            <p class="text-xs text-white/80">Registered Nurse • Certified Master Cosmetologist</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio Content -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="bg-surface-container-low p-6 sm:p-8 rounded-2xl border border-outline-variant/15 shadow-lg">
+          <blockquote class="font-headline-md italic text-primary my-2 border-l-2 border-primary pl-4 mb-6 text-xl">
+            “If your mind can think it, you can achieve it.”
+          </blockquote>
+          
+          <div class="space-y-4 font-body-md text-on-surface-variant text-sm leading-relaxed">
+            <p>
+              Raised in Kuttanadu in Alappuzha, Stephy served as a dedicated registered nurse for 5 years. Inspired by her mother helping brides affordably in their village, she recognized her deeper calling in aesthetics, skincare, and transformational beauty education.
+            </p>
+            <p>
+              Refusing to settle for standard academy conventions, she bridged clinical healthcare rigor, skin biology, and haute cosmetology to build <strong>LivArt Beauty Academy</strong>. Her medical background ensures every student understands dermal physiology, hygiene sterilization, and chemical formulation before ever touching client skin.
+            </p>
+            <p>
+              Under her leadership alongside <strong>Joseph Nipun</strong>, LivArt has trained hundreds of successful bridal artists, salon managers, and entrepreneurs across Kerala and the Middle East.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 mt-6 border-t border-outline-variant/15 text-center">
+            <div class="p-3 bg-surface-container rounded-lg">
+              <strong class="font-title-md text-primary text-base block font-bold">5+ Years</strong>
+              <span class="text-[11px] text-outline">Clinical Nursing</span>
+            </div>
+            <div class="p-3 bg-surface-container rounded-lg">
+              <strong class="font-title-md text-primary text-base block font-bold">1000+</strong>
+              <span class="text-[11px] text-outline">Students Trained</span>
+            </div>
+            <div class="p-3 bg-surface-container rounded-lg col-span-2 sm:col-span-1">
+              <strong class="font-title-md text-primary text-base block font-bold">B&WSSC</strong>
+              <span class="text-[11px] text-outline">Master Evaluator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MASTERCLASSES & PHILOSOPHY IN MOTION -->
+    <div class="mb-space-xl">
+      <div class="border-b border-outline-variant/20 pb-4 mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="font-label-sm text-primary uppercase tracking-widest text-xs font-bold block mb-1">Philosophy & Demos</span>
+          <h2 class="font-display-md text-2xl sm:text-3xl font-bold text-on-surface">Stephy Sebastian in Action</h2>
+        </div>
+        <a 
+          href="https://www.instagram.com/livart_academy/" 
+          target="_blank" 
+          class="text-xs text-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1.5"
+        >
+          <span>Follow on Instagram</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/reel/DZKXR4KNBIU/"
+          image="/images/brand/stephy-sebastian.webp"
+          category="Founder Message"
+          title="Why LivArt Beauty Academy is Different"
+          description="Stephy Sebastian breaks down our hands-on philosophy, live model training, and career pathway support."
+          badge="@livart_academy"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/"
+          image="/images/academy-live/hairstylist_graduation_ceremony.jpg"
+          category="Masterclass Demo"
+          title="Stephy Sebastian Live Masterclass"
+          description="High-precision hair styling and couture finishing demonstrated live for students at the academy."
+          badge="@livart_academy"
+        />
+
+        <InstagramReelCard 
+          url="https://www.instagram.com/livart_academy/reel/DY8vuSUIW_R/"
+          image="/images/academy-live/sabna_faculty_journey.jpg"
+          category="Mentorship Outcome"
+          title="Sabna: From Student to Senior Faculty"
+          description="How Stephy's mentorship transforms dedicated students into confident industry educators."
+          badge="@livart_academy"
+        />
+      </div>
+    </div>
+
+    <!-- LEAD CAPTURE SECTION -->
+    <div class="py-space-xl max-w-[900px] mx-auto">
+      <CourseLeadForm 
+        courseName="Cosmetology Programme (12 Months)"
+        title="Train Directly Under Stephy Sebastian"
+        subtitle="Limited batch sizes ensure personal attention during practical model sessions. Request the 2026 course syllabus and fee details directly on WhatsApp."
+        formId="founder-lead-form"
+      />
+    </div>
+
+  </section>
+</Layout>
