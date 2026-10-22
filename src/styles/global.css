@@ -209,6 +209,33 @@
 }
 
 /* ==========================================================================
+   MOBILE-FIRST OPTIMIZATIONS & TAP SAFETY
+   ========================================================================== */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent text overflow on small mobile displays */
+@media (max-width: 640px) {
+  h1, h2, h3 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Smooth mobile bottom bar transitions */
+.mobile-sticky-action-bar {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+/* ==========================================================================
    PRINT SPECIFICATION & EXECUTIVE PROSPECTUS STYLES
    Ensures crystal-clear, ink-friendly, executive output when printed or exported as PDF
    ========================================================================== */

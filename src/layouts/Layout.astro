@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import InstagramVideoModal from '../components/InstagramVideoModal.astro';
+import MobileStickyBar from '../components/MobileStickyBar.astro';
+import MobileNavigationDrawer from '../components/MobileNavigationDrawer.astro';
 
 interface Props {
 	title: string;
@@ -227,44 +229,55 @@ const finalSchema = schema || defaultSchema;
 					</nav>
 				</div>
 				
-				<div class="flex items-center gap-3">
-					<a class="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-primary hover:border-primary/50 transition-all duration-300" href="tel:+919633211151" aria-label="Advisory Helpline">
+				<div class="flex items-center gap-2 sm:gap-3">
+					<a class="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-primary hover:border-primary/50 transition-all duration-300" href="tel:+919633211151" aria-label="Advisory Helpline">
 						<span class="material-symbols-outlined text-[18px]">call</span>
 					</a>
-					<a class="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-[#25D366] hover:border-[#25D366]/50 transition-all duration-300" href="https://wa.me/919633211151" target="_blank" aria-label="WhatsApp">
+					<a class="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-[#25D366] hover:border-[#25D366]/50 transition-all duration-300" href="https://wa.me/919633211151" target="_blank" aria-label="WhatsApp">
 						<span class="material-symbols-outlined text-[18px]">chat</span>
 					</a>
 					
 					<!-- Language Switcher -->
-					<div class="flex items-center gap-1 border border-white/15 rounded-full p-1 bg-black/50 shadow-inner">
+					<div class="flex items-center gap-0.5 sm:gap-1 border border-white/15 rounded-full p-0.5 sm:p-1 bg-black/50 shadow-inner">
 						<a 
 							href={enPath} 
-							class={`px-3 py-1 rounded-full text-xs font-bold font-label-sm uppercase tracking-wider transition-all ${isMl ? "text-white/60 hover:text-white" : "bg-primary text-white shadow-[0_0_12px_rgba(254,0,2,0.6)]"}`}
+							class={`px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold font-label-sm uppercase tracking-wider transition-all ${isMl ? "text-white/60 hover:text-white" : "bg-primary text-white shadow-[0_0_12px_rgba(254,0,2,0.6)]"}`}
 							aria-label="Switch to English version"
 						>
 							EN
 						</a>
 						<a 
 							href={mlPath} 
-							class={`px-3 py-1 rounded-full text-xs font-bold font-label-sm uppercase tracking-wider transition-all ${isMl ? "bg-primary text-white shadow-[0_0_12px_rgba(254,0,2,0.6)]" : "text-white/60 hover:text-white"}`}
+							class={`px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold font-label-sm uppercase tracking-wider transition-all ${isMl ? "bg-primary text-white shadow-[0_0_12px_rgba(254,0,2,0.6)]" : "text-white/60 hover:text-white"}`}
 							aria-label="മലയാളം പതിപ്പിലേക്ക് മാറുക"
 						>
 							ML
 						</a>
 					</div>
 
+					<!-- Desktop Apply Button -->
 					<a 
-						class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-primary hover:bg-[#d40002] text-white font-label-md text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(254,0,2,0.45)] hover:shadow-[0_0_25px_rgba(254,0,2,0.7)]" 
+						class="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 rounded-full bg-primary hover:bg-[#d40002] text-white font-label-md text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(254,0,2,0.45)] hover:shadow-[0_0_25px_rgba(254,0,2,0.7)]" 
 						href={isMl ? "/ml/contact-us/" : "/contact-us/"}
 					>
 						{isMl ? "അഡ്മിഷൻ നേടൂ" : "Apply Now"}
 					</a>
+
+					<!-- Mobile Hamburger Menu Button -->
+					<button
+						type="button"
+						id="mobile-nav-toggle"
+						class="lg:hidden flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 border border-white/15 text-white transition-all cursor-pointer"
+						aria-label="Open mobile navigation menu"
+					>
+						<span class="material-symbols-outlined text-[22px]">menu</span>
+					</button>
 				</div>
 			</div>
 		</header>
 
 		<!-- Main Content -->
-		<main class="w-full pt-16 bg-surface flex-1">
+		<main class="w-full pt-16 pb-20 lg:pb-0 bg-surface flex-1">
 			<slot />
 		</main>
 
@@ -355,5 +368,11 @@ const finalSchema = schema || defaultSchema;
 
 		<!-- Global Interactive Instagram Video Modal -->
 		<InstagramVideoModal />
+
+		<!-- Mobile Navigation Drawer -->
+		<MobileNavigationDrawer isMalayalam={isMl} enPath={enPath} mlPath={mlPath} />
+
+		<!-- Sticky Mobile Bottom Action Bar (High-Conversion CTAs) -->
+		<MobileStickyBar isMalayalam={isMl} />
 	</body>
 </html>

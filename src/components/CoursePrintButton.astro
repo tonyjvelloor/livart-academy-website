@@ -18,12 +18,12 @@ const displayLabel = label || defaultLabel;
 <button
   type="button"
   onclick="window.print()"
-  class={`group inline-flex items-center gap-2 px-6 py-4 bg-surface-container-high hover:bg-white hover:text-black text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/40 hover:border-white transition-all font-bold cursor-pointer print:hidden shadow-sm hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] ${className}`}
+  class={`group inline-flex items-center justify-center gap-2 px-6 py-4 bg-surface-container-high hover:bg-white hover:text-black text-on-surface font-label-md uppercase tracking-widest rounded border border-outline-variant/40 hover:border-white transition-all font-bold cursor-pointer print:hidden shadow-sm hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] min-h-[48px] w-full sm:w-auto text-center ${className}`}
   title={isMalayalam ? "കോഴ്സ് സിലബസും വിവരങ്ങളും പ്രിന്റ് ചെയ്യുക" : "Print Official Course Syllabus and Prospectus"}
   aria-label={displayLabel}
 >
   <span class="material-symbols-outlined text-primary text-xl transition-colors group-hover:text-black">
     print
   </span>
-  <span>{displayLabel}</span>
+  <span class="text-xs sm:text-sm">{displayLabel}</span>
 </button>

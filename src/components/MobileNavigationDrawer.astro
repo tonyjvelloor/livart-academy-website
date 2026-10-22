@@ -1,0 +1,257 @@
+---
+interface Props {
+  isMalayalam?: boolean;
+  enPath?: string;
+  mlPath?: string;
+}
+
+const {
+  isMalayalam = false,
+  enPath = "/",
+  mlPath = "/ml/"
+} = Astro.props;
+
+const courses = isMalayalam ? [
+  { title: "കോസ്മെറ്റോളജി പ്രോഗ്രാം (12M & 6M)", href: "/ml/certification-course-in-cosmetology/", badge: "ഫ്ലാഗ്ഷിപ്പ്" },
+  { title: "ഡിപ്ലോമ ഇൻ മേക്കപ്പ് (3M & 1M)", href: "/ml/make-up-course/", badge: "ജനപ്രിയം" },
+  { title: "ഫാസ്ട്രാക്ക് ബ്രൈഡൽ മേക്കപ്പ് (10 Days)", href: "/ml/bridal-makeup-course/", badge: "ബ്രൈഡൽ" },
+  { title: "ഹെയർ ഡ്രസ്സിംഗ് & സ്റ്റൈലിംഗ് (4M & 2M)", href: "/ml/hair-styling-course/", badge: "ഹെയർ" },
+  { title: "സ്കിൻ തെറാപ്പി & എസ്തറ്റിക്സ് (4M & 2M)", href: "/ml/skin-care-course/", badge: "സ്കിൻ" },
+  { title: "ജോബ്-ഓറിയന്റഡ് സലൂൺ കോഴ്‌സ് (1 Month)", href: "/ml/job-oriented-salon-course/", badge: "സലൂൺ" },
+] : [
+  { title: "Cosmetology Programme (12M & 6M)", href: "/certification-course-in-cosmetology/", badge: "Flagship" },
+  { title: "Diploma in Makeup Artistry (3M & 1M)", href: "/make-up-course/", badge: "Popular" },
+  { title: "Fastrack Bridal Makeup (10 Days)", href: "/bridal-makeup-course/", badge: "Bridal" },
+  { title: "Hair Dressing & Styling (4M & 2M)", href: "/hair-styling-course/", badge: "Hair" },
+  { title: "Skin Therapy & Aesthetics (4M & 2M)", href: "/skin-care-course/", badge: "Skin" },
+  { title: "Job-Oriented Salon Course (1 Month)", href: "/job-oriented-salon-course/", badge: "Salon" },
+];
+
+const navLinks = isMalayalam ? [
+  { title: "കോഴ്‌സുകൾ പൂർണ്ണ വിവരണം", href: "/ml/overview/", icon: "school" },
+  { title: "ഞങ്ങളുടെ കാമ്പസ് ടൂർ", href: "/ml/take-a-tour/", icon: "apartment" },
+  { title: "വിദ്യാർത്ഥികളുടെ പോർട്ട്ഫോളിയോ", href: "/ml/portfolios/", icon: "photo_library" },
+  { title: "സ്ഥാപക & ഫാക്കൽറ്റി", href: "/ml/about-us-makeup-artist/", icon: "person" },
+  { title: "ബ്യൂട്ടി കരിയർ ബ്ലോഗ്", href: "/blog/", icon: "article" },
+  { title: "പതിവ് ചോദ്യോത്തരങ്ങൾ (FAQ)", href: "/ml/faq/", icon: "quiz" },
+  { title: "അഡ്മിഷൻ & ലൊക്കേഷൻ", href: "/ml/contact-us/", icon: "pin_drop" },
+] : [
+  { title: "All Courses Overview", href: "/overview/", icon: "school" },
+  { title: "Kalamassery Campus Tour", href: "/take-a-tour/", icon: "apartment" },
+  { title: "Student Portfolios & Work", href: "/portfolios/", icon: "photo_library" },
+  { title: "Founder & Lead Educator", href: "/founder-makeup-academy/", icon: "person" },
+  { title: "Beauty Career Guides (Blog)", href: "/blog/", icon: "article" },
+  { title: "Frequently Asked Questions", href: "/faq/", icon: "quiz" },
+  { title: "Admissions Desk & Location", href: "/contact-us/", icon: "pin_drop" },
+];
+---
+
+<!-- MOBILE NAVIGATION DRAWER (Slide-down luxury menu for mobile users) -->
+<div 
+  id="mobile-nav-drawer" 
+  class="fixed inset-0 z-[60] bg-black/90 backdrop-blur-2xl transition-all duration-300 opacity-0 pointer-events-none flex flex-col justify-between overflow-y-auto lg:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile Navigation Menu"
+>
+  <!-- Top bar with brand & close button -->
+  <div class="h-16 px-4 flex items-center justify-between border-b border-white/10 bg-[#0e1015]/90 sticky top-0 z-10">
+    <a href={isMalayalam ? "/ml/" : "/"} class="flex items-center gap-2" id="mobile-drawer-brand">
+      <img 
+        src="/images/brand/livart-logo-horizontal.png" 
+        alt="LivArt Beauty Academy" 
+        class="h-8 w-auto object-contain" 
+        width="160"
+        height="68"
+      />
+    </a>
+
+    <div class="flex items-center gap-2">
+      <!-- Language switch pill -->
+      <div class="flex items-center gap-1 border border-white/15 rounded-full p-0.5 bg-black/60">
+        <a 
+          href={enPath} 
+          class={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase transition-all ${isMalayalam ? "text-white/60" : "bg-primary text-white font-bold"}`}
+        >
+          EN
+        </a>
+        <a 
+          href={mlPath} 
+          class={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase transition-all ${isMalayalam ? "bg-primary text-white font-bold" : "text-white/60"}`}
+        >
+          ML
+        </a>
+      </div>
+
+      <!-- Close Drawer Button -->
+      <button 
+        type="button" 
+        id="mobile-nav-close" 
+        class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 active:scale-90 text-white flex items-center justify-center transition-all cursor-pointer"
+        aria-label="Close navigation menu"
+      >
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Drawer Body Content -->
+  <div class="p-4 space-y-6 flex-1">
+    
+    <!-- Direct Admissions Helpline Strip -->
+    <div class="p-3.5 rounded-2xl bg-[#14161d] border border-white/10 flex items-center justify-between gap-2 shadow-lg">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-lg">support_agent</span>
+        </div>
+        <div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-primary block leading-none mb-1">
+            {isMalayalam ? "അഡ്മിഷൻ ഹെൽപ്പ്‌ലൈൻ" : "Admissions Desk"}
+          </span>
+          <a href="tel:+919633211151" class="text-sm font-bold text-white hover:text-primary transition-colors">
+            +91 96332 11151
+          </a>
+        </div>
+      </div>
+      <a 
+        href="https://wa.me/919633211151" 
+        target="_blank" 
+        class="px-3 py-1.5 rounded-xl bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-md"
+      >
+        <span>WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- Course Catalog Group -->
+    <div class="space-y-2">
+      <div class="flex items-center justify-between px-1">
+        <span class="text-[11px] font-bold uppercase tracking-widest text-white/50">
+          {isMalayalam ? "പ്രൊഫഷണൽ കോഴ്‌സുകൾ" : "Professional Courses"}
+        </span>
+        <a href={isMalayalam ? "/ml/overview/" : "/overview/"} class="text-[11px] text-primary font-bold hover:underline">
+          {isMalayalam ? "എല്ലാം കാണുക &rarr;" : "View All &rarr;"}
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 gap-1.5">
+        {courses.map((c) => (
+          <a 
+            href={c.href} 
+            class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 active:bg-primary/20 border border-white/5 transition-all group"
+          >
+            <span class="text-sm font-semibold text-white/90 group-hover:text-white transition-colors">
+              {c.title}
+            </span>
+            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-white/10 text-white/70 group-hover:bg-primary group-hover:text-white transition-all">
+              {c.badge}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Academy Links -->
+    <div class="space-y-2 pt-2 border-t border-white/10">
+      <span class="text-[11px] font-bold uppercase tracking-widest text-white/50 px-1 block">
+        {isMalayalam ? "അക്കാദമി വിവരങ്ങൾ" : "Explore Academy"}
+      </span>
+
+      <div class="grid grid-cols-2 gap-2">
+        {navLinks.map((l) => (
+          <a 
+            href={l.href} 
+            class="flex items-center gap-2 p-2.5 rounded-xl bg-white/5 hover:bg-white/10 active:bg-white/15 border border-white/5 transition-all text-xs font-medium text-white/80"
+          >
+            <span class="material-symbols-outlined text-base text-primary">{l.icon}</span>
+            <span class="truncate">{l.title}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Sister Brand & Location -->
+    <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 space-y-2 text-xs">
+      <div class="flex items-center justify-between text-white/70">
+        <span class="font-semibold">{isMalayalam ? "ലൊക്കേഷൻ:" : "Campus Location:"}</span>
+        <span class="text-primary font-bold">Kalamassery (Metro Pillar 384)</span>
+      </div>
+      <a 
+        href="https://share.google/OCj5l70Grn7Wxu8WR" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="inline-flex items-center gap-1.5 text-xs text-primary font-bold hover:underline"
+      >
+        <span class="material-symbols-outlined text-sm">location_on</span>
+        <span>Google Maps Directions & Reviews &rarr;</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Bottom Sticky Apply Action -->
+  <div class="p-4 bg-[#0a0b0f] border-t border-white/10 sticky bottom-0 z-10 pb-[max(1rem,env(safe-area-inset-bottom))]">
+    <a 
+      href={isMalayalam ? "/ml/contact-us/" : "/contact-us/"} 
+      class="w-full py-3.5 bg-primary hover:bg-[#d40002] active:scale-98 text-white font-label-md uppercase tracking-widest font-bold rounded-xl shadow-[0_0_25px_rgba(254,0,2,0.5)] flex items-center justify-center gap-2 text-xs transition-all"
+    >
+      <span class="material-symbols-outlined text-lg">school</span>
+      <span>{isMalayalam ? "അഡ്മിഷന് അപേക്ഷിക്കുക (2026)" : "Apply for 2026 Admissions"}</span>
+    </a>
+  </div>
+</div>
+
+<script>
+  function setupMobileMenu() {
+    const drawer = document.getElementById('mobile-nav-drawer');
+    const openBtn = document.getElementById('mobile-nav-toggle');
+    const closeBtn = document.getElementById('mobile-nav-close');
+    if (!drawer) return;
+
+    function openMenu() {
+      drawer.classList.remove('opacity-0', 'pointer-events-none');
+      drawer.classList.add('opacity-100', 'pointer-events-auto');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      drawer.classList.remove('opacity-100', 'pointer-events-auto');
+      drawer.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+
+    if (openBtn) {
+      openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMenu();
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+
+    // Close on navigation click inside drawer
+    drawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !drawer.classList.contains('pointer-events-none')) {
+        closeMenu();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileMenu);
+  } else {
+    setupMobileMenu();
+  }
+  document.addEventListener('astro:page-load', setupMobileMenu);
+</script>
