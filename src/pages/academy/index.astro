@@ -1,0 +1,272 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const locations = await getCollection('locations');
+
+// Group locations by region
+const metroCorridor = locations.filter(loc => 
+  ['kalamassery', 'edappally', 'palarivattom', 'kochi', 'ernakulam'].includes(loc.id)
+);
+
+const greaterKochi = locations.filter(loc => 
+  ['kakkanad', 'aluva', 'vyttila', 'tripunithura', 'angamaly'].includes(loc.id)
+);
+
+const regionalHubs = locations.filter(loc => 
+  ['thrissur', 'kottayam'].includes(loc.id)
+);
+
+const hubSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://livart.co.in/academy/#organization",
+      "name": "LivArt Beauty Academy Centres & Locations",
+      "url": "https://livart.co.in/academy/",
+      "logo": "https://livart.co.in/apple-touch-icon.png",
+      "telephone": "+91-9633211151",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+        "addressLocality": "Kalamassery, Kochi",
+        "addressRegion": "Kerala",
+        "postalCode": "682024",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://livart.co.in/academy/#locations-list",
+      "name": "LivArt Beauty Academy Student Catchment Centres",
+      "itemListElement": locations.map((loc, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": `Beauty & Cosmetology Courses in ${loc.data.city}`,
+        "url": `https://livart.co.in/academy/${loc.id}/`
+      }))
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Beauty Academy Centres & Locations in Kerala | LivArt Academy"
+  description="Explore LivArt Beauty Academy centres, transit routes, and student batches across Kochi, Kalamassery, Edappally, Kakkanad, Aluva, Thrissur & Kottayam."
+  schema={hubSchema}
+>
+  <!-- 1. HERO DIRECTORY HEADER -->
+  <section class="relative pt-24 sm:pt-32 pb-16 px-margin-sm lg:px-margin-lg max-w-[1280px] mx-auto text-center">
+    <nav class="flex items-center justify-center gap-2 text-xs font-label-sm text-on-surface-variant mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-primary transition-colors">Home</a>
+      <span class="text-white/30">/</span>
+      <span class="text-primary font-semibold">Academy Centres</span>
+    </nav>
+
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 mb-5 shadow-sm">
+      <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+      <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">
+        Kochi Metro Corridor & Greater Kerala
+      </span>
+    </div>
+
+    <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-on-surface leading-tight mb-5 max-w-4xl mx-auto">
+      Professional Beauty & Cosmetology Academy <span class="text-primary italic">Across Kerala.</span>
+    </h1>
+
+    <p class="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-8">
+      Discover our dedicated student study centers, direct metro transit guides, and specialized batches serving aspiring cosmetologists, bridal makeup artists, and hair stylists from every major Kerala hub.
+    </p>
+
+    <!-- Fast Facts Bar -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+      <div class="p-4 rounded-xl bg-surface-container border border-white/5">
+        <span class="text-2xl font-bold text-primary font-display">12+</span>
+        <p class="text-xs text-on-surface-variant uppercase tracking-wider font-medium mt-1">Kerala Hubs</p>
+      </div>
+      <div class="p-4 rounded-xl bg-surface-container border border-white/5">
+        <span class="text-2xl font-bold text-on-surface font-display">1 Min</span>
+        <p class="text-xs text-on-surface-variant uppercase tracking-wider font-medium mt-1">From Metro Pillar 382</p>
+      </div>
+      <div class="p-4 rounded-xl bg-surface-container border border-white/5">
+        <span class="text-2xl font-bold text-emerald-400 font-display">100%</span>
+        <p class="text-xs text-on-surface-variant uppercase tracking-wider font-medium mt-1">Placement Record</p>
+      </div>
+      <div class="p-4 rounded-xl bg-surface-container border border-white/5">
+        <span class="text-2xl font-bold text-on-surface font-display">B&WSSC</span>
+        <p class="text-xs text-on-surface-variant uppercase tracking-wider font-medium mt-1">Govt Recognized</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. REGIONAL DIRECTORY GRIDS -->
+  <section class="py-12 px-margin-sm lg:px-margin-lg max-w-[1280px] mx-auto space-y-16">
+    
+    <!-- REGION 1: CENTRAL KOCHI & METRO CORRIDOR -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-sm">
+          <span class="material-symbols-outlined text-base">train</span>
+        </span>
+        <div>
+          <h2 class="font-display text-xl sm:text-2xl font-bold text-on-surface">
+            Kochi Metro Core Corridor
+          </h2>
+          <p class="text-xs sm:text-sm text-on-surface-variant">
+            Direct door-to-door access to Pathadipalam Metro Station within 1 to 15 minutes.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {metroCorridor.map(loc => (
+          <a 
+            href={`/academy/${loc.id}/`}
+            class="p-6 rounded-2xl bg-surface-container border border-white/10 hover:border-primary transition-all duration-300 group shadow-lg flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary border border-primary/20">
+                  {loc.data.commuteTime}
+                </span>
+                <span class="text-xs text-on-surface-variant">{loc.data.distanceFromCampus}</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors mb-2">
+                {loc.data.city}
+              </h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed line-clamp-2 mb-4">
+                {loc.data.description}
+              </p>
+            </div>
+            <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-bold text-primary">
+              <span>View Courses & Transit</span>
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- REGION 2: GREATER KOCHI COMMERCIAL & TECH HUBS -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-sm">
+          <span class="material-symbols-outlined text-base">apartment</span>
+        </span>
+        <div>
+          <h2 class="font-display text-xl sm:text-2xl font-bold text-on-surface">
+            Greater Kochi & Tech Corridor
+          </h2>
+          <p class="text-xs sm:text-sm text-on-surface-variant">
+            Seamless highway and feeder bus connectivity for students from Kakkanad, Aluva, Vyttila, Tripunithura & Angamaly.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {greaterKochi.map(loc => (
+          <a 
+            href={`/academy/${loc.id}/`}
+            class="p-6 rounded-2xl bg-surface-container border border-white/10 hover:border-primary transition-all duration-300 group shadow-lg flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-primary/10 text-primary border border-primary/20">
+                  {loc.data.commuteTime}
+                </span>
+                <span class="text-xs text-on-surface-variant">{loc.data.distanceFromCampus}</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors mb-2">
+                {loc.data.city}
+              </h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed line-clamp-2 mb-4">
+                {loc.data.description}
+              </p>
+            </div>
+            <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-bold text-primary">
+              <span>View Courses & Transit</span>
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- REGION 3: REGIONAL KERALA HUBS (WITH HOSTEL SUPPORT) -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-sm">
+          <span class="material-symbols-outlined text-base">hotel</span>
+        </span>
+        <div>
+          <h2 class="font-display text-xl sm:text-2xl font-bold text-on-surface">
+            Regional Kerala Centers (With Verified Hostel Support)
+          </h2>
+          <p class="text-xs sm:text-sm text-on-surface-variant">
+            For students traveling from Thrissur, Kottayam, and across Kerala seeking international certification and Gulf placement.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {regionalHubs.map(loc => (
+          <a 
+            href={`/academy/${loc.id}/`}
+            class="p-6 sm:p-8 rounded-2xl bg-surface-container border border-white/10 hover:border-primary transition-all duration-300 group shadow-lg flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Hostel Assistance Included
+                </span>
+                <span class="text-xs text-primary font-bold">{loc.data.commuteTime}</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-on-surface group-hover:text-primary transition-colors mb-2">
+                {loc.data.city}
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                {loc.data.description}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-bold text-primary">
+              <span>Explore Curriculum, Train Transit & Hostels</span>
+              <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 3. CENTRAL CAMPUS FOOTER CTA -->
+  <section class="py-16 bg-surface-container-low border-t border-white/5">
+    <div class="max-w-[1000px] mx-auto px-margin-sm lg:px-margin-lg text-center">
+      <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#17181f] to-[#0f1015] border border-white/10 shadow-2xl">
+        <span class="text-xs uppercase tracking-widest text-primary font-bold">Flagship Academy Campus</span>
+        <h2 class="font-display text-2xl sm:text-4xl font-bold text-on-surface mt-2 mb-4">
+          Visit Us at Pathadipalam, Kalamassery
+        </h2>
+        <p class="text-sm sm:text-base text-on-surface-variant max-w-xl mx-auto leading-relaxed mb-8">
+          Conveniently located at Madukappilly Tower, directly opposite Kochi Metro Pillar 382. Book a free campus walkthrough, meet our senior master trainers, and receive personalized career counseling.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a 
+            href="/contact-us/"
+            class="px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-on-primary font-bold font-label-md transition-all shadow-lg shadow-primary/20"
+          >
+            Schedule Campus Visit
+          </a>
+          <a 
+            href="/overview/"
+            class="px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:border-primary text-on-surface hover:text-primary font-bold font-label-md transition-all"
+          >
+            Explore All Courses
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

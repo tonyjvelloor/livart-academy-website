@@ -8,6 +8,21 @@ const locationsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     primaryKeyword: z.string(),
+    district: z.string().default("Ernakulam"),
+    distanceFromCampus: z.string().default("Direct access via Kochi Metro"),
+    metroRoute: z.string().default("Pathadipalam Metro Station (Pillar 382) - 2 min walk"),
+    commuteTime: z.string().default("10-25 mins"),
+    transportGuide: z.string().optional(),
+    popularCourses: z.array(z.string()).default([
+      "Cosmetology & Beautician Master Diploma",
+      "Bridal Makeup & HD Artistry",
+      "Advanced Hair Architecture & Salon Chemical Work",
+      "Clinical Skin Therapy & Aesthetics"
+    ]),
+    faqs: z.array(z.object({
+      q: z.string(),
+      a: z.string(),
+    })).default([]),
   })
 });
 
