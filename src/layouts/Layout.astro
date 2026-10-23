@@ -185,7 +185,7 @@ const finalSchema = schema || defaultSchema;
 <html lang={isMl ? "ml" : "en"} class="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
@@ -238,7 +238,7 @@ const finalSchema = schema || defaultSchema;
 	<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between">
 		
 		<!-- Header -->
-		<header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0b0e]/85 backdrop-blur-2xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+		<header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0b0e]/90 backdrop-blur-2xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transform-gpu">
 			<div class="h-16 max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg flex items-center justify-between">
 				<div class="flex items-center gap-space-md">
 					<a class="flex items-center gap-3 group py-1" href={isMl ? "/ml/" : "/"} aria-label="LivArt Beauty Academy">
@@ -326,12 +326,12 @@ const finalSchema = schema || defaultSchema;
 		</header>
 
 		<!-- Main Content -->
-		<main class="w-full pt-16 pb-20 lg:pb-0 bg-surface flex-1">
+		<main class="w-full pt-16 bg-surface flex-1">
 			<slot />
 		</main>
 
 		<!-- Footer -->
-		<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 pt-space-xl pb-space-lg">
+		<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 pt-space-xl pb-28 lg:pb-space-lg">
 			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-lg pb-space-xl border-b border-outline-variant/20">
 					<div class="lg:col-span-2 space-y-space-md pr-0 lg:pr-gutter-lg">

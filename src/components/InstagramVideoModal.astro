@@ -4,7 +4,7 @@
 
 <div 
   id="instagram-video-modal" 
-  class="fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-xl transition-all duration-300 opacity-0 pointer-events-none"
+  class="fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-xl transition-all duration-300 opacity-0 pointer-events-none overscroll-contain transform-gpu"
   role="dialog"
   aria-modal="true"
   aria-labelledby="modal-reel-title"
@@ -13,7 +13,7 @@
   <div class="modal-backdrop absolute inset-0 cursor-pointer" aria-label="Close video player"></div>
 
   <!-- Modal Dialog Container -->
-  <div class="relative z-10 w-full max-w-[440px] max-h-[92vh] flex flex-col bg-[#111317] border border-white/15 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.85)] overflow-hidden transform scale-95 transition-transform duration-300">
+  <div class="relative z-10 w-full max-w-[440px] max-h-[92dvh] flex flex-col bg-[#111317] border border-white/15 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.85)] overflow-hidden transform scale-95 transition-transform duration-300">
     
     <!-- Modal Header -->
     <div class="p-4 bg-[#181a20]/90 border-b border-white/10 flex items-center justify-between gap-3">
@@ -132,6 +132,7 @@
         }
       });
 
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     }
 
@@ -149,6 +150,7 @@
       setTimeout(() => {
         modal.classList.add('hidden');
         iframe.src = ''; // Stop audio/video
+        document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
       }, 250);
     }
