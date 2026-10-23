@@ -1,19 +1,421 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+
+const allPosts = await getCollection('blog');
+
+// Sort posts: featured first, then by pubDate (newest first), or title
+const posts = allPosts.sort((a, b) => {
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  const dateA = a.data.pubDate ? new Date(a.data.pubDate).getTime() : 0;
+  const dateB = b.data.pubDate ? new Date(b.data.pubDate).getTime() : 0;
+  return dateB - dateA;
+});
+
+const featuredPost = posts.find(p => p.data.featured) || posts[0];
+const remainingPosts = posts.filter(p => p.id !== featuredPost?.id);
+
+// Unique categories
+const categories = ["All", "Career Guides", "Bridal & Artistry", "Cosmetology", "Hair Architecture", "Education & Pathways"];
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://livart.co.in/blog/#blog",
+      "name": "LivArt Beauty Academy Insights & Masterclass Directory",
+      "description": "Authoritative guides on cosmetology careers, bridal makeup artistry, clinical skin treatments, and beautician certifications in Kerala.",
+      "url": "https://livart.co.in/blog/",
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "LivArt Beauty Academy",
+        "url": "https://livart.co.in",
+        "logo": "https://livart.co.in/apple-touch-icon.png"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://livart.co.in/blog/#articles-list",
+      "name": "LivArt Academy Beauty & Career Articles",
+      "itemListElement": posts.map((post, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": post.data.title.split('|')[0].trim(),
+        "url": `https://livart.co.in/blog/${post.id}/`
+      }))
+    }
+  ]
+};
 ---
 
-<Layout title="Livart Academy Blog | Insights on Beauty & Careers">
-  <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1000px] mx-auto mt-8 min-h-[60vh]">
-    <div class="mb-space-xl text-center">
-      <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary font-semibold block mb-4">Insights & News</span>
-      <h1 class="font-display-xl text-display-xl text-on-surface tracking-tight mb-space-md">The Beauty Archive.</h1>
-      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-        Expert guidance on cosmetology careers, bridal makeup trends, and aesthetic clinical practices.
+<Layout 
+  title="Beauty Academy Insights & Cosmetology Career Guides | LivArt Academy"
+  description="Masterclass insights on cosmetology careers, bridal makeup trends, hair chemistry, and beautician certifications from LivArt Beauty Academy Kochi."
+  schema={blogSchema}
+>
+  <main class="min-h-screen bg-background text-on-surface">
+    <!-- 1. HERO DIRECTORY HEADER -->
+    <section class="relative pt-24 sm:pt-32 pb-12 px-margin-sm lg:px-margin-lg max-w-[1280px] mx-auto text-center">
+      <nav class="flex items-center justify-center gap-2 text-xs font-label-sm text-on-surface-variant mb-6" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-primary transition-colors">Home</a>
+        <span class="text-white/30">/</span>
+        <span class="text-primary font-semibold">Blog & Insights</span>
+      </nav>
+
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 mb-5 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="font-label-sm uppercase tracking-widest text-primary text-xs font-bold">
+          LivArt Editorial & Career Masterclass
+        </span>
+      </div>
+
+      <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-on-surface leading-tight mb-5 max-w-4xl mx-auto">
+        The Beauty & Cosmetology <span class="text-primary italic">Knowledge Archive.</span>
+      </h1>
+
+      <p class="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-10">
+        Expert industry guides on launching high-income beauty careers, mastering 4K HD bridal artistry, precision salon hair architecture, and government certification standards in Kerala and the Gulf.
       </p>
-    </div>
-    <div class="mt-space-xl text-center border border-outline-variant/30 p-space-xl rounded-xl">
-      <h2 class="font-headline-md text-on-surface mb-2">Blog coming soon to the new platform</h2>
-      <p class="font-body-md text-on-surface-variant">We are migrating our 26+ articles to this new architecture. All previous URLs have been preserved with automatic redirects to protect SEO rankings.</p>
-    </div>
-  </section>
+
+      <!-- Fast Search & Filter Hub -->
+      <div class="max-w-2xl mx-auto relative mb-8">
+        <div class="relative">
+          <input 
+            type="text" 
+            id="blog-search-input"
+            placeholder="Search guides (e.g. 'bridal makeup', 'salary', 'resume', 'hair styling')..." 
+            class="w-full pl-12 pr-4 py-3.5 rounded-full bg-surface-container border border-white/10 text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 text-sm transition-all shadow-inner"
+          />
+          <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Category Filter Chips -->
+      <div class="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto" id="category-filter-chips">
+        {categories.map((cat, i) => (
+          <button 
+            type="button"
+            data-category={cat}
+            class={`category-chip px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer ${
+              i === 0 
+                ? 'bg-primary text-white shadow-md shadow-primary/20 active-chip' 
+                : 'bg-surface-container border border-white/5 text-on-surface-variant hover:text-white hover:border-white/20'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <!-- 2. FEATURED LEAD ARTICLE (Hero Card) -->
+    {featuredPost && (
+      <section class="px-margin-sm lg:px-margin-lg max-w-[1280px] mx-auto mb-16" id="featured-article-container">
+        <div class="p-1 rounded-3xl bg-gradient-to-r from-primary/30 via-white/5 to-primary/10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 rounded-[22px] bg-surface-container overflow-hidden border border-white/10">
+            <div class="lg:col-span-7 relative min-h-[300px] sm:min-h-[380px] overflow-hidden group">
+              <img 
+                src={featuredPost.data.image} 
+                alt={featuredPost.data.title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/30 to-transparent lg:hidden"></div>
+              <div class="absolute top-4 left-4 z-10 flex gap-2">
+                <span class="px-3 py-1 rounded-full bg-primary text-white text-[11px] font-bold tracking-wider uppercase shadow-md">
+                  Featured Masterclass
+                </span>
+                <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white/90 text-[11px] font-medium border border-white/10">
+                  {featuredPost.data.category}
+                </span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-3 text-xs text-on-surface-variant mb-4">
+                  <span>{featuredPost.data.pubDate ? new Date(featuredPost.data.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Editorial Staff'}</span>
+                  <span>•</span>
+                  <span>{featuredPost.data.readTime}</span>
+                </div>
+
+                <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-on-surface hover:text-primary transition-colors mb-4">
+                  <a href={`/blog/${featuredPost.id}/`}>
+                    {featuredPost.data.title.split('|')[0].trim()}
+                  </a>
+                </h2>
+
+                <p class="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed mb-6 line-clamp-3">
+                  {featuredPost.data.description}
+                </p>
+              </div>
+
+              <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-primary font-bold text-xs">
+                    LS
+                  </div>
+                  <div>
+                    <p class="text-xs font-semibold text-on-surface">{featuredPost.data.author}</p>
+                    <p class="text-[10px] text-on-surface-variant">LivArt Master Educator</p>
+                  </div>
+                </div>
+
+                <a 
+                  href={`/blog/${featuredPost.id}/`}
+                  class="inline-flex items-center gap-2 text-xs font-bold text-primary hover:text-primary-fixed uppercase tracking-wider group/link"
+                >
+                  Read Guide 
+                  <span class="transition-transform group-hover/link:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- 3. ARTICLE DIRECTORY GRID -->
+    <section class="px-margin-sm lg:px-margin-lg max-w-[1280px] mx-auto pb-20">
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-white/5">
+        <div>
+          <h2 class="font-display text-xl sm:text-2xl font-bold text-on-surface">
+            All Knowledge Guides
+          </h2>
+          <p class="text-xs text-on-surface-variant mt-1">
+            Showing <span id="article-count">{posts.length}</span> verified industry masterclasses
+          </p>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-posts-grid">
+        {posts.map((post) => (
+          <article 
+            class="blog-card group flex flex-col rounded-2xl bg-surface-container border border-white/5 hover:border-primary/40 transition-all duration-300 overflow-hidden shadow-lg hover:shadow-primary/5"
+            data-category={post.data.category}
+            data-title={post.data.title.toLowerCase()}
+            data-desc={post.data.description.toLowerCase()}
+          >
+            <!-- Card Image -->
+            <a href={`/blog/${post.id}/`} class="relative aspect-[16/10] overflow-hidden bg-surface-container-high block">
+              <img 
+                src={post.data.image} 
+                alt={post.data.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container/80 via-transparent to-transparent"></div>
+              <div class="absolute top-3 left-3 flex gap-2">
+                <span class="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white/90 text-[10px] font-bold uppercase tracking-wider border border-white/10">
+                  {post.data.category}
+                </span>
+              </div>
+              <div class="absolute bottom-3 right-3">
+                <span class="px-2 py-0.5 rounded-full bg-surface-container/90 text-on-surface-variant text-[10px] font-medium border border-white/10">
+                  {post.data.readTime}
+                </span>
+              </div>
+            </a>
+
+            <!-- Card Body -->
+            <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between">
+              <div>
+                <div class="text-[11px] text-on-surface-variant/80 mb-2">
+                  {post.data.pubDate ? new Date(post.data.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Editorial Staff'}
+                </div>
+
+                <h3 class="font-display text-lg sm:text-xl font-bold tracking-tight text-on-surface group-hover:text-primary transition-colors mb-3 leading-snug">
+                  <a href={`/blog/${post.id}/`}>
+                    {post.data.title.split('|')[0].trim()}
+                  </a>
+                </h3>
+
+                <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant leading-relaxed line-clamp-3 mb-6">
+                  {post.data.description}
+                </p>
+              </div>
+
+              <!-- Card Footer -->
+              <div class="pt-4 border-t border-white/5 flex items-center justify-between mt-auto">
+                <span class="text-[11px] text-on-surface-variant/70">
+                  By {post.data.author.split('&')[0].trim()}
+                </span>
+                
+                <a 
+                  href={`/blog/${post.id}/`}
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-primary group-hover:text-primary-fixed uppercase tracking-wider"
+                  aria-label={`Read ${post.data.title}`}
+                >
+                  Read Guide 
+                  <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- No Results Placeholder -->
+      <div id="no-results" class="hidden text-center py-16 px-4 bg-surface-container rounded-2xl border border-white/5 my-8">
+        <svg class="w-12 h-12 text-on-surface-variant mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <h3 class="font-display text-xl font-bold text-on-surface mb-2">No matching guides found</h3>
+        <p class="text-sm text-on-surface-variant max-w-md mx-auto mb-6">
+          We couldn't find any articles matching your search criteria. Try searching for terms like "cosmetology", "bridal", "salary", or "hair".
+        </p>
+        <button 
+          type="button" 
+          id="reset-search-btn"
+          class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-bold uppercase tracking-wider hover:bg-primary-fixed transition-colors"
+        >
+          Reset All Filters
+        </button>
+      </div>
+    </section>
+
+    <!-- 4. ADMISSIONS & CAREER ADVISORY BANNER -->
+    <section class="px-margin-sm lg:px-margin-lg max-w-[1280px] mx-auto pb-24">
+      <div class="relative rounded-3xl bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-low p-8 sm:p-12 lg:p-16 border border-white/10 overflow-hidden text-center">
+        <!-- Background accent glow -->
+        <div class="absolute -top-24 -left-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-4">
+            Admissions Open • 2026 Batches
+          </span>
+
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-on-surface tracking-tight mb-4">
+            Transform Your Passion into an <span class="text-primary italic">International Career.</span>
+          </h2>
+
+          <p class="font-body-md text-sm sm:text-base text-on-surface-variant mb-8 max-w-2xl mx-auto leading-relaxed">
+            Join Kerala's premier government-certified beauty academy. Learn directly under celebrity educator Stephy Sebastian with 100% placement support, master-level bridal kits, and direct metro access in Kalamassery, Kochi.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="https://wa.me/919633211151?text=Hi%20LivArt%20Academy%2C%20I%20am%20interested%20in%20learning%20more%20about%20your%20professional%20courses." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wider uppercase transition-all shadow-lg shadow-emerald-900/30 flex items-center justify-center gap-2"
+            >
+              <span>Chat on WhatsApp</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            </a>
+
+            <a 
+              href="tel:+919633211151" 
+              class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-primary hover:bg-primary-fixed text-white font-bold text-sm tracking-wider uppercase transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
+            >
+              <span>Call Admissions: +91 96332 11151</span>
+            </a>
+
+            <a 
+              href="/overview/" 
+              class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-surface-container border border-white/20 text-on-surface hover:bg-white/10 font-bold text-sm tracking-wider uppercase transition-all"
+            >
+              Explore All Courses
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Client-side Interactive Filter & Search Script -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('blog-search-input');
+      const chips = document.querySelectorAll('.category-chip');
+      const cards = document.querySelectorAll('.blog-card');
+      const countEl = document.getElementById('article-count');
+      const noResults = document.getElementById('no-results');
+      const resetBtn = document.getElementById('reset-search-btn');
+
+      let currentCategory = 'All';
+      let searchQuery = '';
+
+      function filterArticles() {
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category') || '';
+          const cardTitle = card.getAttribute('data-title') || '';
+          const cardDesc = card.getAttribute('data-desc') || '';
+
+          const matchesCategory = (currentCategory === 'All') || (cardCat.toLowerCase().includes(currentCategory.toLowerCase()) || currentCategory.toLowerCase().includes(cardCat.toLowerCase()));
+          const matchesSearch = !searchQuery || cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery) || cardCat.toLowerCase().includes(searchQuery);
+
+          if (matchesCategory && matchesSearch) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (countEl) countEl.textContent = visibleCount;
+
+        if (noResults) {
+          if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+          } else {
+            noResults.classList.add('hidden');
+          }
+        }
+      }
+
+      // Chip click handlers
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.classList.remove('bg-primary', 'text-white', 'shadow-md', 'shadow-primary/20', 'active-chip');
+            c.classList.add('bg-surface-container', 'border', 'border-white/5', 'text-on-surface-variant');
+          });
+
+          chip.classList.add('bg-primary', 'text-white', 'shadow-md', 'shadow-primary/20', 'active-chip');
+          chip.classList.remove('bg-surface-container', 'border-white/5', 'text-on-surface-variant');
+
+          currentCategory = chip.getAttribute('data-category') || 'All';
+          filterArticles();
+        });
+      });
+
+      // Search input handler
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value.toLowerCase().trim();
+          filterArticles();
+        });
+      }
+
+      // Reset button
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          searchQuery = '';
+          currentCategory = 'All';
+
+          chips.forEach((c, idx) => {
+            if (idx === 0) {
+              c.classList.add('bg-primary', 'text-white', 'shadow-md', 'shadow-primary/20', 'active-chip');
+              c.classList.remove('bg-surface-container', 'border-white/5', 'text-on-surface-variant');
+            } else {
+              c.classList.remove('bg-primary', 'text-white', 'shadow-md', 'shadow-primary/20', 'active-chip');
+              c.classList.add('bg-surface-container', 'border', 'border-white/5', 'text-on-surface-variant');
+            }
+          });
+
+          filterArticles();
+        });
+      }
+    });
+  </script>
 </Layout>

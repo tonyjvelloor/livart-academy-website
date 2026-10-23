@@ -32,6 +32,11 @@ const blogCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date().optional(),
+    author: z.string().default("Stephy Sebastian & LivArt Faculty"),
+    category: z.string().default("Career Guides"),
+    readTime: z.string().default("6 min read"),
+    image: z.string().default("/images/academy-live/bridal_makeup_live_session.jpg"),
+    featured: z.boolean().default(false),
   })
 });
 
