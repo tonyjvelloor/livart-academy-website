@@ -2,38 +2,109 @@
 import Layout from '../../layouts/Layout.astro';
 import CourseLeadForm from '../../components/CourseLeadForm.astro';
 import InstagramReelCard from '../../components/InstagramReelCard.astro';
+
+const mlHomeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://livart.co.in/ml/#organization",
+      "name": "ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമി (Livart Beauty Academy)",
+      "alternateName": ["LivArt Academy", "LivArt Salon & Academy"],
+      "url": "https://livart.co.in/ml/",
+      "logo": "https://livart.co.in/apple-touch-icon.png",
+      "image": "https://livart.co.in/images/brand/livart-logo-horizontal.png",
+      "description": "കൊച്ചിയിലെ മികച്ച പ്രൊഫഷണൽ ബ്യൂട്ടി അക്കാദമി. കോസ്മെറ്റോളജി, ബ്രൈഡൽ മേക്കപ്പ്, ഹെയർ ഡ്രസ്സിംഗ്, സ്കിൻ തെറാപ്പി കോഴ്‌സുകൾ.",
+      "telephone": "+91-9633211151",
+      "email": "connect@livart.co.in",
+      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+        "addressLocality": "Kalamassery, Kochi",
+        "addressRegion": "Kerala",
+        "postalCode": "682024",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "10.0436",
+        "longitude": "76.3175"
+      },
+      "hasMap": "https://share.google/OCj5l70Grn7Wxu8WR",
+      "sameAs": [
+        "https://share.google/OCj5l70Grn7Wxu8WR",
+        "https://www.instagram.com/livart_academy/",
+        "https://www.facebook.com/livart.academy/",
+        "https://www.livartsalon.com/"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://livart.co.in/ml/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "കൊച്ചിയിലെ ബ്യൂട്ടീഷ്യൻ കോഴ്സുകളുടെ ഫീസ് എത്രയാണ്?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ലിവ്ആർട്ട് അക്കാദമിയിൽ കോഴ്സുകളുടെ കാലയളവും വിഷയവുമനുസരിച്ചാണ് ഫീസ് നിശ്ചയിച്ചിരിക്കുന്നത് (10 ദിവസത്തെ ബ്രൈഡൽ മാസ്റ്റർക്ലാസ് മുതൽ 6 മാസം, 12 മാസത്തെ സമഗ്ര കോസ്മെറ്റോളജി ഡിപ്ലോമകൾ വരെ). പലിശരഹിത പ്രതിമാസ തവണകളായി ഫീസ് അടയ്ക്കാം. എല്ലാ പ്രാക്ടിക്കൽ ടൂൾകിറ്റുകളും ഇതിൽ ഉൾപ്പെടുന്നു."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ലിവ്ആർട്ട് വിദ്യാർത്ഥികൾക്ക് ലഭിക്കുന്ന സർട്ടിഫിക്കറ്റുകൾ ഏതൊക്കെയാണ്?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "കേന്ദ്ര നൈപുണ്യ വികസന മന്ത്രാലയത്തിന് കീഴിലുള്ള ബ്യൂട്ടി & വെൽനസ് സെക്ടർ സ്കിൽ കൗൺസിൽ (B&WSSC) അംഗീകൃത ദേശീയ സർട്ടിഫിക്കറ്റാണ് ലഭിക്കുന്നത്. ഇത് ഇന്ത്യയിലും ഗൾഫ് (UAE) അടക്കമുള്ള വിദേശ രാജ്യങ്ങളിലും സലൂൺ ജോലികൾക്ക് സാധുതയുള്ളതാണ്."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "മുൻപരിചയമില്ലാത്തവർക്ക് കോഴ്സിൽ ചേരാമോ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "തീർച്ചയായും. 10-ാം ക്ലാസോ പ്ലസ് ടുവോ കഴിഞ്ഞ ആർക്കും ലിവ്ആർട്ടിൽ ചേരാം. അടിസ്ഥാന സ്കിൻ അനാട്ടമി മുതൽ ആധുനിക ഹെയർ കെമിക്കൽ വർക്കുകളും 4K HD ബ്രൈഡൽ ആർട്ടിസ്ട്രിയും ഞങ്ങൾ പൂജ്യത്തിൽ നിന്ന് പഠിപ്പിച്ചു നൽകുന്നു."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <Layout 
   title="മികച്ച ബ്യൂട്ടി കോഴ്‌സുകൾ കൊച്ചി | Livart Beauty Academy"
   description="കൊച്ചിയിലെ മികച്ച പ്രൊഫഷണൽ ബ്യൂട്ടി അക്കാദമി. കോസ്മെറ്റോളജി, ബ്രൈഡൽ മേക്കപ്പ്, ഹെയർ ഡ്രസ്സിംഗ്, സ്കിൻ തെറാപ്പി കോഴ്‌സുകൾ. B&WSSC ദേശീയ അംഗീകാരവും ഫ്രീ ടൂൾകിറ്റും 1 മാസത്തെ സലൂൺ ഇന്റേൺഷിപ്പും."
+  schema={mlHomeSchema}
 >
 	<div class="flex flex-col w-full text-on-surface">
 		
 		<!-- 1. HERO SECTION -->
 		<section class="relative flex flex-col justify-center items-center text-center px-margin-sm lg:px-margin-lg py-12 sm:py-20">
 			<div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
-				<div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high/90 border border-outline-variant/30 mb-space-lg shadow-sm">
-					<a href="https://www.instagram.com/livart_academy?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-on-surface hover:text-primary transition-colors font-medium">
-						<svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-						<span class="font-semibold text-primary">@livart_academy</span>
+				<div class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/90 border border-outline-variant/30 mb-6 shadow-sm max-w-full">
+					<a href="https://www.instagram.com/livart_academy?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-primary font-semibold hover:underline">
+						<svg class="w-3.5 h-3.5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+						<span>@livart_academy</span>
 					</a>
-					<span class="text-outline/40">•</span>
-					<span class="font-label-sm text-label-sm uppercase tracking-[0.16em] text-on-surface font-semibold">
+					<span class="text-white/20">•</span>
+					<span class="font-label-sm text-[10px] sm:text-xs uppercase tracking-wider text-on-surface font-semibold truncate sm:whitespace-normal">
 						കേരളത്തിലെ മികച്ച ബ്യൂട്ടി അക്കാദമി • 2026 അഡ്മിഷൻ ആരംഭിച്ചു
 					</span>
 				</div>
 				
-				<h1 class="font-display-xl text-display-xl lg:text-[72px] lg:leading-[80px] tracking-tight text-white max-w-4xl mb-space-md text-balance">
-					പ്രൊഫഷണൽ ബ്യൂട്ടി വിദ്യാഭ്യാസം.<br/>
-					<span class="italic font-display-xl text-white/90">നിങ്ങളുടെ യഥാർത്ഥ കരിയറിനായി.</span>
+				<h1 class="font-display text-3xl sm:text-5xl lg:text-[72px] lg:leading-[80px] tracking-tight text-white max-w-4xl mb-4 sm:mb-6 text-center leading-[1.15] font-bold">
+					പ്രൊഫഷണൽ ബ്യൂട്ടി വിദ്യാഭ്യാസം.<br class="hidden sm:inline"/>
+					<span class="italic font-normal text-white/90">നിങ്ങളുടെ യഥാർത്ഥ കരിയറിനായി.</span>
 				</h1>
 				
-				<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-space-xl leading-relaxed text-pretty">
+				<p class="font-body text-sm sm:text-base lg:text-lg text-on-surface-variant max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed text-center px-2">
 					പാഷനെ ഒരു മികച്ച പ്രൊഫഷനാക്കി മാറ്റാം — കളമശ്ശേരിയിലെ ലിവ്ആർട്ട് അക്കാദമിയിൽ B&WSSC അംഗീകൃത കോഴ്സുകൾ. ഹെയർ ആർക്കിടെക്ചർ, ബ്രൈഡൽ മേക്കപ്പ്, ക്ലിനിക്കൽ സ്കിൻ കെയർ എന്നിവയിൽ തത്സമയ ക്ലയന്റുകളിൽ നേരിട്ടുള്ള പരിശീലനം.
 				</p>
 				
-				<div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto max-w-md sm:max-w-none mx-auto mb-space-xl">
+				<div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto max-w-md sm:max-w-none mx-auto mb-8 sm:mb-12">
 					<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-label-md text-label-md uppercase tracking-widest transition-all duration-300 shadow-md hover:bg-primary-fixed font-bold rounded w-full sm:w-auto text-center min-h-[48px]" href="/ml/overview/">
 						കോഴ്‌സുകൾ കാണുക
 					</a>
@@ -43,14 +114,14 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
 				</div>
 
 				<!-- ELEMENT 1: HERO ESTABLISHMENT VISUAL SHOWCASE (3-Pillar Luxury Atelier Triptych) -->
-				<div class="w-full max-w-6xl mt-space-lg grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+				<div class="w-full max-w-6xl mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
 					<!-- Pillar 1: Haute Bridal Couture & 4K HD Artistry -->
 					<div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(254,0,2,0.25)] touch-pan-y">
-						<div class="aspect-[16/11] sm:aspect-[4/5] w-full overflow-hidden relative">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
-								src="/images/academy-live/bridal_couture_transformation.jpg" 
+								src="/images/instagram/Da8Hb68SA5B.jpg" 
 								alt="ലിവ്ആർട്ട് അക്കാദമി ബ്രൈഡൽ കൗച്ചർ ആർട്ടിസ്ട്രിയും ടെമ്പിൾ സാരി ഡ്രേപ്പിംഗും" 
 								class="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
 							/>
@@ -78,13 +149,13 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
 
 					<!-- Pillar 2: Flagship Kalamassery Salon Atelier (Elevated Centerpiece) -->
 					<div class="group relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary hover:shadow-[0_16px_50px_rgba(254,0,2,0.4)] md:-translate-y-2 touch-pan-y">
-						<div class="aspect-[16/11] sm:aspect-[4/5] w-full overflow-hidden relative">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
-								src="/images/academy-live/future_artists_live_atelier.jpg" 
-								alt="ലിവ്ആർട്ട് അക്കാദമി ലൈവ് ഹെയർ ആർക്കിടെക്ചറും ക്ലയന്റ് സ്റ്റൈലിംഗ് ഫ്ലോറും - പത്തടിപ്പാലം" 
-								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+								src="/images/academy-live/salon_backwash_hair_spa.jpg" 
+								alt="ലിവ്ആർട്ട് അക്കാദമി ലൈവ് ഹെയർ ആർക്കിടെക്ചറും ക്ലയന്റ് സ്റ്റൈലിംഗ് ഫ്ലോറും - പത്തടിപ്പാലം മെട്രോ പില്ലർ 384" 
+								class="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
 							/>
 							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
 							
@@ -113,7 +184,7 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
 
 					<!-- Pillar 3: Precision Hair Architecture & Chemical Salon Floor -->
 					<div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(254,0,2,0.25)] touch-pan-y">
-						<div class="aspect-[16/11] sm:aspect-[4/5] w-full overflow-hidden relative">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
@@ -150,22 +221,22 @@ import InstagramReelCard from '../../components/InstagramReelCard.astro';
 		<!-- 2. TRUST STRIP -->
 		<section class="w-full bg-surface-container-lowest py-space-md border-y border-outline-variant/20">
 			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md text-center divide-x divide-outline-variant/20">
-					<div class="flex flex-col items-center justify-center px-4">
-						<span class="material-symbols-outlined text-primary text-3xl mb-2">verified</span>
-						<span class="font-label-md uppercase tracking-wider text-on-surface font-semibold">B&WSSC അംഗീകാരം</span>
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 text-center divide-y sm:divide-y-0 sm:divide-x divide-outline-variant/20">
+					<div class="flex flex-col items-center justify-center px-2 sm:px-4 pb-4 sm:pb-0">
+						<span class="material-symbols-outlined text-primary text-3xl mb-1.5">verified</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface font-semibold text-xs sm:text-sm">B&WSSC അംഗീകാരം</span>
 					</div>
-					<div class="flex flex-col items-center justify-center px-4">
-						<span class="material-symbols-outlined text-primary text-3xl mb-2">back_hand</span>
-						<span class="font-label-md uppercase tracking-wider text-on-surface font-semibold">100% പ്രാക്ടിക്കൽ ട്രെയിനിങ്</span>
+					<div class="flex flex-col items-center justify-center px-2 sm:px-4 pb-4 sm:pb-0">
+						<span class="material-symbols-outlined text-primary text-3xl mb-1.5">back_hand</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface font-semibold text-xs sm:text-sm">100% പ്രാക്ടിക്കൽ</span>
 					</div>
-					<div class="flex flex-col items-center justify-center px-4">
-						<span class="material-symbols-outlined text-primary text-3xl mb-2">school</span>
-						<span class="font-label-md uppercase tracking-wider text-on-surface font-semibold">വിദഗ്ദ്ധരായ അധ്യാപകർ</span>
+					<div class="flex flex-col items-center justify-center px-2 sm:px-4 pt-4 sm:pt-0">
+						<span class="material-symbols-outlined text-primary text-3xl mb-1.5">school</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface font-semibold text-xs sm:text-sm">വിദഗ്ദ്ധരായ അധ്യാപകർ</span>
 					</div>
-					<div class="flex flex-col items-center justify-center px-4">
-						<span class="material-symbols-outlined text-primary text-3xl mb-2">location_on</span>
-						<span class="font-label-md uppercase tracking-wider text-on-surface font-semibold">കളമശ്ശേരി, കൊച്ചി</span>
+					<div class="flex flex-col items-center justify-center px-2 sm:px-4 pt-4 sm:pt-0">
+						<span class="material-symbols-outlined text-primary text-3xl mb-1.5">location_on</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface font-semibold text-xs sm:text-sm">കളമശ്ശേരി, കൊച്ചി</span>
 					</div>
 				</div>
 			</div>

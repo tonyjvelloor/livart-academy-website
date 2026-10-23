@@ -112,30 +112,70 @@ const breadcrumbSchema = {
 
 const defaultSchema = {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Livart Beauty Academy",
-  "url": "https://livart.co.in",
-  "logo": "https://livart.co.in/images/brand/livart-original-logo.png",
-  "description": description,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
-    "addressLocality": "Kalamassery, Kochi",
-    "addressRegion": "Kerala",
-    "postalCode": "682024",
-    "addressCountry": "IN"
-  },
-  "hasMap": "https://share.google/OCj5l70Grn7Wxu8WR",
-  "sameAs": [
-    "https://share.google/OCj5l70Grn7Wxu8WR",
-    "https://www.instagram.com/livart_academy/",
-    "https://www.facebook.com/livart.academy/"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-9633211151",
-    "contactType": "admissions"
-  }
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://livart.co.in/#organization",
+      "name": "Livart Beauty Academy",
+      "alternateName": ["LivArt Academy", "LivArt Salon & Academy", "ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമി"],
+      "url": "https://livart.co.in",
+      "logo": "https://livart.co.in/apple-touch-icon.png",
+      "image": "https://livart.co.in/images/brand/livart-logo-horizontal.png",
+      "description": description,
+      "telephone": "+91-9633211151",
+      "email": "connect@livart.co.in",
+      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, Credit Card, UPI, Bank Transfer, EMI",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+        "addressLocality": "Kalamassery, Kochi",
+        "addressRegion": "Kerala",
+        "postalCode": "682024",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "10.0436",
+        "longitude": "76.3175"
+      },
+      "hasMap": "https://share.google/OCj5l70Grn7Wxu8WR",
+      "sameAs": [
+        "https://share.google/OCj5l70Grn7Wxu8WR",
+        "https://www.instagram.com/livart_academy/",
+        "https://www.facebook.com/livart.academy/",
+        "https://www.livartsalon.com/"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Stephy Sebastian",
+        "jobTitle": "Founder & Master Educator",
+        "sameAs": "https://livart.co.in/founder-makeup-academy/"
+      },
+      "knowsAbout": [
+        "Cosmetology",
+        "Bridal Makeup Artistry",
+        "4K HD Makeup",
+        "Airbrush Makeup",
+        "Hair Dressing",
+        "Nanoplastia",
+        "Hair Botox",
+        "Balayage",
+        "Skin Therapy",
+        "Hydra Facials",
+        "Chemical Peels",
+        "Saree Draping"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9633211151",
+        "contactType": "admissions",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Malayalam"]
+      }
+    }
+  ]
 };
 
 const finalSchema = schema || defaultSchema;

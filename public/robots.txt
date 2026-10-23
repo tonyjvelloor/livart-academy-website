@@ -1,5 +1,28 @@
 User-agent: *
 Allow: /
 
+# AI Crawlers & Answer Engines (AEO & GEO Optimization)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Sitemaps
 Sitemap: https://livart.co.in/sitemap-index.xml
 Sitemap: https://livart.co.in/sitemap.xml

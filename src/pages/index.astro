@@ -2,35 +2,109 @@
 import Layout from '../layouts/Layout.astro';
 import CourseLeadForm from '../components/CourseLeadForm.astro';
 import InstagramReelCard from '../components/InstagramReelCard.astro';
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://livart.co.in/#organization",
+      "name": "Livart Beauty Academy",
+      "alternateName": ["LivArt Academy", "LivArt Salon & Academy", "ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമി"],
+      "url": "https://livart.co.in",
+      "logo": "https://livart.co.in/apple-touch-icon.png",
+      "image": "https://livart.co.in/images/brand/livart-logo-horizontal.png",
+      "description": "Kerala's premier B&WSSC-certified beauty education atelier in Kalamassery, Kochi. Master hair architecture, bridal couture, clinical dermal aesthetics, and salon management on live clients.",
+      "telephone": "+91-9633211151",
+      "email": "connect@livart.co.in",
+      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+        "addressLocality": "Kalamassery, Kochi",
+        "addressRegion": "Kerala",
+        "postalCode": "682024",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "10.0436",
+        "longitude": "76.3175"
+      },
+      "hasMap": "https://share.google/OCj5l70Grn7Wxu8WR",
+      "sameAs": [
+        "https://share.google/OCj5l70Grn7Wxu8WR",
+        "https://www.instagram.com/livart_academy/",
+        "https://www.facebook.com/livart.academy/",
+        "https://www.livartsalon.com/"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://livart.co.in/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the fee structure for beauty courses in Kochi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Course fees at LivArt Beauty Academy depend on specialization and duration (ranging from 10-day fast-track bridal masterclasses and 1-month salon certifications to our comprehensive 6-month and 12-month Cosmetology Programmes). Flexible interest-free monthly installment plans are available, and all practical practice toolkits are included."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What certifications do Livart graduates receive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LivArt graduates receive government-recognized certification accredited by the Beauty & Wellness Sector Skill Council (B&WSSC) under the Ministry of Skill Development & Entrepreneurship (MSDE). These credentials are valid across India and eligible for Gulf (UAE, Qatar) and European salon job visa attestation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do beginners qualify for enrollment at LivArt Academy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Most successful LivArt students start with zero prior beauty experience. Anyone who has completed 10th or 12th standard can enroll. We teach from foundational skin anatomy and color theory up to advanced chemical hair architecture and 4K HD bridal artistry."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
-<Layout title="Livart Beauty Academy | Professional Beauty Education in Kochi">
+<Layout 
+  title="Livart Beauty Academy | Professional Beauty Education in Kochi"
+  description="Turn passion into profession at Kerala's premier B&WSSC-certified beauty education atelier in Kalamassery, Kochi. Master cosmetology, bridal makeup, hair & skin on live clients."
+  schema={homeSchema}
+>
 	<div class="flex flex-col w-full text-on-surface">
 		
 		<!-- 1. HERO SECTION -->
 		<section class="relative flex flex-col justify-center items-center text-center px-margin-sm lg:px-margin-lg py-12 sm:py-20">
 			<div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
-				<div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high/90 border border-outline-variant/30 mb-space-lg shadow-sm">
-					<a href="https://www.instagram.com/livart_academy?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-on-surface hover:text-primary transition-colors font-medium">
-						<svg class="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-						<span class="font-semibold text-primary">@livart_academy</span>
+				<div class="inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/90 border border-outline-variant/30 mb-6 shadow-sm max-w-full">
+					<a href="https://www.instagram.com/livart_academy?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-primary font-semibold hover:underline">
+						<svg class="w-3.5 h-3.5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+						<span>@livart_academy</span>
 					</a>
-					<span class="text-outline/40">•</span>
-					<span class="font-label-sm text-label-sm uppercase tracking-[0.16em] text-on-surface font-semibold">
+					<span class="text-white/20">•</span>
+					<span class="font-label-sm text-[10px] sm:text-xs uppercase tracking-wider text-on-surface font-semibold truncate sm:whitespace-normal">
 						Kerala’s Finest Beauty Academy • 2026 Admissions Open
 					</span>
 				</div>
 				
-				<h1 class="font-display-xl text-display-xl lg:text-[72px] lg:leading-[80px] tracking-tight text-white max-w-4xl mb-space-md text-balance">
-					Professional Beauty Education. <br/>
-					<span class="italic font-display-xl text-white/90">Built for Real Careers.</span>
+				<h1 class="font-display text-3xl sm:text-5xl lg:text-[72px] lg:leading-[80px] tracking-tight text-white max-w-4xl mb-4 sm:mb-6 text-center leading-[1.15] font-bold">
+					Professional Beauty Education. <br class="hidden sm:inline"/>
+					<span class="italic font-normal text-white/90">Built for Real Careers.</span>
 				</h1>
 				
-				<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-space-xl leading-relaxed text-pretty">
+				<p class="font-body text-sm sm:text-base lg:text-lg text-on-surface-variant max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed text-center px-2">
 					Turn passion into profession with Kerala’s premier B&WSSC-certified beauty education atelier in Kalamassery, Kochi. Master hair architecture, bridal couture, clinical dermal aesthetics, and salon management on live clients.
 				</p>
 				
-				<div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto max-w-md sm:max-w-none mx-auto mb-space-xl">
+				<div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto max-w-md sm:max-w-none mx-auto mb-8 sm:mb-12">
 					<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-label-md text-label-md uppercase tracking-widest transition-all duration-300 shadow-md hover:bg-primary-fixed font-bold rounded w-full sm:w-auto text-center min-h-[48px]" href="/overview/">
 						Explore Courses
 					</a>
@@ -40,15 +114,15 @@ import InstagramReelCard from '../components/InstagramReelCard.astro';
 				</div>
 
 				<!-- ELEMENT 1: HERO ESTABLISHMENT VISUAL SHOWCASE (3-Pillar Luxury Atelier Triptych) -->
-				<div class="w-full max-w-6xl mt-space-lg grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+				<div class="w-full max-w-6xl mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
 					<!-- Pillar 1: Haute Bridal Couture & 4K HD Artistry -->
 					<div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(254,0,2,0.25)] touch-pan-y">
-						<div class="aspect-[16/11] sm:aspect-[4/5] w-full overflow-hidden relative">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
-								src="/images/academy-live/bridal_couture_transformation.jpg" 
-								alt="LivArt Academy Bridal Couture Artistry and Temple Saree Draping" 
+								src="/images/instagram/Da8Hb68SA5B.jpg" 
+								alt="LivArt Academy student bride makeover with high definition 4K bridal makeup" 
 								class="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
 							/>
 							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
@@ -75,13 +149,13 @@ import InstagramReelCard from '../components/InstagramReelCard.astro';
 
 					<!-- Pillar 2: Flagship Kalamassery Salon Atelier (Elevated Centerpiece) -->
 					<div class="group relative rounded-2xl overflow-hidden border-2 border-primary/50 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary hover:shadow-[0_16px_50px_rgba(254,0,2,0.4)] md:-translate-y-2 touch-pan-y">
-						<div class="aspect-[16/11] sm:aspect-[4/5] w-full overflow-hidden relative">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
-								src="/images/academy-live/future_artists_live_atelier.jpg" 
-								alt="LivArt Academy live hair architecture and client styling floor at Pathadipalam" 
-								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+								src="/images/academy-live/salon_backwash_hair_spa.jpg" 
+								alt="LivArt Academy Flagship Atelier Salon Floor with Hydraulic Styling Chairs at Pathadipalam Metro Pillar 384" 
+								class="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
 							/>
 							<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
 							
@@ -110,7 +184,7 @@ import InstagramReelCard from '../components/InstagramReelCard.astro';
 
 					<!-- Pillar 3: Precision Hair Architecture & Chemical Salon Floor -->
 					<div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#131418] shadow-2xl transition-all duration-500 hover:border-primary/60 hover:shadow-[0_12px_40px_rgba(254,0,2,0.25)] touch-pan-y">
-						<div class="aspect-[16/11] sm:aspect-[4/5] w-full overflow-hidden relative">
+						<div class="aspect-[4/5] w-full overflow-hidden relative">
 							<img 
 								fetchpriority="high" 
 								decoding="async" 
@@ -147,22 +221,22 @@ import InstagramReelCard from '../components/InstagramReelCard.astro';
 		<!-- 2. TRUST STRIP -->
 		<section class="w-full bg-surface-container-lowest py-space-md border-y border-outline-variant/20">
 			<div class="max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg">
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md text-center divide-x divide-outline-variant/20">
-					<div class="flex flex-col items-center justify-center px-4">
-						<span class="material-symbols-outlined text-primary text-3xl mb-2">verified</span>
-						<span class="font-label-md uppercase tracking-wider text-on-surface">B&WSSC Affiliated</span>
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 text-center divide-y sm:divide-y-0 sm:divide-x divide-outline-variant/20">
+					<div class="flex flex-col items-center justify-center px-2 sm:px-4 pb-4 sm:pb-0">
+						<span class="material-symbols-outlined text-primary text-3xl mb-1.5">verified</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface text-xs sm:text-sm font-semibold">B&WSSC Affiliated</span>
 					</div>
-					<div class="flex flex-col items-center justify-center px-4">
-						<span class="material-symbols-outlined text-primary text-3xl mb-2">back_hand</span>
-						<span class="font-label-md uppercase tracking-wider text-on-surface">Hands-on Training</span>
+					<div class="flex flex-col items-center justify-center px-2 sm:px-4 pb-4 sm:pb-0">
+						<span class="material-symbols-outlined text-primary text-3xl mb-1.5">back_hand</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface text-xs sm:text-sm font-semibold">Hands-on Training</span>
 					</div>
-					<div class="flex flex-col items-center justify-center px-4">
-						<span class="material-symbols-outlined text-primary text-3xl mb-2">school</span>
-						<span class="font-label-md uppercase tracking-wider text-on-surface">Experienced Trainers</span>
+					<div class="flex flex-col items-center justify-center px-2 sm:px-4 pt-4 sm:pt-0">
+						<span class="material-symbols-outlined text-primary text-3xl mb-1.5">school</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface text-xs sm:text-sm font-semibold">Experienced Trainers</span>
 					</div>
-					<div class="flex flex-col items-center justify-center px-4">
-						<span class="material-symbols-outlined text-primary text-3xl mb-2">location_on</span>
-						<span class="font-label-md uppercase tracking-wider text-on-surface">Kalamassery, Kochi</span>
+					<div class="flex flex-col items-center justify-center px-2 sm:px-4 pt-4 sm:pt-0">
+						<span class="material-symbols-outlined text-primary text-3xl mb-1.5">location_on</span>
+						<span class="font-label-md uppercase tracking-wider text-on-surface text-xs sm:text-sm font-semibold">Kalamassery, Kochi</span>
 					</div>
 				</div>
 			</div>
