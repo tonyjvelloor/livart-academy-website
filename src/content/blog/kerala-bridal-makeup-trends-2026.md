@@ -28,7 +28,7 @@ The Kerala Hindu bridal look remains one of the most iconic in all of Indian wed
 
 One of the most common mistakes in traditional Kerala bridal makeup is using cool-toned products against warm gold jewellery. In 2026, top bridal artists are using warm-toned foundations and eyeshadows that harmonise with the yellow-gold of traditional Kerala temple jewellery, creating a cohesive, regal look.
 
-At [LivArt Beauty Academy's 4K HD Bridal Makeup course](https://livart.co.in), students spend dedicated sessions mastering colour theory for different jewellery metals and fabric tones — a skill that separates good bridal artists from truly exceptional ones.
+At [LivArt Beauty Academy's 4K HD Bridal Makeup course](/bridal-makeup-course/), students spend dedicated sessions mastering colour theory for different jewellery metals and fabric tones — a skill that separates good bridal artists from truly exceptional ones.
 
 ## Christian Bridal Makeup Kerala: Soft Glam Meets Sophistication
 
@@ -159,7 +159,7 @@ The best bridal makeup starts months before the wedding day. Here's the skincare
 - Use a lightweight, non-greasy moisturiser
 - Avoid heavy creams that can cause foundation to slide
 
-Understanding pre-bridal skincare is a core module in LivArt's [Clinical Skin Therapy programme](https://livart.co.in), which equips students to advise brides on skin preparation — an increasingly valuable service that top bridal artists offer as part of their packages.
+Understanding pre-bridal skincare is a core module in LivArt's [Clinical Skin Therapy programme](/skin-care-course/), which equips students to advise brides on skin preparation — an increasingly valuable service that top bridal artists offer as part of their packages.
 
 ## Monsoon-Proof Bridal Makeup: Kerala's Unique Challenge
 
@@ -181,7 +181,7 @@ Let's address the elephant in the room: **Kerala's climate is brutal on makeup.*
 
 7. **Emergency Kit Essentials:** Every bridal artist working in Kerala should carry a monsoon emergency kit — mini setting spray, waterproof liner, blotting papers, cotton buds, and concealer for quick fixes.
 
-These are exactly the kind of practical, climate-specific techniques taught at [LivArt Beauty Academy](https://livart.co.in), where students practise in real Kerala conditions with international-grade products from L'Oréal, Wella, and Schwarzkopf — preparing them for the realities of bridal work in this region.
+These are exactly the kind of practical, climate-specific techniques taught at [LivArt Beauty Academy in Kalamassery](/academy/kalamassery/), where students practise in real Kerala conditions with international-grade products from L'Oréal, Wella, and Schwarzkopf — preparing them for the realities of bridal work in this region.
 
 ## Why Bridal Makeup Artistry Is a Thriving Career in Kerala
 
@@ -191,7 +191,7 @@ A single bridal assignment in Kerala can command ₹15,000 to ₹75,000+ dependi
 
 But here's what separates artists who charge ₹15,000 from those who command ₹75,000: **formal training, certification, and a professional portfolio.**
 
-LivArt Beauty Academy's [Cosmetology Master Diploma](https://livart.co.in) — a B&WSSC + NSDC government-recognised programme — covers every bridal style discussed in this article, along with hair architecture, clinical skin therapy, and salon management. Under the mentorship of Stephy Sebastian, a celebrity stylist and former L'Oréal and Wella national educator, students build real portfolios with live bridal projects, gain 100% placement assurance, and graduate with credentials that command premium pricing in the market.
+LivArt Beauty Academy's [Cosmetology Master Diploma](/certification-course-in-cosmetology/) — a B&WSSC + NSDC government-recognised programme — covers every bridal style discussed in this article, along with [hair architecture](/hair-styling-course/), [clinical skin therapy](/skin-care-course/), and salon management. Under the mentorship of Stephy Sebastian, a celebrity stylist and former L'Oréal and Wella national educator, students build real portfolios with live bridal projects, gain 100% placement assurance, and graduate with credentials that command premium pricing in the market.
 
 ## Your Next Step
 

@@ -188,12 +188,12 @@ Here's what the job market looks like for graduates of professional **beauty cou
 
 ## Why LivArt Beauty Academy Is Kerala's Best Choice After 12th
 
-At **LivArt Beauty Academy** in Kalamassery, Kochi, we built our Cosmetology Master Diploma specifically for students stepping into the industry after 12th. Here's what makes it different:
+At **[LivArt Beauty Academy](/academy/kalamassery/)** in Kalamassery, Kochi, we built our [Cosmetology Master Diploma](/certification-course-in-cosmetology/) specifically for students stepping into the industry after 12th. Here's what makes it different:
 
 - **Government-recognised certifications** — B&WSSC + NSDC + MSDE. Your credential is backed by the Government of India.
 - **Founded by Stephy Sebastian** — Celebrity stylist and former L'Oréal and Wella national educator with decades of industry experience.
 - **International product training** — Hands-on learning with L'Oréal, Wella, and Schwarzkopf professional products — not local substitutes.
-- **Complete curriculum** — Our 1-year programme covers cosmetology, 4K HD bridal makeup, hair architecture, clinical skin therapy, nail artistry, and salon management — everything under one roof.
+- **Complete curriculum** — Our 1-year programme covers cosmetology, [4K HD bridal makeup](/bridal-makeup-course/), [hair architecture](/hair-styling-course/), [clinical skin therapy](/skin-care-course/), nail artistry, and salon management — everything under one roof.
 - **100% placement assurance** — Every graduate receives placement support. Our alumni work in premium salons, luxury hotels, bridal studios, and international markets.
 - **Small batch sizes** — Individual attention, not crowd-based teaching.
 - **Real salon environment** — Professional infrastructure modelled on working salons, so you train the way you'll work.
@@ -204,7 +204,7 @@ At **LivArt Beauty Academy** in Kalamassery, Kochi, we built our Cosmetology Mas
 
 The beauty industry doesn't wait — and neither should you. Whether you just finished your 12th boards or you've been exploring options for months, the right training can put you on a path to a creative, financially rewarding career faster than almost any traditional degree.
 
-**Ready to start?** Call LivArt Beauty Academy at **+91 96332 11151** or visit [livart.co.in](https://livart.co.in) to book a free career counselling session. Walk in, see our facilities, meet our faculty, and discover why hundreds of students across Kerala trust LivArt to launch their beauty careers.
+**Ready to start?** Call LivArt Beauty Academy at **+91 96332 11151** or explore our [comprehensive course prospectus](/overview/) to book a free career counselling session. Walk in, see our facilities, meet our faculty, and discover why hundreds of students across Kerala trust LivArt to launch their beauty careers.
 
 Your future in beauty starts with one decision. Make it today.
 

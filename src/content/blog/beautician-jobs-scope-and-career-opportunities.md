@@ -70,7 +70,7 @@ Not all beauticians earn equal compensation. The top 10% of high earners share s
 Located in Pathadipalam, Kalamassery (just 1 minute from Metro Pillar 382 in Kochi), **LivArt Beauty Academy** offers comprehensive diplomas structured to launch immediate careers:
 * [Certification Course in Cosmetology](/certification-course-in-cosmetology/) (6 Months)
 * [Job-Oriented Salon Course](/job-oriented-salon-course/) (Fast-Track Placement)
-* [Diploma in Hair Dressing](/diploma-in-hair-dressing/)
+* [Advanced Hair Architecture & Styling Course](/hair-styling-course/)
 * [Bridal Makeup Masterclass](/bridal-makeup-course/)
 
 **Take the first step today.** Call our academic counselors at **+91 96332 11151** to tour our state-of-the-art campus and review our 100% placement record.

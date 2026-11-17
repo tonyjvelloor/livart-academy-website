@@ -209,7 +209,7 @@ Compare that to a full salon setup costing ₹5–₹15 lakh, and you'll see why
 
 Anyone can watch YouTube tutorials and buy a gel kit online. But there's a significant gap between hobbyist nail art and professional-grade work that clients will pay premium prices for. That gap is training.
 
-At **LivArt Beauty Academy, Kalamassery, Kochi**, nail artistry is taught as part of the **Cosmetology Master Diploma** — not as an isolated weekend workshop, but as an integrated module within a comprehensive beauty education. Under the mentorship of **Stephy Sebastian** (celebrity stylist and former L'Oréal/Wella national educator), students learn:
+At **[LivArt Beauty Academy in Kalamassery, Kochi](/academy/kalamassery/)**, nail artistry is taught as part of our flagship **[Cosmetology Master Diploma](/certification-course-in-cosmetology/)** — not as an isolated weekend workshop, but as an integrated module within a comprehensive beauty education. Under the mentorship of **Stephy Sebastian** (celebrity stylist and former L'Oréal/Wella national educator), students learn:
 
 - Proper nail preparation and sanitation protocols that prevent infections and lifting
 - Advanced extension techniques using professional-grade products from L'Oréal, Wella, and Schwarzkopf
@@ -220,7 +220,7 @@ The academy's **B&WSSC + NSDC + MSDE government-recognised certification** means
 
 **Ready to turn your passion for nails into a professional career?**
 
-📞 Call **+91 96332 11151** or visit [livart.co.in](https://livart.co.in) to learn about LivArt's Cosmetology Master Diploma and how nail artistry training fits into your beauty career path.
+📞 Call **+91 96332 11151** or explore our **[Course Prospectus](/overview/)** to learn about LivArt's [Cosmetology Master Diploma](/certification-course-in-cosmetology/) and how nail artistry, [bridal makeup](/bridal-makeup-course/), and [hair styling](/hair-styling-course/) fit into your beauty career path.
 
 📍 Visit us: Madukappilly Tower, Pathadipalam, Edappally P.O, Kalamassery, Kochi, Kerala 682024
 

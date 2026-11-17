@@ -50,7 +50,7 @@ Understanding these undertones is critical for Indian hair, which carries dense 
 - **30 Vol (9%):** 2–3 levels of lift — highlights and balayage
 - **40 Vol (12%):** 3–4 levels of lift — use with caution and only on healthy hair
 
-> **Pro tip from our faculty:** At [LivArt's Hair Architecture programme](/courses), students learn to perform strand tests and porosity assessments *before* selecting developer strength — a habit that separates professionals from amateurs.
+> **Pro tip from our faculty:** At [LivArt's Advanced Hair Architecture programme](/hair-styling-course/), students learn to perform strand tests and porosity assessments *before* selecting developer strength — a habit that separates professionals from amateurs.
 
 ---
 
@@ -243,7 +243,7 @@ Mastering these 10 techniques doesn't happen overnight. Here's a realistic progr
 
 YouTube tutorials can teach you *what* a technique looks like. They cannot teach you *why* a formulation works, *how* to adjust for Indian hair's unique melanin density, or *when* to walk away from a service that will compromise hair integrity.
 
-At **[LivArt Beauty Academy's Hair Architecture programme](/courses)**, students train with professional-grade **Wella and Schwarzkopf products** — the same international brands used in India's top salons. The curriculum covers every technique in this article, with hands-on practice on live models under the mentorship of **Stephy Sebastian**, a celebrity stylist and former national educator for both L'Oréal and Wella.
+At **[LivArt Beauty Academy's Hair Architecture programme](/hair-styling-course/)**, students train with professional-grade **Wella and Schwarzkopf products** — the same international brands used in India's top salons. The curriculum covers every technique in this article, with hands-on practice on live models under the mentorship of **Stephy Sebastian**, a celebrity stylist and former national educator for both L'Oréal and Wella.
 
 What makes the training different:
 

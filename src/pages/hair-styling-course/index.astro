@@ -52,11 +52,91 @@ const diplomaInHairModules = [
   { num: "06", title: "Hair Colouring", desc: "Colour theory • Product selection • Root touch-up • Global colour • Global + highlights." },
   { num: "07", title: "Texture Treatments", desc: "Hair smoothing & Keratin treatments (complete theory and practical execution on live clients)." }
 ];
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://livart.co.in/hair-styling-course/#course",
+      "name": "Hair Dressing & Advanced Hair Styling Courses (4M & 2M)",
+      "description": "Comprehensive professional hair education in Kochi covering 13+ precision haircuts (Butterfly, Wolf, Bob), Nanoplastia, Hair Botox, Balayage, L'Oréal colour chemistry, and bridal hair design with tool kit included.",
+      "courseCode": "LIV-HAIR-04",
+      "url": "https://livart.co.in/hair-styling-course/",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "LivArt Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://share.google/OCj5l70Grn7Wxu8WR"
+      },
+      "educationalCredentialAwarded": "B&WSSC (Beauty & Wellness Sector Skill Council) & NSDC Certified Professional Hair Stylist Diploma",
+      "occupationalCredentialAwarded": "Professional Hair Stylist, Hair Colorist & Salon Floor Technician",
+      "educationalLevel": "Beginner to Advanced Stylist",
+      "inLanguage": "en-IN",
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "name": "4-Month Diploma in Hair Dressing & Chemical Architecture",
+          "courseMode": "onsite",
+          "courseWorkload": "4 Months Comprehensive",
+          "location": {
+            "@type": "Place",
+            "name": "LivArt Beauty Academy Kalamassery Campus",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+              "addressLocality": "Kalamassery, Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682024",
+              "addressCountry": "IN"
+            }
+          }
+        },
+        {
+          "@type": "CourseInstance",
+          "name": "2-Month Accelerated Diploma in Hair",
+          "courseMode": "onsite",
+          "courseWorkload": "2 Months Fast-Track",
+          "location": {
+            "@type": "Place",
+            "name": "LivArt Beauty Academy Kalamassery Campus",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+              "addressLocality": "Kalamassery, Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682024",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "category": "Tuition",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://livart.co.in/hair-styling-course/"
+      },
+      "teaches": [
+        "13+ Precision Haircuts (Butterfly, Wolf, Bob, Graduation, Layers)",
+        "Nanoplastia, Hair Botox & Keratin Smoothing Chemistry",
+        "Color Wheel & Formulation for Indian Undertones",
+        "Balayage, Ombré, Babylights & Foiling Techniques",
+        "Scalp Health, Anti-Dandruff & Hair Spa Treatments",
+        "Thermal Styling, Micro-Crimping, Tongs & Blow-Drying Geometry",
+        "Bridal Hair Design, Textured Buns, Braids & Flower Placement"
+      ]
+    }
+  ]
+};
 ---
 
 <Layout 
   title="Hair Dressing & Hair Styling Courses in Kochi | Livart Beauty Academy"
   description="Master professional hair dressing and styling in Kochi. Offering 4-Month Diploma in Hair Dressing, 2-Month Diploma in Hair, and Short-Term precision cutting workshops with tool kits included."
+  schema={courseSchema}
 >
   <div class="screen-only">
   <!-- HERO -->

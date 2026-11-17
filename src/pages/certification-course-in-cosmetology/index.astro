@@ -12,11 +12,94 @@ const cosmetologyModules = [
   { num: "04", title: "Commercial Salon Internship (Stage 4)", desc: "1-Month guaranteed internship on live working salon floor • Real client management, billing & appointment scheduling • High-volume speed, precision & service etiquette." },
   { num: "05", title: "Salon Business & Entrepreneurship", desc: "Salon setup, equipment sourcing & inventory control • Client consultation & retention mastery • Freelance bridal booking management • B&WSSC Govt certification exam." }
 ];
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://livart.co.in/certification-course-in-cosmetology/#course",
+      "name": "Master Cosmetology Programme (12 & 6 Months)",
+      "description": "Comprehensive B&WSSC-certified beauty education program in Kochi integrating precision hair dressing, clinical dermal aesthetics, and bridal makeup artistry with a mandatory 1-month live salon floor internship.",
+      "courseCode": "LIV-COSM-01",
+      "url": "https://livart.co.in/certification-course-in-cosmetology/",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "LivArt Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://share.google/OCj5l70Grn7Wxu8WR"
+      },
+      "educationalCredentialAwarded": "B&WSSC (Beauty & Wellness Sector Skill Council) & NSDC Government of India Certified Cosmetology Master Diploma",
+      "occupationalCredentialAwarded": "Professional Cosmetologist, Salon Manager & Bridal Stylist",
+      "educationalLevel": "Beginner to Advanced Master Diploma",
+      "inLanguage": "en-IN",
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "name": "12-Month Master Cosmetology Diploma",
+          "courseMode": "onsite",
+          "courseWorkload": "12 Months Full-Time / Part-Time (Includes 1-Month Salon Internship)",
+          "location": {
+            "@type": "Place",
+            "name": "LivArt Beauty Academy Kalamassery Campus",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+              "addressLocality": "Kalamassery, Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682024",
+              "addressCountry": "IN"
+            }
+          }
+        },
+        {
+          "@type": "CourseInstance",
+          "name": "6-Month Accelerated Cosmetology Diploma",
+          "courseMode": "onsite",
+          "courseWorkload": "6 Months Intensive",
+          "location": {
+            "@type": "Place",
+            "name": "LivArt Beauty Academy Kalamassery Campus",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+              "addressLocality": "Kalamassery, Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682024",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "category": "Tuition",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://livart.co.in/certification-course-in-cosmetology/"
+      },
+      "teaches": [
+        "13+ Precision Haircuts & Styling",
+        "Nanoplastia, Hair Botox, Keratin & Chemical Straightening",
+        "Hair Coloring, Balayage, Highlights & Ombre",
+        "Clinical Dermal Analysis & Hydra-Facials",
+        "High-Frequency & Galvanic Electrotherapy",
+        "Chemical Peels & Anti-Aging Protocols",
+        "4K HD & Airbrush Bridal Makeup Artistry",
+        "South Indian Saree Pre-Pleating & Box Draping",
+        "Commercial Salon Operations & Client Consultation",
+        "Salon Setup & Entrepreneurship"
+      ]
+    }
+  ]
+};
 ---
 
 <Layout 
   title="Cosmetology Programme (12 & 6 Months) | Livart Beauty Academy Kochi"
   description="Master Hair, Skin, and Makeup with a mandatory 1-month salon floor internship at Livart Beauty Academy Kochi. B&WSSC-affiliated Cosmetology qualification for aspiring salon owners and top artists."
+  schema={courseSchema}
 >
   <div class="screen-only">
   <!-- 1. HERO SECTION -->

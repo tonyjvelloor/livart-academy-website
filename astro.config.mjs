@@ -14,8 +14,13 @@ export default defineConfig({
 
   redirects: {
     '/home': '/',
+    '/courses': '/overview/',
     '/courses-beautician-kochi': '/overview/',
     '/diploma-in-tattoo': '/overview/',
+    '/diploma-in-hair': '/hair-styling-course/',
+    '/diploma-in-hair-dressing': '/hair-styling-course/',
+    '/diploma-in-makeup': '/make-up-course/',
+    '/diploma-in-skin-therapy': '/skin-care-course/',
     // Redirect root-level blog posts to /blog/ prefix as per SEO audit
     '/qualities-of-a-professional-hair-stylist': '/blog/qualities-of-a-professional-hair-stylist/',
     '/how-to-become-a-beautician': '/blog/how-to-become-a-beautician/',
@@ -33,5 +38,10 @@ export default defineConfig({
     '/10-best-career-opportunities-for-makeup-artists': '/blog/10-best-career-opportunities-for-makeup-artists/'
   },
 
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      changefreq: 'weekly',
+      lastmod: new Date(),
+    })
+  ]
 });

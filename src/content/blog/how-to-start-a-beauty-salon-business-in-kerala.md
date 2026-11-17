@@ -23,10 +23,10 @@ Kerala has one of India's highest literacy rates and most health-conscious popul
 
 **Where the real opportunity lies:**
 
-- **Tier-2 and Tier-3 towns** — Thrissur, Palakkad, Kollam, and Alappuzha are underserved for professional-grade salons
-- **Bridal and occasion-based services** — Kerala's wedding season (October–March) generates massive demand
+- **Tier-2 and Tier-3 towns** — [Thrissur](/academy/thrissur/), Palakkad, Kollam, and [Alappuzha](/academy/alappuzha/) are underserved for professional-grade salons
+- **Bridal and occasion-based services** — Kerala's wedding season (October–March) generates massive demand for certified [bridal makeup artists](/bridal-makeup-course/)
 - **Men's grooming** — The unisex salon segment is growing at 20%+ year-on-year
-- **Skin and wellness add-ons** — Facials, clinical skin therapy, and hair spa services dramatically increase per-visit billing
+- **Skin and wellness add-ons** — Facials, [clinical skin therapy](/skin-care-course/), and [hair spa services](/hair-styling-course/) dramatically increase per-visit billing
 
 A well-positioned salon in Kerala can realistically generate ₹1.5–5 lakh monthly revenue within the first year, depending on location and service quality.
 
@@ -246,7 +246,7 @@ Having trained hundreds of beauty professionals who've gone on to open their own
 
 Here's the uncomfortable truth: most beauty academy graduates know how to apply makeup or cut hair — but they have no idea how to read a P&L statement, negotiate with vendors, or calculate their break-even point.
 
-This is precisely why **LivArt Beauty Academy in Kalamassery, Kochi** includes comprehensive **Salon Management** training within its Cosmetology Master Diploma programme. Founded by **Stephy Sebastian** — a celebrity stylist and former national educator for L'Oréal and Wella — LivArt goes beyond technical training to build complete beauty professionals.
+This is precisely why **[LivArt Beauty Academy in Kalamassery, Kochi](/academy/kalamassery/)** includes comprehensive **Salon Management** training within its flagship [Master Cosmetology Programme](/certification-course-in-cosmetology/). Founded by **Stephy Sebastian** — a celebrity stylist and former national educator for L'Oréal and Wella — LivArt goes beyond technical training to build complete beauty professionals.
 
 ### What You Learn in LivArt's Salon Management Module
 

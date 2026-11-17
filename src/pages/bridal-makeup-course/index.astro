@@ -20,11 +20,72 @@ const bridalModules = [
   { num: "12", title: "Client Consultation & Complete Look", desc: "Bride consultation & trial etiquette • Bridal makeup timing • Saree draping • Complete head-to-toe bridal look demonstration." },
   { num: "13", title: "Practical Examination & Final Model", desc: "Exam preparation & intensive timed practice • Practical bridal evaluation • Full look execution on a final live model." }
 ];
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://livart.co.in/bridal-makeup-course/#course",
+      "name": "Fastrack Bridal Makeup Course (10 Days Intensive Bootcamp)",
+      "description": "High-intensity 10-day bridal makeup bootcamp in Kochi covering Hindu, Christian, and Muslim bridal looks, sweatproof foundation techniques, bridal hairstyling, saree pre-pleating, and live model examination.",
+      "courseCode": "LIV-BRIDE-03",
+      "url": "https://livart.co.in/bridal-makeup-course/",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "LivArt Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://share.google/OCj5l70Grn7Wxu8WR"
+      },
+      "educationalCredentialAwarded": "LivArt Academy Professional Bridal Makeup Artist Certificate",
+      "occupationalCredentialAwarded": "Certified Freelance Bridal Makeup Artist & Saree Draping Specialist",
+      "educationalLevel": "Intensive Bridal Bootcamp",
+      "inLanguage": "en-IN",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "name": "10-Day Fastrack Bridal Makeup Intensive",
+        "courseMode": "onsite",
+        "courseWorkload": "10 Days Full-Time Intensive Practical Training",
+        "location": {
+          "@type": "Place",
+          "name": "LivArt Beauty Academy Kalamassery Campus",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+            "addressLocality": "Kalamassery, Kochi",
+            "addressRegion": "Kerala",
+            "postalCode": "682024",
+            "addressCountry": "IN"
+          }
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Tuition",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://livart.co.in/bridal-makeup-course/"
+      },
+      "teaches": [
+        "Sweatproof & Humidity-Resistant Bridal Foundation Matching",
+        "Hindu Bridal (Temple Jewelry & South Indian Glam)",
+        "Christian Bridal (Glass-Skin Radiance, Veil & Gown Styling)",
+        "Muslim Bridal (Mughal-Inspired Intense Eye Artistry)",
+        "Bridal Hair Preparation, Thermal Crimping & Tongs",
+        "Textured Bridal Braids, Buns & Flower Setting",
+        "Saree Pre-Pleating, Steam Ironing & Box Folding",
+        "Live Model Timed Bridal Practical Examination"
+      ]
+    }
+  ]
+};
 ---
 
 <Layout 
   title="Fastrack Bridal Makeup Course (10 Days) | Livart Beauty Academy Kochi"
   description="Master high-earning Hindu, Christian, and Muslim bridal looks in 10 intensive days at Livart Beauty Academy Kochi. Includes hairstyling, saree draping, brush kit, and live model practical exam."
+  schema={courseSchema}
 >
   <div class="screen-only">
     <!-- HERO -->

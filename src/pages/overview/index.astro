@@ -112,11 +112,77 @@ const salonCourses = [
     highlights: ["100% Practical Salon Floor Training", "Hair Wash, Blow Dry & Trims", "Threading, Waxing & Facials", "Immediate Placement Support"]
   }
 ];
+
+const overviewSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://livart.co.in/overview/#organization",
+      "name": "LivArt Beauty Academy Courses Prospectus",
+      "url": "https://livart.co.in/overview/",
+      "telephone": "+91-9633211151",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+        "addressLocality": "Kalamassery, Kochi",
+        "addressRegion": "Kerala",
+        "postalCode": "682024",
+        "addressCountry": "IN"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://livart.co.in/overview/#course-list",
+      "name": "Professional Beauty & Cosmetology Diploma Courses",
+      "description": "Government-recognized B&WSSC certified diploma programs at LivArt Beauty Academy Kochi",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Master Cosmetology Programme (12M & 6M)",
+          "url": "https://livart.co.in/certification-course-in-cosmetology/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Diploma in Makeup Artistry (3M & 1M)",
+          "url": "https://livart.co.in/make-up-course/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Fastrack Bridal Makeup Bootcamp (10 Days)",
+          "url": "https://livart.co.in/bridal-makeup-course/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Hair Dressing & Styling Courses (4M & 2M)",
+          "url": "https://livart.co.in/hair-styling-course/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Clinical Skin Therapy & Aesthetics Diploma (4M & 2M)",
+          "url": "https://livart.co.in/skin-care-course/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Job-Oriented Salon Foundation Course (1 Month)",
+          "url": "https://livart.co.in/job-oriented-salon-course/"
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <Layout 
   title="All Beauty & Cosmetology Courses 2026 | Livart Beauty Academy Kochi"
   description="Explore official 2026 beauty courses at Livart Beauty Academy Kochi. Hair dressing, clinical skin therapy, bridal makeup, and master cosmetology with tool kits and internship included."
+  schema={overviewSchema}
 >
   <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1440px] mx-auto mt-8">
     

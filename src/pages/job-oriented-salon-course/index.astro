@@ -16,11 +16,73 @@ const salonJobModules = [
   { num: "08", title: "Manicure & Pedicure Protocols", desc: "Nail filing, cuticle care, dead skin scrubbing, callus removal, and foot relaxation massage." },
   { num: "09", title: "Basic to Advanced Waxing", desc: "Full arms, underarms, legs waxing techniques, speed application, and soothing post-wax oils." }
 ];
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://livart.co.in/job-oriented-salon-course/#course",
+      "name": "Job-Oriented Salon Foundation Course (1 Month Fast-Track)",
+      "description": "Fast-track 1-month practical salon employment qualification in Kochi. Master essential salon floor skills across hair, skin, and grooming: blow dry, haircuts, root touch-up, threading, facials, waxing, and pedicure for immediate salon placement.",
+      "courseCode": "LIV-JOB-06",
+      "url": "https://livart.co.in/job-oriented-salon-course/",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "LivArt Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://share.google/OCj5l70Grn7Wxu8WR"
+      },
+      "educationalCredentialAwarded": "LivArt Academy Certified Salon Floor Assistant & Junior Stylist Certificate",
+      "occupationalCredentialAwarded": "Salon Floor Assistant, Junior Stylist & Beautician",
+      "educationalLevel": "Beginner Job-Ready Fast-Track",
+      "inLanguage": "en-IN",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "name": "1-Month Accelerated Salon Job Qualification",
+        "courseMode": "onsite",
+        "courseWorkload": "1 Month Intensive Practical Floor Training",
+        "location": {
+          "@type": "Place",
+          "name": "LivArt Beauty Academy Kalamassery Campus",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+            "addressLocality": "Kalamassery, Kochi",
+            "addressRegion": "Kerala",
+            "postalCode": "682024",
+            "addressCountry": "IN"
+          }
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Tuition",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://livart.co.in/job-oriented-salon-course/"
+      },
+      "teaches": [
+        "Salon Commercial Blow Drying & Round Brush Styling",
+        "Shampoo Basin Etiquette & Scalp Draping",
+        "Commercial Basic Haircuts (U-Cut, Straight, V-Cut & Layer Trims)",
+        "Grey Coverage & Quick Root Touch-Up Application",
+        "Scalp Oil Acupressure Massage & Hair Spa",
+        "Precision Eyebrow & Full-Face Threading",
+        "Deep Cleansing Facials & Steaming Protocols",
+        "Nail Care, Manicure & Spa Pedicure",
+        "Hygienic Strip & Peel-Off Body Waxing"
+      ]
+    }
+  ]
+};
 ---
 
 <Layout 
   title="Job-Oriented Salon Course (1 Month) | Livart Beauty Academy Kochi"
   description="Accelerated 1-month job-oriented salon course in Kochi. Master essential salon floor skills across hair and skin: blow dry, haircuts, facials, root touch-ups, pedicure, and threading for immediate employment."
+  schema={courseSchema}
 >
   <div class="screen-only">
   <!-- HERO -->

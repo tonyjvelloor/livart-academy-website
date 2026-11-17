@@ -186,7 +186,7 @@ Before enrolling anywhere, verify:
 
 ## How LivArt's Clinical Skin Therapy Programme Prepares You for Real-World Success
 
-At [LivArt Beauty Academy](https://livart.co.in) in Kalamassery, Kochi, the Clinical Skin Therapy programme was designed with one principle: **you should be job-ready from day one after graduation, not after months of additional on-the-job learning**.
+At [LivArt Beauty Academy's Clinical Skin Therapy Programme](/skin-care-course/) in [Kalamassery, Kochi](/academy/kalamassery/), the curriculum was designed with one principle: **you should be job-ready from day one after graduation, not after months of additional on-the-job learning**.
 
 Here's what makes the programme different:
 
@@ -220,9 +220,9 @@ Here's the reality: the skin care industry in India is growing faster than train
 
 Every month you wait, more people recognise this opportunity. More academies open (many without proper accreditation). More graduates enter the market. The professionals who establish themselves now — with proper training, legitimate certifications, and real clinical experience — will be the ones leading clinics, training the next generation, and earning at the top of the pay scale five years from now.
 
-A professional skin care course isn't an expense. It's the highest-return investment you can make in your beauty career.
+A professional skin care course isn't an expense. It's the highest-return investment you can make in your beauty career. You can also explore our all-in-one [Master Cosmetology Programme](/certification-course-in-cosmetology/) which pairs clinical skin therapy with [hair dressing](/hair-styling-course/) and [bridal makeup artistry](/bridal-makeup-course/).
 
-**Ready to start your clinical skin therapy journey?** Visit [LivArt Beauty Academy](https://livart.co.in) or call **+91 96332 11151** to learn about upcoming batches, fee structures, and placement opportunities. The academy is located at Madukappilly Tower, Pathadipalam, Edappally P.O, Kalamassery, Kochi, Kerala 682024.
+**Ready to start your clinical skin therapy journey?** Explore the [Diploma in Skin Care & Therapy](/skin-care-course/) or call **+91 96332 11151** to learn about upcoming batches, fee structures, and placement opportunities. The academy is located at Madukappilly Tower, Pathadipalam, Edappally P.O, Kalamassery, Kochi, Kerala 682024.
 
 ---
 

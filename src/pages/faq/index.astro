@@ -31,9 +31,26 @@ const faqs = [
     answer: "Our Cosmetology Programmes (12 Months and 6 Months) combine diplomas across Hair Dressing (13+ cuts, Nanoplastia, Botox, Balayage), Skin Therapy (Hydra facials, High frequency, chemical peels), Makeup Artistry (3 bridal looks, Airbrush, Saree draping), tool kits, and a mandatory 1-month salon floor internship."
   }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<Layout title="Frequently Asked Questions | Livart Beauty Academy">
+<Layout 
+  title="Frequently Asked Questions (FAQ) | Livart Beauty Academy Kochi"
+  description="Common questions about courses, B&WSSC certifications, course fees, hostel accommodation, placement, and toolkits at LivArt Beauty Academy Kochi."
+  schema={faqSchema}
+>
   <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1000px] mx-auto mt-8">
     <div class="text-center mb-space-xl">
       <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">Clarity & Governance</span>
@@ -57,24 +74,6 @@ const faqs = [
       ))}
     </div>
 
-    <!-- Structured Data for FAQPage -->
-    <script type="application/ld+json" set:html={`
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          ${faqs.map(faq => `{
-            "@type": "Question",
-            "name": "${faq.question}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "${faq.answer.replace(/"/g, '\\"')}"
-            }
-          }`).join(',')}
-        ]
-      }
-    `} />
-    
     <script>
       document.querySelectorAll('.faq-toggle').forEach(btn => {
         btn.addEventListener('click', () => {

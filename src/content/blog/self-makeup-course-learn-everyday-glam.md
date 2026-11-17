@@ -228,13 +228,13 @@ Not all courses are created equal. Here's what to look for:
 
 Whether you're a bride preparing for the biggest day of your life, a professional who wants a polished daily look, or a college student exploring your personal style — a **self makeup course** is one of the most practical investments you can make in yourself.
 
-At **LivArt Beauty Academy** in Kalamassery, Kochi, we offer both **self-makeup programmes** for personal grooming and **professional certification courses** for those who want to build a career in beauty. Founded by **Stephy Sebastian** — celebrity stylist and former L'Oréal and Wella national educator — every programme is built on hands-on, real-world training with international-grade products.
+At **[LivArt Beauty Academy](/academy/kalamassery/)** in Kalamassery, Kochi, we offer both dedicated **self-makeup programmes** for personal grooming and accredited **[professional makeup certification courses](/make-up-course/)** or the all-inclusive **[Master Cosmetology Diploma](/certification-course-in-cosmetology/)** for those who want to build a career in beauty. Founded by **Stephy Sebastian** — celebrity stylist and former L'Oréal and Wella national educator — every programme is built on hands-on, real-world training with international-grade products.
 
 **Ready to become your own makeup artist?**
 
 📞 Call or WhatsApp: **+91 96332 11151**
 📍 Visit: Madukappilly Tower, Pathadipalam, Edappally P.O, Kalamassery, Kochi – 682024
-🌐 Explore courses: [livart.co.in](https://livart.co.in)
+🌐 Explore all diplomas & masterclasses: [LivArt Course Prospectus](/overview/)
 
 ---
 

@@ -12,11 +12,34 @@ const cosmetologyModules = [
   { num: "04", title: "കൊമേർഷ്യൽ സലൂൺ ഇന്റേൺഷിപ്പ് (സ്റ്റേജ് 4)", desc: "ലൈവ് വർക്കിംഗ് സലൂൺ ഫ്ലോറിൽ 1 മാസത്തെ നിർബന്ധിത ഇന്റേൺഷിപ്പ് • റിയൽ ക്ലയന്റ് മാനേജ്‌മെന്റ്, ബില്ലിംഗ്, ഹൈ-സ്പീഡ് പ്രിസിഷൻ പരിശീലനം." },
   { num: "05", title: "സലൂൺ ബിസിനസ് & സംരംഭകത്വം", desc: "സലൂൺ സെറ്റപ്പ്, എക്യുപ്‌മെന്റ് സോഴ്സിംഗ് • ക്ലയന്റ് കൺസൾട്ടേഷൻ & റിട്ടൻഷൻ • ഫ്രീലാൻസ് ബ്രൈഡൽ ബുക്കിംഗ് മാനേജ്‌മെന്റ് • B&WSSC ഗവ. എക്സാം." }
 ];
+
+const mlCourseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://livart.co.in/ml/certification-course-in-cosmetology/#course",
+      "name": "മാസ്റ്റർ കോസ്മെറ്റോളജി പ്രോഗ്രാം (12 & 6 മാസം)",
+      "description": "കൊച്ചിയിലെ ഏറ്റവും മികച്ച ഗവൺമെന്റ് അംഗീകൃത (B&WSSC) കോസ്മെറ്റോളജി ഡിപ്ലോമ. ഹെയർ ഡ്രസ്സിംഗ്, ക്ലിനിക്കൽ സ്കിൻ തെറാപ്പി, ബ്രൈഡൽ മേക്കപ്പ് ആർട്ടിസ്ട്രി, ടൂൾ കിറ്റ്, ഒപ്പം 1 മാസത്തെ നിർബന്ധിത സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പും ഉൾപ്പെടെ.",
+      "courseCode": "LIV-COSM-01-ML",
+      "url": "https://livart.co.in/ml/certification-course-in-cosmetology/",
+      "inLanguage": "ml-IN",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമി (LivArt Beauty Academy)",
+        "url": "https://livart.co.in/ml/",
+        "sameAs": "https://share.google/OCj5l70Grn7Wxu8WR"
+      },
+      "educationalCredentialAwarded": "B&WSSC & കേന്ദ്ര നൈപുണ്യ വികസന മന്ത്രാലയം (MSDE) അംഗീകൃത കോസ്മെറ്റോളജി മാസ്റ്റർ ഡിപ്ലോമ"
+    }
+  ]
+};
 ---
 
 <Layout 
   title="കോസ്‌മെറ്റോളജി കോഴ്‌സ് കൊച്ചി (12 & 6 മാസം) | Livart Beauty Academy"
   description="കേരളത്തിലെ ഏറ്റവും മികച്ച കോസ്‌മെറ്റോളജി പ്രോഗ്രാം. ഹെയർ, സ്കിൻ, മേക്കപ്പ് ഡിപ്ലോമകളും 1 മാസത്തെ സലൂൺ ഇന്റേൺഷിപ്പും ടൂൾ കിറ്റും ഉൾപ്പെടെ. B&WSSC അംഗീകൃത സർട്ടിഫിക്കേഷൻ."
+  schema={mlCourseSchema}
 >
   <div class="screen-only">
   <!-- 1. HERO SECTION -->

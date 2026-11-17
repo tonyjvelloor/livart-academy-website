@@ -24,11 +24,92 @@ const skin2MonthModules = [
   { num: "05", title: "Skin Concerns & Targeted Care", desc: "Understanding acne, hyperpigmentation, dryness, oiliness, and specialized corrective treatments." },
   { num: "06", title: "Extensive Practical Training", desc: "Threading • De-tan treatment • Basic clean up • Basic facial • Waxing • Manicure • Pedicure • High frequency machine • Acne treatments." }
 ];
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://livart.co.in/skin-care-course/#course",
+      "name": "Clinical Skin Therapy & Aesthetics Diploma (4M & 2M)",
+      "description": "Professional clinical aesthetics and skin therapy certification in Kochi. Master dermal anatomy, Hydra Facials, High-Frequency electrotherapy, Galvanic iontophoresis, chemical peels, and luxury salon skin treatments with tool kit included.",
+      "courseCode": "LIV-SKIN-05",
+      "url": "https://livart.co.in/skin-care-course/",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "LivArt Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://share.google/OCj5l70Grn7Wxu8WR"
+      },
+      "educationalCredentialAwarded": "B&WSSC (Beauty & Wellness Sector Skill Council) Certified Clinical Skin Aesthetician Diploma",
+      "occupationalCredentialAwarded": "Certified Clinical Aesthetician & Skin Therapist",
+      "educationalLevel": "Beginner to Advanced Aesthetician",
+      "inLanguage": "en-IN",
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "name": "4-Month Advanced Diploma in Skin Therapy & Clinical Aesthetics",
+          "courseMode": "onsite",
+          "courseWorkload": "4 Months Comprehensive",
+          "location": {
+            "@type": "Place",
+            "name": "LivArt Beauty Academy Kalamassery Campus",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+              "addressLocality": "Kalamassery, Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682024",
+              "addressCountry": "IN"
+            }
+          }
+        },
+        {
+          "@type": "CourseInstance",
+          "name": "2-Month Accelerated Skin Therapy Track",
+          "courseMode": "onsite",
+          "courseWorkload": "2 Months Fast-Track",
+          "location": {
+            "@type": "Place",
+            "name": "LivArt Beauty Academy Kalamassery Campus",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+              "addressLocality": "Kalamassery, Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682024",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "category": "Tuition",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://livart.co.in/skin-care-course/"
+      },
+      "teaches": [
+        "Skin Science, Dermal Layers & Pathological Conditions",
+        "Hydra-Facial Machine Operation & Vacuum Pore Extraction",
+        "High-Frequency & Galvanic Iontophoresis Electrotherapy",
+        "Ultrasonic Dermal Infusion & Anti-Aging Protocols",
+        "Chemical Exfoliation & Acid Peels (AHA/BHA)",
+        "Acne Extraction, Hyperpigmentation & De-Tan Protocols",
+        "Therapeutic Facial Massage Manipulation Strokes",
+        "Professional Manicure, Spa Pedicure & Waxing Techniques"
+      ]
+    }
+  ]
+};
 ---
 
 <Layout 
   title="Skin Therapy & Aesthetics Courses in Kochi | Livart Beauty Academy"
   description="Master clinical aesthetics, Hydra Facials, High Frequency, and skin therapy at Livart Beauty Academy Kochi. 4-Month Diploma in Skin Therapy and 2-Month Skin Therapy Course with tool kit included."
+  schema={courseSchema}
 >
   <div class="screen-only">
   <!-- HERO -->

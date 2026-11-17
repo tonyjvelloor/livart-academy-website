@@ -63,7 +63,7 @@ A stylist's station is their operating theatre:
 ### Master Hair Architecture at LivArt Academy
 Are you passionate about turning hair styling into a high-income, respected profession?
 
-At **LivArt Beauty Academy** in Kalamassery, Kochi, our [Diploma in Hair Dressing](/diploma-in-hair-dressing/) and [Advanced Hair Styling Courses](/hair-styling-course/) offer:
+At **LivArt Beauty Academy** in Kalamassery, Kochi, our [Advanced Hair Styling & Architecture Course](/hair-styling-course/) offers:
 * Direct training under celebrity stylist **Stephy Sebastian** (former national educator for L'Oréal and Wella).
 * Comprehensive training in balayage, keratin smoothing, hair botox, and precision cutting.
 * Hands-on practice in our fully equipped flagship salon atelier.

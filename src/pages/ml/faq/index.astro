@@ -27,9 +27,27 @@ const faqs = [
     answer: "12 മാസത്തെയും 6 മാസത്തെയും കോസ്മെറ്റോളജി പ്രോഗ്രാമുകളിൽ ഹെയർ ഡ്രസ്സിംഗ് (13+ കട്ടുകൾ, നാനോപ്ലാസ്റ്റിയ, ബോട്ടോക്സ്, കളറിംഗ്), സ്കിൻ തെറാപ്പി (ഹൈഡ്ര ഫേഷ്യൽ, കെമിക്കൽ പീൽസ്), മേക്കപ്പ് ആർട്ടിസ്ട്രി (3 ബ്രൈഡൽ ലുക്കുകൾ, എയർബ്രഷ്, സാരി ഡ്രേപ്പിംഗ്), ടൂൾകിറ്റുകൾ, കൂടാതെ 1 മാസത്തെ നിർബന്ധിത സലൂൺ ഫ്ലോർ ഇന്റേൺഷിപ്പും ഉൾപ്പെടുന്നു."
   }
 ];
+
+const mlFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ml-IN",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<Layout title="പതിവായി ചോദിക്കുന്ന ചോദ്യങ്ങൾ (FAQ) | Livart Beauty Academy">
+<Layout 
+  title="പതിവായി ചോദിക്കുന്ന ചോദ്യങ്ങൾ (FAQ) | Livart Beauty Academy"
+  description="ലിവ്ആർട്ട് ബ്യൂട്ടി അക്കാദമി കൊച്ചിയിലെ കോഴ്സുകൾ, സർക്കാർ B&WSSC സർട്ടിഫിക്കറ്റുകൾ, ഫീസ് ഘടന, ഹോസ്റ്റൽ സൗകര്യം, പ്ലേസ്മെന്റ് വിവരങ്ങൾ."
+  schema={mlFaqSchema}
+>
   <section class="py-space-xl px-margin-sm lg:px-margin-lg max-w-[1000px] mx-auto mt-8">
     <div class="text-center mb-space-xl">
       <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-space-xs">വിവരങ്ങൾ & സംശയനിവാരണം</span>
@@ -53,24 +71,6 @@ const faqs = [
       ))}
     </div>
 
-    <!-- Structured Data for FAQPage -->
-    <script type="application/ld+json" set:html={`
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          ${faqs.map(faq => `{
-            "@type": "Question",
-            "name": "${faq.question}",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "${faq.answer.replace(/"/g, '\\"')}"
-            }
-          }`).join(',')}
-        ]
-      }
-    `} />
-    
     <script>
       document.querySelectorAll('.faq-toggle').forEach(btn => {
         btn.addEventListener('click', () => {

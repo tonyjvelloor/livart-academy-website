@@ -55,13 +55,13 @@ Delhi's massive wedding industry — Big Fat Indian Weddings are practically a c
 
 Bangalore's tech-professional clientele drives strong demand for grooming services, skincare treatments, and polished everyday makeup. The city is also emerging as a hub for clinical skin therapy and derma-aesthetic services.
 
-### Kochi & Kerala
+### [Kochi & Kerala](/academy/kochi/)
 
 - **Salon Beautician:** ₹18,000 – ₹35,000/month
 - **Freelance Makeup Artist:** ₹30,000 – ₹80,000/month
 - **Bridal Specialist:** ₹15,000 – ₹50,000 per assignment
 
-Here's what makes Kerala special: the **Gulf connection**. Thousands of Kerala-trained beauticians work in Dubai, Abu Dhabi, Qatar, and Oman — earning ₹80,000–₹2,00,000/month with accommodation included. This makes Kerala one of the smartest places to *train*, even if you don't plan to work locally long-term. Kochi, in particular, has seen a surge in premium salons and bridal studios, with well-trained professionals earning ₹40,000–₹60,000 even at the mid-career level.
+Here's what makes Kerala special: the **Gulf connection**. Thousands of Kerala-trained beauticians work in Dubai, Abu Dhabi, Qatar, and Oman — earning ₹80,000–₹2,00,000/month with accommodation included. This makes Kerala one of the smartest places to *train*, even if you don't plan to work locally long-term. [Kochi](/academy/kochi/), in particular, has seen a surge in premium salons and bridal studios, with well-trained professionals graduating from [Kalamassery's beauty education corridor](/academy/kalamassery/) earning ₹40,000–₹60,000 even at the mid-career level.
 
 ### Chennai
 
@@ -241,7 +241,7 @@ At LivArt, our curriculum includes training on internationally recognised produc
 
 1. **Get certified from a recognised academy.** Not just any course — look for B&WSSC + NSDC recognition. This is non-negotiable for serious career growth.
 
-2. **Pick a high-value specialisation.** Bridal makeup, clinical skin therapy, and advanced hair colouring are the three highest-ROI specialisations in 2026.
+2. **Pick a high-value specialisation.** [Bridal makeup](/bridal-makeup-course/), [clinical skin therapy](/skin-care-course/), and [advanced hair colouring & architecture](/hair-styling-course/) are the three highest-ROI specialisations in 2026.
 
 3. **Build your portfolio from day one.** Document every look you create during training. Before-and-after photos, reels, and client testimonials are your currency.
 
@@ -253,7 +253,7 @@ At LivArt, our curriculum includes training on internationally recognised produc
 
 ## Why LivArt Graduates Earn More
 
-LivArt Beauty Academy in Kalamassery, Kochi, was founded by **Stephy Sebastian** — a celebrity stylist and former national educator for L'Oréal and Wella — with a specific mission: to produce beauty professionals who earn at the top of the market, not the bottom.
+[LivArt Beauty Academy in Kalamassery, Kochi](/certification-course-in-cosmetology/), was founded by **Stephy Sebastian** — a celebrity stylist and former national educator for L'Oréal and Wella — with a specific mission: to produce beauty professionals who earn at the top of the market, not the bottom.
 
 Here's what sets LivArt apart:
 

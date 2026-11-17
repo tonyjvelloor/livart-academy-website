@@ -33,11 +33,92 @@ const oneMonthModules = [
   { num: "11", title: "Hairstyles", desc: "Bridal braids, buns, ponytails, and flower setting." },
   { num: "12", title: "Saree Draping", desc: "Pre-pleating, box folding, and draping for all body types." }
 ];
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "@id": "https://livart.co.in/make-up-course/#course",
+      "name": "Diploma in Makeup Artistry (3-Month Master & 1-Month Intensive)",
+      "description": "Professional bridal and fashion makeup artistry diploma in Kochi led by celebrity stylist Stephy Sebastian. Covers Hindu, Christian & Muslim bridal couture, 4K HD foundation blending, airbrush, thermal hair styling, and advanced saree draping.",
+      "courseCode": "LIV-MUA-02",
+      "url": "https://livart.co.in/make-up-course/",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "LivArt Beauty Academy",
+        "url": "https://livart.co.in",
+        "sameAs": "https://share.google/OCj5l70Grn7Wxu8WR"
+      },
+      "educationalCredentialAwarded": "B&WSSC (Beauty & Wellness Sector Skill Council) Government Certified Makeup Artist Diploma",
+      "occupationalCredentialAwarded": "Certified Bridal Makeup Artist & Fashion Stylist",
+      "educationalLevel": "Beginner to Professional",
+      "inLanguage": "en-IN",
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "name": "3-Month Master Diploma in Makeup Artistry",
+          "courseMode": "onsite",
+          "courseWorkload": "3 Months Comprehensive",
+          "location": {
+            "@type": "Place",
+            "name": "LivArt Beauty Academy Kalamassery Campus",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+              "addressLocality": "Kalamassery, Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682024",
+              "addressCountry": "IN"
+            }
+          }
+        },
+        {
+          "@type": "CourseInstance",
+          "name": "1-Month Intensive Makeup Artistry Track",
+          "courseMode": "onsite",
+          "courseWorkload": "1 Month Intensive",
+          "location": {
+            "@type": "Place",
+            "name": "LivArt Beauty Academy Kalamassery Campus",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Madukappilly Tower, Pathadipalam, Edappally P.O",
+              "addressLocality": "Kalamassery, Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682024",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "category": "Tuition",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://livart.co.in/make-up-course/"
+      },
+      "teaches": [
+        "Skin Preparation & CTM Protocols",
+        "Color Theory, Concealing & Base Matching for Indian Skin Tones",
+        "Cream & Powder Contouring, Blushing & Highlighting",
+        "Hindu Bridal, Christian Bridal & Muslim Bridal Looks",
+        "4K HD Media Makeup & Airbrush Artistry",
+        "Eye Makeup, Cut-Crease, Smoky Eyes & False Lashes",
+        "Bridal Hair Styling, Braids, Buns & Flower Setting",
+        "Saree Pre-Pleating, Box Folding & Draping Variations"
+      ]
+    }
+  ]
+};
 ---
 
 <Layout 
   title="Diploma in Makeup Artistry in Kochi | Livart Beauty Academy"
   description="Learn professional makeup artistry from Stephy Sebastian at Livart Beauty Academy Kochi. 3-Month Master Diploma and 1-Month Intensive Diploma covering Bridal, HD, Airbrush, and Saree Draping with tool kit included."
+  schema={courseSchema}
 >
   <div class="screen-only">
   <!-- HERO -->

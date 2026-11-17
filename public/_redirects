@@ -1,7 +1,19 @@
 # Netlify / Cloudflare Pages 301 Redirects
 /home / 301
+/courses /overview/ 301
+/courses/ /overview/ 301
 /courses-beautician-kochi /overview/ 301
+/courses-beautician-kochi/ /overview/ 301
 /diploma-in-tattoo /overview/ 301
+/diploma-in-tattoo/ /overview/ 301
+/diploma-in-hair /hair-styling-course/ 301
+/diploma-in-hair/ /hair-styling-course/ 301
+/diploma-in-hair-dressing /hair-styling-course/ 301
+/diploma-in-hair-dressing/ /hair-styling-course/ 301
+/diploma-in-makeup /make-up-course/ 301
+/diploma-in-makeup/ /make-up-course/ 301
+/diploma-in-skin-therapy /skin-care-course/ 301
+/diploma-in-skin-therapy/ /skin-care-course/ 301
 /qualities-of-a-professional-hair-stylist /blog/qualities-of-a-professional-hair-stylist/ 301
 /how-to-become-a-beautician /blog/how-to-become-a-beautician/ 301
 /why-a-cosmetology-diploma-is-your-perfect-choice /blog/why-a-cosmetology-diploma-is-your-perfect-choice/ 301
